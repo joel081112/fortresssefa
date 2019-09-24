@@ -10,7 +10,7 @@
 }
 
 :root {
-    --accent-color: #45494E;
+    --accent-color: #ff1455;
     --gradient-color: #FBFBFB;
 }
 
@@ -36,7 +36,7 @@ a:after {
 }
 
 body {
-    background: #45494E;
+    background: #f5fff0;
     font-family: "Varela Round", Nunito, Montserrat, sans-serif;
     margin: 0;
     padding: 0;
@@ -54,7 +54,7 @@ body {
 }
 
 .menu > ol > li {
-    background: #3c3c3c;
+    background: #e8e7ef;
     border-left: 5px solid var(--gradient-color);
     margin-bottom: 1px;
     position: relative;
@@ -62,8 +62,8 @@ body {
 }
 
 .menu > ol > li:nth-child(1) {
-    --accent-color: #FDA085;
-    --gradient-color: #F6D365;
+    --accent-color: #1A0FBA;
+    --gradient-color: #fefefe;
 }
 
 .menu > ol > li:nth-child(2) {

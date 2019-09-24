@@ -8,6 +8,8 @@
     <link rel="stylesheet" href='/static/css/bootstrap.css'>
     <link rel="stylesheet" href='/static/css/NavMENU.css'>
     <link rel="stylesheet" href='/static/css/owl.min.css'>
+    <link rel="stylesheet" href='/static/css/hamburgerAnim.css'>
+    <link rel="stylesheet" href='/static/css/w3Pop.css'>
 {% endblock %}
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
@@ -17,6 +19,7 @@
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="../../assets/js/vendor/popper.min.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../dist/js/hamburgerAnim.js"></script>
 {% endblock %}
 
 {% block content %} {#    html stuff sits in here#}
@@ -25,22 +28,63 @@
 
 
 
+
     <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <div class="hamburger" id="id01">
+            <label class="toggle">
+                <input type="checkbox">
+                <div>
+                    <div>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <svg>
+                        <use xlink:href="#path">
+                    </svg>
+                    <svg>
+                        <use xlink:href="#path">
+                    </svg>
+                </div>
+            </label>
+
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" id="path">
+                    <path d="M22,22 L2,22 C2,11 11,2 22,2 C33,2 42,11 42,22"></path>
+                </symbol>
+            </svg>
+        </div>
+
+
         <header class="masthead mb-auto">
             <nav class="menu">
                 <ol>
                     <li class="menu-item"><a href="#0">Home</a></li>
                     <li class="menu-item"><a href="#0">About</a></li>
                     <li class="menu-item">
-                        <a href="#0">Widgets</a>
+                        <a href="#0">Products</a>
                         <ol class="sub-menu">
-                            <li class="menu-item"><a href="Action.html">Big Widgets</a></li>
-                            <li class="menu-item"><a href="AndotherAction.html">Bigger Widgets</a></li>
-                            <li class="menu-item"><a href="#0">Huge Widgets</a></li>
+                            <div class="column">
+                                <h10>Doors</h10>
+                                <li class="menu-item"><a href="Action.html">Big Widgets</a></li>
+                                <li class="menu-item"><a href="AndotherAction.html">Bigger Widgets</a></li>
+                                <li class="menu-item"><a href="#0">Huge Widgets</a></li>
+                            </div>
+                            <div class="column">
+                                <h10>Shutters</h10>
+                                <li class="menu-item"><a href="Action.html">Big Widgets</a></li>
+                                <li class="menu-item"><a href="AndotherAction.html">Bigger Widgets</a></li>
+                                <li class="menu-item"><a href="#0">Huge Widgets</a></li>
+                                <li class="menu-item"><a href="Action.html">Big Widgets</a></li>
+                            </div>
+                            <div class="column">
+                                <h10>Glass</h10>
+                                <li class="menu-item"><a href="Action.html">Big Widgets</a></li>
+                                <li class="menu-item"><a href="AndotherAction.html">Bigger Widgets</a></li>
+                            </div>
                         </ol>
                     </li>
                     <li class="menu-item">
-                        <a href="#0">Kabobs</a>
+                        <a href="#0">Services</a>
                         <ol class="sub-menu">
                             <li class="menu-item"><a href="#0">Shishkabobs</a></li>
                             <li class="menu-item"><a href="#0">BBQ kabobs</a></li>
@@ -60,6 +104,7 @@
                 <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
             </p>
         </main>
+
 
         <footer class="mastfoot mt-auto">
             <div class="inner">

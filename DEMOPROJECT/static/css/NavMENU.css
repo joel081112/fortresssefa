@@ -10,7 +10,7 @@
 }
 
 :root {
-    --accent-color: #45494E;
+    --accent-color: #12ffc9;
     --gradient-color: #FBFBFB;
 }
 
@@ -36,7 +36,7 @@ a:after {
 }
 
 body {
-    background: #45494E;
+    background: #e9e0c1;
     font-family: "Varela Round", Nunito, Montserrat, sans-serif;
     margin: 0;
     padding: 0;
@@ -44,17 +44,17 @@ body {
 }
 
 .menu {
-    margin: 15px;
+    margin: 8px;
 }
 
 .menu > ol {
     list-style: none;
-    margin: 30px 0;
+    margin: 2px 0;
     padding: 0;
 }
 
 .menu > ol > li {
-    background: #3c3c3c;
+    background: #e5e9da;
     border-left: 5px solid var(--gradient-color);
     margin-bottom: 1px;
     position: relative;
@@ -62,28 +62,28 @@ body {
 }
 
 .menu > ol > li:nth-child(1) {
-    --accent-color: #FDA085;
-    --gradient-color: #F6D365;
+    --accent-color: #fefefe;
+    --gradient-color: #052b96;
 }
 
 .menu > ol > li:nth-child(2) {
-    --accent-color: #BFF098;
-    --gradient-color: #6FD6FF;
+    --accent-color: #fefefe;
+    --gradient-color: #28499c;
 }
 
 .menu > ol > li:nth-child(3) {
-    --accent-color: #EA8D8D;
-    --gradient-color: #A890FE;
+    --accent-color: #fefefe;
+    --gradient-color: #3874a4;
 }
 
 .menu > ol > li:nth-child(4) {
-    --accent-color: #D8B5FF;
-    --gradient-color: #1EAE98;
+    --accent-color: #fefefe;
+    --gradient-color: #365aab;
 }
 
 .menu > ol > li:nth-child(5) {
-    --accent-color: #C6EA8D;
-    --gradient-color: #FE90AF;
+    --accent-color: #fefefe;
+    --gradient-color: #1f4fb1;
 }
 
 .menu > ol > li a {
@@ -123,7 +123,7 @@ body {
 
 .menu > ol > li:focus .sub-menu,
 .menu > ol > li:focus-within .sub-menu {
-    max-height: 500px;
+    max-height: 1500px;
 }
 
 .menu > ol > li:focus a:before,
@@ -132,7 +132,7 @@ body {
 }
 
 .menu > ol > li:after {
-    background: #3c3c3c;
+    background: #5475c0;
     content: "";
     position: absolute;
     left: 0;
@@ -175,7 +175,38 @@ body {
     width: 15px;
 }
 
-@media (min-width: 600px) {
+/* Create three equal columns that floats next to each other */
+.column {
+    padding: 7px;
+}
+
+.column a {
+    float: none;
+    padding: 7px;
+    display: block;
+    text-align: left;
+    font-size: 13px;
+}
+
+@media (min-width: 400px)  and (max-width: 640px) {
+    /* Create three equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 33.33%;
+        padding: 15px;
+        max-height: 750px;
+    }
+
+    .column a {
+        float: none;
+        padding: 16px;
+        display: block;
+        text-align: left;
+    }
+}
+
+@media (min-width: 640px) {
+
     a:focus,
     a:hover {
         position: relative;
@@ -193,7 +224,7 @@ body {
     }
 
     .menu {
-      margin: 2vh 0 0;
+        margin: 0 0 0;
     }
 
     .menu > ol {
@@ -208,7 +239,7 @@ body {
         display: inline-block;
         margin-left: -5px;
         vertical-align: top;
-        width: 120px;
+        width: 18%;
     }
 
     .menu > ol > li:hover:after,
@@ -225,7 +256,7 @@ body {
     .menu > ol > li:hover .sub-menu,
     .menu > ol > li:focus .sub-menu,
     .menu > ol > li:focus-within .sub-menu {
-        max-height: 750px;
+        max-height: 900px;
     }
 
     .menu > ol > li a:not(:last-child):before {
@@ -241,15 +272,68 @@ body {
         margin: 15px -15px -15px;
         padding-left: 0;
     }
+
+    /* Create three equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 33.33%;
+        padding: 15px;
+        max-height: 750px;
+    }
+
+    .column a {
+        float: none;
+        padding: 16px;
+        display: block;
+        text-align: left;
+    }
 }
 
 
 @media (min-width: 775px) {
     .menu > ol > li {
-        width: 150px;
+        width: 18%;
+        font-size: 18px;
     }
 
     .menu > ol > li a:not(:last-child):before {
-        right: 25px;
+        right: 10px;
+    }
+
+    /* Create three equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 33.33%;
+        padding: 15px;
+        max-height: 750px;
+    }
+
+    .column a {
+        float: none;
+        padding: 16px;
+        display: block;
+        text-align: left;
     }
 }
+
+@media (min-width: 640px) {
+    .hamburger {
+        display: none !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
