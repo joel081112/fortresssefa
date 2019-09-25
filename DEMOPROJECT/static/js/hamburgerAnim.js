@@ -6,6 +6,18 @@ var animate = setInterval(() => {
 }, 3000)
 
 document.querySelector('body').addEventListener('click', () => {
-  clearInterval(animate);
+    clearInterval(animate);
 })
+
+
+function displayWindowSize() {
+    var w = document.documentElement.clientWidth;
+    var toggle = document.querySelector(".toggle input");
+
+    if (w > 640) {
+        toggle.checked = false;
+    }
+}
+
+window.addEventListener("resize", displayWindowSize);
 

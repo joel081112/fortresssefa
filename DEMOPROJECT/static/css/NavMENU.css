@@ -316,11 +316,20 @@ body {
     }
 }
 
-@media (min-width: 640px) {
+@media screen and (max-width: 640px){
+    #menuPanel{
+        display: none !important;
+    }
+}
+
+@media screen and  (min-width: 640px) {
     .hamburger {
         display: none !important;
     }
 }
+
+
+
 
 
 
