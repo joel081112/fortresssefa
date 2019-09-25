@@ -5,13 +5,13 @@ function displayWindowSize() {
 
     if (w > 640) {
         toggle.checked = false;
-        menu.style.cssText += ';display:block !important;'
+        menu.style.cssText = ';display:block !important;'
     }
-    //going from small to large displays menu (as wanted)
-    //going back to small menu will always menu
-    //need to hide it when going to small
+    else if (w < 640) {
+        toggle.checked = false;
+        menu.style.cssText = ';display:none !important;'
+    }
 }
-
 window.addEventListener("resize", displayWindowSize);
 
 var menu = document.getElementById('menuPanel');

@@ -259,8 +259,9 @@ body {
         max-height: 900px;
     }
 
+    /**not sure if does anything*/
     .menu > ol > li a:not(:last-child):before {
-        right: 12.5px;
+        right: 12px;
     }
 
     .menu > ol > li:hover a:before {
@@ -268,10 +269,12 @@ body {
     }
 
     .menu > ol .sub-menu {
-        border-left: 0;
+        border-left: 20px;
         margin: 15px -15px -15px;
         padding-left: 0;
     }
+
+
 
     /* Create three equal columns that floats next to each other */
     .column {
@@ -310,14 +313,14 @@ body {
 
     .column a {
         float: none;
-        padding: 16px;
+        padding: 15px;
         display: block;
         text-align: left;
     }
 }
 
-@media screen and (max-width: 639.98px){
-    #menuPanel{
+@media screen and (max-width: 639.98px) {
+    #menuPanel {
         display: none !important;
     }
 }
