@@ -1,58 +1,240 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Cover Template for Bootstrap</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
-
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
-  </head>
-
-  <body class="text-center">
-
-    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
-        <div class="inner">
-          <h3 class="masthead-brand">Cover</h3>
-          <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="#">Features</a>
-            <a class="nav-link" href="#">Contact</a>
-          </nav>
-        </div>
-      </header>
-
-      <main role="main" class="inner cover">
-        <h1 class="cover-heading">Cover your page.</h1>
-        <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-        <p class="lead">
-          <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
-        </p>
-      </main>
-
-      <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-        </div>
-      </footer>
-    </div>
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+{% extends "../base.html" %}
+{% load static %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}Products{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+    <link rel="stylesheet" href='/static/css/cover.css'>
+    <link rel="stylesheet" href='/static/css/bootstrap.css'>
+    <link rel="stylesheet" href='/static/css/NavMENU.css'>
+    <link rel="stylesheet" href='/static/css/owl.min.css'>
+    <link rel="stylesheet" href='/static/css/hamburgerAnim.css'>
+    <link rel="stylesheet" href='/static/css/w3Pop.css'>
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="../../assets/js/vendor/popper.min.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>
-  </body>
-</html>
+    <script src="../../static/js/hamburgerAnim.js"></script>
+{% endblock %}
+
+{% block content %} {#    html stuff sits in here#}
+
+
+
+
+
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+        <div class="hamburger">
+            <label class="toggle" id="menuDisplay">
+                <input type="checkbox" id="myCheck">
+                <div>
+                    <div>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <svg>
+                        <use xlink:href="#path">
+                    </svg>
+                    <svg>
+                        <use xlink:href="#path">
+                    </svg>
+                </div>
+            </label>
+
+            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" id="path">
+                    <path d="M22,22 L2,22 C2,11 11,2 22,2 C33,2 42,11 42,22"></path>
+                </symbol>
+            </svg>
+        </div>
+
+
+        <header class="masthead mb-auto" id="menuPanel">
+            <nav class="menu">
+                <ol>
+                    <li class="menu-item"><a href="#0">Home</a></li>
+                    <li class="menu-item"><a href="#0">About</a></li>
+                    <li class="menu-item">
+                        <a href="#0">Products</a>
+                        <ol class="sub-menu">
+                            <div class="column">
+                                <h10>Doors</h10>
+                                <li class="menu-item"><a href="Action.html">Speed</a></li>
+                                <li class="menu-item"><a href="AndotherAction.html">Sectional</a></li>
+                                <li class="menu-item"><a href="#0">Steel</a></li>
+                            </div>
+                            <div class="column">
+                                <h10>Shutters</h10>
+                                <li class="menu-item"><a href="Action.html">Commercial</a></li>
+                                <li class="menu-item"><a href="AndotherAction.html">Fire Shutters</a></li>
+                                <li class="menu-item"><a href="AndotherAction.html">Fire Curtains</a></li>
+                                <li class="menu-item"><a href="#0">Industrial</a></li>
+                                <li class="menu-item"><a href="Action.html">Insulated</a></li>
+                                <li class="menu-item"><a href="Action.html">Smoke Curtain</a></li>
+                            </div>
+                            <div class="column">
+                                <h10>Extra</h10>
+                                <li class="menu-item"><a href="Action.html">Partition Screens</a></li>
+                                <li class="menu-item"><a href="Action.html">Loading Bays</a></li>
+                                <li class="menu-item"><a href="Action.html">Fortress Trellidor</a></li>
+                                <li class="menu-item"><a href="Action.html">Crime Guard Screen</a></li>
+                                <li class="menu-item"><a href="Action.html">Security Gates</a></li>
+                            </div>
+                        </ol>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#0">Services</a>
+                        <ol class="sub-menu">
+                            <li class="menu-item"><a href="#0">Shishkabobs</a></li>
+                            <li class="menu-item"><a href="#0">BBQ kabobs</a></li>
+                            <li class="menu-item"><a href="#0">Summer kabobs</a></li>
+                        </ol>
+                    </li>
+                    <li class="menu-item"><a href="#0">Contact</a></li>
+                </ol>
+            </nav>
+        </header>
+
+
+
+
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a
+                        href="https://twitter.com/mdo">@mdo</a>.</p>
+            </div>
+        </footer>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <nav class="menu">
+  <ol>
+    <li class="menu-item"><a href="#0">Home</a></li>
+    <li class="menu-item"><a href="#0">About</a></li>
+    <li class="menu-item">
+      <a href="#0">Widgets</a>
+      <ol class="sub-menu">
+        <li class="menu-item"><a href="Action.html">Big Widgets</a></li>
+        <li class="menu-item"><a href="AndotherAction.html">Bigger Widgets</a></li>
+        <li class="menu-item"><a href="#0">Huge Widgets</a></li>
+      </ol>
+    </li>
+    <li class="menu-item">
+      <a href="#0">Kabobs</a>
+      <ol class="sub-menu">
+        <li class="menu-item"><a href="#0">Shishkabobs</a></li>
+        <li class="menu-item"><a href="#0">BBQ kabobs</a></li>
+        <li class="menu-item"><a href="#0">Summer kabobs</a></li>
+      </ol>
+    </li>
+    <li class="menu-item"><a href="#0">Contact</a></li>
+  </ol>
+</nav>
+
+
+    <h1>
+        Welcome to Fortress SEFA
+    </h1>
+    <h2>
+        THIS IS MY WEBSITE
+    </h2>
+    <ul>
+        <li>Python</li>
+        <li>Java</li>
+    </ul>
+    <table style="width:30%">
+        <tr>
+            <th>Python</th>
+            <th>Java</th>
+        </tr>
+        <tr>
+            <td>Pycharm</td>
+            <td>Netbeans</td>
+        </tr>
+    </table>
+    {{ page.intro|richtext }}
+    {{ page.security|richtext }}
+    {{ page.environment|richtext }}
+    {{ page.fire|richtext }}
+    {{ page.architectural|richtext }}
+    <div>
+        {# creates 2 buttons #}
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+                <button class="btn btn-outline-success" type="button">Main button</button>
+                <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button>
+            </form>
+        </nav>
+
+
+    </div>
+    <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <nav class="navbar navbar-light bg-light">
+  <span class="navbar-text">
+    Navbar text with an inline element
+  </span>
+    </nav>
+-->
+    <!-- <nav class="navbar navbar-dark bg-primary">
+
+    </nav>-->
+
+
+
+
+    <!--
+       <div class="cover container d-flex h-100 p-3 mx-auto flex column">
+           <header class="masthead mb-auto">
+               <div class="inner">
+                   <h3 class="masthead mb-auto"></h3>
+                   <nav class="nav nav-masthead justify-content-centre">
+                       <a class="nav-link active" href="#">Home</a>
+                       <a class="nav-link" href="#">Features</a>
+                       <a class="nav-link" href="#">Contact</a>
+                   </nav>
+               </div>
+           </header>
+           <main role="main" class="inner cover">
+               <h1 class="cover-heading">Cover your page</h1>
+               <p class="lead">
+                   Cover is a one page template for building the simple and beautiful home pages.
+                   Download, edit the text and add your full screen background photo to make it your
+                   own.
+               </p>
+               <p class="lead">
+                   <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+               </p>
+           </main>
+           <footer class="mastfoot mt-auto">
+               <div class="inner">
+                   <p>
+                       Cover template for
+                       <a href="https://getbootstrap.com/">Bootstrap</a>
+                       , by
+                       <a href="https://twitter.com/mdo">@mdo</a>
+                   </p>
+               </div>
+           </footer>
+
+       </div>
+   -->
+{% endblock %}
