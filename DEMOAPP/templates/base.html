@@ -14,7 +14,7 @@
             {% endwith %}
         {% endblock %}
     </title>
-    <meta name="description" content=""/>
+    <meta name="description" content="{% block meta_descr %}{% endblock %}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     {#    #responsive stuff to work bootstrap##}
     {# Fonts #}
@@ -43,6 +43,8 @@
         {# Override this in templates to add extra stylesheets #}
 
     {% endblock %}
+
+
 </head>
 <body class="{% block body_class %}{% endblock %}">
 {% wagtailuserbar %}
