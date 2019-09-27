@@ -68,22 +68,22 @@ body {
 
 .menu > ol > li:nth-child(2) {
     --accent-color: #fefefe;
-    --gradient-color: #28499c;
+    --gradient-color: #052b96;
 }
 
 .menu > ol > li:nth-child(3) {
     --accent-color: #fefefe;
-    --gradient-color: #3874a4;
+    --gradient-color: #052b96;
 }
 
 .menu > ol > li:nth-child(4) {
     --accent-color: #fefefe;
-    --gradient-color: #365aab;
+    --gradient-color: #052b96;
 }
 
 .menu > ol > li:nth-child(5) {
     --accent-color: #fefefe;
-    --gradient-color: #1f4fb1;
+    --gradient-color: #052b96;
 }
 
 /*nav bar itself*/
@@ -177,8 +177,9 @@ body {
 }
 
 /* Create three equal columns that floats next to each other */
+/* padding over the highlighted area*/
 .column {
-    padding: 35px;
+    padding: 15px;
 }
 
 .column a {
