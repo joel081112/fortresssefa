@@ -20,7 +20,7 @@ a:focus {
 }
 
 a:focus:after {
-    width: 50px;
+    width: 100px;
 }
 
 a:after {
@@ -86,6 +86,7 @@ body {
     --gradient-color: #1f4fb1;
 }
 
+/*nav bar itself*/
 .menu > ol > li a {
     color: #FBFBFB;
     display: block;
@@ -177,7 +178,7 @@ body {
 
 /* Create three equal columns that floats next to each other */
 .column {
-    padding: 7px;
+    padding: 35px;
 }
 
 .column a {
@@ -242,21 +243,30 @@ body {
         width: 18%;
     }
 
+    /*width of menu options pop ups on hover*/
+    /*we want -55 left and -55 right*/
+    /*and hover background*/
     .menu > ol > li:hover:after,
-    .menu > ol > li:focus:after,
-    .menu > ol > li:focus-within:after {
+    .menu > ol > li:focus-within:after,
+    .menu > ol > li:focus:after {
         background: linear-gradient(to bottom, var(--accent-color), var(--gradient-color));
         border-radius: 3px;
         top: -15px;
-        bottom: -15px;
         left: -15px;
         right: -15px;
     }
 
+
+/*Past max height-900 is just added*/
     .menu > ol > li:hover .sub-menu,
     .menu > ol > li:focus .sub-menu,
     .menu > ol > li:focus-within .sub-menu {
         max-height: 900px;
+        background: linear-gradient(to bottom, var(--accent-color), var(--gradient-color));
+        border-radius: 3px;
+        top: -15px;
+        left: -5px;
+        right: -55px;
     }
 
     /**not sure if does anything*/
@@ -268,25 +278,25 @@ body {
         transform: rotate(-180deg);
     }
 
+    /*margin effects distance between columns in submenu*/
     .menu > ol .sub-menu {
         border-left: 20px;
-        margin: 15px -15px -15px;
+        margin: 15px -100px -15px;
         padding-left: 0;
     }
-
 
 
     /* Create three equal columns that floats next to each other */
     .column {
         float: left;
         width: 33.33%;
-        margin: 15px 15px -15px -15px;
-        max-height: 750px;
+        margin: 1px 15px -15px -15px;
+        max-height: 800px;
     }
 
     .column a {
         float: none;
-        padding: 1000px;
+        padding: 5px;
         display: block;
         text-align: left;
     }
@@ -297,6 +307,13 @@ body {
     .menu > ol > li {
         width: 18%;
         font-size: 18px;
+    }
+
+    /*margin effects distance between columns in submenu*/
+    .menu > ol .sub-menu {
+        border-left: 20px;
+        margin: 15px -50px -15px;
+        padding-left: 0;
     }
 
     .menu > ol > li a:not(:last-child):before {
