@@ -1,6 +1,6 @@
 {% extends "../base.html" %}
 {% load static %}
-{% block page-css-class %}cover-container d-flex h-100 p-3 mx-auto flex-column{% endblock %}
+{% block page-css-class %}cover-container d-flex h-25 p-3 mx-auto flex-column{% endblock %}
 {% load wagtailcore_tags wagtailimages_tags %}
 {% block body_class %}Home{% endblock %}
 {% block extra_css %}
@@ -13,21 +13,22 @@
 {% endblock %}
 
 {% block meta_descr %}
-    Fortress SEFA Home - doors  shutters | Security solutions, Environmental applications, Fire protection & Architectural.
+    Fortress SEFA Home - doors  shutters | Security solutions, Environmental applications, Fire protection &
+    Architectural.
     Over 40 years of providing industry leading products.
 {% endblock %}
 
 
 
 {% block content %} {#    html stuff sits in here#}
-        <!--<main role="main" class="inner cover">
-            <h1 class="cover-heading">Cover your page.</h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit
-                the text, and add your own fullscreen background photo to make it your own.</p>
-            <p class="lead">
-                <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
-            </p>
-        </main>-->
+    <!--<main role="main" class="inner cover">
+        <h1 class="cover-heading">Cover your page.</h1>
+        <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit
+            the text, and add your own fullscreen background photo to make it your own.</p>
+        <p class="lead">
+            <a href="#" class="btn btn-lg btn-secondary">Learn more</a>
+        </p>
+    </main>-->
 
     {{ page.intro|richtext }}
     {{ page.security|richtext }}
