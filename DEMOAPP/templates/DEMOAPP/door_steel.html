@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "../base.html" %}
+{% load static %}
+{% block page-css-class %}cover-container d-flex h-100 p-3 mx-auto flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}Steel Door{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
 
-</body>
-</html>
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA About us. Links to socials and linkedin is included in this page.
+{% endblock %}
+
+{% block content %}
+    <p>Images of steel door</p>
+{% endblock %}
