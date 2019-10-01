@@ -108,3 +108,13 @@ body {
   color: rgba(255, 255, 255, .5);
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    box-sizing: border-box;
+  background-color: #292c2f;
+    width: 100%;
+    text-align: left;
+    padding: 55px 50px;
+    margin-top: 30px;
+}
