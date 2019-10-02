@@ -52,6 +52,9 @@
 <div class="{% block page-css-class %}{% endblock %}">
     <div class="centre-content">
         {# header #}
+        <a href="/" class="menuLogo">
+            <img src="/media/images/fortress_sefa_small_60px.max-165x165.jpg" id="smallLogo">
+        </a>
         <div class="hamburger">
             <label class="toggle" id="menuDisplay">
                 <input type="checkbox" id="myCheck">
@@ -69,13 +72,16 @@
                 </div>
             </label>
 
+
             <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
                 <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" id="path">
                     <path d="M22,22 L2,22 C2,11 11,2 22,2 C33,2 42,11 42,22"></path>
                 </symbol>
             </svg>
         </div>
+
         <header class="masthead mb-auto" id="menuPanel">
+
             <nav class="menu">
                 <ol>
                     <li class="menu-item"><a href="/">Home</a></li>
@@ -128,18 +134,38 @@
     <footer class="mastfoot mt-auto">
         <div class="footer-contents">
             <div class="column left">
-                <p>Cover template for Bootstrap by mdo
+                <p>
+                <div class="copyright">Fortress SEFA <img src="/media/original_images/copyright.png" id="smallLogo"
+                                                          height="20px" width="20px">
+                    <script type="text/javascript">
+                        document.write(new Date().getFullYear());
+                    </script>
+                </div>
                 </p>
             </div>
             <div class="column middle">
-                <p>A bit of text
-                <br><br><br><br><br>Bit more text that is a bit longer
+                <p>
+                    <img src="/media/original_images/maps.png" id="mapIcon" height="40px" width="40px">
+                    6 Trench Road
+                    <br>Newtownabbey, Northern Ireland
+                    <br><br>
+                    <a href="tel:+44 (0)28 9034 2655" id="phoneLink">
+                        <img src="/media/original_images/phone.png" id="phoneIcon" height="40px" width="40px">
+                    </a>
+                    +44 (0)28 9034 2655
+                    <br><br><br><img src="/media/original_images/email.png" id="mailIcon" height="40px" width="40px">
+                    info@fortress-sefa.com
                 </p>
             </div>
             <div class="column right">
                 <p>Blah blah blah blah blah </p>
+                <br><br><img src="/media/original_images/linkedIn.png" id="smallLogo" height="40px" width="40px">
+                <img src="/media/original_images/facebook.png" id="smallLogo" height="40px" width="40px">
             </div>
         </div>
+        <a href="#" class="scrollUp">
+            <img src="/media/original_images/returnToTop.png" id="backToTop" height="40px" width="40px">
+        </a>
     </footer>
     {# footer #}
 </div>
@@ -152,13 +178,10 @@
         crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="../../assets/js/vendor/popper.min.js"></script>
-<script src="../../dist/js/bootstrap.min.js"></script>
 <script src="../../static/js/hamburgerAnim.js"></script>
 {##<script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>##}
 <script type="text/javascript" src="{% static 'js/owl.min.js' %}"></script>
 {#<script type="text/javascript" src="{% static 'js/match-height.min.js' %}"></script>#}
-<script type="text/javascript" src="Merci {% static 'js/scripts.js' %}"></script>
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
 

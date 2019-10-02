@@ -14,16 +14,19 @@
     --gradient-color: #FBFBFB;
 }
 
-a:focus {
+.menu a:focus {
     outline: none;
     position: relative;
 }
 
-a:focus:after {
+.menu a:focus:after {
     width: 100px;
 }
 
-a:after {
+
+
+/*background is for the line appearing on hover*/
+.menu a:after {
     content: "";
     background: #FBFBFB;
     position: absolute;
@@ -34,6 +37,8 @@ a:after {
     transition: 0.5s;
     transition-delay: 0.2s;
 }
+
+
 
 body {
     background: #e9e0c1;
@@ -47,6 +52,7 @@ body {
     margin: 8px;
     padding:8px;
     max-width:1010px;
+
 }
 
 .menu > ol {
@@ -184,7 +190,7 @@ body {
     padding: 15px;
 }
 
-.column a {
+ol > .column a {
     float: none;
     padding: 7px;
     display: block;
@@ -201,7 +207,7 @@ body {
         max-height: 750px;
     }
 
-    .column a {
+    ol > .column a {
         float: none;
         padding: 16px;
         display: block;

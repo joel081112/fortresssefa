@@ -2,12 +2,6 @@
  * Globals
  */
 
-/* Links */
-a,
-a:focus,
-a:hover {
-    color: #fff;
-}
 
 /* Custom default button */
 .btn-secondary,
@@ -45,6 +39,8 @@ body {
 /*
  * Header
  */
+
+
 .masthead {
     margin-bottom: 2rem;
 }
@@ -119,6 +115,29 @@ footer {
 
 }
 
+footer p {
+    color: #f7f2f2;
+}
+
+.copyright {
+    color: #4d5258;
+}
+
+#mapIcon {
+    float: left;
+}
+
+#phoneIcon {
+    float: left;
+}
+
+#mailIcon {
+    float: left;
+}
+
+#backToTop {
+    float: right;
+}
 
 * {
     box-sizing: border-box;
@@ -128,15 +147,18 @@ footer {
 footer .column {
     float: left;
     padding: 10px;
-    height: 150px; /* Should be removed. Only for demonstration */
+    height: 150px;
+/
 }
 
 .left, .right {
     width: 25%;
+    text-align: center;
 }
 
 .middle {
     width: 50%;
+    text-align: center;
 }
 
 /* Clear floats after the columns */
@@ -146,7 +168,12 @@ footer .row:after {
     clear: both;
 }
 
+#phoneIcon a{
+    display: block;
+}
+
 @media (max-width: 640px) {
+
 
     footer .column {
         padding: 10px;
@@ -155,12 +182,34 @@ footer .row:after {
         text-align: center;
         font-size: 13px;
     }
-    .mastfoot{
+
+    #mapIcon {
+        float: none;
+    }
+
+    #phoneIcon {
+        float: none;
+    }
+    #phoneLink a{
+        display: block;
+    }
+
+    #mailIcon {
+        float: none;
+    }
+
+    .mastfoot {
         padding: 20px;
     }
 
-    .footer-contents{
+    .footer-contents {
         text-align: center;
+    }
+
+    #smallLogo {
+        float: right;
+        padding: 10px;
+        z-index: 1;
     }
 }
 
