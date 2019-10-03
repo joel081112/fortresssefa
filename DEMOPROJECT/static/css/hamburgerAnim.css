@@ -3,6 +3,7 @@
 .toggle {
   display: block;
   cursor: pointer;
+  padding: 4px 0 0 15px;
 }
 .toggle input {
   display: none;
@@ -46,7 +47,7 @@
   width: 47%;
   height: 2px;
   border-radius: 1px;
-  background: #fff;
+  background: #4d5258;
   position: absolute;
   -webkit-backface-visibility: hidden;
   transition: border-radius .3s ease, background .4s ease, -webkit-transform .5s ease;
@@ -70,7 +71,7 @@
 .toggle input + div svg {
   display: block;
   fill: none;
-  stroke: #fff;
+  stroke: #4d5258;
   stroke-width: 2px;
   width: 44px;
   height: 44px;
@@ -99,7 +100,7 @@
           transform: rotate(90deg);
 }
 .toggle input:checked + div div span:before, .toggle input:checked + div div span:after {
-  background: #fff;
+  background: #4d5258;
 }
 .toggle input:checked + div div span:first-child:before {
   -webkit-transform: rotate(45deg) translate(2.2px, -3px) scaleX(1.05);
@@ -122,7 +123,7 @@
   stroke-dasharray: 0 82.801 62 82.801;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
-  stroke: #fff;
+  stroke: #4d5258;
 }
 .toggle input:checked + div svg:nth-child(3) {
   -webkit-transform: rotate(270deg);

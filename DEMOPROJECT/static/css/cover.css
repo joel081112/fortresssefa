@@ -21,7 +21,7 @@
 html,
 body {
     height: 100%;
-    background: #e9e0c1;
+    background: #ecf6f9;
 }
 
 body {
@@ -94,6 +94,10 @@ body {
     font-weight: 700;
 }
 
+.block{
+    margin: 15px;
+}
+
 
 /*
  * Footer
@@ -105,7 +109,7 @@ body {
 footer {
     bottom: 0;
     box-sizing: border-box;
-    background-color: #292c2f;
+    background-color: #093145;
     width: 100%;
     margin: 0 auto;
     text-align: left;
@@ -119,6 +123,7 @@ footer p {
     color: #f7f2f2;
 }
 
+
 .copyright {
     color: #4d5258;
 }
@@ -126,6 +131,11 @@ footer p {
 #mapIcon {
     float: left;
 }
+
+#legal {
+   display: inline-block;
+}
+
 
 #phoneIcon {
     float: left;
@@ -147,8 +157,7 @@ footer p {
 footer .column {
     float: left;
     padding: 10px;
-    height: 150px;
-/
+    height: 200px;
 }
 
 .left, .right {
@@ -174,6 +183,10 @@ footer .row:after {
 
 @media (max-width: 640px) {
 
+    .block{
+    margin: 15px;
+    padding: 10px 0 0 0;
+}
 
     footer .column {
         padding: 10px;
@@ -182,6 +195,10 @@ footer .row:after {
         text-align: center;
         font-size: 13px;
     }
+
+    .footerLinks{
+    float:none;
+}
 
     #mapIcon {
         float: none;
@@ -210,6 +227,8 @@ footer .row:after {
         float: right;
         padding: 10px;
         z-index: 1;
+        height:50px;
+        width:40px;
     }
 }
 

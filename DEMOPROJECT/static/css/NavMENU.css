@@ -10,7 +10,7 @@
 }
 
 :root {
-    --accent-color: #12ffc9;
+    --accent-color: #ecf6f9;
     --gradient-color: #FBFBFB;
 }
 
@@ -39,9 +39,9 @@
 }
 
 
-
+/*background is behind text        e9e0c1*/
 body {
-    background: #e9e0c1;
+    background: #ecf6f9;
     font-family: "Varela Round", Nunito, Montserrat, sans-serif;
     margin: 0;
     padding: 0;
@@ -50,8 +50,8 @@ body {
 
 .menu {
     margin: 8px;
-    padding:8px;
-    max-width:1010px;
+    padding: 20px 8px 8px 8px;
+    max-width:1510px;
 
 }
 
@@ -61,8 +61,9 @@ body {
     padding: 0;
 }
 
+/*menu background         e5e9da*/
 .menu > ol > li {
-    background: #e5e9da;
+    background: #214557;
     border-left: 5px solid var(--gradient-color);
     margin-bottom: 1px;
     position: relative;
@@ -234,9 +235,10 @@ ol > .column a {
     }
 
     .menu {
-        margin: 0 0 0;
-
-    }
+    margin: 0 0 0;
+    padding: 8px;
+    max-width:1510px;
+}
 
     .menu > ol {
         display: block;

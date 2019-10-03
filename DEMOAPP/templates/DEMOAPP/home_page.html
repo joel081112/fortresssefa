@@ -5,6 +5,7 @@
 {% block body_class %}Home{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
+    <link rel="stylesheet" href='/static/css/homePage.css'>
 
 {% endblock %}
 {% block extra_js %}
@@ -30,11 +31,27 @@
         </p>
     </main>-->
 
-    {{ page.intro|richtext }}
-    {{ page.security|richtext }}
-    {{ page.environment|richtext }}
-    {{ page.fire|richtext }}
-    {{ page.architectural|richtext }}
+    <div class="homeInfo1">
+        {{ page.intro|richtext }}
+    </div>
+
+    <div class="homeInfo2">
+        {{ page.security|richtext }}
+    </div>
+
+    <div class="homeInfo3">
+        {{ page.environment|richtext }}
+    </div>
+
+    <div class="homeInfo4">
+        {{ page.fire|richtext }}
+    </div>
+
+    <div class="homeInfo5">
+        {{ page.architectural|richtext }}
+    </div>
+
+
     <!-- <div>
         {# creates 2 buttons #}
         <nav class="navbar navbar-light bg-light">

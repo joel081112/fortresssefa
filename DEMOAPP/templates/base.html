@@ -128,20 +128,32 @@
             </nav>
         </header>
         {# /header #}
-        {% block content %}{% endblock %}
+
+
+        <div class="block">
+            {% block content %}{% endblock %}
+        </div>
     </div>
     {# footer #}
     <footer class="mastfoot mt-auto">
         <div class="footer-contents">
             <div class="column left">
-                <p>
-                <div class="copyright">Fortress SEFA <img src="/media/original_images/copyright.png" id="smallLogo"
-                                                          height="20px" width="20px">
+                <div class="footerLinks">
+                    <p>
+                        <a href="#0" id="legal">Privacy </a>
+                        ·
+                        <a href="#0" id="legal"> Legal</a>
+
+                    </p>
+                </div>
+                <div class="copyright">
+                    Fortress SEFA <img src="/media/original_images/copyright.png"
+                                       height="20px" width="20px">
                     <script type="text/javascript">
                         document.write(new Date().getFullYear());
                     </script>
                 </div>
-                </p>
+
             </div>
             <div class="column middle">
                 <p>
@@ -159,8 +171,8 @@
             </div>
             <div class="column right">
                 <p>Blah blah blah blah blah </p>
-                <br><br><img src="/media/original_images/linkedIn.png" id="smallLogo" height="40px" width="40px">
-                <img src="/media/original_images/facebook.png" id="smallLogo" height="40px" width="40px">
+                <br><img src="/media/original_images/linkedIn.png" id="social" height="40px" width="40px">
+                <img src="/media/original_images/facebook.png" id="social" height="40px" width="40px">
             </div>
         </div>
         <a href="#" class="scrollUp">

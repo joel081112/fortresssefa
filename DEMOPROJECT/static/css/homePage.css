@@ -1,9 +1,35 @@
-.desktopHome {
-    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+.homeInfo1 {
+    width: 100%;
 }
 
-html, body {
-    margin: 0;
-    height: 100%;
-    overflow: hidden;
+.homeInfo2 {
+    width: 50%;
+    padding: 20px;
+    height: 300px;
+    text-align: center;
+    float:left;
+}
+
+.homeInfo3 {
+     width: 50%;
+    padding: 20px;
+    height: 300px;
+    text-align: center;
+    float:right;
+}
+
+.homeInfo4 {
+    width: 50%;
+    padding: 20px;
+    height: 300px;
+    text-align: center;
+    float:left;
+}
+
+.homeInfo5 {
+    width: 50%;
+    padding: 20px;
+    height: 300px;
+    text-align: center;
+    float:right;
 }
