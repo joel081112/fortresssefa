@@ -396,21 +396,43 @@ class HomePage(Page):
         blank=True,  # required field or not
         verbose_name="Intro"  # called on wagtail site
     )
-    security = RichTextField(
+    securityText = RichTextField(
         blank=True,
-        verbose_name="Security"
+        verbose_name="SecurityText"
     )
-    environment = RichTextField(
+
+    securityImage = RichTextField(
         blank=True,
-        verbose_name="Environment"
+        verbose_name="SecurityImage"
     )
-    fire = RichTextField(
+
+    environmentText = RichTextField(
         blank=True,
-        verbose_name="Fire"
+        verbose_name="EnvironmentText"
     )
-    architectural = RichTextField(
+
+    environmentImage = RichTextField(
         blank=True,
-        verbose_name="Architectural"
+        verbose_name="EnvironmentImage"
+    )
+
+    fireText = RichTextField(
+        blank=True,
+        verbose_name="FireText"
+    )
+
+    fireImage = RichTextField(
+        blank=True,
+        verbose_name="FireImage"
+    )
+
+    architecturalText = RichTextField(
+        blank=True,
+        verbose_name="ArchitecturalText"
+    )
+    architecturalImage= RichTextField(
+        blank=True,
+        verbose_name="ArchitecturalImage"
     )
 
     search_fields = Page.search_fields + [
@@ -439,19 +461,35 @@ class HomePage(Page):
             classname="full"
         ),
         FieldPanel(
-            'security',
+            'securityText',
             classname="full"
         ),
         FieldPanel(
-            'environment',
+            'securityImage',
             classname="full"
         ),
         FieldPanel(
-            'fire',
+            'environmentText',
             classname="full"
         ),
         FieldPanel(
-            'architectural',
+            'environmentImage',
+            classname="full"
+        ),
+        FieldPanel(
+            'fireText',
+            classname="full"
+        ),
+        FieldPanel(
+            'fireImage',
+            classname="full"
+        ),
+        FieldPanel(
+            'architecturalText',
+            classname="full"
+        ),
+        FieldPanel(
+            'architecturalImage',
             classname="full"
         ),
     ]

@@ -5,25 +5,43 @@
 .homeInfo2 {
     width: 50%;
     padding: 20px;
-    height: 300px;
+    height: auto;
     text-align: center;
-    float:left;
+    float: left;
+}
+
+
+.homeIm1{
+    width:50%;
+    height:auto;
+    float: right;
 }
 
 .homeInfo3 {
      width: 50%;
     padding: 20px;
-    height: 300px;
+    height: auto;
     text-align: center;
     float:right;
+}
+.homeIm2{
+    width:50%;
+    height:auto;
+    float: left;
 }
 
 .homeInfo4 {
     width: 50%;
     padding: 20px;
-    height: 300px;
+    height: auto;
     text-align: center;
     float:left;
+}
+
+.homeIm3{
+    width:50%;
+    height:auto;
+    float: right;
 }
 
 .homeInfo5 {
@@ -32,4 +50,55 @@
     height: 300px;
     text-align: center;
     float:right;
+}
+
+.homeIm4{
+    width:50%;
+    height:auto;
+    float: left;
+}
+
+
+@media screen and (max-width: 639.98px) {
+    .homeInfo1 {
+    width: 100%;
+}
+
+.homeInfo2 {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    float: left;
+}
+
+
+.homeIm1{
+    width:100%;
+    padding: 20px;
+    float: left;
+}
+
+.homeInfo3 {
+     width: 100%;
+    padding: 20px;
+    height: 300px;
+    text-align: center;
+    float:right;
+}
+
+.homeInfo4 {
+    width: 100%;
+    padding: 20px;
+    height: 300px;
+    text-align: center;
+    float:left;
+}
+
+.homeInfo5 {
+    width: 100%;
+    padding: 20px;
+    height: 300px;
+    text-align: center;
+    float:right;
+}
 }
