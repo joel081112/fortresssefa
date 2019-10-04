@@ -1,9 +1,22 @@
-.homeInfo1 {
+.overview {
     width: 100%;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+.overview td {
+    padding: 5px;
+}
+
+.homeInfo1 {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 50px;
+
 }
 
 .homeInfo2 {
-    width: 50%;
     padding: 20px;
     height: auto;
     text-align: center;
@@ -11,94 +24,88 @@
 }
 
 
-.homeIm1{
-    width:50%;
-    height:auto;
+.homeIm1 {
+    height: auto;
     float: right;
 }
 
 .homeInfo3 {
-     width: 50%;
     padding: 20px;
     height: auto;
     text-align: center;
-    float:right;
+    float: right;
 }
-.homeIm2{
-    width:50%;
-    height:auto;
+
+.homeIm2 {
+    height: auto;
     float: left;
 }
 
 .homeInfo4 {
-    width: 50%;
     padding: 20px;
     height: auto;
     text-align: center;
-    float:left;
+    float: left;
 }
 
-.homeIm3{
-    width:50%;
-    height:auto;
+.homeIm3 {
+    height: auto;
     float: right;
 }
 
 .homeInfo5 {
-    width: 50%;
     padding: 20px;
     height: 300px;
     text-align: center;
-    float:right;
+    float: right;
 }
 
-.homeIm4{
-    width:50%;
-    height:auto;
+.homeIm4 {
+    height: auto;
     float: left;
 }
 
 
 @media screen and (max-width: 639.98px) {
     .homeInfo1 {
-    width: 100%;
-}
+        width: 100%;
+    }
 
-.homeInfo2 {
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    float: left;
-}
+    .homeInfo2 {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        float: left;
+    }
 
 
-.homeIm1{
-    width:100%;
-    padding: 20px;
-    float: left;
-}
+    .homeIm1 {
+        width: 100%;
+        padding: 20px;
+        float: left;
+    }
 
-.homeInfo3 {
-     width: 100%;
-    padding: 20px;
-    height: 300px;
-    text-align: center;
-    float:right;
-}
+    .homeInfo3 {
+        width: 100%;
+        padding: 20px;
+        height: 300px;
+        text-align: center;
+        float: right;
+    }
 
-.homeInfo4 {
-    width: 100%;
-    padding: 20px;
-    height: 300px;
-    text-align: center;
-    float:left;
-}
+    .homeInfo4 {
+        width: 100%;
+        padding: 20px;
+        height: 300px;
+        text-align: center;
+        float: left;
+    }
 
-.homeInfo5 {
-    width: 100%;
-    padding: 20px;
-    height: 300px;
-    text-align: center;
-    float:right;
-}
+    .homeInfo5 {
+        width: 100%;
+        padding: 20px;
+        height: 300px;
+        text-align: center;
+        float: right;
+    }
 }

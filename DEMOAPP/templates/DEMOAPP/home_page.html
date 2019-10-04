@@ -28,43 +28,61 @@
         {{ page.intro|richtext }}
     </div>
 
-    <div class="homeInfo2">
-        {{ page.securityText|richtext }}
-    </div>
+    <table class="overview">
+        <tr>
+            <td>
+                <div class="homeInfo2">
+                    {{ page.securityText|richtext }}
+                </div>
+            </td>
+            <td>
+                <!--div for image of security-->
+                <div class="homeIm1">
+                    {{ page.securityImage|richtext }}
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <!--div for image of environment-->
+                <div class="homeIm2">
+                    {{ page.environmentImage|richtext }}
+                </div>
+            </td>
+            <td>
+                <div class="homeInfo3">
+                    {{ page.environmentText|richtext }}
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="homeInfo4">
+                    {{ page.fireText|richtext }}
+                </div>
 
-    <!--div for image of security-->
-    <div class="homeIm1">
-        {{ page.securityImage|richtext }}
-    </div>
+            </td>
+            <td>
+                <!--div for image of fire-->
+                <div class="homeIm3">
+                    {{ page.fireImage|richtext }}
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><!--div for image of architecture-->
+                <div class="homeIm4">
+                    {{ page.architecturalImage|richtext }}
+                </div>
 
-    <!--div for image of environment-->
-    <div class="homeIm2">
-        {{ page.environmentImage|richtext }}
-    </div>
-
-    <div class="homeInfo3">
-        {{ page.environmentText|richtext }}
-    </div>
-
-<!--div for image of fire-->
-    <div class="homeIm3">
-        {{ page.fireImage|richtext }}
-    </div>
-
-    <div class="homeInfo4">
-        {{ page.fireText|richtext }}
-    </div>
-
-
-    <!--div for image of architecture-->
-<div class="homeIm4">
-        {{ page.architecturalImage|richtext }}
-    </div>l
-
-    <div class="homeInfo5">
-        {{ page.architecturalText|richtext }}
-    </div>
-
+            </td>
+            <td>
+                <div class="homeInfo5">
+                    {{ page.architecturalText|richtext }}
+                </div>
+            </td>
+        </tr>
+    </table>
 
 
 {% endblock %}
