@@ -24,7 +24,6 @@
 }
 
 
-
 /*background is for the line appearing on hover*/
 .menu a:after {
     content: "";
@@ -51,7 +50,7 @@ body {
 .menu {
     margin: 8px;
     padding: 20px 8px 8px 8px;
-    max-width:1510px;
+    max-width: 1510px;
 
 }
 
@@ -235,10 +234,12 @@ ol > .column a {
     }
 
     .menu {
-    margin: 0 0 0;
-    padding: 8px;
-    max-width:1510px;
-}
+        padding: 8px;
+        max-width: 1510px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
 
     .menu > ol {
         display: block;
@@ -269,7 +270,7 @@ ol > .column a {
     }
 
 
-/*Past max height-900 is just added*/
+    /*Past max height-900 is just added*/
     .menu > ol > li:hover .sub-menu,
     .menu > ol > li:focus .sub-menu,
     .menu > ol > li:focus-within .sub-menu {
