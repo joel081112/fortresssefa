@@ -45,6 +45,7 @@
 .overview {
     width: 100%;
     padding: 5px;
+    border-collapse: collapse;
 }
 
 .overview td {
@@ -108,47 +109,13 @@
     float: left;
 }
 
-
-@media screen and (max-width: 639.98px) {
-    .homeInfo1 {
-        width: 100%;
-    }
-
-    .homeInfo2 {
-        width: 100%;
-        padding: 20px;
-        text-align: center;
-        float: left;
-    }
-
-
-    .homeIm1 {
-        width: 100%;
-        padding: 20px;
-        float: left;
-    }
-
-    .homeInfo3 {
-        width: 100%;
-        padding: 20px;
-        height: 300px;
-        text-align: center;
-        float: right;
-    }
-
-    .homeInfo4 {
-        width: 100%;
-        padding: 20px;
-        height: 300px;
-        text-align: center;
-        float: left;
-    }
-
-    .homeInfo5 {
-        width: 100%;
-        padding: 20px;
-        height: 300px;
-        text-align: center;
-        float: right;
-    }
+@media all and (max-width:640px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
 }
