@@ -69,7 +69,7 @@
     </div>
 
     <table class="overview">
-        <tr class="box one">
+        <tr class="box one fadeInBlock">
             <td>
                 <div class="homeInfo2">
                     {{ page.securityText|richtext }}
@@ -82,7 +82,7 @@
                 </div>
             </td>
         </tr>
-        <tr class="box two">
+        <tr class="box two fadeInBlock">
             <td>
                 <!--div for image of environment-->
                 <div class="homeIm2">
@@ -95,7 +95,7 @@
                 </div>
             </td>
         </tr>
-        <tr class="box three">
+        <tr class="box three fadeInBlock">
             <td>
                 <div class="homeInfo4">
                     {{ page.fireText|richtext }}
@@ -109,19 +109,22 @@
                 </div>
             </td>
         </tr>
-        <tr class="box four">
-            <td><!--div for image of architecture-->
-                <div class="homeIm4">
-                    {{ page.architecturalImage|richtext }}
-                </div>
 
-            </td>
-            <td>
-                <div class="homeInfo5">
-                    {{ page.architecturalText|richtext }}
-                </div>
-            </td>
+        <tr class="box four fadeInBlock">
+                <td><!--div for image of architecture-->
+
+                    <div class="homeIm4">
+                        {{ page.architecturalImage|richtext }}
+                    </div>
+
+                </td>
+                <td>
+                    <div class="homeInfo5">
+                        {{ page.architecturalText|richtext }}
+                    </div>
+                </td>
         </tr>
+
     </table>
 
 
