@@ -46,6 +46,13 @@ $(function () {
   });
 });
 
+$(function () {
+    var fadeOnL = $('.fadeonload');
+    for(var i=0; i<fadeOnL.length; i++) {
+        $(fadeOnL[i]).animate({'opacity': '1', 'margin-left': '100px'}, 1000);
+    }
+});
+
 
 
 
