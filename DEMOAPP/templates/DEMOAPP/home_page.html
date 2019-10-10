@@ -110,9 +110,9 @@
 
         <tr class="box four fadeInBlock">
             <td><!--div for image of architecture-->
-<div class="homeIm4 responsiveness">
-                    {% for item in page.gallery_images.all %}
-                        {% image item.image fill-800x800-c100  %}
+                <div class="homeIm4 responsiveness">
+                    {% for item in page.architecture_images.all %}
+                        {% image item.image fill-800x800-c100 %}
                         <p>{{ item.caption }}</p>
                     {% endfor %}
                 </div>
@@ -124,8 +124,6 @@
                 </div>
             </td>
         </tr>
-
-
 
 
     </table>

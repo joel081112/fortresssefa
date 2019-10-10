@@ -438,9 +438,9 @@ class HomePage(Page):
     )
 
     def main_image(self):
-        gallery_item = self.gallery_images.first()
-        if gallery_item:
-            return gallery_item.image
+        architecture_item = self.architecture_images.first()
+        if architecture_item:
+            return architecture_item.image
         else:
             return None
 
@@ -502,8 +502,8 @@ class HomePage(Page):
             classname="full"
         ),
         InlinePanel(
-            'gallery_images',
-            label="Gallery images"
+            'architecture_images',
+            label="Architecture images"
         ),
     ]
 
@@ -519,7 +519,7 @@ class HomePage(Page):
 
 
 class HomePageGalleryImage(Orderable):
-    page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='gallery_images')
+    page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='architecture_images')
     image = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.CASCADE, related_name='+'
     )
