@@ -3,10 +3,12 @@ from django.db import models
 # Create your models here.
 # database stuff
 # class base and function
-from wagtail.admin.edit_handlers import FieldPanel, TabbedInterface, ObjectList
+from modelcluster.fields import ParentalKey
+from wagtail.admin.edit_handlers import FieldPanel, TabbedInterface, ObjectList, InlinePanel
 from wagtail.core.fields import RichTextField
-from wagtail.core.models import Page
+from wagtail.core.models import Page, Orderable
 from wagtail.search import index
+from wagtail.images.edit_handlers import ImageChooserPanel
 
 
 class ContactUs(Page):
@@ -430,10 +432,17 @@ class HomePage(Page):
         blank=True,
         verbose_name="ArchitecturalText"
     )
-    architecturalImage= RichTextField(
+    architecturalImage = RichTextField(
         blank=True,
         verbose_name="ArchitecturalImage"
     )
+
+    def main_image(self):
+        gallery_item = self.gallery_images.first()
+        if gallery_item:
+            return gallery_item.image
+        else:
+            return None
 
     search_fields = Page.search_fields + [
         index.SearchField(
@@ -492,6 +501,10 @@ class HomePage(Page):
             'architecturalImage',
             classname="full"
         ),
+        InlinePanel(
+            'gallery_images',
+            label="Gallery images"
+        ),
     ]
 
     # what to call the panels on wagtail
@@ -503,3 +516,17 @@ class HomePage(Page):
     ]
 
     )
+
+
+class HomePageGalleryImage(Orderable):
+    page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='gallery_images')
+    image = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.CASCADE, related_name='+'
+    )
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        ImageChooserPanel('image'),
+        FieldPanel('caption'),
+    ]
+
