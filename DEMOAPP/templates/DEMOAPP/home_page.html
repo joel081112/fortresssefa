@@ -79,7 +79,6 @@
             <td>
                 <!--div for image of security-->
                 <div class="homeIm1">
-                    {{ page.securityImage|richtext }}
                 </div>
             </td>
         </tr>
@@ -87,7 +86,6 @@
             <td>
                 <!--div for image of environment-->
                 <div class="homeIm2">
-                    {{ page.environmentImage|richtext }}
                 </div>
             </td>
             <td>
@@ -106,34 +104,33 @@
             <td>
                 <!--div for image of fire-->
                 <div class="homeIm3">
-                    {{ page.fireImage|richtext }}
                 </div>
             </td>
         </tr>
 
         <tr class="box four fadeInBlock">
-                <td><!--div for image of architecture-->
+            <td><!--div for image of architecture-->
+<div class="homeIm4 responsiveness">
+                    {% for item in page.gallery_images.all %}
+                        {% image item.image fill-800x800-c100  %}
+                        <p>{{ item.caption }}</p>
+                    {% endfor %}
+                </div>
 
-                    <div class="homeIm4">
-                        {{ page.architecturalImage|richtext }}
-                    </div>
-
-                </td>
-                <td>
-                    <div class="homeInfo5">
-                        {{ page.architecturalText|richtext }}
-                    </div>
-                </td>
+            </td>
+            <td>
+                <div class="homeInfo5">
+                    {{ page.architecturalText|richtext }}
+                </div>
+            </td>
         </tr>
+
+
+
 
     </table>
 
 
-    {% for item in page.gallery_images.all %}
-        <div style="float: left; margin: 10px">
-            {% image item.image fill-320x240 %}
-            <p>{{ item.caption }}</p>
-        </div>
-    {% endfor %}
+
 
 {% endblock %}
