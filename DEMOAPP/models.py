@@ -460,8 +460,8 @@ class HomePage(Page):
             classname="full"
         ),
         InlinePanel(
-            'architecture_images',
-            label="Architecture images"
+            'homepage_images',
+            label="Homepage images"
         ),
 
         # InlinePanel(
@@ -483,7 +483,7 @@ class HomePage(Page):
 
 
 class HomePageGalleryImage(Orderable):
-    page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='architecture_images')
+    page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='homepage_images')
     image = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.CASCADE, related_name='+'
     )
