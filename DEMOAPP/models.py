@@ -403,19 +403,9 @@ class HomePage(Page):
         verbose_name="SecurityText"
     )
 
-    securityImage = RichTextField(
-        blank=True,
-        verbose_name="SecurityImage"
-    )
-
     environmentText = RichTextField(
         blank=True,
         verbose_name="EnvironmentText"
-    )
-
-    environmentImage = RichTextField(
-        blank=True,
-        verbose_name="EnvironmentImage"
     )
 
     fireText = RichTextField(
@@ -423,26 +413,10 @@ class HomePage(Page):
         verbose_name="FireText"
     )
 
-    fireImage = RichTextField(
-        blank=True,
-        verbose_name="FireImage"
-    )
-
     architecturalText = RichTextField(
         blank=True,
         verbose_name="ArchitecturalText"
     )
-    architecturalImage = RichTextField(
-        blank=True,
-        verbose_name="ArchitecturalImage"
-    )
-
-    def main_image(self):
-        architecture_item = self.architecture_images.first()
-        if architecture_item:
-            return architecture_item.image
-        else:
-            return None
 
     search_fields = Page.search_fields + [
         index.SearchField(
@@ -474,15 +448,7 @@ class HomePage(Page):
             classname="full"
         ),
         FieldPanel(
-            'securityImage',
-            classname="full"
-        ),
-        FieldPanel(
             'environmentText',
-            classname="full"
-        ),
-        FieldPanel(
-            'environmentImage',
             classname="full"
         ),
         FieldPanel(
@@ -490,21 +456,19 @@ class HomePage(Page):
             classname="full"
         ),
         FieldPanel(
-            'fireImage',
-            classname="full"
-        ),
-        FieldPanel(
             'architecturalText',
-            classname="full"
-        ),
-        FieldPanel(
-            'architecturalImage',
             classname="full"
         ),
         InlinePanel(
             'architecture_images',
             label="Architecture images"
         ),
+
+        # InlinePanel(
+        #     'security_images',
+        #     label="Security images"
+        # ),
+
     ]
 
     # what to call the panels on wagtail
