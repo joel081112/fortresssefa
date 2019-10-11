@@ -78,14 +78,24 @@
             </td>
             <td>
                 <!--div for image of security-->
-                <div class="homeIm1">
+                <div class="homeIm1 responsiveness">
+                    {% for item in page.architecture_images.all|slice:":1" %}
+                        {% comment %}maybe change the .all for first image   .all|slice:":1"      {% endcomment %}
+                        {% image item.image fill-800x800-c100 %}
+                        <p>{{ item.caption }}</p>
+                    {% endfor %}
                 </div>
             </td>
         </tr>
         <tr class="box two fadeInBlock">
             <td>
                 <!--div for image of environment-->
-                <div class="homeIm2">
+                <div class="homeIm2 responsiveness">
+                    {% for item in page.architecture_images.all|slice:"1:2" %}
+                        {% comment %}maybe change the .all for first image   .all|slice:":1"      {% endcomment %}
+                        {% image item.image fill-800x800-c100 %}
+                        <p>{{ item.caption }}</p>
+                    {% endfor %}
                 </div>
             </td>
             <td>
@@ -103,7 +113,12 @@
             </td>
             <td>
                 <!--div for image of fire-->
-                <div class="homeIm3">
+                <div class="homeIm3 responsiveness">
+                    {% for item in page.architecture_images.all|slice:"2:3" %}
+                        {% comment %}maybe change the .all for first image   .all|slice:":1"      {% endcomment %}
+                        {% image item.image fill-800x800-c100 %}
+                        <p>{{ item.caption }}</p>
+                    {% endfor %}
                 </div>
             </td>
         </tr>
@@ -111,7 +126,7 @@
         <tr class="box four fadeInBlock">
             <td><!--div for image of architecture-->
                 <div class="homeIm4 responsiveness">
-                    {% for item in page.architecture_images.all|slice:":1" %}
+                    {% for item in page.architecture_images.all|slice:"3:4" %}
                         {% comment %}maybe change the .all for first image   .all|slice:":1"      {% endcomment %}
                         {% image item.image fill-800x800-c100 %}
                         <p>{{ item.caption }}</p>
