@@ -69,77 +69,55 @@
     </div>
 
 
-    <table class="overview">
-        <tr class="box one fadeInBlock">
-            <td>
+
+    <div class="overview">
+        <article class="item">
                 <div class="homeInfo2">
                     {{ page.securityText|richtext }}
                 </div>
-            </td>
-            <td>
-                <!--div for image of security-->
-                <div class="homeIm1 responsiveness">
-                    {% for item in page.homepage_images.all|slice:":1" %}
-                        {% image item.image fill-800x800-c100 %}
-                        <p>{{ item.caption }}</p>
-                    {% endfor %}
-                </div>
-            </td>
-        </tr>
-        <tr class="box two fadeInBlock">
-            <td>
-                <!--div for image of environment-->
-                <div class="homeIm2 responsiveness">
-                    {% for item in page.homepage_images.all|slice:"1:2" %}
-                        {% image item.image fill-800x800-c100 %}
-                        <p>{{ item.caption }}</p>
-                    {% endfor %}
-                </div>
-            </td>
-            <td>
-                <div class="homeInfo3">
-                    {{ page.environmentText|richtext }}
-                </div>
-            </td>
-        </tr>
-        <tr class="box three fadeInBlock">
-            <td>
-                <div class="homeInfo4">
-                    {{ page.fireText|richtext }}
-                </div>
+            <div class="homeIm1 responsiveness">
+                {% for item in page.homepage_images.all|slice:"1" %}
+                    {% image item.image fill-800x800-c100 %}
+                    <p>{{ item.caption }}</p>
+                {% endfor %}
+            </div>
+        </article>
+        <article class="item fadeInBlock">
+            <div class="homeInfo3">
+                {{ page.environmentText|richtext }}
+            </div>
+            <div class="homeIm2">
+                {% for item in page.homepage_images.all|slice:"1:2" %}
+                    {% image item.image fill-800x800-c100 %}
+                    <p>{{ item.caption }}</p>
+                {% endfor %}
+            </div>
+        </article>
 
-            </td>
-            <td>
-                <!--div for image of fire-->
-                <div class="homeIm3 responsiveness">
-                    {% for item in page.homepage_images.all|slice:"2:3" %}
-                        {% image item.image fill-800x800-c100 %}
-                        <p>{{ item.caption }}</p>
-                    {% endfor %}
-                </div>
-            </td>
-        </tr>
+        <article class="item fadeInBlock">
+            <div class="homeInfo4">
+                {{ page.fireText|richtext }}
+            </div>
+            <div class="homeIm3">
+                {% for item in page.homepage_images.all|slice:"2:3" %}
+                    {% image item.image fill-800x800-c100 %}
+                    <p>{{ item.caption }}</p>
+                {% endfor %}
+            </div>
+        </article>
 
-        <tr class="box four fadeInBlock">
-            <td><!--div for image of architecture-->
-                <div class="homeIm4 responsiveness">
-                    {% for item in page.homepage_images.all|slice:"3:4" %}
-                        {% image item.image fill-800x800-c100 %}
-                        <p>{{ item.caption }}</p>
-                    {% endfor %}
-                </div>
-
-            </td>
-            <td>
-                <div class="homeInfo5">
-                    {{ page.architecturalText|richtext }}
-                </div>
-            </td>
-        </tr>
-
-
-    </table>
-
+        <article class="item fadeInBlock">
+            <div class="homeInfo5">
+                {{ page.architecturalText|richtext }}
+            </div>
+            <div class="homeIm4">
+                {% for item in page.homepage_images.all|slice:"3:4" %}
+                    {% image item.image fill-800x800-c100 %}
+                    <p>{{ item.caption }}</p>
+                {% endfor %}
+            </div>
+        </article>
+    </div>
 
 
 

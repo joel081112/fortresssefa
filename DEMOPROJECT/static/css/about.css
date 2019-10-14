@@ -48,9 +48,6 @@
     border-collapse: collapse;
 }
 
-.overview td {
-    padding: 5px;
-}
 
 .homeInfo1 {
     width: 80%;
@@ -109,13 +106,4 @@
     float: left;
 }
 
-@media all and (max-width:640px) {
-  table,
-  thead,
-  tbody,
-  th,
-  td,
-  tr {
-    display: block;
-  }
-}
+

@@ -5,11 +5,11 @@ function displayWindowSize() {
 
     if (w > 640) {
         toggle.checked = false;
-        menu.style.cssText = ';display:block !important;'
+        menu.style.cssText = ';display:block;'
     }
     else if (w < 640) {
         toggle.checked = false;
-        menu.style.cssText = ';display:none !important;'
+        menu.style.cssText = ';display:none;'
     }
 }
 window.addEventListener("resize", displayWindowSize);

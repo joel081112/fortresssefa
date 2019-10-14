@@ -71,6 +71,7 @@ body {
     border-bottom-color: #fff;
 }
 
+
 @media (min-width: 775px) {
     .masthead-brand {
         float: left;
@@ -94,7 +95,7 @@ body {
     font-weight: 700;
 }
 
-.block{
+.block {
     margin: 15px;
 }
 
@@ -133,7 +134,7 @@ footer p {
 }
 
 #legal {
-   display: inline-block;
+    display: inline-block;
 }
 
 
@@ -177,16 +178,27 @@ footer .row:after {
     clear: both;
 }
 
-#phoneIcon a{
+#phoneIcon a {
     display: block;
+}
+
+#smallLogo {
+    padding: 10px;
+    z-index: 1;
+    margin-right: 50px;
+    display: block;
+}
+
+#largeLogo {
+    display: none;
 }
 
 @media (max-width: 640px) {
 
-    .block{
-    margin: 15px;
-    padding: 10px 0 0 0;
-}
+    .block {
+        margin: 15px;
+        padding: 10px 0 0 0;
+    }
 
     footer .column {
         padding: 10px;
@@ -196,9 +208,9 @@ footer .row:after {
         font-size: 13px;
     }
 
-    .footerLinks{
-    float:none;
-}
+    .footerLinks {
+        float: none;
+    }
 
     #mapIcon {
         float: none;
@@ -207,7 +219,8 @@ footer .row:after {
     #phoneIcon {
         float: none;
     }
-    #phoneLink a{
+
+    #phoneLink a {
         display: block;
     }
 
@@ -227,10 +240,24 @@ footer .row:after {
         float: right;
         padding: 10px;
         z-index: 1;
-        height:50px;
-        width:40px;
+        height: 50px;
+        width: 40px;
+        margin-right: 50px;
+        display: none;
+    }
+
+    #largeLogo {
+        height: auto;
+        width: 50%;
+        display: block;
+        align-items: center;
+        max-width: initial;
+        max-height: 75px;
     }
 }
+
+
+
 
 
 

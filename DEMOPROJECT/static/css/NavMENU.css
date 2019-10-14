@@ -71,27 +71,27 @@ body {
 
 .menu > ol > li:nth-child(1) {
     --accent-color: #fefefe;
-    --gradient-color: #052b96;
+    --gradient-color: #285469;
 }
 
 .menu > ol > li:nth-child(2) {
     --accent-color: #fefefe;
-    --gradient-color: #052b96;
+    --gradient-color: #285469;
 }
 
 .menu > ol > li:nth-child(3) {
     --accent-color: #fefefe;
-    --gradient-color: #052b96;
+    --gradient-color: #285469;
 }
 
 .menu > ol > li:nth-child(4) {
     --accent-color: #fefefe;
-    --gradient-color: #052b96;
+    --gradient-color: #285469;
 }
 
 .menu > ol > li:nth-child(5) {
     --accent-color: #fefefe;
-    --gradient-color: #052b96;
+    --gradient-color: #285469;
 }
 
 /*nav bar itself*/
@@ -141,7 +141,7 @@ body {
 }
 
 .menu > ol > li:after {
-    background: #5475c0;
+    background: #36718e;
     content: "";
     position: absolute;
     left: 0;

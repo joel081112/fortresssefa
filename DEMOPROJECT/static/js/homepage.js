@@ -1,8 +1,13 @@
+//for the text that is hidden at starts SEFA
 $(function () {
     var text = $(".text");
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
         var homeIm2Class = $('.homeIm2');
+        var homeIm1Class = $('.homeIm1');
+        var w = document.documentElement.clientWidth;
+
+    if (w > 640) {
 
         if (scroll >= 200) {
             text.removeClass("hidden");
@@ -15,12 +20,20 @@ $(function () {
         if (scroll + 250 < homeIm2Class.offset().top) { // when the div with homeIm2 class scrolls into view
             text.show();
         }
-
+    }
+    else{
+        if (scroll + 250 > homeIm1Class.offset().top) { // when the div with homeIm2 class scrolls into view
+            text.hide();
+        }
+        if (scroll + 250 < homeIm1Class.offset().top) { // when the div with homeIm2 class scrolls into view
+            text.show();
+        }
+    }
 
     });
 });
 
-
+// make a div fade in 200px above
 $(function () {
   $(window).scroll(function () {
 
@@ -38,7 +51,7 @@ $(function () {
 
         $(fadeClass[i]).animate({
           'opacity': '1'
-        }, 2500);
+        }, 1750);
 
       }
 
@@ -46,6 +59,7 @@ $(function () {
   });
 });
 
+//fade in div on page loading
 $(function () {
     var fadeOnL = $('.fadeonload');
     for(var i=0; i<fadeOnL.length; i++) {

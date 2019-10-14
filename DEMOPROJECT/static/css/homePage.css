@@ -1,47 +1,53 @@
 .fadeInBlock {
-  opacity: 0;
+    opacity: 0;
 }
 
-
+/*make div hidden to start*/
 
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
+/*for the SEFA appear*/
 .text {
-  position: fixed;
-  list-style: none;
-  border-bottom: 0;
+    position: fixed;
+    list-style: none;
+    border-bottom: 0;
 }
 
 .text.hidden {
-  border-bottom: 1px solid #333;
+    border-bottom: 1px solid #333;
 }
 
 .text li {
-  display: inline-block;
-  float: left;
-  font-weight: 700;
-  font-size: 2em;
-  color: #333;
-  opacity: 1;
-  transition: all 0.5s ease-in-out;
-  max-width: 2em;
+    display: inline-block;
+    float: left;
+    font-weight: 700;
+    font-size: 2em;
+    color: #333;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    max-width: 2em;
 }
+
 .text.hidden li.spaced {
-  padding-left: 0;
+    padding-left: 0;
 }
+
 .text li.spaced {
-  padding-left: 0.5em;
+    padding-left: 0.5em;
 }
 
 .text.hidden li.ghost {
-  opacity: 0;
-  max-width: 0;
+    opacity: 0;
+    max-width: 0;
 }
 
+/*end SEFA appear text*/
 
+
+/*for the table*/
 .overview {
     width: 100%;
     padding: 5px;
@@ -109,23 +115,65 @@
     float: left;
 }
 
-@media all and (max-width:640px) {
-  table,
-  thead,
-  tbody,
-  th,
-  td,
-  tr {
-    display: block;
-  }
-}
+/*end table layout*/
+
 
 .responsive {
-  width: 100%;
-  height: auto;
-}
-
-img{
-    max-width:100%;
+    width: 100%;
     height: auto;
 }
+
+/*make images width of div*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*turn table into 1 column at 640*/
+@media all and (max-width: 640px) {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+}
+
+
+/*experiment*/
+
+.item {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.item:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.item > div {
+    width: 50%;
+}
+
+@media (max-width: 640px) {
+
+    .item,
+    .item:nth-child(odd) {
+        flex-direction: column;
+    }
+
+    .item > div {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
