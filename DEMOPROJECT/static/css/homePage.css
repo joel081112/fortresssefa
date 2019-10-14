@@ -14,6 +14,7 @@
     position: fixed;
     list-style: none;
     border-bottom: 0;
+    margin-top: 80px;
 }
 
 .text.hidden {
@@ -129,18 +130,6 @@ img {
     height: auto;
 }
 
-/*turn table into 1 column at 640*/
-@media all and (max-width: 640px) {
-    table,
-    thead,
-    tbody,
-    th,
-    td,
-    tr {
-        display: block;
-    }
-
-}
 
 
 /*experiment*/

@@ -49,9 +49,8 @@ body {
 
 .menu {
     margin: 8px;
-    padding: 20px 8px 8px 8px;
+    padding: 100px 8px 8px 8px;
     max-width: 1510px;
-
 }
 
 .menu > ol {
@@ -93,6 +92,7 @@ body {
     --accent-color: #fefefe;
     --gradient-color: #285469;
 }
+
 
 /*nav bar itself*/
 .menu > ol > li a {
@@ -360,6 +360,34 @@ ol > .column a {
         display: none !important;
     }
 }
+
+@media screen and (max-width: 639.98px) {
+    .menu > ol > li:nth-child(1) {
+    --accent-color: #285469;
+    --gradient-color: #285469;
+}
+
+.menu > ol > li:nth-child(2) {
+    --accent-color: #285469;
+    --gradient-color: #285469;
+}
+
+.menu > ol > li:nth-child(3) {
+    --accent-color: #285469;
+    --gradient-color: #285469;
+}
+
+.menu > ol > li:nth-child(4) {
+    --accent-color: #285469;
+    --gradient-color: #285469;
+}
+
+.menu > ol > li:nth-child(5) {
+    --accent-color: #285469;
+    --gradient-color: #285469;
+}
+}
+
 
 
 

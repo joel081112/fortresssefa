@@ -40,6 +40,9 @@ body {
  * Header
  */
 
+.header{
+    padding:15px;
+}
 
 .masthead {
     margin-bottom: 2rem;
@@ -253,6 +256,12 @@ footer .row:after {
         align-items: center;
         max-width: initial;
         max-height: 75px;
+    }
+
+    .header{
+        opacity: 0.8;
+        position: fixed;
+        background: #ecf6f9;
     }
 }
 

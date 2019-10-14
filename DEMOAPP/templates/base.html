@@ -57,39 +57,40 @@
 <div class="{% block page-css-class %}{% endblock %}">
     <div class="centre-content">
         {# header #}
-        <a href="/" class="menuLogo">
-            <img src="/media/images/fortress_sefa_small_60px.max-165x165.jpg" id="smallLogo">
-        </a>
+        <div class="header">
+            <a href="/" class="menuLogo">
+                <img src="/media/images/fortress_sefa_small_60px.max-165x165.jpg" id="smallLogo">
+            </a>
 
-        <div class="hamburger">
-            <label class="toggle" id="menuDisplay">
-                <input type="checkbox" id="myCheck">
-                <div>
+            <div class="hamburger">
+                <label class="toggle" id="menuDisplay">
+                    <input type="checkbox" id="myCheck">
                     <div>
-                        <span></span>
-                        <span></span>
+                        <div>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <svg>
+                            <use xlink:href="#path">
+                        </svg>
+                        <svg>
+                            <use xlink:href="#path">
+                        </svg>
                     </div>
-                    <svg>
-                        <use xlink:href="#path">
-                    </svg>
-                    <svg>
-                        <use xlink:href="#path">
-                    </svg>
-                </div>
-            </label>
+                </label>
 
 
-            <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-                <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" id="path">
-                    <path d="M22,22 L2,22 C2,11 11,2 22,2 C33,2 42,11 42,22"></path>
-                </symbol>
-            </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" id="path">
+                        <path d="M22,22 L2,22 C2,11 11,2 22,2 C33,2 42,11 42,22"></path>
+                    </symbol>
+                </svg>
 
+            </div>
+            <a href="/" class="menuLogo">
+                <img src="/media/original_images/fortress_sefa_s8gdTFJ.jpg" id="largeLogo">
+            </a>
         </div>
-        <a href="/" class="menuLogo">
-            <img src="/media/original_images/fortress_sefa_s8gdTFJ.jpg" id="largeLogo">
-        </a>
-
         <header class="masthead mb-auto" id="menuPanel">
 
             <nav class="menu">
