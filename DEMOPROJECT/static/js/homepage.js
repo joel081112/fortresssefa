@@ -7,6 +7,7 @@ $(function () {
         var homeIm1Class = $('.homeIm1');
         var w = document.documentElement.clientWidth;
 
+        //for mobile
     if (w > 640) {
 
         if (scroll >= 200) {
@@ -21,11 +22,12 @@ $(function () {
             text.show();
         }
     }
+    //for desktop/tablet
     else{
-        if (scroll + 250 > homeIm1Class.offset().top) { // when the div with homeIm2 class scrolls into view
+        if (scroll + 350 > homeIm1Class.offset().top) { // when the div with homeIm2 class scrolls into view
             text.hide();
         }
-        if (scroll + 250 < homeIm1Class.offset().top) { // when the div with homeIm2 class scrolls into view
+        if (scroll + 350 < homeIm1Class.offset().top) { // when the div with homeIm2 class scrolls into view
             text.show();
         }
     }
@@ -66,6 +68,7 @@ $(function () {
         $(fadeOnL[i]).animate({'opacity': '1', 'margin-left': '100px'}, 1000);
     }
 });
+
 
 
 
