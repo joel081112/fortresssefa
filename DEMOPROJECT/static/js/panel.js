@@ -21,7 +21,7 @@
 
                 // open panel when clicking on trigger btn
                 //need to change this to hamburger
-                if ((x.top>y.top) && (toggle.checked == true)) {
+                if ((x.top > y.top) && (toggle.checked == true)) {
                     panelTriggers[i].addEventListener('click', function (event) {
                         event.preventDefault();
                         addClass(panel, 'cd-panel--is-visible');
@@ -61,5 +61,11 @@
             el.className = el.className.replace(reg, ' ');
         }
     }
+
+    (function () {
+        //scrollbar class to appear if menu is longer that viewport
+
+    })();
 })();
+
 

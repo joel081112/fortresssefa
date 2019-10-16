@@ -32,22 +32,23 @@ button.onclick = function () {
 
 
 checkbox.onclick = function () {
-    var homeInfo1 = $('.homeInfo1');
+    var homeInfo1 = $('.block');
     var text1 = $("#fixedpoint");
     var text = $(".text");
 
     //used for testing
     var x = text1.offset();
     var y = homeInfo1.offset();
-    //alert("Top: " + x.top + " Left: " + x.left + "Menu Top " + y.top + " Left: " + y.left + this.checked);
-
+    //alert("Top: " + x.top + "   Menu Top " + y.top + this.checked);
+    var w = document.documentElement.clientWidth;
+    var h = document.documentElement.clientHeight;
 
     //code for offset for menu display
-    if ((x.top < y.top) && (this.checked == true)) {
+    if ((x.top < y.top) && (this.checked == true) && (w>399) && (h >859)) {
         menu.style.cssText = ';display:block !important;'
-    } else if ((x.top < y.top) && (this.checked == false)) {
+    } else if ((x.top < y.top) && (this.checked == false) && (w>399) && (h >859)) {
         menu.style.cssText = ';display:none !important;';
-    } else if ((x.top > y.top)) {
+    } else if ((x.top > y.top) || (w < 400) || (h <860)) {
         var panelTriggers = document.getElementsByClassName('js-cd-panel-trigger');
         if (panelTriggers.length > 0) {
             for (var i = 0; i < panelTriggers.length; i++) {
