@@ -1,3 +1,4 @@
+var close = false;
 (function () {
     // Slide In Panel - by CodyHouse.co
     var panelTriggers = document.getElementsByClassName('js-cd-panel-trigger');
@@ -8,6 +9,7 @@
         var homeInfo1 = $('.homeInfo1');
         var toggle = document.querySelector(".toggle input");
         var text1 = $("#fixedpoint");
+
 
         //used for testing
         var x = text1.offset();
@@ -25,6 +27,7 @@
                     panelTriggers[i].addEventListener('click', function (event) {
                         event.preventDefault();
                         addClass(panel, 'cd-panel--is-visible');
+                        close =false;
                     });
                 }
 
@@ -33,8 +36,8 @@
                     if (hasClass(event.target, 'js-cd-close') || hasClass(event.target, panelClass)) {
                         event.preventDefault();
                         removeClass(panel, 'cd-panel--is-visible');
-                        toggle.checked = false;
-                    }
+
+                    }close = true;
                 });
             })(i);
         }
@@ -67,5 +70,4 @@
 
     })();
 })();
-
 

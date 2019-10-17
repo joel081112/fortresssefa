@@ -36,8 +36,8 @@ Primary style
         height: 100%;
         width: 100%;
         visibility: hidden;
-        -webkit-transition: visibility 0s 1.5s;
-        transition: visibility 0s 1.5s;
+        -webkit-transition: visibility 0s 0.5s;
+        transition: visibility 0s 0.5s;
     }
 
     .cd-panel::after {
@@ -58,6 +58,7 @@ Primary style
         visibility: visible;
         -webkit-transition: visibility 0s 0s;
         transition: visibility 0s 0s;
+        z-index: 10;
     }
 
     .cd-panel.cd-panel--is-hidden {

@@ -44,37 +44,52 @@ checkbox.onclick = function () {
     var h = document.documentElement.clientHeight;
 
     //code for offset for menu display
-    if ((x.top < y.top) && (this.checked == true) && (w>399) && (h >859)) {
+    if ((x.top < y.top) && (this.checked == true) && (w > 399) && (h > 859)) {
         menu.style.cssText = ';display:block !important;'
-    } else if ((x.top < y.top) && (this.checked == false) && (w>399) && (h >859)) {
+    } else if ((x.top < y.top) && (this.checked == false) && (w > 399) && (h > 859)) {
         menu.style.cssText = ';display:none !important;';
-    } else if ((x.top > y.top) || (w < 400) || (h <860)) {
+    } else if ((x.top > y.top) || (w < 400) || (h < 860)) {
         var panelTriggers = document.getElementsByClassName('js-cd-panel-trigger');
         if (panelTriggers.length > 0) {
+
             for (var i = 0; i < panelTriggers.length; i++) {
                 (function (i) {
                     var panelClass = 'js-cd-panel-' + panelTriggers[i].getAttribute('data-panel'),
                         panel = document.getElementsByClassName(panelClass)[0];
+                    var toggle = document.querySelector(".toggle input");
                     // open panel when clicking on trigger btn
                     panelTriggers[i].addEventListener('click', function (event) {
+
                         event.preventDefault();
                         addClass(panel, 'cd-panel--is-visible');
+
+toggle.checked = true;
                     });
-                    text.hide();
+
                     //close panel when clicking on 'x' or outside the panel
                     panel.addEventListener('click', function (event) {
                         if (hasClass(event.target, 'js-cd-close') || hasClass(event.target, panelClass)) {
                             event.preventDefault();
                             removeClass(panel, 'cd-panel--is-visible');
+
+                            toggle.checked = false;
                         }
+
                     });
 
                 })(i);
             }
 
+
         }
+
     }
-}
+    if (this.checked) {
+        alert('hi');
+    } else {
+        alert('well well');
+    }
+};
 
 function hasClass(el, className) {
     if (el.classList) return el.classList.contains(className);
