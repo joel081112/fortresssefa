@@ -53,7 +53,7 @@ $(function () {
 
                 $(fadeClass[i]).animate({
                     'opacity': '1'
-                }, 1750);
+                }, 950);
 
             }
 

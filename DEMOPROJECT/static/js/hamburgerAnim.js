@@ -63,7 +63,7 @@ checkbox.onclick = function () {
                         event.preventDefault();
                         addClass(panel, 'cd-panel--is-visible');
 
-toggle.checked = true;
+                        toggle.checked = true;
                     });
 
                     //close panel when clicking on 'x' or outside the panel
@@ -124,6 +124,10 @@ $(function () {
         if ((w < 640) && (homeInfo1.offset().top > 350)) {
             menu.style.cssText = ';display:none;'
             text.hide();
+            toggle.checked = false;
+        }
+        if( (w < 640) && (homeInfo1.offset().top > 350) && (this.checked == true) && ((x.top > y.top)) ){
+            addClass(panel, 'cd-panel--is-visible');
         }
     });
 });
