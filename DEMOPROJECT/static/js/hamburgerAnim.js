@@ -84,11 +84,6 @@ checkbox.onclick = function () {
         }
 
     }
-    if (this.checked) {
-        alert('hi');
-    } else {
-        alert('well well');
-    }
 };
 
 function hasClass(el, className) {

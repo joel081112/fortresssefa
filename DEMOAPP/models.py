@@ -398,22 +398,22 @@ class HomePage(Page):
         blank=True,  # required field or not
         verbose_name="Intro"  # called on wagtail site
     )
-    securityText = RichTextField(
+    security = RichTextField(
         blank=True,
         verbose_name="SecurityText"
     )
 
-    environmentText = RichTextField(
+    environment = RichTextField(
         blank=True,
         verbose_name="EnvironmentText"
     )
 
-    fireText = RichTextField(
+    fire = RichTextField(
         blank=True,
         verbose_name="FireText"
     )
 
-    architecturalText = RichTextField(
+    architectural = RichTextField(
         blank=True,
         verbose_name="ArchitecturalText"
     )
@@ -444,19 +444,19 @@ class HomePage(Page):
             classname="full"
         ),
         FieldPanel(
-            'securityText',
+            'security',
             classname="full"
         ),
         FieldPanel(
-            'environmentText',
+            'environment',
             classname="full"
         ),
         FieldPanel(
-            'fireText',
+            'fire',
             classname="full"
         ),
         FieldPanel(
-            'architecturalText',
+            'architectural',
             classname="full"
         ),
         InlinePanel(
