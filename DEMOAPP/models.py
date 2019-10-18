@@ -1,35 +1,55 @@
 from django.db import models
-
 # Create your models here.
 # database stuff
 # class base and function
 from modelcluster.fields import ParentalKey
-from wagtail.admin.edit_handlers import FieldPanel, TabbedInterface, ObjectList, InlinePanel
+from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel, TabbedInterface, ObjectList
 from wagtail.core.fields import RichTextField
 from wagtail.core.models import Page, Orderable
-from wagtail.search import index
 from wagtail.images.edit_handlers import ImageChooserPanel
+from wagtail.search import index
 
 
-class Search(Page):
-    search_fields = Page.search_fields + [
+class BlogIndexPage(Page):
+    intro = RichTextField(blank=True)
 
-    ]  # these are if adding a search to the website
-
-    # content tab panels
     content_panels = Page.content_panels + [
-
+        FieldPanel('intro', classname="full")
     ]
 
-    # what to call the panels on wagtail
-    edit_handler = TabbedInterface([
-        ObjectList(content_panels, heading='Content'),
-        ObjectList(Page.promote_panels, heading='SEO'),
-        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-        # classname settings adds the cog
+
+class BlogPage(Page):
+    date = models.DateField("Post date")
+    intro = models.CharField(max_length=250)
+    body = RichTextField(blank=True)
+
+    search_fields = Page.search_fields + [
+        index.SearchField('intro'),
+        index.SearchField('body'),
     ]
 
+    content_panels = Page.content_panels + [
+        FieldPanel('date'),
+        FieldPanel('intro'),
+        FieldPanel('body', classname="full"),
+        InlinePanel(
+            'blogpage_images',
+            label="blogpage images"
+        ),
+    ]
+
+
+class BlogPageGalleryImage(Orderable):
+    page = ParentalKey(BlogPage, on_delete=models.CASCADE, related_name='blogpage_images')
+    image = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.CASCADE, related_name='+'
     )
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        ImageChooserPanel('image'),
+        FieldPanel('caption'),
+    ]
 
 
 class ContactUs(Page):
