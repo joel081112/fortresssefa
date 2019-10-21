@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-# Create your views here.
-#def hi(request):
-    #return HttpResponse('<h1>THIS IS MY HOME PAGE</h1>')# #original line
-    #return render(request,'DEMOAPP/hi.html')
+
+from django.core.paginator import Paginator
+
+def home(request):
+    posts. Post.objects.all()
+    paginator = Paginator(posts,4)
+    page = request.GET.get('page')
+    return render(request, 'base/home.html',{'posts':posts})
