@@ -7,6 +7,7 @@
     <link rel="stylesheet" href='/static/css/allImagesRespon.css'>
     <link rel="stylesheet" href='/static/css/blog.css'>
     <link rel="stylesheet" href='/static/css/w3.css'>
+    <link rel="stylesheet" href='/static/css/disqus.js'>
 {% endblock %}
 
 {% block body_class %}template-blogpage{% endblock %}
@@ -23,9 +24,10 @@
         {% for item in page.blogpage_images.all %}
             {% image item.image fill-800x800-c100 %}
             <p>{{ item.caption }}</p>
+
         {% endfor %}
     </div>
-    <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
-
-
+    <p><a href="{{ page.get_parent.url }}">Return to blog »</a></p>
+<div id="disqus_thread"></div>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 {% endblock %}

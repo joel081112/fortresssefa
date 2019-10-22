@@ -12,6 +12,7 @@
 
 {% endblock %}
 {% block extra_js %}
+
     {# Override this in templates to add extra javascript #}
 {% endblock %}
 {% block meta_descr %}
@@ -27,10 +28,52 @@
 
 
             <h1>{{ page.title }}</h1>
+            {# start paginator #}
+            <div id="paginatorTop">
+                {% if posts.paginator.num_pages > 1 %}
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="pagination">
+                                    {% if posts.has_previous %}
+                                        <li class="page-item">
+                                            <a href="?page={{ posts.previous_page_number }}" class="page-link">
+                                                <span>&laquo;</span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% for page_num in posts.paginator.page_range %}
+                                        <li class="page-item {% if page_num == posts.number %} active{% endif %}">
+                                            <a href="?page={{ page_num }}" class="page-link">
+                                                {{ page_num }}
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+
+                                    {% if posts.has_next %}
+                                        <li class="page-item">
+                                            <a href="?page={{ posts.next_page_number }}" class="page-link">
+                                                <span>&raquo;</span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endif %}
+            </div>
+            {# end paginator #}
 
             <div class="intro">{{ page.intro|richtext }}</div>
-            {% for post in posts|slice:":4" %}
+
+        {# Start blog cards #}
+            {% for post in posts %}
+
                 <div class="w3-card-4 w3-margin w3-white">
+
                     <div class="blogIndexImg">
                         {% for item in post.specific.blogpage_images.all|slice:"1" %}
                             {% image item.image fill-400x400-c100 %}
@@ -46,27 +89,39 @@
                         {{ post.specific.body|richtext }}
 
                         <div class="w3-row">
+
                             <div class="w3-col m8 s12">
+
                                 <p>
                                     <button class="w3-button w3-padding-large w3-white w3-border"><b><a
                                             class="effect-shine"
                                             href="{% pageurl post %}">READ
                                         MORE »</a></b>
                                     </button>
+
                                 </p>
+
                             </div>
                             <div class="w3-col m4 w3-hide-small">
-                                <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span
-                                        class="w3-tag">0</span></span></p>
+                                <p>
+                                    <span class="w3-padding-large w3-right">
+                                        <span class="w3-tag">
+                                            <a href="{% pageurl post %}#disqus_thread"> _
+                                            </a>
+                                        </span>
+                                    </span>
+                                </p>
                             </div>
                         </div>
                     </div>
+
                 </div>
+
                 <hr>
-
             {% endfor %}
+        {# end blog cards #}
 
-        {# start paginator #}
+            {# start paginator #}
             {% if posts.paginator.num_pages > 1 %}
                 <div class="container">
                     <div class="row">
@@ -100,13 +155,8 @@
                     </div>
                 </div>
             {% endif %}
-        {# end paginator #}
+            {# end paginator #}
 
-
-            {% if page.get_children.has_next %}
-                <a href="?page={{ page.get_children.next_page_number }}">next</a>
-                <a href="?page={{ page.get_children.paginator.num_pages }}">last &raquo;</a>
-            {% endif %}
         </div>
         {# end blog entry #}
 
@@ -135,6 +185,7 @@
                         </li>
 
 
+
                     {% endfor %}
                 </ul>
 
@@ -142,6 +193,5 @@
             {# end right side #}
         </div>
     </div><br>
-
 
 {% endblock %}

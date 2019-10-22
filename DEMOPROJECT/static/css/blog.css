@@ -20,3 +20,13 @@ color: #000000;
     transition: transform .2s; /* Animation */
 
 }
+
+#paginatorTop{
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+}
+
+h1{
+    display: inline-block;
+}

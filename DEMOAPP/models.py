@@ -23,8 +23,9 @@ class BlogIndexPage(Page):
         context = super().get_context(request, *args, **kwargs)
         # Get all posts
         all_posts = BlogPage.objects.live().public().order_by('-first_published_at')
-        # Paginate all posts by 2 per page
-        paginator = Paginator(all_posts, 4)
+        date_sorted_posts = sorted(all_posts, key=lambda p: p.specific.date, reverse=False)
+        # Paginate all posts by 4 per page
+        paginator = Paginator(date_sorted_posts, 4)
         # Try to get the ?page=x value
         page = request.GET.get("page")
         try:

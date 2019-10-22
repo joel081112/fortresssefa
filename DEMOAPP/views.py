@@ -2,8 +2,9 @@ from django.shortcuts import render
 
 from django.core.paginator import Paginator
 
+
 def home(request):
-    posts. Post.objects.all()
-    paginator = Paginator(posts,4)
+    posts.Post.objects.all()
+    paginator = Paginator(posts, 4)
     page = request.GET.get('page')
-    return render(request, 'base/home.html',{'posts':posts})
+    return render(request, 'base/home.html', {'posts': posts})
