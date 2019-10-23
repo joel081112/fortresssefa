@@ -32,13 +32,13 @@ button.onclick = function () {
 
 
 checkbox.onclick = function () {
-    var homeInfo1 = $('.block');
+    var block = $('.block');
     var text1 = $("#fixedpoint");
     var text = $(".text");
 
     //used for testing
     var x = text1.offset();
-    var y = homeInfo1.offset();
+    var y = block.offset();
     /*y.top is currently going off block top margin*/
     var w = document.documentElement.clientWidth;
     var h = document.documentElement.clientHeight;
@@ -113,16 +113,16 @@ $(function () {
     var text = $(".text");
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
-        var homeInfo1 = $('.homeInfo1');
+        var block = $('.block');
         var w = document.documentElement.clientWidth;
 
         //we dont want menu to show when not at top of
-        if ((w < 640) && (homeInfo1.offset().top > 350)) {
+        if ((w < 640) && (block.offset().top > 350)) {
             menu.style.cssText = ';display:none;'
             text.hide();
             toggle.checked = false;
         }
-        if( (w < 640) && (homeInfo1.offset().top > 350) && (this.checked == true) && ((x.top > y.top)) ){
+        if( (w < 640) && (block.offset().top > 350) && (this.checked == true) && ((x.top > y.top)) ){
             addClass(panel, 'cd-panel--is-visible');
         }
     });

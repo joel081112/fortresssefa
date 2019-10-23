@@ -6,14 +6,17 @@ var close = false;
     var toggle = document.querySelector(".toggle input");
     $(window).scroll(function () {
         var scroll = $(window).scrollTop();
-        var homeInfo1 = $('.homeInfo1');
+        var block = $('.block');
         var toggle = document.querySelector(".toggle input");
         var text1 = $("#fixedpoint");
 
 
         //used for testing
+
         var x = text1.offset();
-        var y = homeInfo1.offset();
+
+        var y = block.offset();
+
 
         /*displays side panel*/
         for (var i = 0; i < panelTriggers.length; i++) {
@@ -27,7 +30,7 @@ var close = false;
                     panelTriggers[i].addEventListener('click', function (event) {
                         event.preventDefault();
                         addClass(panel, 'cd-panel--is-visible');
-                        close =false;
+                        close = false;
                     });
                 }
 
@@ -37,7 +40,8 @@ var close = false;
                         event.preventDefault();
                         removeClass(panel, 'cd-panel--is-visible');
 
-                    }close = true;
+                    }
+                    close = true;
                 });
             })(i);
         }
@@ -70,4 +74,21 @@ var close = false;
 
     })();
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

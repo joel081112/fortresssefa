@@ -7,12 +7,16 @@
     <link rel="stylesheet" href='/static/css/allImagesRespon.css'>
     <link rel="stylesheet" href='/static/css/blog.css'>
     <link rel="stylesheet" href='/static/css/w3.css'>
-    <link rel="stylesheet" href='/static/css/disqus.js'>
 {% endblock %}
 
 {% block body_class %}template-blogpage{% endblock %}
 
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+{% endblock %}
+
 {% block content %}
+    <p><a href="{{ page.get_parent.url }}">Return to blog »</a></p>
     <h1 class="blogLink">{{ page.title }}</h1>
     <h5 class="w3-opacity">{{ page.date }}</h5>
 
@@ -27,7 +31,7 @@
 
         {% endfor %}
     </div>
-    <p><a href="{{ page.get_parent.url }}">Return to blog »</a></p>
+
 <div id="disqus_thread"></div>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 {% endblock %}
