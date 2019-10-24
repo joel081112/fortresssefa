@@ -3445,4 +3445,30 @@
 		$.support.transform3d = tests.csstransforms3d();
 	}
 
+	$(".owl-carousel").owlCarousel({
+    items: 2,
+    nav: true,
+    loop: true,
+    dots: false,
+    margin: 5,
+    autoplay: true,
+    autoplayTimeout: '3000',
+    navContainer: '#nav',
+    navText: [
+        '<i class="fa fa-angle-left"></i>',
+        '<i class="fa fa-angle-right"></i>'
+    ],
+    responsive:{
+        0:{
+            items:1
+        },
+        767:{
+            items:2,
+            nav:true
+        }
+    }
+});
+
 })(window.Zepto || window.jQuery, window, document);
+
+

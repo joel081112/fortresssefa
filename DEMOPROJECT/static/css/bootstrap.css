@@ -5337,18 +5337,17 @@ button.close {
   align-items: center;
   justify-content: center;
   width: 15%;
-  color: #fff;
+  color: #000000;
   text-align: center;
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .carousel-control-prev:hover, .carousel-control-prev:focus,
 .carousel-control-next:hover,
 .carousel-control-next:focus {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
   outline: 0;
-  opacity: .9;
 }
 
 .carousel-control-prev {
@@ -5398,7 +5397,7 @@ button.close {
   margin-right: 3px;
   margin-left: 3px;
   text-indent: -999px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .carousel-indicators li::before {
@@ -5422,7 +5421,7 @@ button.close {
 }
 
 .carousel-indicators .active {
-  background-color: #fff;
+  background-color: #000000;
 }
 
 .carousel-caption {
@@ -5433,7 +5432,7 @@ button.close {
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;
-  color: #fff;
+  color: #000000;
   text-align: center;
 }
 

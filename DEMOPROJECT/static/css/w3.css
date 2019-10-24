@@ -758,6 +758,8 @@ a {
 }
 
 @media (max-width: 600px) {
+
+
     .w3-modal-content {
         margin: 0 10px;
         width: auto !important
@@ -771,9 +773,6 @@ a {
         position: relative
     }
 
-    .w3-hide-small {
-        display: none !important
-    }
 
     .w3-mobile {
         display: block;
@@ -786,6 +785,12 @@ a {
 
     .w3-dropdown-hover.w3-mobile, .w3-dropdown-hover.w3-mobile .w3-btn, .w3-dropdown-hover.w3-mobile .w3-button, .w3-dropdown-click.w3-mobile, .w3-dropdown-click.w3-mobile .w3-btn, .w3-dropdown-click.w3-mobile .w3-button {
         width: 100%
+    }
+}
+
+@media (max-width: 374px) {
+    .w3-hide-small {
+        display: none !important
     }
 }
 

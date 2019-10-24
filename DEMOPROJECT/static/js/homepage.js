@@ -1,38 +1,40 @@
 //for the text that is hidden at starts SEFA
 $(function () {
-    var text = $(".text");
-    $(window).scroll(function () {
-        var scroll = $(window).scrollTop();
-        var homeIm2Class = $('.homeIm2');
-        var homeIm1Class = $('.homeIm1');
-        var w = document.documentElement.clientWidth;
-        var h = document.documentElement.clientHeight;
-        //for desktop/tablet
-        if (w > 640) {
-            if (scroll >= 200) {
-                text.removeClass("hidden");
-            } else {
-                text.addClass("hidden");
+    if (window.location.pathname==='/') {
+        var text = $(".text");
+        $(window).scroll(function () {
+            var scroll = $(window).scrollTop();
+            var homeIm2Class = $('.homeIm2');
+            var homeIm1Class = $('.homeIm1');
+            var w = document.documentElement.clientWidth;
+            var h = document.documentElement.clientHeight;
+            //for desktop/tablet
+            if (w > 640) {
+                if (scroll >= 200) {
+                    text.removeClass("hidden");
+                } else {
+                    text.addClass("hidden");
+                }
+                if (scroll + 250 > homeIm2Class.offset().top) { // when the div with homeIm2 class scrolls into view
+                    text.hide();
+                }
+                if (scroll + 250 < homeIm2Class.offset().top) { // when the div with homeIm2 class scrolls into view
+                    text.show();
+                }
             }
-            if (scroll + 250 > homeIm2Class.offset().top) { // when the div with homeIm2 class scrolls into view
-                text.hide();
-            }
-            if (scroll + 250 < homeIm2Class.offset().top) { // when the div with homeIm2 class scrolls into view
-                text.show();
-            }
-        }
-        //for mobile
-        else {
-            if ((scroll + 350 > homeIm1Class.offset().top)) { // when the div with homeIm2 class scrolls into view
-                text.hide();
+            //for mobile
+            else {
+                if ((scroll + 350 > homeIm1Class.offset().top)) { // when the div with homeIm2 class scrolls into view
+                    text.hide();
+
+                }
+                if ((scroll + 350 < homeIm1Class.offset().top)) { // when the div with homeIm2 class scrolls into view
+                    text.show();
+                }
 
             }
-            if ((scroll + 350 < homeIm1Class.offset().top)) { // when the div with homeIm2 class scrolls into view
-                text.show();
-            }
-
-        }
-    });
+        });
+    }
 });
 
 // make a div fade in 200px above

@@ -3,7 +3,8 @@ from django.db import models
 # database stuff
 # class base and function
 from modelcluster.fields import ParentalKey
-from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel, TabbedInterface, ObjectList
+from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel, TabbedInterface, ObjectList, \
+    StreamFieldPanel
 from wagtail.core.fields import RichTextField
 from wagtail.core.models import Page, Orderable
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
@@ -56,20 +57,29 @@ class BlogPage(Page):
     ]
 
     content_panels = Page.content_panels + [
-        FieldPanel('date'),
-        FieldPanel('intro'),
-        FieldPanel('body', classname="full"),
-        InlinePanel(
-            'blogpage_images',
-            label="blogpage images"
+        MultiFieldPanel([FieldPanel('date'),
+                         FieldPanel('intro'),
+                         FieldPanel('body', classname="full")],
+                        heading="blogpage Options"
+                        ),
+
+        MultiFieldPanel(
+            [InlinePanel('blogpage_images', max_num=30, min_num=1, label="blogpage images")],
+            heading="blogpage Images"
         ),
     ]
 
 
 class BlogPageGalleryImage(Orderable):
+    """Between 1 and 30 images for the blog page carousel."""
+
     page = ParentalKey(BlogPage, on_delete=models.CASCADE, related_name='blogpage_images')
     image = models.ForeignKey(
-        'wagtailimages.Image', on_delete=models.CASCADE, related_name='+'
+        'wagtailimages.Image',
+        null=True,
+        blank=False,
+        on_delete=models.CASCADE,
+        related_name='+'
     )
     caption = models.CharField(blank=True, max_length=250)
 
