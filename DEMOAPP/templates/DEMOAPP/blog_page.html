@@ -35,7 +35,9 @@
         <ul class="carousel-indicators">
             {% for item in page.blogpage_images.all %}
                 <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter|add:"-1" }}"
-                    class="{% if forloop.counter == 1 %}active{% endif %}"></li>
+                    class="{% if forloop.counter == 1 %}active{% endif %}">
+                    </li>
+
             {% endfor %}
         </ul>
         <div class="blog">
@@ -45,15 +47,24 @@
                     <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
                         <img src="{{ img.url }}" class="d-block w-100" alt="{{ img.alt }}">
                     </div>
-
-
                 {% endfor %}
             </div>
         </div>
     </div>
-
-
     {# end carousel #}
+
+
+    <div class="gallery">
+        <div class="container">
+            {% for item in page.blogpage_images.all %}
+                <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter|add:"-1" }}"
+                    class="{% if forloop.counter == 1 %}active{% endif %}">
+                {% image item.image fill-100x100-c100 %}
+                <img src="{{ img.url }}"  class="item" alt="{{ img.alt }}">
+                    <p>{{ item.caption }}</p></li>
+            {% endfor %}
+        </div>
+    </div>
 
 
     <div id="disqus_thread"></div>

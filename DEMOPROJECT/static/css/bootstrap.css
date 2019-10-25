@@ -5377,20 +5377,24 @@ button.close {
 }
 
 .carousel-indicators {
+  justify-content: center;
+  align-content: center;
+  margin-left: 25%;
+  margin-right: 25%;
   position: absolute;
   right: 0;
-  bottom: 10px;
   left: 0;
   z-index: 15;
   display: flex;
-  justify-content: center;
+
   padding-left: 0;
-  margin-right: 15%;
-  margin-left: 15%;
   list-style: none;
+  bottom: -8px;
 }
 
 .carousel-indicators li {
+  display: flex;
+  flex-wrap: wrap;
   position: relative;
   flex: 0 1 auto;
   width: 30px;
@@ -5400,6 +5404,18 @@ button.close {
   text-indent: -999px;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+.carousel-indicators li img{
+    float: left;
+    height: 54px;
+    left: 0;
+    width: 100px;
+}
+
+.carousel-indicators .active img{
+    opacity: 0.7;
+}
+
 
 .carousel-indicators li::before {
   position: absolute;

@@ -179,11 +179,45 @@ h1 {
     max-height: 650px;
 }
 
+.blog .rich-text p {
+    text-transform: none;
+}
+
+.blog {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.gallery .item {
+    padding:5px;
+}
+
+.gallery img{
+    margin-top: 10px;
+}
+.gallery img:hover{
+    transform: scale(1.2);
+}
+
+.gallery .container {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+
+}
+
+.gallery li{
+    list-style-type: none;
+}
+
 @media (min-width: 640px) {
     .blog .carousel-inner {
         position: relative;
         width: 50%;
         overflow: hidden;
+        margin-left: 25%;
     }
 }
 
@@ -191,6 +225,6 @@ h1 {
 
 
 /*second carousel start*/
-
+/* override position and transform in 3.3.x */
 
 /*second carousel end*/
