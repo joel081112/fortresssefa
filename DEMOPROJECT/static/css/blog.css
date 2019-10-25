@@ -210,11 +210,11 @@ h1 {
 
 .imageCounter{
     position: absolute;
-    opacity:0.4;
+    font-size: 0.7em;
+    opacity:0.75;
     background: #000000;
     color: #ffffff;
-    padding: 4px 2px 8px 2px;
-    max-width: 18%;
+    padding-right: 5px;
     display: inline-block;
     border-radius: 5px;
     right:15px;
@@ -222,7 +222,13 @@ h1 {
     clear: both;
     line-height: 16px;
     text-align: center;
+}
 
+.imageCounter > img{
+    max-height: 30px;
+    width: auto;
+    height: auto;
+    vertical-align: middle;
 }
 
 .gallery li{

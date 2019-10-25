@@ -46,9 +46,10 @@
                     {% image item.image fill-650x650 as img %}
                     <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
                         <img src="{{ img.url }}" class="d-block w-100" alt="{{ img.alt }}">
-                    <div class="imageCounter">
-                    {{ forloop.counter }} of {{ page.blogpage_images.all.count }}
-                </div>
+                        <div class="imageCounter">
+                            <img src="/media/original_images/camera.png" id="display">
+                            {{ forloop.counter }} of {{ page.blogpage_images.all.count }}
+                        </div>
                     </div>
                 {% endfor %}
             </div>
