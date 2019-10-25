@@ -1,10 +1,9 @@
 {% extends "base.html" %}
-
+{% block page-css-class %}cover-container d-flex w-100 h-25 p-3 mx-auto flex-column padding{% endblock %}
 {% load wagtailcore_tags wagtailimages_tags %}
+
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
-    <link rel="stylesheet" href='/static/css/homepage.css'>
-    <link rel="stylesheet" href='/static/css/allImagesRespon.css'>
     <link rel="stylesheet" href='/static/css/blog.css'>
     <link rel="stylesheet" href='/static/css/w3.css'>
 {% endblock %}
@@ -17,6 +16,11 @@
 
 {% block content %}
     <p><a href="{{ page.get_parent.url }}">Return to blog »</a></p>
+    <div class="box-1">
+        <div class="btn btn-one">
+            <span>HOVER ME</span>
+        </div>
+    </div>
     <h1 class="blogLink">{{ page.title }}</h1>
     <h5 class="w3-opacity">{{ page.date }}</h5>
 
@@ -25,7 +29,6 @@
     {{ page.body|richtext }}
 
     {# start carousel #}
-
     {# second attempt #}
 
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -35,15 +38,17 @@
                     class="{% if forloop.counter == 1 %}active{% endif %}"></li>
             {% endfor %}
         </ul>
-        <div class="carousel-inner">
-            {% for item in page.blogpage_images.all %}
-                {% image item.image fill-650x650 as img %}
-                <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
-                    <img src="{{ img.url }}" class="d-block w-100" alt="{{ img.alt }}">
-                </div>
+        <div class="blog">
+            <div class="carousel-inner">
+                {% for item in page.blogpage_images.all %}
+                    {% image item.image fill-650x650 as img %}
+                    <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
+                        <img src="{{ img.url }}" class="d-block w-100" alt="{{ img.alt }}">
+                    </div>
 
 
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 

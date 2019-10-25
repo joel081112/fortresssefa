@@ -174,10 +174,23 @@ h1 {
 
 /* carousel start*/
 .carousel-inner img {
-      width: auto;
+    width: auto;
     height: auto;
     max-height: 650px;
-  }
+}
+
+@media (min-width: 640px) {
+    .blog .carousel-inner {
+        position: relative;
+        width: 50%;
+        overflow: hidden;
+    }
+}
+
 /* carousel ending*/
 
 
+/*second carousel start*/
+
+
+/*second carousel end*/
