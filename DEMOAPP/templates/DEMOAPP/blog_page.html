@@ -36,7 +36,7 @@
             {% for item in page.blogpage_images.all %}
                 <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter|add:"-1" }}"
                     class="{% if forloop.counter == 1 %}active{% endif %}">
-                    </li>
+                </li>
 
             {% endfor %}
         </ul>
@@ -46,6 +46,9 @@
                     {% image item.image fill-650x650 as img %}
                     <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
                         <img src="{{ img.url }}" class="d-block w-100" alt="{{ img.alt }}">
+                    <div class="imageCounter">
+                    {{ forloop.counter }} of {{ page.blogpage_images.all.count }}
+                </div>
                     </div>
                 {% endfor %}
             </div>
@@ -54,18 +57,22 @@
     {# end carousel #}
 
 
-    <div class="gallery">
-        <div class="container">
-            {% for item in page.blogpage_images.all %}
-                <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter|add:"-1" }}"
-                    class="{% if forloop.counter == 1 %}active{% endif %}">
-                {% image item.image fill-100x100-c100 %}
-                <img src="{{ img.url }}"  class="item" alt="{{ img.alt }}">
-                    <p>{{ item.caption }}</p></li>
-            {% endfor %}
-        </div>
-    </div>
 
+    <div class="gallery thumbs">
+        <button class="gallery nav-arrow"></button>
+        <div class="gallery">
+            <div class="container">
+                {% for item in page.blogpage_images.all %}
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter|add:"-1" }}"
+                        class="{% if forloop.counter == 1 %}active{% endif %}">
+                        {% image item.image fill-100x100-c100 %}
+                        <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
+                        <p>{{ item.caption }}</p></li>
+                {% endfor %}
+            </div>
+        </div>
+        <button class="gallery nav-arrow"></button>
+    </div>
 
     <div id="disqus_thread"></div>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by

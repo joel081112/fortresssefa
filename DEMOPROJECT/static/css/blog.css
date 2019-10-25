@@ -208,6 +208,23 @@ h1 {
 
 }
 
+.imageCounter{
+    position: absolute;
+    opacity:0.4;
+    background: #000000;
+    color: #ffffff;
+    padding: 4px 2px 8px 2px;
+    max-width: 18%;
+    display: inline-block;
+    border-radius: 5px;
+    right:15px;
+    bottom: 15px;
+    clear: both;
+    line-height: 16px;
+    text-align: center;
+
+}
+
 .gallery li{
     list-style-type: none;
 }
