@@ -96,20 +96,34 @@
 
                             <div class="w3-col m8 s12">
 
-                                <p>
-                                    <button class="w3-button w3-padding-large w3-white w3-border"><b><a
-                                            class="effect-shine"
-                                            href="{% pageurl post %}">SEE
-                                        MORE »</a></b>
-                                    </button>
 
-                                </p>
+                                <div id="container">
+                                    <div class="new-body">
+                                        <button class="learn-more">
+                                            <a href="{% pageurl post %}">
+                                                <div class="circle">
+                                                    <span class="icon arrow"></span>
+                                                </div>
+                                                <p class="button-text">See More</p></a>
+                                        </button>
+                                    </div>
+                                </div>
+
 
                             </div>
                             <div class="w3-col m4 w3-hide-small">
-                                <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                                <div class="lds-roller">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
 
-                                    <span class="w3-padding-large w3-right" id="commentCount">
+                                <span class="w3-padding-large w3-right" id="commentCount">
                                         <span class="w3-tag">
                                             <a href="{% pageurl post %}#disqus_thread" id="searchFor"> _
                                             </a>
@@ -198,5 +212,6 @@
             {# end right side #}
         </div>
     </div><br>
+
 
 {% endblock %}

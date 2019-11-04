@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Mukta:700");
 .blogIndexImg {
     width: 100%;
     padding: 10px 10px 0 10px;
@@ -176,7 +177,7 @@ h1 {
 .carousel-inner img {
     width: auto;
     height: auto;
-    max-height: 650px;
+    max-height: 750px;
 }
 
 .blog .rich-text p {
@@ -247,7 +248,3 @@ h1 {
 /* carousel ending*/
 
 
-/*second carousel start*/
-/* override position and transform in 3.3.x */
-
-/*second carousel end*/

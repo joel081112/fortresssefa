@@ -215,19 +215,20 @@ ol > .column a {
     }
 }
 
+/*THIS IS THE PROBLEM FOR THE BUTTON*/
 @media (min-width: 640px) {
 
-    a:focus,
-    a:hover {
+    .menu a:focus,
+    .menu a:hover {
         position: relative;
     }
 
-    a:focus:after,
+    .menu a:focus:after,
     a:hover:after {
         width: 50px;
     }
 
-    a:after {
+    .menu a:after {
         left: 0;
         right: 0;
         margin: auto;
