@@ -2,12 +2,12 @@
 .timeline {
     background: #112C30;
     margin: 0;
-    padding: 0;
     font-family: sans-serif;
     font-size: 15px;
     line-height: 26px;
     color: #B9CFD0;
     overflow: hidden;
+    padding-bottom: 15px;
 }
 
 .timeline a {
@@ -80,7 +80,7 @@
     width: 60px;
 }
 
-.stem-wrapper .stem{
+.stem-wrapper .stem {
     background: #1e4f56;
     overflow: hidden;
     height: 100%;
@@ -153,20 +153,44 @@
     right: -110px;
 }
 
-.post-wrapper .post.music-icon .stem-overlay .icon {
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/22043/music-icon.png);
+.post-wrapper .post.nSeventy-icon .stem-overlay .icon {
+    background-image: url('/media/original_images/1970.png');
 }
 
-.post-wrapper .post.bitbucket-icon .stem-overlay .icon {
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/22043/bitbucket-icon.png);
+.post-wrapper .post.nFive-icon .stem-overlay .icon {
+    background-image: url('/media/original_images/1995.png');
 }
 
-.post-wrapper .post.m-icon .stem-overlay .icon {
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/22043/m-icon.png);
+.post-wrapper .post.oThree-icon .stem-overlay .icon {
+    background-image: url('/media/original_images/2003.png');
 }
 
-.post-wrapper .post.twitter-icon .stem-overlay .icon {
-    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/22043/twitter-icon.png);
+.post-wrapper .post.oFive-icon .stem-overlay .icon {
+    background-image: url('/media/original_images/2005.png');
+}
+
+.post-wrapper .post.oSix-icon .stem-overlay .icon {
+    background-image: url('/media/original_images/2006.png');
+}
+
+.post-wrapper .post.oSeven-icon .stem-overlay .icon {
+    background-image: url('/media/original_images/2007.png');
+}
+
+.post-wrapper .post.oEight-icon .stem-overlay .icon {
+    background-image: url('/media/original_images/2008.png');
+}
+
+.post-wrapper .post.ten-icon .stem-overlay .icon {
+    background-image: url('/media/original_images/2010.png');
+}
+
+.post-wrapper .post.thirteen-icon .stem-overlay .icon {
+    background-image: url('/media/original_images/2013.png');
+}
+
+.post-wrapper .post.top-icon .stem-overlay .icon {
+    background-image: url('/media/original_images/newReturnToTop.png');
 }
 
 .post-wrapper .post .stem-overlay {
@@ -230,7 +254,7 @@
     }
 
     .post-wrapper .post .stem-overlay, .post-wrapper .post:nth-child(even) .stem-overlay, .post-wrapper .post:nth-child(odd) .stem-overlay {
-        left: -60px;
+        left: -75px;
         right: auto;
     }
 
@@ -257,7 +281,7 @@
     }
 
     .stem-padding, .single-stem-icon {
-        margin-left: 30px;
+        margin-left: 15px;
     }
 }
 

@@ -8,45 +8,46 @@
         setupPostAnimation();
         enableScrollAbortion();
 
+        setupScrollToTop();
         // Trigger window.scroll, this will initiate some of the scripts
         $(window).scroll();
     });
 
     function showStem() {
         var stemb = $(".stem-background");
+
         var stem = $(".stem");
         var timeline = $(".timeline");
         var timelineot = timeline.offset().top;
         var h = document.documentElement.clientHeight;
-        var timelineb =timeline.offset().top + timeline.outerHeight(true);
-
+        var timelineb = timeline.offset().top + timeline.outerHeight(true);
         $(window).scroll(function () {
             var scroll = $(window).scrollTop();
-            if (scroll>timelineot-h) {
+            if (scroll > timelineot - h) {
                 stem.show();
                 stemb.show();
-                stem.height(scroll+h-timelineot);
-                stem.offset({top:timelineot});
-                stemb.offset({top:timelineot});
-                if(scroll<timelineot){
-					stemb.height(h/2+scroll-timelineot);
-				}
-                else if(scroll>timelineot){
-                	stemb.height(h/2+scroll-timelineot);
-				}
-                if((scroll)>(timelineb-h/2)){
-                    stemb.height(timelineb-timelineot);
+                stem.height(scroll + h - timelineot);
+                stem.offset({top: timelineot});
+                stemb.offset({top: timelineot});
+                if (scroll < timelineot) {
+                    stemb.height(h / 2 + scroll - timelineot);
+                } else if (scroll > timelineot) {
+                    // 15 is because minus padding-bottom of timeline
+                    stemb.height(h / 2 + scroll - timelineot-15);
+                }
+                if ((scroll) > (timelineb - h / 2)) {
+                    // 15 is because minus padding-bottom of timeline
+                    stemb.height(timelineb - timelineot-15);
                 }
 
-                if(scroll > (timelineb)){
+                if (scroll > (timelineb)) {
                     stem.hide();
                     stemb.hide();
+                } else if (scroll > (timelineb - h)) {
+                    // 15 is because minus padding-bottom of timeline
+                    stem.height(timelineb - timelineot - 15);
                 }
-                else if(scroll > (timelineb-h)){
-                    stem.height(timelineb-timelineot);
-                }
-            }
-            else {
+            } else {
                 stemb.hide();
                 stem.hide();
             }
@@ -133,6 +134,17 @@
 
     }
 
+    function setupScrollToTop() {
+        var scrollSpeed = 750;
+        var timeline = $(".timeline");
+        var timelineot = timeline.offset().top;
+        $('.trigger-scroll-to-top').click(function (e) {
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: timelineot
+            }, scrollSpeed);
+        });
+    }
 
     function setupClickToScroll(post) {
 
