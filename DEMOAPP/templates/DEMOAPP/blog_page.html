@@ -15,12 +15,16 @@
 {% endblock %}
 
 {% block content %}
-    <p><a href="{{ page.get_parent.url }}">Return to blog »</a></p>
-    <div class="box-1">
-        <div class="btn btn-one">
-            <span>HOVER ME</span>
-        </div>
-    </div>
+
+    <p>
+        <a href="{{ page.get_parent.url }}">
+            <div class="box-1">
+                <div class="btn btn-one">
+                    <span>Return to blog »</span>
+                </div>
+            </div>
+        </a>
+    </p>
     <h1 class="blogLink">{{ page.title }}</h1>
     <h5 class="w3-opacity">{{ page.date }}</h5>
 

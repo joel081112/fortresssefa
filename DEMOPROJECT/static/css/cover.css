@@ -79,8 +79,14 @@ body {
  * Header
  */
 
+.top{
+    position: relative;
+    z-index: 1000;
+}
+
 .header {
     padding: 15px;
+    position: relative;
 }
 
 .masthead {
@@ -141,6 +147,7 @@ body {
 .block {
     margin: 15px;
     padding-top: 50px;
+z-index: auto;
 }
 
 
@@ -303,6 +310,7 @@ footer .row:after {
         opacity: 0.9;
         position: fixed;
         background: #ecf6f9;
+        z-index: 10;
     }
 }
 
