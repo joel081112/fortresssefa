@@ -45,6 +45,9 @@ checkbox.onclick = function () {
 
 
     //code for offset for menu display
+
+    //drop down menu only shows when height of device greater than 860px
+    //otherwise shows panel
     if ((x.top == y.top) && (this.checked == true) && (w > 399) && (h > 859)) {
         menu.style.cssText = ';display:block !important;'
     } else if ((x.top < y.top) && (this.checked == false) && (w > 399) && (h > 859)) {
