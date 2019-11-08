@@ -232,9 +232,12 @@
             <div class="gallery">
                 <div class="container">
                     {% for item in page.client_images.all %}
-                        {% image item.image fill-150x150-c100 %}
-                        <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
-                        <p>{{ item.caption }}</p>
+                        {% image item.image fill-150x150-c100 as img %}
+                        <a href="{{ item.caption }}">
+                            <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
+
+                        </a>
+
                     {% endfor %}
                 </div>
             </div>

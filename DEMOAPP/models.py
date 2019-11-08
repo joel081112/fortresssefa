@@ -64,14 +64,13 @@ class BlogPage(Page):
                         ),
 
         MultiFieldPanel(
-            [InlinePanel('blogpage_images', max_num=30, min_num=1, label="blogpage images")],
+            [InlinePanel('blogpage_images', max_num=30, min_num=0, label="blogpage images")],
             heading="blogpage Images"
         ),
     ]
 
 
 class BlogPageGalleryImage(Orderable):
-    """Between 1 and 30 images for the blog page carousel."""
 
     page = ParentalKey(BlogPage, on_delete=models.CASCADE, related_name='blogpage_images')
     image = models.ForeignKey(
