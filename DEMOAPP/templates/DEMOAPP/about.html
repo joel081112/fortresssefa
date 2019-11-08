@@ -16,10 +16,34 @@
 {% endblock %}
 
 {% block content %}
-    <p>Fortress has a proud history dating back to 1969. Over the years we have expanded and adapted to provide the best service for our clients.
-Below is a timeline of some of the key moments in Fortress's history, leading up to the present day. </p>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
+    <div class="pastIntro flex-container">
+        <div class="flex-item">
+            <img class="pastImg pastBox" src="/media/original_images/nFortress_old_logo.PNG" alt=""></div>
+        <div class="flex-item">
+            <div class="chat">
+                <div class="mine messages">
+                    <div class="message last pastBox">
+                        <p>Fortress has a proud history dating back to 1969. Over the years we have expanded and adapted
+                            to provide the best service for our clients.
+                            Below is a timeline of some of the key moments in Fortress's history, leading up to the
+                            present
+                            day. </p>
+                    </div>
+                </div>
+                <div class="yours messages">
+                    <div class="message pastBox">
+                        <p>Below you can see some of our older companies which represent our rich heritage within the
+                            industry over the years.
+                            Although the names may have changed, the ideals and standards remain the same.
+                            Our commitment to innovation and development will continue to change the face of Fortress
+                            group.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
     <div class="timeline" id="timeline">
 
 
@@ -32,9 +56,21 @@ Below is a timeline of some of the key moments in Fortress's history, leading up
         <div class="section main-content">
             <div class="section-inner">
 
-                <div class="stem-padding"></div>
 
                 <div class="post-wrapper">
+
+                    <article class="post start-icon">
+                        <div class="stem-overlay">
+                            <div class="icon"></div>
+                            <div class="stem-mask"></div>
+                        </div>
+
+                        <div class="post-content">
+                            <div class="entry-content">
+                                <p><br><br><br><br><br></p>
+                            </div>
+                        </div>
+                    </article>
 
                     <article class="post nSeventy-icon">
                         <div class="stem-overlay">
@@ -184,10 +220,25 @@ Below is a timeline of some of the key moments in Fortress's history, leading up
         </div> <!-- main-content -->
 
     </div>
-    <p>More content</p>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br>
+
+    <div class="pastClients">
+        <div class="pastBox">
+            <h2>Past Clients</h2>
+            <p>As one of Europes leading door suppliers we have a long list of high profile clients who trust us with
+                their
+                business.
+                Here is a list of just a few of them.</p>
+
+            <div class="gallery">
+                <div class="container">
+                    {% for item in page.client_images.all %}
+                        {% image item.image fill-150x150-c100 %}
+                        <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
+                        <p>{{ item.caption }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
 {% endblock %}

@@ -117,7 +117,10 @@ class About(Page):
 
     # content tab panels
     content_panels = Page.content_panels + [
-
+        MultiFieldPanel(
+            [InlinePanel('client_images', max_num=30, min_num=1, label="client images")],
+            heading="client Images"
+        ),
     ]
 
     # what to call the panels on wagtail
@@ -129,6 +132,24 @@ class About(Page):
     ]
 
     )
+
+
+class AboutGalleryImage(Orderable):
+
+    page = ParentalKey(About, on_delete=models.CASCADE, related_name='client_images')
+    image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=False,
+        on_delete=models.CASCADE,
+        related_name='+'
+    )
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        ImageChooserPanel('image'),
+        FieldPanel('caption'),
+    ]
 
 
 class Products(Page):

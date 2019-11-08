@@ -13,6 +13,8 @@
         $(window).scroll();
     });
 
+    //06/11/2019
+    //We need to make the stem line move when the menu is clicked
     function showStem() {
         var stemb = $(".stem-background");
 
@@ -33,11 +35,11 @@
                     stemb.height(h / 2 + scroll - timelineot);
                 } else if (scroll > timelineot) {
                     // 15 is because minus padding-bottom of timeline
-                    stemb.height(h / 2 + scroll - timelineot-15);
+                    stemb.height(h / 2 + scroll - timelineot - 15);
                 }
                 if ((scroll) > (timelineb - h / 2)) {
                     // 15 is because minus padding-bottom of timeline
-                    stemb.height(timelineb - timelineot-15);
+                    stemb.height(timelineb - timelineot - 15);
                 }
 
                 if (scroll > (timelineb)) {
@@ -138,11 +140,21 @@
         var scrollSpeed = 750;
         var timeline = $(".timeline");
         var timelineot = timeline.offset().top;
+        var w = document.documentElement.clientWidth;
+        var headerH = $(".header");
+
         $('.trigger-scroll-to-top').click(function (e) {
             e.preventDefault();
-            $('html, body').animate({
-                scrollTop: timelineot
-            }, scrollSpeed);
+            if (w > 639.98) {
+                $('html, body').animate({
+                    scrollTop: timelineot
+                }, scrollSpeed);
+            } else {
+                $('html, body').animate({
+                    scrollTop: timelineot-100
+                }, scrollSpeed);
+            }
+
         });
     }
 
