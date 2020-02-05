@@ -151,7 +151,7 @@
                 }, scrollSpeed);
             } else {
                 $('html, body').animate({
-                    scrollTop: timelineot-100
+                    scrollTop: timelineot - 100
                 }, scrollSpeed);
             }
 
@@ -178,6 +178,7 @@
         });
 
     }
+
 
 })(jQuery);
 

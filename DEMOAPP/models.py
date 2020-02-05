@@ -71,7 +71,6 @@ class BlogPage(Page):
 
 
 class BlogPageGalleryImage(Orderable):
-
     page = ParentalKey(BlogPage, on_delete=models.CASCADE, related_name='blogpage_images')
     image = models.ForeignKey(
         'wagtailimages.Image',
@@ -134,7 +133,6 @@ class About(Page):
 
 
 class AboutGalleryImage(Orderable):
-
     page = ParentalKey(About, on_delete=models.CASCADE, related_name='client_images')
     image = models.ForeignKey(
         'wagtailimages.Image',
@@ -191,6 +189,47 @@ class ProTec(Page):
     ]
 
     )
+
+
+class LoginArchitect(Page):
+    search_fields = Page.search_fields + [
+
+    ]  # these are if adding a search to the website
+
+    # content tab panels
+    content_panels = Page.content_panels + [
+
+    ]
+
+    # what to call the panels on wagtail
+    edit_handler = TabbedInterface([
+        ObjectList(content_panels, heading='Content'),
+        ObjectList(Page.promote_panels, heading='SEO'),
+        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
+        # classname settings adds the cog
+    ]
+
+    )
+
+    class SignUp(Page):
+        search_fields = Page.search_fields + [
+
+        ]  # these are if adding a search to the website
+
+        # content tab panels
+        content_panels = Page.content_panels + [
+
+        ]
+
+        # what to call the panels on wagtail
+        edit_handler = TabbedInterface([
+            ObjectList(content_panels, heading='Content'),
+            ObjectList(Page.promote_panels, heading='SEO'),
+            ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
+            # classname settings adds the cog
+        ]
+
+        )
 
 
 class DoorSpeed(Page):

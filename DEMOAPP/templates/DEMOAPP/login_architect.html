@@ -1,0 +1,73 @@
+{% extends "../second_base.html" %}
+{% load static %}
+{% block page-css-class %}cover-container w-100 d-flex h-25 p-3 mx-auto flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}Login Architect{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+    <link rel="stylesheet" href='/static/css/login.css'>
+
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA direct login to advance in to the architect downloadable documents.
+
+
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="container1">
+        <form action="/contact-us">
+            <div class="row">
+                <div class="col-25">
+                    <label for="email">User Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="email" name="email"
+                           pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}$"
+                           title="A valid username must be in correct email format"
+                           placeholder="User name" required>
+                </div>
+
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-25">
+                    <label for="pass">Password</label>
+                </div>
+                <div class="col-75">
+                    <input type="password" id="pass" name="password" minlength="5"
+                           pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*"
+                           placeholder="Password"
+                           title="A valid password is a set of 5 characters, each consisting of an
+                           upper or lower-case letter, or a digit. The password must begin with a letter and contain at least one digit"
+                           required>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <input type="submit" value="Submit">
+            </div>
+
+
+        </form>
+        <div class="new-body">
+            <button class="learn-more">
+                <a href="/sign-up">
+                    <div class="circle">
+                        <span class="icon arrow"></span>
+                    </div>
+                    <p class="button-text">Sign Up</p></a>
+            </button>
+        </div>
+    </div>
+
+
+{% endblock %}
