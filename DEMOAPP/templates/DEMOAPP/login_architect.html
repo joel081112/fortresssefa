@@ -42,8 +42,8 @@
                 <div class="col-25">
                     <label for="pass">Password</label>
                 </div>
-                <div class="col-75">
-                    <input type="password" id="pass" name="password" minlength="5"
+                <div class="col-75 wrapt">
+                    <input class= "text" type="password" id="pass" name="password" minlength="5"
                            pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*"
                            placeholder="Password"
                            title="A valid password is a set of 5 characters, each consisting of an
@@ -51,8 +51,8 @@
                            autocomplete="current-password"
                            required>
 
-                    <label for="passShowIcon" ><input name="passShowIcon"  type="checkbox" class="passw" onclick="showHidePassword();">
-                        <span   class="im fa fa-fw fa-eye "></span></label>
+                    <label class="checkbox" for="passShowIcon" id="showHide"><input name="passShowIcon"  type="checkbox" class="passw" onclick="showHidePassword();">
+                        <span   class="im fa fa-fw fa-eye  "></span></label>
 
                 </div>
 

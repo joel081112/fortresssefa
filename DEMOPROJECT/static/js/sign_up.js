@@ -1,5 +1,5 @@
 function check(input) {
-    if (input.value != document.getElementById('password').value) {
+    if (input.value != document.getElementById('passNew').value) {
         input.setCustomValidity('Password Must be Matching.');
     } else {
         // input is valid -- reset the error message
