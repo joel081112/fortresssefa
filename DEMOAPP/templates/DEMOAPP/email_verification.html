@@ -1,0 +1,38 @@
+{% extends "../second_base.html" %}
+{% load static %}
+{% block page-css-class %}cover-container w-100 d-flex h-25 p-3 mx-auto flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}Email Verification{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+    <link rel="stylesheet" href='/static/css/login.css'>
+
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+
+
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA verification page
+
+
+
+{% endblock %}
+
+{% block content %}
+<p>out here posing</p>
+<div class="new-body">
+            <button class="learn-more">
+                <a href="/">
+                    <div class="circle">
+                        <span class="icon arrow"></span>
+                    </div>
+                    <p class="button-text">Sign Up</p></a>
+            </button>
+        </div>
+
+
+
+
+{% endblock %}
