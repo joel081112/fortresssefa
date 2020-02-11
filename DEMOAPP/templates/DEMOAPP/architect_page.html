@@ -7,6 +7,9 @@
     {# Override this in templates to add extra stylesheets #}
  <link rel="stylesheet" href='/static/css/homePage.css'>
     <link rel="stylesheet" href='/static/css/contactUs.css'>
+
+    <link rel="stylesheet" href='/static/css/architect.css'>
+
 {% endblock %}
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
@@ -19,7 +22,10 @@
 {% endblock %}
 
 {% block content %}
-    <p>document upload</p>
+    <p>Document upload</p>
+    <p>Welcome <label id="demo2"></label></p>
+
+
 
   {% comment %} <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
