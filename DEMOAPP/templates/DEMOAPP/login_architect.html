@@ -21,8 +21,9 @@
 
 {% block content %}
 
-    <div class="container1">
+    <div class="signup">
         <form action="/architect-page">
+            <a href="/"><i class="fa fa-home" style="font-size:24px; color:black"></i></a>
             <div class="row">
                 <div class="col-25">
                     <label for="email">User Name</label>
@@ -35,7 +36,6 @@
                            placeholder="User name" required>
 
                 </div>
-
             </div>
             <hr>
             <div class="row">
@@ -43,7 +43,7 @@
                     <label for="pass">Password</label>
                 </div>
                 <div class="col-75 wrapt">
-                    <input class= "text" type="password" id="pass" name="password" minlength="5"
+                    <input class="text" type="password" id="pass" name="password" minlength="5"
                            pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*"
                            placeholder="Password"
                            title="A valid password is a set of 5 characters, each consisting of an
@@ -51,34 +51,44 @@
                            autocomplete="current-password"
                            required>
 
-                    <label class="checkbox" for="passShowIcon" id="showHide"><input name="passShowIcon"  type="checkbox" class="passw" onclick="showHidePassword();">
-                        <span   class="im fa fa-fw fa-eye  "></span></label>
-
+                    <label class="checkbox" for="passShowIcon" id="showHide"><input name="passShowIcon"
+                                                                                    type="checkbox"
+                                                                                    class="passw"
+                                                                                    onclick="showHidePassword();">
+                        <span class="im fa fa-fw fa-eye  "></span></label>
                 </div>
-
-
-
             </div>
-
-
-
-
             <div class="row">
                 <input type="submit" value="Submit">
             </div>
-
-
         </form>
-        <div class="new-body">
-            <button class="learn-more">
-                <a href="/sign-up">
-                    <div class="circle">
-                        <span class="icon arrow"></span>
+        <div class="forgotten-password">
+            <div class="row">
+                <div class="col-45">
+                    <div class="new-body">
+                        <button class="learn-more">
+                            <a href="/sign-up">
+                                <div class="circle">
+                                    <span class="icon arrow"></span>
+                                </div>
+                                <p class="button-text">Sign Up</p></a>
+                        </button>
                     </div>
-                    <p class="button-text">Sign Up</p></a>
-            </button>
+                </div>
+                <div class="col-55">
+                    <a href="/forgotten-password">
+                        <div class="box-1">
+                            <div class="btn btn-one" style="padding-top: 0">
+                                <span>Forgotten password</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
+
     </div>
+
 
 
 {% endblock %}
