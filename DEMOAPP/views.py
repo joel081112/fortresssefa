@@ -8,3 +8,7 @@ def home(request):
     paginator = Paginator(posts, 4)
     page = request.GET.get('page')
     return render(request, 'base/home.html', {'posts': posts})
+
+
+def index(request):
+    return render(request, 'confirm_email.html')

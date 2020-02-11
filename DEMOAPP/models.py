@@ -698,6 +698,25 @@ class HomePage(Page):
 
     )
 
+    class ConfirmEmail(Page):
+        search_fields = Page.search_fields + [
+
+        ]  # these are if adding a search to the website
+
+        # content tab panels
+        content_panels = Page.content_panels + [
+
+        ]
+
+        # what to call the panels on wagtail
+        edit_handler = TabbedInterface([
+            ObjectList(content_panels, heading='Content'),
+            ObjectList(Page.promote_panels, heading='SEO'),
+            ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
+            # classname settings adds the cog
+        ]
+
+        )
 
 class HomePageGalleryImage(Orderable):
     page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='homepage_images')
