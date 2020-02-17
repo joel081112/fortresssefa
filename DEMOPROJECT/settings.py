@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
-
+from .email_info import *
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'wagtail.admin',
     'wagtail.core',
     'blog',
-
     'modelcluster',
     'taggit',
 ]
@@ -70,7 +69,7 @@ ROOT_URLCONF = 'DEMOPROJECT.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "send")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -137,3 +136,12 @@ MEDIA_URL = '/media/'
 MEDIAFILES_DIRS = [os.path.join(BASE_DIR, 'DEMOPROJECT/media')]
 
 WAGTAIL_SITE_NAME = 'Joels class website'
+
+EMAIL_USE_TLS = EMAIL_USE_TLS
+EMAIL_HOST = EMAIL_HOST
+EMAIL_HOST_USER = EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
+EMAIL_PORT = EMAIL_PORT
+
+
+

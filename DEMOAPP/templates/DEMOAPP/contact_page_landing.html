@@ -1,0 +1,28 @@
+{% extends "../second_base.html" %}
+{% load static %}
+{% block page-css-class %}cover-container w-100 d-flex h-25 p-3 mx-auto flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}Contact Page Landing{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+    <link rel="stylesheet" href='/static/css/login.css'>
+
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+
+
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA direct sign up to advance in to the architect downloadable documents.
+
+
+
+{% endblock %}
+
+	{% block content %}
+    <h1>{{ page.title }}</h1>
+    <p>
+        {{ self.thank_you_text|richtext }}
+    </p>
+{% endblock %}

@@ -23,11 +23,12 @@ from wagtail.documents import urls as wagtaildocs_urls
 from wagtail.core import urls as wagtail_urls
 
 urlpatterns = [
-                  # path('admin/', admin.site.urls),
-                  # path('', include('DEMOAPP.urls')),  # empty string because we want it to be mapped to the homepage
-                  re_path(r'^admin/', include(wagtailadmin_urls)),
-                  re_path(r'^documents/', include(wagtaildocs_urls)),
-                  re_path(r'', include(wagtail_urls)),
+    # path('admin/', admin.site.urls),
+    # path('', include('DEMOAPP.urls')),  # empty string because we want it to be mapped to the homepage
+    re_path(r'^admin/', include(wagtailadmin_urls)),
+    re_path(r'^documents/', include(wagtaildocs_urls)),
+    re_path(r'', include(wagtail_urls)),
 
-                  # url(r’’, include(wagtail_urls)),
-              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+    # url(rï¿½ï¿½, include(wagtail_urls)),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

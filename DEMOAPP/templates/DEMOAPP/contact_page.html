@@ -1,0 +1,59 @@
+{% extends "../second_base.html" %}
+{% load static %}
+{% block page-css-class %}cover-container w-100 d-flex h-25 p-3 mx-auto flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}Contact Page{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+    <link rel="stylesheet" href='/static/css/login.css'>
+    <link rel="stylesheet" href='/static/css/contact_form.css'>
+
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+
+
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA direct sign up to advance in to the architect downloadable documents.
+
+
+
+{% endblock %}
+
+{% block content %}
+
+    <form action="{% pageurl page %}" method="POST">
+        {% csrf_token %}
+        <div class="contact">
+
+            {% for field in form %}
+                <div class="row">
+                    <div class="col-25">
+                        {{ field.label_tag }}
+                    </div>
+                    <div class="col-75">
+                        {{ field }}
+                    </div>
+                </div>
+<hr>
+            {% endfor %}
+
+        </div>
+
+        <div class="forgotten-password">
+            <div class="row">
+                <div class="col-45">
+                    <div class="new-body">
+                        <button class="learn-more" type="submit">
+                            <div class="circle">
+                                <span class="icon arrow"></span>
+                            </div>
+                            <p class="button-text">Submit</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

@@ -24,125 +24,122 @@
 
 
 
-    <div class="signup">
-    <a href="/"><i class="fa fa-home" style="font-size:24px; color:black"></i></a>
-        <form action="/email-verification">
-            <div class="row">
-                <div class="col-25">
-                    <label for="email">User Name</label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="email" name="email"
-                           pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}$"
-                           title="A valid username must be in correct email format"
-                           placeholder="User name"
-                           required>
-                </div>
 
+    <form action="/email-verification">
+        <div class="row">
+            <div class="col-25">
+                <label for="email">User Name</label>
             </div>
-            <hr>
-            <div class="row">
-                <div class="col-25">
-                    <label for="password">Password</label>
-                </div>
-                <div class="col-75 wrapt">
-                    <input class="text" type="password" id="passNew" name="password" minlength="5"
-                           pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*"
-                           placeholder="Password"
-                           title="A valid password is a set of 5 characters, each consisting of an
+            <div class="col-75">
+                <input type="text" id="email" name="email"
+                       pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}$"
+                       title="A valid username must be in correct email format"
+                       placeholder="User name"
+                       required>
+            </div>
+
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-25">
+                <label for="password">Password</label>
+            </div>
+            <div class="col-75 wrapt">
+                <input class="text" type="password" id="passNew" name="password" minlength="5"
+                       pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*"
+                       placeholder="Password"
+                       title="A valid password is a set of 5 characters, each consisting of an
                            upper or lower-case letter, or a digit. The password must begin with a letter and contain at least one digit"
-                           autocomplete="new-password"
-                           required>
-                    <label class="checkbox" for="passShowIcon"><input name="passShowIcon" type="checkbox" class="passw"
-                                                                      onclick="showHidePasswordForm();">
-                        <span class="im fa fa-fw fa-eye "></span></label>
+                       autocomplete="new-password"
+                       required>
+                <label class="checkbox" for="passShowIcon"><input name="passShowIcon" type="checkbox" class="passw"
+                                                                  onclick="showHidePasswordForm();">
+                    <span class="im fa fa-fw fa-eye "></span></label>
 
-                </div>
             </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="confirm_password">Retype Password</label>
-                </div>
-                <div class="col-75">
-                    <input type="password" id="confirm_password" name="confirm_password"
-                           oninput="check(this)"
-                           placeholder="Confirm Password"
-                           required>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="confirm_password">Retype Password</label>
             </div>
-            <hr>
-            <div class="row">
-                <div class="col-25">
-                    <label for="fname">First Name</label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="fname" name="firstname" required placeholder="Your first name..">
-                </div>
+            <div class="col-75">
+                <input type="password" id="confirm_password" name="confirm_password"
+                       oninput="check(this)"
+                       placeholder="Confirm Password"
+                       required>
             </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="lname">Last name</label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="lname" name="lastname" required placeholder="Your surname..">
-                </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-25">
+                <label for="fname">First Name</label>
             </div>
-            <hr>
-            <div class="row">
-                <div class="col-25">
-                    <label for="cname">Company Name</label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="cname" name="companyname" required placeholder="Your company name..">
-                </div>
+            <div class="col-75">
+                <input type="text" id="fname" name="firstname" required placeholder="Your first name..">
             </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="caddress">Company address</label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="caddress" name="address" required placeholder="Your company address..">
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="lname">Last name</label>
             </div>
-            <div class="row">
-                <div class="col-25">
-                    <label for="ctown">Company Town</label>
-                </div>
-                <div class="col-75">
-                    <input type="text" id="ctown" name="town" required placeholder="Your company town..">
-                </div>
+            <div class="col-75">
+                <input type="text" id="lname" name="lastname" required placeholder="Your surname..">
             </div>
-
-            <div class="forgotten-password">
-                <div class="row">
-                    <div class="col-45">
-                        <div class="new-body">
-                            <button class="learn-more">
-                                <a href="/email-verification">
-                                    <div class="circle">
-                                        <span class="icon arrow"></span>
-                                    </div>
-                                    <p class="button-text">Submit</p></a>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-25">
+                <label for="cname">Company Name</label>
             </div>
-        </form>
-        <div class="forgotten-password sign-up">
-            <div class="row">
-                <div class="col-55">
-                    <a href="/login-architect">
-                        <div class="box-1">
-                            <div class="btn btn-one" style="padding-top: 0">
-                                <span>Return to login</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+            <div class="col-75">
+                <input type="text" id="cname" name="companyname" required placeholder="Your company name..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="caddress">Company address</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="caddress" name="address" required placeholder="Your company address..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="ctown">Company Town</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="ctown" name="town" required placeholder="Your company town..">
             </div>
         </div>
 
+        <div class="forgotten-password">
+            <div class="row">
+                <div class="col-45">
+                    <div class="new-body">
+                        <button class="learn-more">
+                            <a href="/email-verification">
+                                <div class="circle">
+                                    <span class="icon arrow"></span>
+                                </div>
+                                <p class="button-text">Submit</p></a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="forgotten-password sign-up">
+        <div class="row">
+            <div class="col-55">
+                <a href="/login-architect">
+                    <div class="box-1">
+                        <div class="btn btn-one" style="padding-top: 0">
+                            <span>Return to login</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
 
 
