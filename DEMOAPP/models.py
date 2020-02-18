@@ -1,3 +1,6 @@
+import json
+
+from django.core.serializers.json import DjangoJSONEncoder
 from django.db import models
 # Create your models here.
 # database stuff
@@ -10,7 +13,7 @@ from wagtail.core.models import Page, Orderable
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
-from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
+from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField, AbstractFormSubmission
 
 
 class FormField(AbstractFormField):
@@ -22,12 +25,12 @@ class FormField(AbstractFormField):
 
 
 class ContactPage(AbstractEmailForm):
-    # This is the default path.
-    # If ignored, Wagtail adds _landing.html to your template name
 
+    # the landing page code
     intro = RichTextField(blank=True)
     thank_you_text = RichTextField(blank=True)
 
+    # the labels code
     content_panels = AbstractEmailForm.content_panels + [
         FieldPanel('intro'),
         InlinePanel('form_fields', label='Form Fields'),
@@ -38,7 +41,7 @@ class ContactPage(AbstractEmailForm):
                 FieldPanel('to_address', classname="col6"),
             ]),
             FieldPanel("subject"),
-        ], heading="Email Settings"),
+        ], "Email"),
     ]
 
 

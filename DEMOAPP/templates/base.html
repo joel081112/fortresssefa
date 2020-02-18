@@ -125,6 +125,13 @@
 
 
         </div>
+    {% if request.user.is_authenticated %}
+        Hi {{ request.user.username }}
+        <a href="{% url 'account_logout' %}" class="nav-link d-inline">Logout?</a>
+        {% else %}
+        hi guest
+        <a href="{% url 'account_login' %}" class="nav-link d-inline">Login</a>
+    {% endif %}
 
         <div class="block">
             {% block content %}{% endblock %}

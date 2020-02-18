@@ -1,0 +1,175 @@
+{% extends "account/base.html" %}
+{% block page-css-class %}cover-container w-100 d-flex h-25 p-3 mx-auto flex-column{% endblock %}
+{% load i18n %}
+{% load account socialaccount %}
+
+
+{% block title %}{% trans "Sign In" %}{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+
+
+
+    <form method="POST" action="{% url 'account_login' %}">
+        <h1>{% trans "Sign In" %}</h1>
+
+
+        <div class="row">
+            <p>{% blocktrans %}If you have not created an account yet, then please
+                <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+        </div>
+
+
+    {% comment %}
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+        {% endif %}
+{% endcomment %}
+
+
+
+
+
+    {% csrf_token %}
+        {% for field in form %}
+
+            {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+            {% endif %}
+            <div class="row">
+                <div class="col-25">
+                    {{ field.label_tag }}
+                </div>
+                <div class="col-75">
+                    {{ field }}
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:2 %}{% else %}
+                <hr>{% endif %}
+        {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+        <a class="btn btn-link"
+           href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+
+        <div class="col-45">
+            <div class="new-body">
+                <button class="learn-more" type="submit">
+
+                    <div class="circle">
+                        <span class="icon arrow"></span>
+                    </div>
+                    <p class="button-text">{% trans "Sign In" %}</p>
+                </button>
+            </div>
+        </div>
+
+        {% comment %} <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>{% endcomment %}
+    </form>
+
+
+    {% comment %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <form action="/architect-page">
+        <div class="row">
+            <div class="col-25">
+                <label for="email">User Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="email" name="email"
+                       pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}$"
+                       title="A valid username must be in correct email format"
+                       autocomplete="username"
+                       placeholder="User name" required>
+
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-25">
+                <label for="pass">Password</label>
+            </div>
+            <div class="col-75 wrapt">
+                <input class="text" type="password" id="pass" name="password" minlength="5"
+                       pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*"
+                       placeholder="Password"
+                       title="A valid password is a set of 5 characters, each consisting of an
+                           upper or lower-case letter, or a digit. The password must begin with a letter and contain at least one digit"
+                       autocomplete="current-password"
+                       required>
+
+                <label class="checkbox" for="passShowIcon" id="showHide"><input name="passShowIcon"
+                                                                                type="checkbox"
+                                                                                class="passw"
+                                                                                onclick="showHidePassword();">
+                    <span class="im fa fa-fw fa-eye  "></span></label>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    <div class="forgotten-password">
+        <div class="row">
+            <div class="col-45">
+                <div class="new-body">
+                    <button class="learn-more">
+                        <a href="/sign-up">
+                            <div class="circle">
+                                <span class="icon arrow"></span>
+                            </div>
+                            <p class="button-text">Sign Up</p></a>
+                    </button>
+                </div>
+            </div>
+            <div class="col-55">
+                <a href="/forgotten-password">
+                    <div class="box-1">
+                        <div class="btn btn-one" style="padding-top: 0">
+                            <span>Forgotten password</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endcomment %}
+
+{% endblock %}
