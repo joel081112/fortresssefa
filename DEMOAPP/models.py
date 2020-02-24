@@ -14,6 +14,7 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField, AbstractFormSubmission
+from django import forms
 
 
 class FormField(AbstractFormField):
@@ -25,7 +26,6 @@ class FormField(AbstractFormField):
 
 
 class ContactPage(AbstractEmailForm):
-
     # the landing page code
     intro = RichTextField(blank=True)
     thank_you_text = RichTextField(blank=True)
@@ -43,6 +43,11 @@ class ContactPage(AbstractEmailForm):
             FieldPanel("subject"),
         ], "Email"),
     ]
+
+
+class ContactPage(forms.Form):
+    firstname = forms.CharField(label='First name',
+                                widget=forms.TextInput(attrs={'placeholder': 'First name'}))
 
 
 class BlogIndexPage(Page):
@@ -201,6 +206,46 @@ class Products(Page):
     ]
 
     )
+
+    class Temp(Page):
+        search_fields = Page.search_fields + [
+
+        ]  # these are if adding a search to the website
+
+        # content tab panels
+        content_panels = Page.content_panels + [
+
+        ]
+
+        # what to call the panels on wagtail
+        edit_handler = TabbedInterface([
+            ObjectList(content_panels, heading='Content'),
+            ObjectList(Page.promote_panels, heading='SEO'),
+            ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
+            # classname settings adds the cog
+        ]
+
+        )
+
+        class Servicing(Page):
+            search_fields = Page.search_fields + [
+
+            ]  # these are if adding a search to the website
+
+            # content tab panels
+            content_panels = Page.content_panels + [
+
+            ]
+
+            # what to call the panels on wagtail
+            edit_handler = TabbedInterface([
+                ObjectList(content_panels, heading='Content'),
+                ObjectList(Page.promote_panels, heading='SEO'),
+                ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
+                # classname settings adds the cog
+            ]
+
+            )
 
 
 class ProTec(Page):
@@ -750,6 +795,7 @@ class HomePage(Page):
         ]
 
         )
+
 
 class HomePageGalleryImage(Orderable):
     page = ParentalKey(HomePage, on_delete=models.CASCADE, related_name='homepage_images')

@@ -37,6 +37,7 @@
     <link rel="stylesheet" href='/static/css/hamburgerAnim.css'>
     <link rel="stylesheet" href='/static/css/panel.css'>
     <link rel="stylesheet" href='/static/css/buttons.css'>
+    <link rel="stylesheet" href='/static/css/temp.css'>
 
     {#  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"#}
     {#  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">#}
@@ -53,6 +54,7 @@
 
 </head>
 <body class="{% block body_class %}{% endblock %}">
+
 {% wagtailuserbar %}
 
 <div class="{% block page-css-class %}{% endblock %}">
@@ -62,10 +64,19 @@
             {# header #}
             <div class="header">
 
-                <a href="/" class="menuLogo">
-                    <img src="/media/images/fortress_sefa_small_60px.max-165x165.jpg" id="smallLogo">
-                </a>
+                <div class="col-45">
+                    <a href="/" class="menuLogo logoT">
+                        <img src="/media/images/fortress_sefa_small_60px.max-165x165.jpg" id="smallLogo" width="auto"
+                             height="150px">
+                    </a>
 
+                    <p class="title">
+                        FORTRESS SEFA<br/>
+                    </p>
+                    <p class="title2">
+                        SECURITY ENVIRONMENT FIRE ARCHITECTURE
+                    </p>
+                </div>
                 <div class="hamburger">
                     <label class="toggle cd-btn js-cd-panel-trigger" id="menuDisplay" data-panel="main">
                         <input type="checkbox" id="myCheck">
@@ -99,7 +110,17 @@
             <header class="masthead mb-auto" id="menuPanel">
 
                 {# This the menu for the desktop panel. It is seperate to the mobile #}
-                {% include 'nav_menu.html' %}
+                {% include 'temp_nav_menu.html' %}
+                <div class="textytext">
+                    The Fortress SEFA product range covers the following product groups: <br/>
+                    <p class="texty">
+                    Security Enhancement<br/>
+                    Accredited with LPCB LPS1175 security range shutters & steel doors<br/>
+                    Accredited with Secure By Design Steel Doors, Shutters & Glazing<br/>
+                    Loading Bay equipment with complementary Shutter/Sectional door range <br/>
+                    All images can be found on our website/email as stated above<br/>
+                    </p>
+                </div>
             </header>
             <p id="fixedpoint">
                 46546487978
@@ -114,7 +135,7 @@
 
                 <div class="cd-panel__container">
                     <div class="cd-panel__content">
-                        {% include 'nav_menu.html' %}
+                        {% include 'temp_nav_menu.html' %}
 
                     </div> <!-- cd-panel__content -->
 
@@ -125,13 +146,7 @@
 
 
         </div>
-        {% if request.user.is_authenticated %}
-            Hi {{ request.user.username }} {{ request.user.firstname }}
-            <a href="{% url 'account_logout' %}" class="nav-link d-inline">Logout?</a>
-        {% else %}
-            hi guest
-            <a href="{% url 'account_login' %}" class="nav-link d-inline">Login</a>
-        {% endif %}
+
 
         <div class="block">
             {% block content %}{% endblock %}
@@ -143,61 +158,31 @@
     <footer class="mastfoot mt-auto">
         <div class="footer-contents">
             <div class="column left">
-                <div class="footerLinks">
-                    <p>
-                    <h1 id="legal"><a href="#0" class="effect-shine">Privacy </a></h1>
-                    ·
-                    <h1 id="legal"><a href="#0" class="effect-shine" id="legal"> Legal</a></h1>
-                    ·
-                    <h1 id="legal"><a href="#0" class="effect-shine" id="legal"> Cookies</a></h1>
-
-
-                    </p>
-                </div>
-                <div class="copyright">
-                    Fortress SEFA <img src="/media/original_images/copyright.png"
-                                       height="20px" width="20px">
-                    <script type="text/javascript">
-                        document.write(new Date().getFullYear());
-                    </script>
-                </div>
-
+                <img src="/media/original_images/maps.png" id="mapIcon" height="40px" width="40px">
+                6 Trench Road
+                <br>Newtownabbey, Northern Ireland
             </div>
             <div class="column middle">
                 <p>
-                    <img src="/media/original_images/maps.png" id="mapIcon" height="40px" width="40px">
-                    6 Trench Road
-                    <br>Newtownabbey, Northern Ireland
-                    <br><br>
                     <a href="tel:+44 (0)28 9034 2655" id="phoneLink">
                         <img src="/media/original_images/phone.png" id="phoneIcon" height="40px" width="40px">
                     </a>
-                    +44 (0)28 9034 2655<br><br><br>
-                    <a href="/contact-page" id="phoneLink">
-                        <img src="/media/original_images/email.png" id="mailIcon" height="40px"
-                             width="40px">
-                    </a>
-                    info@fortress-sefa.com
+                    +44 (0)28 9034 2655
                 </p>
             </div>
             <div class="column right">
-                <p>Blah blah blah blah 100 times </p>
-                <br>
-                <div class="hover10">
-                    <a href="https://www.linkedin.com/company/fortresssefa/" target="_blank" id="social">
-                        <figure id="social"><img src="/media/original_images/linkedIn.png" height="40px" width="40px">
-                        </figure>
-                    </a>
-                    <a href="https://www.facebook.com/Fortress-SEFA-367639123362658/" target="_blank" id="social">
-                        <figure id="social"><img src="/media/original_images/facebook.png" height="40px" width="40px">
-                        </figure>
-                    </a>
+                <a href="/contact-page" id="phoneLink">
+                    <img src="/media/original_images/email.png" id="mailIcon" height="40px"
+                         width="40px">
+                </a>
+                info@fortress-sefa.com
 
-                </div>
             </div>
-            <a href="#" class="scrollup">
-                <img src="/media/original_images/returnToTop.png" id="backToTop" height="40px" width="40px">
-            </a>
+            <div class="locations">
+                Belfast ● Dublin ● Dundee ● Glasgow ● London ● Manchester ● Warsaw ● Stockholm ● Uppsala ● Gothenburg ● Malmo
+
+
+            </div>
         </div>
 
     </footer>

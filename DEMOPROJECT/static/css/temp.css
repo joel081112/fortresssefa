@@ -1,22 +1,31 @@
+.all {
+    margin: 300px;
+}
+
+.phone {
+    float: right;
+}
+
 body {
-    background-image: url("/media/images/edited login background.jpg");
-    /* Background image is centered vertically and horizontally at all times */
-    background-position: center center;
+    background-image: url("/media/images/ASDA Shore Road - 2013 (3).jpg"),url("/media/images/Lever Test 1.jpg"),
 
-    /* Background image doesn't tile */
-    background-repeat: no-repeat;
-
-    /* Background image is fixed in the viewport so that it doesn't move when
-       the content's height is greater than the image's height */
+    url("/media/images/r1.2.jpg");
+    background-position: left, center, right;
+    background-repeat: no-repeat, no-repeat, no-repeat;
     background-attachment: fixed;
+    background-color: slategrey;
+}
 
-    /* This is what makes the background image rescale based
-       on the container's size */
-    background-size: cover;
+.textytext{
+    font-size: 20px;
+    width:50%;
+    float:right;
+    color: white;
+    padding-top: 30px;
+}
 
-    /* Set a background color that will be displayed
-       while the background image is loading */
-    background-color: #464646;
+.texty{
+    margin-left: 15px;
 }
 
 * {
@@ -212,48 +221,69 @@ input[type=submit]:hover {
     z-index: 100;
 }
 
-.forgotten-password .row{
+.forgotten-password .row {
     display: inherit;
 }
 
 @media (min-width: 1000px) {
-    .forgotten-password .btn{
-        width:200px;
+    .forgotten-password .btn {
+        width: 200px;
     }
-    .forgotten-password .box-1{
-        width:200px;
+
+    .forgotten-password .box-1 {
+        width: 200px;
     }
 }
 
 @media (max-width: 450px) {
-    .forgotten-password .btn{
-        width:180px;
+    .forgotten-password .btn {
+        width: 180px;
     }
-    .forgotten-password .box-1{
-        width:180px;
+
+    .forgotten-password .box-1 {
+        width: 180px;
     }
 }
 
-.sign-up .col-55{
-    float:right;
+.sign-up .col-55 {
+    float: right;
 }
 
-body .pass-confirm{
+body .pass-confirm {
     text-transform: none;
 }
 
-.field_error{
-    padding-top: 15px;
-    text-transform: none;
+.title {
+    font-size: 85px;
+    color: white;
 }
 
-.field_error .errorlist{
-    margin-bottom: 0
+.title2 {
+    font-size: 40px;
+    float: left;
+    color: lightgrey;
+}
+
+.logoT {
+    float: left;
+    display: inline-block;
+}
+
+.locations {
+    text-align: center;
+}
+
+footer .column {
+    height: 100px;
 }
 
 
-
-
+.Temp .menu {
+    padding: 8px;
+    max-width: 1510px;
+    margin-left: auto;
+    margin-right: 0;
+}
 
 
 

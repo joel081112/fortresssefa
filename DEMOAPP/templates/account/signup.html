@@ -2,20 +2,75 @@
 {% block page-css-class %}cover-container w-100 d-flex h-25 p-3 mx-auto flex-column{% endblock %}
 {% load i18n %}
 
-{% block head_title %}{% trans "Signup" %}{% endblock %}
+
+
+{% block title %} {% trans "Signup" %} | {% endblock %}
+{% block title_suffix %}
+    {% with self.get_site.site_name as site_name %}
+        {% if site_name %}| {{ site_name }}{% endif %}
+    {% endwith %}
+{% endblock %}
 
 {% block content %}
-<h1>{% trans "Sign Up" %}</h1>
+    <h1>{% trans "Sign Up" %}</h1>
+    <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
+    </p>
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+    <form method="post" action="{% url 'account_signup' %}">
+        {% csrf_token %}
 
-<form method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
+
+        {% for field in form %}
+            <div class="field_error">
+                {{ field.errors }}
+            </div>
+
+            <div class="row">
+
+                <div class="col-25">
+                    {{ field.label_tag }}
+
+                </div>
+                {% if forloop.counter == 8 %}
+                    <div class="col-75 wrapt">
+                        {{ field }}
+
+                        {#   class="text" type="password" id="pass" name="password"#}
+
+
+                        <label class="checkbox" for="passShowIcon"><input name="passShowIcon" type="checkbox"
+                                                                          class="passw"
+                                                                          onclick="showHidePassword();">
+                            <span class="im fa fa-fw fa-eye "></span></label>
+                    </div>
+                {% else %}
+
+                    <div class="col-75">
+                        {{ field }}
+                    </div>
+                {% endif %}
+            </div>
+            {% if forloop.counter == 2 %}
+                <hr>{% elif forloop.counter == 4 %}
+                <hr>{% elif forloop.counter == 7 %}
+                <hr>
+            {% endif %}
+
+        {% endfor %}
+
+        <div class="row">
+            <div class="col-45">
+                <div class="new-body">
+                    <button class="learn-more" type="submit">
+
+                        <div class="circle">
+                            <span class="icon arrow"></span>
+                        </div>
+                        <p class="button-text">{% trans "Sign Up" %}</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
 
 {% endblock %}

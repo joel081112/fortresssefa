@@ -1,0 +1,20 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block page-css-class %}cover-container w-100 d-flex p-3 mx-auto flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}Servicing{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA services that show what the company does for its customers
+
+{% endblock %}
+
+{% block content %}
+    <p>some service</p>
+{% endblock %}

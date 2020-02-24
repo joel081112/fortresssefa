@@ -20,6 +20,16 @@ function showHidePassword() {
   }
 }
 
+
+function showHidePassword_id() {
+  var x = document.getElementById("id_password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
 function showHidePasswordForm() {
   var x = document.getElementById("passNew");
   if (x.type === "password") {
