@@ -14,7 +14,8 @@
 
 {% block content %}
     <h1>{% trans "Sign Up" %}</h1>
-    <p class="signup-head">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
+    <p class="signup-head">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>
+        .{% endblocktrans %}
     </p>
 
     <form method="post" action="{% url 'account_signup' %}">
@@ -23,7 +24,16 @@
 
         {% for field in form %}
             <div class="field_error">
-                {{ field.errors }}
+                {% if form.errors %}
+                    {% for error in field.errors %}
+                        <p class="error-message">
+                            <strong>{{ error|escape }}</strong>
+                        </p>
+                    {% endfor %}
+                {% endif %}
+                {% if field.help_text %}
+                    <p class="help">{{ field.help_text|safe }}</p>
+                {% endif %}
             </div>
 
             <div class="row">
@@ -41,7 +51,7 @@
 
                         <label class="checkbox" for="passShowIcon"><input name="passShowIcon" type="checkbox"
                                                                           class="passw"
-                                                                          onclick="showHidePassword();">
+                                                                          onclick="showHidePasswordForm();">
                             <span class="im fa fa-fw fa-eye "></span></label>
                     </div>
                 {% else %}

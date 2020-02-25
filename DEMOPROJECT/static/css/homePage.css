@@ -163,5 +163,82 @@
 
 
 
+/*This is the start of drop*/
+
+.accountdrop{
+    float:right;
+    margin-right: 150px;
+}
+
+.dropdown
+{
+color: #555;
+margin: 3px -22px 0 0;
+position: relative;
+height: 17px;
+text-align:left;
+}
+
+.accountsub
+{
+background: #fff;
+position: absolute;
+top: -12px;
+left: -20px;
+z-index: 100;
+width: 135px;
+display: none;
+margin-left: 10px;
+padding: 40px 0 5px;
+border-radius: 6px;
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+.dropdown li a
+{
+color: #555555;
+display: block;
+font-weight: bold;
+padding: 6px 15px;
+cursor: pointer;
+text-decoration:none;
+}
+
+.dropdown li a:hover
+{
+background:#155FB0;
+color: #FFFFFF;
+text-decoration: none;
+}
+a.account
+{
+font-size: 11px;
+line-height: 16px;
+color: #555;
+position: absolute;
+z-index: 110;
+display: block;
+padding: 11px 0 0 20px;
+height: 28px;
+width: 115px;
+margin: -11px 0 0 -10px;
+text-decoration: none;
+background: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAECAYAAABCxiV9AAAAIklEQVQI12NgYGBwA+JsLBgkDgZuuCTQFSAk/v//j64ADgAE3AirQOYYigAAAABJRU5ErkJggg==) 116px 17px no-repeat;
+cursor:pointer;
+
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+.options
+{
+list-style:none;
+margin:0;
+font-size: 11px;
+padding: 11px 0 0 0;
+border-top:1px solid #dedede;
+}
+
+
+
+
 
 
