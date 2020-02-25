@@ -1,8 +1,9 @@
 {% extends "account/base.html" %}
 {% block page-css-class %}cover-container w-100 d-flex h-25 p-3 mx-auto flex-column{% endblock %}
 {% load i18n %}
-
-
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+{% endblock %}
 
 {% block title %} {% trans "Signup" %} | {% endblock %}
 {% block title_suffix %}
@@ -13,7 +14,7 @@
 
 {% block content %}
     <h1>{% trans "Sign Up" %}</h1>
-    <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
+    <p class="signup-head">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}
     </p>
 
     <form method="post" action="{% url 'account_signup' %}">

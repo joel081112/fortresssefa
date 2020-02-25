@@ -15,6 +15,7 @@ from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField, AbstractFormSubmission
 from django import forms
+from wagtailcaptcha.models import WagtailCaptchaEmailForm
 
 
 class FormField(AbstractFormField):
@@ -25,7 +26,7 @@ class FormField(AbstractFormField):
     )
 
 
-class ContactPage(AbstractEmailForm):
+class ContactPage(WagtailCaptchaEmailForm):
     # the landing page code
     intro = RichTextField(blank=True)
     thank_you_text = RichTextField(blank=True)
@@ -43,11 +44,6 @@ class ContactPage(AbstractEmailForm):
             FieldPanel("subject"),
         ], "Email"),
     ]
-
-
-class ContactPage(forms.Form):
-    firstname = forms.CharField(label='First name',
-                                widget=forms.TextInput(attrs={'placeholder': 'First name'}))
 
 
 class BlogIndexPage(Page):

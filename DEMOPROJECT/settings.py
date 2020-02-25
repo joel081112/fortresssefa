@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -40,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -60,6 +58,9 @@ INSTALLED_APPS = [
     'blog',
     'modelcluster',
     'taggit',
+
+    'captcha',
+    'wagtailcaptcha',
 ]
 
 SITE_ID = 1
@@ -179,3 +180,10 @@ ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_USERNAME_BLACKLIST = ["admin"]
 ACCOUNT_USER_MODEL_EMAIL_FIELD = "email"
 LOGIN_REDIRECT_URL = '/'
+
+# Recaptcha settings
+RECAPTCHA_PUBLIC_KEY = "6LdT_dsUAAAAAH2cTbodfKOVXYOgKbd4ys18wzzf"
+RECAPTCHA_PRIVATE_KEY = "6LdT_dsUAAAAANpNL07g_0pkSTz2zDlpq-v_K_uc"
+NOCAPTCHA = True
+
+GOOGLE_RECAPTCHA_SECRET_KEY = "6LdT_dsUAAAAANpNL07g_0pkSTz2zDlpq-v_K_uc"
