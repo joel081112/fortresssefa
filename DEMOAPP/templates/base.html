@@ -66,34 +66,28 @@
                     <img src="/media/images/fortress_sefa_small_60px.max-165x165.jpg" id="smallLogo">
                 </a>
 
-            {% if request.user.is_authenticated %}
                 <div class="accountdrop">
-                    <div class="dropdown">
-                        <a class="account">My Account</a>
+                    {% if request.user.is_authenticated %}
 
-                        <div class="accountsub">
-                            <ul class="options">
-                                <li><a href="#Dashboard">Account Overview</a></li>
-                                <li><a href="{% url 'account_change_password' %}">Change Password</a></li>
-                                <li><a href="{% url 'account_email' %}">Linked Emails</a></li>
-                                <li><a href="{% url 'account_logout' %}">Logout</a></li>
-                            </ul>
+                        <div class="dropdown">
+                            <a class="account">My Account</a>
+
+                            <div class="accountsub">
+                                <ul class="options">
+                                    <li><a href="#Dashboard">Account Overview</a></li>
+                                    <li><a href="{% url 'account_change_password' %}">Change Password</a></li>
+                                    <li><a href="{% url 'account_email' %}">Linked Emails</a></li>
+                                    <li><a href="{% url 'account_logout' %}">Logout</a></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
+
+                    {% else %}
+                        hi guest
+                        <a href="{% url 'account_login' %}" class="nav-link d-inline">Login</a>
+
+                    {% endif %}
                 </div>
-            {% else %}
-
-            {% endif %}
-
-                {% if request.user.is_authenticated %}
-                    Hi {{ request.user.username }} {{ request.user.firstname }} {{ request.user.email }}
-                    <a href="{% url 'account_logout' %}" class="nav-link d-inline">Logout?</a>
-                    <a href="{% url 'account_change_password' %}" class="nav-link d-inline">Reset password</a>
-                {% else %}
-                    hi guest
-                    <a href="{% url 'account_login' %}" class="nav-link d-inline">Login</a>
-
-                {% endif %}
 
                 <div class="hamburger">
                     <label class="toggle cd-btn js-cd-panel-trigger" id="menuDisplay" data-panel="main">

@@ -52,3 +52,11 @@ $('.passw').change(function(){
         $('.im').toggleClass('fa-eye');
     }
 });
+
+$('.passNew').change(function(){
+    if($(this).is(":checked")) {
+        $('.im1').toggleClass('fa-eye-slash');
+    } else {
+        $('.im1').toggleClass('fa-eye');
+    }
+});

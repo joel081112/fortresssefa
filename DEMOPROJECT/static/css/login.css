@@ -200,6 +200,15 @@ input[type=submit]:hover {
     height: 30px;
 }
 
+.passNew {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+}
+
 .col-75 label {
     padding-top: 16px;
     position: absolute;
