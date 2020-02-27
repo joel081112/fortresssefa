@@ -42,7 +42,7 @@
                     {{ field.label_tag }}
 
                 </div>
-                {% if forloop.counter == 8 %}
+                {% if forloop.counter == 3 %}
                     <div class="col-75 wrapt">
                         {{ field }}
 
@@ -51,7 +51,7 @@
 
                         <label class="checkbox" for="passShowIcon"><input name="passShowIcon" type="checkbox"
                                                                           class="passw"
-                                                                          onclick="showHidePassword();">
+                                                                          onclick="showHidePassword_id1();">
                             <span class="im fa fa-fw fa-eye "></span></label>
                     </div>
                 {% else %}
