@@ -3,6 +3,13 @@ from django.shortcuts import render, redirect, render_to_response
 from django.core.paginator import Paginator
 from django.core.mail import send_mail
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import TemplateView
+from django.http import HttpResponseRedirect
+from django.shortcuts import render
+from .forms import ProductForm
+from.models import Product
 
 
 def home(request):
@@ -34,3 +41,27 @@ def email_verification(request):
 
     return render(request, 'email_verification.html')
 
+
+class RestrictedView(LoginRequiredMixin, TemplateView):
+    template_name = ''
+    raise_exception = True
+    permission_denied_message = "You are not allowed here"
+
+
+def product_create_view(request):
+    form = ProductForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    context = {
+        'form': form
+    }
+    return render(request, "products/product_detail.html", context)
+
+
+def product_detail_view(request):
+    obj = Product.objects.get(id=1)
+
+    context = {
+        'object': obj
+    }
+    return render(request, "products/product_detail.html", context)

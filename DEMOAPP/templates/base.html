@@ -4,6 +4,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8"/>
+    <link rel="icon" type="image/png" href="/media/original_images/fortress_sefa_ico.png"/>
     <title>
         {% block title %}
             {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
@@ -70,7 +71,7 @@
                     {% if request.user.is_authenticated %}
 
                         <div class="dropdown">
-                            <a class="account">My Account</a>
+                            <a class="account">{{ request.user.username }} &#x25B2; &#x25BC;</a>
 
                             <div class="accountsub">
                                 <ul class="options">
@@ -86,9 +87,11 @@
                         </div>
 
                     {% else %}
-                        hi guest
-                        <a href="{% url 'account_login' %}" class="nav-link d-inline">Login</a>
+                        <div class="dropdown">
 
+                            <a class="account" href="{% url 'account_login' %}">Architect Login</a>
+
+                        </div>
                     {% endif %}
                 </div>
 

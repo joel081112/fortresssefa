@@ -38,6 +38,14 @@ function showHidePassword_id1() {
     x.type = "password";
   }
 }
+function showHidePassword_id2() {
+  var x = document.getElementById("id_password2");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
 function showHidePassword_idold() {
   var x = document.getElementById("id_oldpassword");
   if (x.type === "password") {
