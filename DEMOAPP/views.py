@@ -47,21 +47,3 @@ class RestrictedView(LoginRequiredMixin, TemplateView):
     raise_exception = True
     permission_denied_message = "You are not allowed here"
 
-
-def product_create_view(request):
-    form = ProductForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-    context = {
-        'form': form
-    }
-    return render(request, "products/product_detail.html", context)
-
-
-def product_detail_view(request):
-    obj = Product.objects.get(id=1)
-
-    context = {
-        'object': obj
-    }
-    return render(request, "products/product_detail.html", context)

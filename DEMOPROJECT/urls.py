@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 from django.conf import settings
-from django.conf.urls import include, url
+from django.conf.urls import include, url, handler404, handler500, handler403, handler400
 from django.conf.urls.static import static
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
@@ -26,16 +26,20 @@ from . import views
 
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
-    # path('', include('DEMOAPP.urls')),  # empty string because we want it to be mapped to the homepage
-    url(r'^account/', include('allauth.account.urls')),
-    re_path(r'^admin/', include(wagtailadmin_urls)),
-    re_path(r'^documents/', include(wagtaildocs_urls)),
-    re_path(r'', include(wagtail_urls)),
-    url(r'^fun/', views.fun),
+                  # path('admin/', admin.site.urls),
+                  # path('', include('DEMOAPP.urls')),  # empty string because we want it to be mapped to the homepage
+
+                  url(r'^yeet', views.handler404),
+                  url(r'^account/password/change/', views.password_redirect),
+                  url(r'^account/', include('allauth.account.urls')),
+                  url(r'^fun/', views.fun),
+                  re_path(r'^admin/', include(wagtailadmin_urls)),
+                  re_path(r'^documents/', include(wagtaildocs_urls)),
+                  re_path(r'', include(wagtail_urls)),
+
+                  # url(r��, include(wagtail_urls)),
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
-    # url(r��, include(wagtail_urls)),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
+handler404 = 'DEMOPROJECT.views.handler404'
+handler500 = 'DEMOPROJECT.views.handler500'

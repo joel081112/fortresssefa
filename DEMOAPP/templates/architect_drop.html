@@ -1,0 +1,24 @@
+<div class="accountdrop">
+    {% if request.user.is_authenticated %}
+
+        <div class="dropdown">
+            <a class="account">{{ request.user.username }} &#x25B2; &#x25BC;</a>
+
+            <div class="accountsub">
+                <ul class="options">
+                    <li><a href="#Dashboard">Account Details</a></li>
+                    <li><a href="{% url 'account_change_password' %}">Change Password</a></li>
+                    <li><a href="{% url 'account_email' %}">Linked Emails</a></li>
+                    <li><a href="{% url 'account_logout' %}">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+
+    {% else %}
+        <div class="dropdown">
+
+            <a class="account" href="{% url 'account_login' %}">Architect Login</a>
+
+        </div>
+    {% endif %}
+</div>

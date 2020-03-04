@@ -67,33 +67,7 @@
                     <img src="/media/images/fortress_sefa_small_60px.max-165x165.jpg" id="smallLogo">
                 </a>
 
-                <div class="accountdrop">
-                    {% if request.user.is_authenticated %}
 
-                        <div class="dropdown">
-                            <a class="account">{{ request.user.username }} &#x25B2; &#x25BC;</a>
-
-                            <div class="accountsub">
-                                <ul class="options">
-                                    <li><a href="#Dashboard">Account Overview</a></li>
-                                    <li><a href="{% url 'account_change_password' %}">Change Password</a></li>
-                                    <li><a href="{% url 'account_reset_password' %}">Reset Password</a></li>
-                                    <li><a href="{% url 'account_email' %}">Linked Emails</a></li>
-                                    <li><a href="{% url 'account_logout' %}">Logout</a></li>
-
-                                    <li><a href="{% url 'account_reset_password_from_key_done' %}">temp</a></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    {% else %}
-                        <div class="dropdown">
-
-                            <a class="account" href="{% url 'account_login' %}">Architect Login</a>
-
-                        </div>
-                    {% endif %}
-                </div>
 
                 <div class="hamburger">
                     <label class="toggle cd-btn js-cd-panel-trigger" id="menuDisplay" data-panel="main">
@@ -177,13 +151,7 @@
 
                     </p>
                 </div>
-                <div class="copyright">
-                    Fortress SEFA <img src="/media/original_images/copyright.png"
-                                       height="20px" width="20px">
-                    <script type="text/javascript">
-                        document.write(new Date().getFullYear());
-                    </script>
-                </div>
+                {% include 'copyright_code.html' %}
 
             </div>
             <div class="column middle">
@@ -250,6 +218,7 @@
 <script src="../../static/js/about.js"></script>
 <script src="../../static/js/url_extract.js"></script>
 <script src="../../static/js/account.js"></script>
+<script src="../../static/js/anime.min.js"></script>
 
 {#<script type="text/javascript" src="{% static 'js/match-height.min.js' %}"></script>#}
 {% block extra_js %}

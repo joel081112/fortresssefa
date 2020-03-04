@@ -9,7 +9,5 @@ from wagtail.core import urls as wagtail_urls
 from allauth.account import *
 from . import views
 
-
 urlpatterns = [
-
 ]

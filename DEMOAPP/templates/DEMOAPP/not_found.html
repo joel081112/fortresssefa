@@ -1,0 +1,20 @@
+{% extends "../not_found_base.html" %}
+{% load static %}
+{% block page-css-class %}cover-container w-100 d-flex h-25 p-3 flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}Not Found{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+    <link rel="stylesheet" href='/static/css/not_found.css'>
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA cant find the page you are looking for. 404 not found
+
+{% endblock %}
+
+{% block content %}
+    Fortress cannot find that page
+{% endblock %}

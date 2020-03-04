@@ -183,12 +183,74 @@ class AboutGalleryImage(Orderable):
     ]
 
 
-class Product(models.Model):
-    title = models.CharField(max_length=120)
-    description = models.TextField(blank=True, null=True)
-
-
 class Products(Page):
+    # content tab panels
+    content_panels = Page.content_panels + [
+
+    ]
+
+    # what to call the panels on wagtail
+    edit_handler = TabbedInterface([
+        ObjectList(content_panels, heading='Content'),
+        ObjectList(Page.promote_panels, heading='SEO'),
+        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
+        # classname settings adds the cog
+    ]
+
+    )
+
+
+class NotFound(Page):
+    # content tab panels
+    content_panels = Page.content_panels + [
+
+    ]
+
+    # what to call the panels on wagtail
+    edit_handler = TabbedInterface([
+        ObjectList(content_panels, heading='Content'),
+        ObjectList(Page.promote_panels, heading='SEO'),
+        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
+        # classname settings adds the cog
+    ]
+
+    )
+
+    class PermissionDenied(Page):
+        # content tab panels
+        content_panels = Page.content_panels + [
+
+        ]
+
+        # what to call the panels on wagtail
+        edit_handler = TabbedInterface([
+            ObjectList(content_panels, heading='Content'),
+            ObjectList(Page.promote_panels, heading='SEO'),
+            ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
+            # classname settings adds the cog
+        ]
+
+        )
+
+
+class Temp(Page):
+    # content tab panels
+    content_panels = Page.content_panels + [
+
+    ]
+
+    # what to call the panels on wagtail
+    edit_handler = TabbedInterface([
+        ObjectList(content_panels, heading='Content'),
+        ObjectList(Page.promote_panels, heading='SEO'),
+        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
+        # classname settings adds the cog
+    ]
+
+    )
+
+
+class Servicing(Page):
     search_fields = Page.search_fields + [
 
     ]  # these are if adding a search to the website
@@ -207,46 +269,6 @@ class Products(Page):
     ]
 
     )
-
-    class Temp(Page):
-        search_fields = Page.search_fields + [
-
-        ]  # these are if adding a search to the website
-
-        # content tab panels
-        content_panels = Page.content_panels + [
-
-        ]
-
-        # what to call the panels on wagtail
-        edit_handler = TabbedInterface([
-            ObjectList(content_panels, heading='Content'),
-            ObjectList(Page.promote_panels, heading='SEO'),
-            ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-            # classname settings adds the cog
-        ]
-
-        )
-
-        class Servicing(Page):
-            search_fields = Page.search_fields + [
-
-            ]  # these are if adding a search to the website
-
-            # content tab panels
-            content_panels = Page.content_panels + [
-
-            ]
-
-            # what to call the panels on wagtail
-            edit_handler = TabbedInterface([
-                ObjectList(content_panels, heading='Content'),
-                ObjectList(Page.promote_panels, heading='SEO'),
-                ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-                # classname settings adds the cog
-            ]
-
-            )
 
 
 class ProTec(Page):
@@ -270,7 +292,7 @@ class ProTec(Page):
     )
 
 
-class LoginArchitect(Page):
+class ArchitectPage(Page):
     search_fields = Page.search_fields + [
 
     ]  # these are if adding a search to the website
@@ -289,106 +311,6 @@ class LoginArchitect(Page):
     ]
 
     )
-
-    class ArchitectPage(Page):
-        search_fields = Page.search_fields + [
-
-        ]  # these are if adding a search to the website
-
-        # content tab panels
-        content_panels = Page.content_panels + [
-
-        ]
-
-        # what to call the panels on wagtail
-        edit_handler = TabbedInterface([
-            ObjectList(content_panels, heading='Content'),
-            ObjectList(Page.promote_panels, heading='SEO'),
-            ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-            # classname settings adds the cog
-        ]
-
-        )
-
-        class EmailVerification(Page):
-            search_fields = Page.search_fields + [
-
-            ]  # these are if adding a search to the website
-
-            # content tab panels
-            content_panels = Page.content_panels + [
-
-            ]
-
-            # what to call the panels on wagtail
-            edit_handler = TabbedInterface([
-                ObjectList(content_panels, heading='Content'),
-                ObjectList(Page.promote_panels, heading='SEO'),
-                ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-                # classname settings adds the cog
-            ]
-
-            )
-
-            class ForgottenPassword(Page):
-                search_fields = Page.search_fields + [
-
-                ]  # these are if adding a search to the website
-
-                # content tab panels
-                content_panels = Page.content_panels + [
-
-                ]
-
-                # what to call the panels on wagtail
-                edit_handler = TabbedInterface([
-                    ObjectList(content_panels, heading='Content'),
-                    ObjectList(Page.promote_panels, heading='SEO'),
-                    ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-                    # classname settings adds the cog
-                ]
-
-                )
-
-                class PasswordReset(Page):
-                    search_fields = Page.search_fields + [
-
-                    ]  # these are if adding a search to the website
-
-                    # content tab panels
-                    content_panels = Page.content_panels + [
-
-                    ]
-
-                    # what to call the panels on wagtail
-                    edit_handler = TabbedInterface([
-                        ObjectList(content_panels, heading='Content'),
-                        ObjectList(Page.promote_panels, heading='SEO'),
-                        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-                        # classname settings adds the cog
-                    ]
-
-                    )
-
-    class SignUp(Page):
-        search_fields = Page.search_fields + [
-
-        ]  # these are if adding a search to the website
-
-        # content tab panels
-        content_panels = Page.content_panels + [
-
-        ]
-
-        # what to call the panels on wagtail
-        edit_handler = TabbedInterface([
-            ObjectList(content_panels, heading='Content'),
-            ObjectList(Page.promote_panels, heading='SEO'),
-            ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-            # classname settings adds the cog
-        ]
-
-        )
 
 
 class DoorSpeed(Page):
@@ -776,26 +698,6 @@ class HomePage(Page):
     ]
 
     )
-
-    class ConfirmEmail(Page):
-        search_fields = Page.search_fields + [
-
-        ]  # these are if adding a search to the website
-
-        # content tab panels
-        content_panels = Page.content_panels + [
-
-        ]
-
-        # what to call the panels on wagtail
-        edit_handler = TabbedInterface([
-            ObjectList(content_panels, heading='Content'),
-            ObjectList(Page.promote_panels, heading='SEO'),
-            ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-            # classname settings adds the cog
-        ]
-
-        )
 
 
 class HomePageGalleryImage(Orderable):
