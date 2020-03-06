@@ -39,3 +39,11 @@
 #info{
     font-size: 100px;
 }
+
+.form {
+  padding: 1em 2em;
+  color: #000000;
+  margin: 0.4em 0;
+  font-size: 2em;
+  font-weight: bold;
+}

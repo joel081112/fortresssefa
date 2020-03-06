@@ -1,3 +1,4 @@
+from django.contrib.auth.views import redirect_to_login
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render, redirect, render_to_response
 from django.core.paginator import Paginator
@@ -12,6 +13,7 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.views.generic import UpdateView
 from django.http import Http404
 from django.template import RequestContext
+from django.urls import reverse
 
 
 def fun(request):
@@ -23,14 +25,32 @@ def password_redirect(request):
     return response
 
 
-def handler404(request, exception, template_name="not_found.html"):
-    response = render_to_response(template_name)
-    response.status_code = 404
-    return response
-
-
 def handler500(request, *args, **argv):
     response = render_to_response('500.html', {},
                                   context_instance=RequestContext(request))
     response.status_code = 500
     return response
+
+
+class PasswordResetDoneView(TemplateView):
+    template_name = (
+        "404")
+
+
+pg_404 = PasswordResetDoneView.as_view()
+
+
+@login_required
+def view_architect_page(request):
+    args = {'user': request.user}
+    return render(request, 'DEMOAPP/architect_page.html', args)
+
+
+@login_required
+def view_home_page(request):
+    args = {'user': request.user}
+    return render(request, 'DEMOAPP/home_page.html', args)
+
+
+def redirect_to_my_auth(request):
+    return redirect_to_login(reverse('wagtailadmin_home'), login_url='account/login')

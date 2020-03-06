@@ -1,21 +1,27 @@
 import json
 
+from django import forms
 from django.core.serializers.json import DjangoJSONEncoder
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db import models
-# Create your models here.
-# database stuff
-# class base and function
+from django.shortcuts import redirect
+from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+
 from modelcluster.fields import ParentalKey
+
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel, TabbedInterface, ObjectList, \
     StreamFieldPanel, FieldRowPanel
 from wagtail.core.fields import RichTextField
 from wagtail.core.models import Page, Orderable
-from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField, AbstractFormSubmission
-from django import forms
 from wagtailcaptcha.models import WagtailCaptchaEmailForm
+from wagtail.documents.models import Document
+from wagtail.documents.edit_handlers import DocumentChooserPanel
+from wagtail.users.forms import UserEditForm, UserCreationForm
 
 
 class FormField(AbstractFormField):
@@ -299,7 +305,10 @@ class ArchitectPage(Page):
 
     # content tab panels
     content_panels = Page.content_panels + [
-
+        MultiFieldPanel(
+            [InlinePanel('architect_pdf', max_num=20, min_num=0, label="architect pdf")],
+            heading="architect pdf"
+        ),
     ]
 
     # what to call the panels on wagtail
@@ -308,9 +317,32 @@ class ArchitectPage(Page):
         ObjectList(Page.promote_panels, heading='SEO'),
         ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
         # classname settings adds the cog
-    ]
+    ])
 
+
+class ArchitectDownloads(Orderable):
+    page = ParentalKey(ArchitectPage, on_delete=models.CASCADE, related_name='architect_pdf')
+    architect_pdf = models.ForeignKey(
+        'wagtaildocs.Document',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
     )
+    image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+        related_name='+'
+    )
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        ImageChooserPanel('image'),
+        FieldPanel('caption'),
+        DocumentChooserPanel('architect_pdf'),
+    ]
 
 
 class DoorSpeed(Page):

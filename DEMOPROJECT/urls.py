@@ -18,18 +18,19 @@ from django.urls import path, re_path
 from django.conf import settings
 from django.conf.urls import include, url, handler404, handler500, handler403, handler400
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
 from wagtail.core import urls as wagtail_urls
 from allauth.account import *
 from . import views
 
-
 urlpatterns = [
                   # path('admin/', admin.site.urls),
                   # path('', include('DEMOAPP.urls')),  # empty string because we want it to be mapped to the homepage
-
-                  url(r'^yeet', views.handler404),
+                  path('404/', TemplateView.as_view(template_name="DEMOAPP/404.html")),
+                  # path('architect-page/', views.view_architect_page),
+                  # path('', views.view_home_page),
                   url(r'^account/password/change/', views.password_redirect),
                   url(r'^account/', include('allauth.account.urls')),
                   url(r'^fun/', views.fun),
@@ -40,6 +41,5 @@ urlpatterns = [
                   # url(r��, include(wagtail_urls)),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-
-handler404 = 'DEMOPROJECT.views.handler404'
+handler404 = TemplateView.as_view(template_name="DEMOAPP/404.html")
 handler500 = 'DEMOPROJECT.views.handler500'

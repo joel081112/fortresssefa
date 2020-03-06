@@ -5,8 +5,10 @@
 {% block body_class %}Architect Page{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
- <link rel="stylesheet" href='/static/css/homePage.css'>
+    <link rel="stylesheet" href='/static/css/homePage.css'>
     <link rel="stylesheet" href='/static/css/contactUs.css'>
+    <link rel="stylesheet" href='/static/css/w3.css'>
+    <link rel="stylesheet" href='/static/css/blog.css'>
 
     <link rel="stylesheet" href='/static/css/architect.css'>
 
@@ -22,18 +24,46 @@
 {% endblock %}
 
 {% block content %}
-    <p>Document upload</p>
-    <p>Welcome <label id="demo2"></label></p>
+    <div class="top_image">
+        <p id="intro">
+            {{ page.title }}
+            <br/>
 
-<form action="/your-name/" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
-</form>
+        </p>
+    </div>
+
+    <div class="all-blocks">
+        {% for download in page.architect_pdf.all %} {# loop over the ArchitectDownload objects #}
+
+            <div class="document">
+                <div class="w3-card-4 w3-margin w3-white">
+
+                    {% with doc=download.architect_pdf %} {# retrieve the Document object for each one #}
+                        {% image doc.image fill-150x150-c100 %}
+                        <p>{{ doc.caption }}</p>
+                        <div class="w3-container">
+                            {{ doc.title }}
+                        </div>
+                        <div class="download">
+                            <a href="{{ doc.url }}" class="smooth-over-button noDecoration">
+                                <i class="fa fa-download"></i>
+                                <p class="btn-txt">PDF</p>
+                            </a>
+
+                        </div>
+
+                    {% endwith %}
+
+
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
 
 
 
-  {% comment %} <script async defer
+    {% comment %} <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
     </script>{% endcomment %}
 {% endblock %}

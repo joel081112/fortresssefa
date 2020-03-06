@@ -23,6 +23,7 @@ SECRET_KEY = '#11yayz=k%wd-5(evc8s%h1j^u*o$8z#^bjv9=d^i!2iv&*k^z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
+# DEBUG = False
 DEBUG = True
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
@@ -75,6 +76,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'wagtail.core.middleware.SiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
+    'DEMOPROJECT.middleware.LoginRequiredMiddleware',
 ]
 
 ROOT_URLCONF = 'DEMOPROJECT.urls'
@@ -163,7 +165,9 @@ EMAIL_HOST_USER = EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
 EMAIL_PORT = EMAIL_PORT
 
-LOGIN_URL = '/login/'
+PASSWORD_REQUIRED_TEMPLATE = 'myapp/password_required.html'
+
+LOGIN_URL = '/account/login'
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 2
@@ -187,3 +191,4 @@ RECAPTCHA_PRIVATE_KEY = "6LdT_dsUAAAAANpNL07g_0pkSTz2zDlpq-v_K_uc"
 NOCAPTCHA = True
 
 GOOGLE_RECAPTCHA_SECRET_KEY = "6LdT_dsUAAAAANpNL07g_0pkSTz2zDlpq-v_K_uc"
+

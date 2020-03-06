@@ -1,3 +1,98 @@
-body{
+body {
     text-transform: none;
 }
+
+ul {
+    list-style-type: none;
+}
+
+.all-blocks {
+    margin: 0 auto;
+    padding: 53px 20px;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: flex-start;
+}
+
+.document {
+
+}
+
+.document .w3-card-4 {
+
+    text-align: center;
+    border-radius: 15px;
+    height: 250px;
+    position: relative;
+    display: block;
+
+}
+
+.download .btn-txt {
+    display: inline;
+}
+
+.document .w3-margin {
+    margin: 16px 40px !important;
+}
+
+.download {
+
+}
+
+.document .btn {
+    width: 70%;
+}
+
+.download {
+    margin-top: 150px;
+    bottom: 0;
+    text-decoration: none;
+}
+
+
+#intro {
+    padding-top: 10%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+    vertical-align: center;
+    font-size: 2.5vw;
+}
+
+.top_image {
+    position: relative;
+    background-size: cover;
+    background-image: url(/media/images/workstation.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    height: 75vh;
+    width: 100vw;
+    margin-left: -15px;
+}
+
+
+@media (max-width: 800px) {
+    .document .w3-card-4 {
+        width: 75%;
+        height: 150px;
+    }
+
+    .download .btn-txt {
+        display: none;
+
+    }
+
+    .download {
+        margin-top: 50px;
+
+    }
+}
+
+
