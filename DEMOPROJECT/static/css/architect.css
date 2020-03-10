@@ -14,22 +14,28 @@ ul {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-start;
     align-content: flex-start;
 }
 
-.document {
-
+.document .w3-container {
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 10px;
 }
 
 .document .w3-card-4 {
-
+    min-width: 200px;
     text-align: center;
     border-radius: 15px;
-    height: 250px;
+    min-height: 250px;
     position: relative;
     display: block;
 
+}
+
+.document img {
+    margin-top: 15px;
 }
 
 .download .btn-txt {
@@ -37,19 +43,14 @@ ul {
 }
 
 .document .w3-margin {
-    margin: 16px 40px !important;
+    margin: 40px !important;
 }
 
 .download {
 
 }
 
-.document .btn {
-    width: 70%;
-}
-
 .download {
-    margin-top: 150px;
     bottom: 0;
     text-decoration: none;
 }
@@ -66,6 +67,14 @@ ul {
     font-size: 2.5vw;
 }
 
+#caption {
+    max-width: 300px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
 .top_image {
     position: relative;
     background-size: cover;
@@ -77,11 +86,17 @@ ul {
     margin-left: -15px;
 }
 
+.document hr{
+    width: 20%;
+    margin: 0 auto;
+    border: 1px solid green;
+}
+
 
 @media (max-width: 800px) {
     .document .w3-card-4 {
         width: 75%;
-        height: 150px;
+        min-height: 150px;
     }
 
     .download .btn-txt {

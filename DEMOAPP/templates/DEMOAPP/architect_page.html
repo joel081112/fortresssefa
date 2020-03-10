@@ -36,14 +36,23 @@
         {% for download in page.architect_pdf.all %} {# loop over the ArchitectDownload objects #}
 
             <div class="document">
-                <div class="w3-card-4 w3-margin w3-white">
+                <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
 
+
+                    {% image download.image fill-150x150-c100 %}
                     {% with doc=download.architect_pdf %} {# retrieve the Document object for each one #}
-                        {% image doc.image fill-150x150-c100 %}
-                        <p>{{ doc.caption }}</p>
+
                         <div class="w3-container">
                             {{ doc.title }}
                         </div>
+
+                    {% endwith %}
+
+                  <hr>
+                    <p id="caption">{{ download.caption }}</p>
+
+                    {% with doc=download.architect_pdf %} {# retrieve the Document object for each one #}
+
                         <div class="download">
                             <a href="{{ doc.url }}" class="smooth-over-button noDecoration">
                                 <i class="fa fa-download"></i>

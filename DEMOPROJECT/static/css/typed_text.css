@@ -1,4 +1,11 @@
+.product_head{
+  width:100vw;
+  background-color: #fffce8;
+  margin-left: 0;
+}
+
 .css-typing{
+  margin: 50px 0 50px 0;
     align-content: center;
     justify-content: center;
 }
@@ -11,7 +18,7 @@
   overflow: hidden;
 }
 .css-typing p:nth-child(1) {
-  width: 17em;
+  width: 32em;
   -webkit-animation: type 2s steps(40, end);
   animation: type 2s steps(40, end);
   -webkit-animation-fill-mode: forwards;
@@ -19,7 +26,7 @@
 }
 
 .css-typing p:nth-child(2) {
-  width: 5em;
+  width: 30em;
   opacity: 0;
   -webkit-animation: type2 2s steps(40, end);
   animation: type2 2s steps(40, end);
@@ -30,10 +37,10 @@
 }
 
 .css-typing p:nth-child(3) {
-  width: 5em;
+  width: 20em;
   opacity: 0;
-  -webkit-animation: type3 5s steps(20, end), blink .5s step-end infinite alternate;
-  animation: type3 5s steps(20, end), blink .5s step-end infinite alternate;
+  -webkit-animation: type3 3s steps(30, end), blink .55s step-end infinite alternate;
+  animation: type3 3s steps(30, end), blink .55s step-end infinite alternate;
   -webkit-animation-delay: 4s;
   animation-delay: 4s;
   -webkit-animation-fill-mode: forwards;
@@ -130,3 +137,4 @@
     border-color: tranparent;
   }
 }
+

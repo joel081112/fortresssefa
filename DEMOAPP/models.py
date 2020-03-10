@@ -282,8 +282,18 @@ class ProTec(Page):
 
     ]  # these are if adding a search to the website
 
+    intro = RichTextField(blank=True)
+
     # content tab panels
     content_panels = Page.content_panels + [
+        FieldPanel(
+            'intro',
+            classname="full"
+        ),
+        MultiFieldPanel(
+            [InlinePanel('protec_images', min_num=0, label="protec images")],
+            heading="protec Images"
+        ),
 
     ]
 
@@ -296,6 +306,23 @@ class ProTec(Page):
     ]
 
     )
+
+
+class ProTecGalleryImage(Orderable):
+    page = ParentalKey(ProTec, on_delete=models.CASCADE, related_name='protec_images')
+    image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=False,
+        on_delete=models.CASCADE,
+        related_name='+'
+    )
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        ImageChooserPanel('image'),
+        FieldPanel('caption'),
+    ]
 
 
 class ArchitectPage(Page):

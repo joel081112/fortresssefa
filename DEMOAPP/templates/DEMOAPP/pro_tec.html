@@ -5,7 +5,8 @@
 {% block body_class %}Pro Tec{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
-
+    <link rel="stylesheet" href='/static/css/blog.css'>
+    <link rel="stylesheet" href='/static/css/w3.css'>
 {% endblock %}
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
@@ -16,5 +17,89 @@
 {% endblock %}
 
 {% block content %}
-    <p>colours</p>
+    <div class="protec">
+        <div class="slant-in">
+            <div class="banner">
+                <div class="clipped">
+                    <div class="product_head">
+                        <div class="css-typing">
+                            <p>
+                                View below information on {{ page.title }}
+                            </p>
+                            <p>
+                                Pro-Tec Powder coating
+
+                            </p>
+
+                            <p>
+                                We do a large range of colours
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="intro"  data-aos="fade-down">
+            {{ page.intro|richtext }}
+        </div>
+    </div>
+
+    {# start carousel #}
+    {# second attempt #}
+    <hr/>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            {% for item in page.protec_images.all %}
+                <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter|add:"-1" }}"
+                    class="{% if forloop.counter == 1 %}active{% endif %}">
+                </li>
+
+            {% endfor %}
+        </ul>
+        <div class="blog">
+            <div class="carousel-inner">
+                {% for item in page.protec_images.all %}
+                    {% image item.image fill-250x250 as img %}
+
+                    <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
+                        <img src="{{ img.url }}" class="d-block w-100" alt="{{ img.alt }}">
+
+
+                        <div class="imageCounter">
+                            <img src="/media/original_images/camera.png" id="display">
+                            {{ forloop.counter }} of {{ page.protec_images.all.count }}
+
+                        </div>
+                        <div class="protec-title">
+                            {{ item.caption }}
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {# end carousel #}
+
+
+
+    <div class="gallery thumbs">
+        <button class="gallery nav-arrow"></button>
+        <div class="gallery">
+            <div class="container">
+                {% for item in page.protec_images.all %}
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter|add:"-1" }}"
+                        class="{% if forloop.counter == 1 %}active{% endif %}">
+                        {% image item.image fill-100x50-c100 %}
+                        <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
+                        <p id="colour-title">{{ item.caption }}</p></li>
+                {% endfor %}
+            </div>
+        </div>
+        <button class="gallery nav-arrow"></button>
+    </div>
+    <hr/>
+
 {% endblock %}

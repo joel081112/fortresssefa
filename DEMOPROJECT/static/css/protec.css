@@ -1,0 +1,48 @@
+.protec-title {
+    position: absolute;
+    font-size: 75px;
+    opacity: 0.75;
+    background: #000000;
+    color: #ffffff;
+    padding-right: 5px;
+    display: inline-block;
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    clear: both;
+    line-height: 90px;
+    text-align: center;
+
+
+
+}
+.protec .banner {
+    background-image: url('/media/images/protec8.jpg');
+
+  background-position: bottom;
+}
+
+.intro {
+    margin: 40px 20vw;
+    text-align: center;
+    columns: 300px 3;
+    font-family: Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+@media (max-width: 800px) {
+    .protec-title {
+        font-size: 50px;
+        line-height: 60px;
+    }
+
+    .intro {
+        margin: 40px 10vw;
+        text-align: center;
+    }
+}
+
+#colour-title {
+    margin: 5px;
+}
