@@ -145,7 +145,8 @@ body {
 
 
 .block {
-    margin: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     padding-top: 50px;
 z-index: auto;
 }
@@ -199,6 +200,9 @@ footer p {
 
 #backToTop {
     float: right;
+    margin-right: 2%;
+    height:40px;
+    width:40px;
 }
 
 * {
@@ -247,7 +251,7 @@ footer .row:after {
 @media (max-width: 640px) {
 
     .block {
-        margin: 0 15px 15px 15px;
+        margin: 0 15px 15px 0;
         padding: 18% 0 0 0;
     }
 
@@ -314,10 +318,12 @@ footer .row:after {
     }
 }
 
+
+
 @media (max-width: 410px) {
 
     .block {
-        margin: 0 15px 15px 15px;
+        margin: 0 15px 15px 0;
         padding: 22% 0 0 0;
     }
 }

@@ -93,6 +93,7 @@ Primary style
         width: 33%;
         height: auto;
         max-height: 50px;
+        margin-left: 2%;
     }
 
     .cd-panel--from-right .cd-panel__header {

@@ -15,19 +15,18 @@
     text-align: center;
 
 
-
 }
+
 .protec .banner {
     background-image: url('/media/images/protec8.jpg');
-
-  background-position: bottom;
+    background-position: center;
 }
 
 .intro {
-    margin: 40px 20vw;
+    padding: 40px 20vw;
     text-align: center;
-    columns: 300px 3;
     font-family: Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
 }
 
 
@@ -38,7 +37,7 @@
     }
 
     .intro {
-        margin: 40px 10vw;
+        padding: 40px 10vw;
         text-align: center;
     }
 }
@@ -46,3 +45,97 @@
 #colour-title {
     margin: 5px;
 }
+
+.image-container1 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding-bottom: 100px;
+}
+
+.image-container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+@media (max-width: 1100px) {
+    .image-container2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+.images-2 {
+    margin: 0 auto;
+    width: 70vw;
+    max-width: 1200px;
+
+}
+
+
+.full-image {
+    max-width: 1200px;
+    width: 70vw;
+    height: auto;
+    margin: 50px auto;
+}
+
+.tall-images-left, .tall-images-right {
+    height: 50vh;
+    width: auto;
+
+    padding-bottom: 50px;
+}
+
+
+.wide-images-left, .wide-images-right {
+    height: auto;
+    width: 36vw;
+    padding-bottom: 50px;
+}
+
+@media (max-width: 800px) {
+    .wide-images-left, .wide-images-right {
+        height: auto;
+        width: 70vw;
+    }
+}
+
+.contact {
+    text-align: left;
+    margin-left: 20vw;
+    margin-bottom: 200px;
+    margin-top: 200px;
+}
+
+.contact h1 {
+    font-size: 64px;
+    line-height: 1.0625;
+    font-weight: 700;
+    letter-spacing: -.009em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    margin: 50px 0;
+}
+
+.intro h1 {
+    font-size: 64px;
+    line-height: 1.0625;
+    font-weight: 700;
+    letter-spacing: -.009em;
+    font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    margin: 50px 0;
+}
+
+.contact p {
+    color: gray;
+    font-size: 17px;
+    line-height: 1.23536;
+    font-weight: 600;
+}
+
+
+

@@ -247,4 +247,12 @@ h1 {
 
 /* carousel ending*/
 
+.rich-text{
+    margin: 0 2%;
+}
+
+#disqus_thread{
+    margin: 0 2%;
+}
+
 
