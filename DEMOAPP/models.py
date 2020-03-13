@@ -256,6 +256,111 @@ class Temp(Page):
     )
 
 
+class Privacy(Page):
+    # content tab panels
+    content_panels = Page.content_panels + [
+
+    ]
+
+    # what to call the panels on wagtail
+    edit_handler = TabbedInterface([
+        ObjectList(content_panels, heading='Content'),
+        ObjectList(Page.promote_panels, heading='SEO'),
+        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
+        # classname settings adds the cog
+    ]
+
+    )
+
+
+class DeleteAccount(Page):
+    # content tab panels
+    content_panels = Page.content_panels + [
+
+    ]
+
+    # what to call the panels on wagtail
+    edit_handler = TabbedInterface([
+        ObjectList(content_panels, heading='Content'),
+        ObjectList(Page.promote_panels, heading='SEO'),
+        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
+        # classname settings adds the cog
+    ]
+
+    )
+
+
+class OverviewAccount(Page):
+    # content tab panels
+    content_panels = Page.content_panels + [
+
+    ]
+
+    # what to call the panels on wagtail
+    edit_handler = TabbedInterface([
+        ObjectList(content_panels, heading='Content'),
+        ObjectList(Page.promote_panels, heading='SEO'),
+        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
+        # classname settings adds the cog
+    ]
+
+    )
+
+
+class UserDeleted(Page):
+    # content tab panels
+    content_panels = Page.content_panels + [
+
+    ]
+
+    # what to call the panels on wagtail
+    edit_handler = TabbedInterface([
+        ObjectList(content_panels, heading='Content'),
+        ObjectList(Page.promote_panels, heading='SEO'),
+        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
+        # classname settings adds the cog
+    ]
+
+    )
+
+
+class Legal(Page):
+    # content tab panels
+    content_panels = Page.content_panels + [
+        MultiFieldPanel(
+            [InlinePanel('legal_images', min_num=0, label="legal images")],
+            heading="legal Images"
+        ),
+    ]
+
+    # what to call the panels on wagtail
+    edit_handler = TabbedInterface([
+        ObjectList(content_panels, heading='Content'),
+        ObjectList(Page.promote_panels, heading='SEO'),
+        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
+        # classname settings adds the cog
+    ]
+
+    )
+
+
+class LegalGalleryImage(Orderable):
+    page = ParentalKey(Legal, on_delete=models.CASCADE, related_name='legal_images')
+    image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=False,
+        on_delete=models.CASCADE,
+        related_name='+'
+    )
+    caption = models.CharField(blank=True, max_length=30)
+
+    panels = [
+        ImageChooserPanel('image'),
+        FieldPanel('caption'),
+    ]
+
+
 class Servicing(Page):
     search_fields = Page.search_fields + [
 

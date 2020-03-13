@@ -1,0 +1,104 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block page-css-class %}cover-container w-100 d-flex h-100 p-3 mx-auto flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}Legal{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA legal page. Find information on lagalities such as human rights .
+
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="human-rights alternative-colour">
+        <h1>
+            Human Rights
+        </h1>
+        <h4>
+            We are committed to upholding the human rights of all those who work with us
+            and for us and comply with international conventions regarding human rights
+            and enforced or child labour.
+        </h4>
+        <h4>
+            What it means:
+        </h4>
+        <h6>
+            Basic human rights, as defined by the United Nations Universal Declaration of Human Rights, include
+            the right to life, liberty and security; equal rights of men and women; the right to protection under the
+            law from discrimination, slavery, torture, or inhumane or degrading treatment; and freedom of speech,
+            thought, conscience and religion.
+
+        </h6>
+        <div class="text">
+            <h6>
+                We always:
+            </h6>
+
+            <ul>
+                <li>create safe working environments for all</li>
+                <li> uphold the principles defined by the United Nations Universal Declaration of Human Rights
+                </li>
+                <li>follow the labour laws of the countries in which we operate
+                    and protect the rights of all workers, including migrant
+                    workers
+                </li>
+                <li>comply with minimum wage and minimum age requirements</li>
+                <li>adhere to regulations regarding maximum working hours</li>
+                <li>listen when legitimate concerns are raised, and whenever
+                    possible take appropriate action to address them
+                </li>
+                <li>encourage employees to become involved in improving team
+                    performance
+                </li>
+                <li>ensure adequate welfare facilities are available</li>
+            </ul>
+
+            <h6>
+                We never:
+            </h6>
+
+            <ul>
+                <li>exploit anyone
+                </li>
+                <li>allow anyone to be exploited in our name</li>
+                <li>do business with any individual, or organisation that does not
+                    support basic human rights or adhere to our own Global
+                    Code of Conduct/standards for our employees. This includes
+                    any JV partners, particularly where we are the JV operator or
+                    hold a majority interest
+                </li>
+                <li>influence an employee’s decision to join or not to join a trade
+                    union
+                </li>
+            </ul>
+
+        </div>
+        <div class="download">
+            <a href="/media/documents/FS Human Rights Doc (HURI-PD).pdf" class="smooth-over-button noDecoration">
+                <i class="fa fa-download"></i>
+                <p class="btn-txt">PDF version</p>
+            </a>
+
+        </div>
+    </div>
+    <div class="certificates">
+        <div class="gallery thumbs">
+            <div class="gallery">
+                <div class="container">
+                    {% for item in page.legal_images.all %}
+                            {% image item.image max-200x200 %}
+                            <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

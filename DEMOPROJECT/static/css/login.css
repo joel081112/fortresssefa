@@ -92,19 +92,19 @@ input[type=submit]:hover {
     opacity: 0.96;
 }
 
-@media (min-width: 1000px) {
+@media  only screen and  (min-width: 1000px) {
     .signup {
         margin: 2% 30%;
     }
 }
 
-@media (min-width: 800px)  and (max-width: 1000px) {
+@media  only screen and (min-width: 800px)  and (max-width: 1000px) {
     .signup {
         margin: 2% 15%;
     }
 }
 
-@media (min-width: 580px)  and (max-width: 800px) {
+@media  only screen and (min-width: 580px)  and (max-width: 800px) {
     .signup {
         margin: 2% 10%;
     }
@@ -114,7 +114,7 @@ input[type=submit]:hover {
     }
 }
 
-@media (max-width: 580px) {
+@media  only screen and (max-width: 580px) {
     .signup {
         margin: 2% 5%;
     }
@@ -225,7 +225,7 @@ input[type=submit]:hover {
     display: inherit;
 }
 
-@media (min-width: 1000px) {
+@media  only screen and (min-width: 1000px) {
     .forgotten-password .btn{
         width:200px;
     }
@@ -234,7 +234,7 @@ input[type=submit]:hover {
     }
 }
 
-@media (max-width: 450px) {
+@media  only screen and (max-width: 450px) {
     .forgotten-password .btn{
         width:180px;
     }

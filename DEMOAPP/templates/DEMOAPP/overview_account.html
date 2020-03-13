@@ -1,0 +1,59 @@
+{% extends "account/base.html" %}
+
+{% load static %}
+{% block page-css-class %}cover-container w-100 d-flex h-25 p-3 flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}Overview Account{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA About us. Links to socials and linkedin is included in this page.
+
+{% endblock %}
+{% block content %}
+    <h1>{{ page.title }}</h1>
+
+    {% if request.user.is_authenticated %}
+
+        <p>Here is your account over view {{ request.user.username }}</p>
+
+    {% endif %}
+
+    <form action="{% pageurl page %}" method="POST">
+        {% csrf_token %}
+        <div class="forgotten-password">
+            <div class="row">
+                <div class="col-45">
+                    <div class="new-body">
+                        <button class="learn-more" type="submit">
+                            <div class="circle">
+                                <span class="icon arrow"></span>
+                            </div>
+                            <p class="button-text">Change</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    {{ request.user.first_name }}<br/>
+    {{ request.user.last_name }}<br/>
+    {{ request.user.email }}<br/>
+    {{ request.user.password }}<br/>
+    {{ request.user.groups }}<br/>
+    {{ request.user.user_permissions }}<br/>
+    {{ request.user.is_staff }}<br/>
+    {{ request.user.is_active }}<br/>
+    {{ request.user.is_superuser }}<br/>
+    {{ request.user.last_login }}<br/>
+    {{ request.user.date_joined }}<br/>
+
+    {{ request.user.get_full_name }}<br/>
+    {{ request.user.get_user_permissions }}<br/>
+
+
+{% endblock %}

@@ -22,6 +22,18 @@
     background-position: center;
 }
 
+@media (max-width: 640px) {
+
+    .protec .banner {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-top: 20vh;
+
+    }
+
+}
+
 .intro {
     padding: 40px 20vw;
     text-align: center;
@@ -30,7 +42,7 @@
 }
 
 
-@media (max-width: 800px) {
+@media only screen and (max-width: 800px) {
     .protec-title {
         font-size: 50px;
         line-height: 60px;
@@ -60,7 +72,7 @@
     align-items: flex-start;
 }
 
-@media (max-width: 1100px) {
+@media only screen and (max-width: 1100px) {
     .image-container2 {
         display: flex;
         flex-wrap: wrap;
@@ -85,10 +97,13 @@
 }
 
 .tall-images-left, .tall-images-right {
-    height: 50vh;
+    max-height: 50vh;
+    max-width: 70vw;
+    height: auto;
     width: auto;
 
     padding-bottom: 50px;
+
 }
 
 
@@ -98,7 +113,7 @@
     padding-bottom: 50px;
 }
 
-@media (max-width: 800px) {
+@media only screen and  (max-width: 800px) {
     .wide-images-left, .wide-images-right {
         height: auto;
         width: 70vw;
@@ -136,6 +151,20 @@
     line-height: 1.23536;
     font-weight: 600;
 }
+
+@media only screen and (max-width: 800px) {
+    .intro h1, .contact h1 {
+        font-size: 45px;
+    }
+
+    .contact p {
+        font-size: 13px;
+    }
+}
+
+
+
+
 
 
 

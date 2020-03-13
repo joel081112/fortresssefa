@@ -198,7 +198,7 @@ ol > .column a {
     font-size: 13px;
 }
 
-@media (min-width: 400px)  and (max-width: 640px) {
+@media  only screen and  (min-width: 400px)  and (max-width: 640px) {
     /* Create three equal columns that floats next to each other */
     .column {
         float: left;
@@ -216,7 +216,7 @@ ol > .column a {
 }
 
 /*THIS IS THE PROBLEM FOR THE BUTTON*/
-@media (min-width: 640px) {
+@media  only screen and (min-width: 640px) {
 
     .menu a:focus,
     .menu a:hover {
@@ -317,7 +317,7 @@ ol > .column a {
 }
 
 
-@media (min-width: 775px) {
+@media  only screen and (min-width: 775px) {
     .menu > ol > li {
         width: 18%;
         font-size: 18px;

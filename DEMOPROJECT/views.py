@@ -14,6 +14,7 @@ from django.views.generic import UpdateView
 from django.http import Http404
 from django.template import RequestContext
 from django.urls import reverse
+from django.contrib.auth import logout
 
 
 def fun(request):
@@ -54,3 +55,9 @@ def view_home_page(request):
 
 def redirect_to_my_auth(request):
     return redirect_to_login(reverse('wagtailadmin_home'), login_url='account/login')
+
+
+def delete_user(request):
+    request.user.delete()
+    logout(request)
+    return redirect('/')

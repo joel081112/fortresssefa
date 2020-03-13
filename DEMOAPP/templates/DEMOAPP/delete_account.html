@@ -1,0 +1,55 @@
+{% extends "account/base.html" %}
+
+{% load static %}
+{% block page-css-class %}cover-container w-100 d-flex h-25 p-3 flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}Delete Account{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA About us. Links to socials and linkedin is included in this page.
+
+{% endblock %}
+{% block content %}
+    <h1>{{ page.title }}</h1>
+
+    {% if request.user.is_authenticated %}
+
+        <p>Do you want to delete the account "{{ request.user.username }}"?</p>
+        {{ request.user.first_name }}
+    {% endif %}
+
+
+    {% if perms.auth.delete_user %}
+            <button>Delete user!</button>
+        {% endif %}
+
+
+
+    <form action="/delete-confirm/" method="POST">
+        {% csrf_token %}
+
+        <div class="forgotten-password">
+            <div class="row">
+                <div class="col-45">
+                    <div class="new-body">
+                        <button class="learn-more" type="submit">
+                            <div class="circle">
+                                <span class="icon arrow"></span>
+                            </div>
+                            <p class="button-text">
+                                <i class="fa fa-exclamation-triangle"></i>
+                                DELETE ACCOUNT</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+{% endblock %}

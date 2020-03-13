@@ -18,7 +18,7 @@ img {
     animation-delay: 1s;
 }
 
-@media (max-width: 640px) {
+@media only screen and(max-width: 640px) {
     .flex-container {
         padding-top: 20px;
     }
@@ -29,7 +29,7 @@ img {
     margin-left: 2%;
 }
 
-@media (min-width: 500px) {
+@media only screen and(min-width: 500px) {
     .flex-item {
         flex-basis: 320px;
     }
@@ -508,7 +508,7 @@ img {
     }
 }
 
-@media (max-width: 425px) {
+@media only screen and (max-width: 425px) {
     .post-wrapper .post .post-content .post-title {
         font-size: 25px;
     }

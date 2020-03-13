@@ -297,13 +297,13 @@ Primary style
         border: 1px solid #d5d5d5;
     }
 
-    @media (max-height: 820px) {
+    @media  only screen and  (max-height: 820px) {
         .cd-panel__content {
             overflow-y: auto;
             width: 100%;
         }
     }
-    @media (max-width: 400px) {
+    @media  only screen and (max-width: 400px) {
         .cd-panel__content {
             overflow-y: auto;
             width: 100%;
@@ -328,7 +328,7 @@ Primary style
 
 }
 
-@media (min-width: 640px) {
+@media  only screen and (min-width: 640px) {
     .mobilePanel {
         display: none;
     }

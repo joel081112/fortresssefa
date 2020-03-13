@@ -84,6 +84,8 @@ ul {
     height: 75vh;
     width: 100vw;
     margin-left: -15px;
+
+    margin-top: 15px;
 }
 
 .document hr{
@@ -93,7 +95,7 @@ ul {
 }
 
 
-@media (max-width: 800px) {
+@media only screen and  (max-width: 800px) {
     .document .w3-card-4 {
         width: 75%;
         min-height: 150px;

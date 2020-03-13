@@ -31,6 +31,7 @@ urlpatterns = [
                   path('404/', TemplateView.as_view(template_name="DEMOAPP/404.html")),
                   # path('architect-page/', views.view_architect_page),
                   # path('', views.view_home_page),
+                  url('delete-confirm/', views.delete_user, name='delete-user'),
                   url(r'^account/password/change/', views.password_redirect),
                   url(r'^account/', include('allauth.account.urls')),
                   url(r'^fun/', views.fun),

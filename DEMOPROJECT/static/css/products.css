@@ -24,7 +24,7 @@
     clip-path: polygon(-15px 0, 110% 0, 110% 90%, -15px 100%);
 }
 
-@media (max-width: 640px) {
+@media  only screen and  (max-width: 640px) {
     .slant-in{
         padding-top:20px;
     }

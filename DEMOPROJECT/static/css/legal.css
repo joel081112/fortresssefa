@@ -1,0 +1,20 @@
+.human-rights{
+    padding: 10%;
+}
+
+.human-rights .text{
+    margin-left: 5%;
+}
+
+.human-rights h4{
+    padding-top: 2%;
+}
+
+.human-rights ul{
+    max-width: 800px;
+    list-style: inherit;
+}
+
+.certificates{
+    padding: 10%;
+}
