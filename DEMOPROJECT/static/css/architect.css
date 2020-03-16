@@ -111,5 +111,11 @@ ul {
 
     }
 }
+#open{
+    display: inline;
 
+}
 
+#close{
+    display: none;
+}

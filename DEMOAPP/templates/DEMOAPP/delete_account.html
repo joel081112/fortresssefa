@@ -9,6 +9,8 @@
 {% endblock %}
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
+
+    <script src="../../static/js/account.js"></script>
 {% endblock %}
 {% block meta_descr %}
     Fortress SEFA About us. Links to socials and linkedin is included in this page.
@@ -25,19 +27,19 @@
 
 
     {% if perms.auth.delete_user %}
-            <button>Delete user!</button>
-        {% endif %}
+        <button>Delete user!</button>
+    {% endif %}
 
 
 
-    <form action="/delete-confirm/" method="POST">
+    <form action="deleted/" method="POST">
         {% csrf_token %}
 
         <div class="forgotten-password">
             <div class="row">
                 <div class="col-45">
                     <div class="new-body">
-                        <button class="learn-more" type="submit">
+                        <button class="learn-more" type="submit" onclick="return confirm('Are you sure?')">
                             <div class="circle">
                                 <span class="icon arrow"></span>
                             </div>

@@ -1,6 +1,6 @@
 //for the text that is hidden at starts SEFA
 $(function () {
-    if (window.location.pathname==='/') {
+    if (window.location.pathname === '/') {
         var text = $(".text");
         $(window).scroll(function () {
             var scroll = $(window).scrollTop();
@@ -70,6 +70,7 @@ $(function () {
         $(fadeOnL[i]).animate({'opacity': '1', 'margin-left': '100px'}, 1000);
     }
 });
+
 
 
 
