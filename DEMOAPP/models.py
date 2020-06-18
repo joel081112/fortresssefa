@@ -281,6 +281,31 @@ class Privacy(Page):
     )
 
 
+class FAQ(Page):
+    intro = RichTextField(
+        blank=True,  # required field or not
+        verbose_name="Intro"  # called on wagtail site
+    )
+
+    content_panels = Page.content_panels + [
+
+        FieldPanel(
+            'intro',
+            classname="full"
+        ),
+    ]
+
+    # what to call the panels on wagtail
+    edit_handler = TabbedInterface([
+        ObjectList(content_panels, heading='Content'),
+        ObjectList(Page.promote_panels, heading='SEO'),
+        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
+        # classname settings adds the cog
+    ]
+
+    )
+
+
 class DeleteAccount(Page):
     # content tab panels
     content_panels = Page.content_panels + [

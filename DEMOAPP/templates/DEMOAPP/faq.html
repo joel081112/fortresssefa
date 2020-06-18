@@ -1,10 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "../base.html" %}
+{% load static %}
+{% block page-css-class %}cover-container w-100 d-flex h-100 p-3 mx-auto flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}FAQ{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
 
-</body>
-</html>
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA FAQ page. These are common questions which we can answer on the spot
+
+{% endblock %}
+
+{% block content %}
+
+
+
+    <div class="human-rights alternative-colour">
+        <h1>Fortress {{ page.title }}</h1>
+
+        <div class="homeInfo1">
+            {{ page.intro|richtext }}
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

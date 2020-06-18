@@ -1,5 +1,31 @@
 /* Set the size of the div element that contains the map */
 #map {
-        height: 400px;  /* The height is 400 pixels */
-        width: 100%;  /* The width is the width of the web page */
-       }
+    height: 500px; /* The height is 400 pixels */
+    width: 100%; /* The width is the width of the web page */
+}
+
+#extra {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+    vertical-align: center;
+    font-size: 15px;
+}
+
+
+.top_header {
+    position: relative;
+    background-size: cover;
+    background-image: url(/media/images/workstation.jpg);
+    background-position: center;
+    height: 60vh;
+    width: 100vw;
+    margin-left: -15px;
+    margin-top: 15px;
+}
+
+.links_contact {
+    border-bottom: 2px solid blue;
+}
