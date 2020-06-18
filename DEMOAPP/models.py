@@ -257,9 +257,17 @@ class Temp(Page):
 
 
 class Privacy(Page):
-    # content tab panels
+    intro = RichTextField(
+        blank=True,  # required field or not
+        verbose_name="Intro"  # called on wagtail site
+    )
+
     content_panels = Page.content_panels + [
 
+        FieldPanel(
+            'intro',
+            classname="full"
+        ),
     ]
 
     # what to call the panels on wagtail
@@ -326,11 +334,26 @@ class UserDeleted(Page):
 
 class Legal(Page):
     # content tab panels
+    intro = RichTextField(
+        blank=True,  # required field or not
+        verbose_name="Intro"  # called on wagtail site
+    )
+
     content_panels = Page.content_panels + [
+
+        FieldPanel(
+            'intro',
+            classname="full"
+        ),
+        MultiFieldPanel(
+            [InlinePanel('legal_pdf', max_num=20, min_num=0, label="legal pdf")],
+            heading="legal pdf"
+        ),
         MultiFieldPanel(
             [InlinePanel('legal_images', min_num=0, label="legal images")],
             heading="legal Images"
         ),
+
     ]
 
     # what to call the panels on wagtail
@@ -359,6 +382,51 @@ class LegalGalleryImage(Orderable):
         ImageChooserPanel('image'),
         FieldPanel('caption'),
     ]
+
+
+class LegalDownloads(Orderable):
+    page = ParentalKey(Legal, on_delete=models.CASCADE, related_name='legal_pdf')
+    legal_pdf = models.ForeignKey(
+        'wagtaildocs.Document',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        FieldPanel('caption'),
+        DocumentChooserPanel('legal_pdf'),
+    ]
+
+
+class Cookies(Page):
+    # content tab panels
+    intro = RichTextField(
+        blank=True,  # required field or not
+        verbose_name="Intro"  # called on wagtail site
+    )
+
+    content_panels = Page.content_panels + [
+
+        FieldPanel(
+            'intro',
+            classname="full"
+        ),
+
+    ]
+
+    # what to call the panels on wagtail
+    edit_handler = TabbedInterface([
+        ObjectList(content_panels, heading='Content'),
+        ObjectList(Page.promote_panels, heading='SEO'),
+        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
+        # classname settings adds the cog
+    ]
+
+    )
 
 
 class Servicing(Page):

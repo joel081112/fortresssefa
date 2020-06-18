@@ -1,0 +1,29 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block page-css-class %}cover-container w-100 d-flex h-100 p-3 mx-auto flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}Cookies{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA cookies page
+
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="human-rights alternative-colour">
+        <h1>{{ page.title }}</h1>
+        <div class="homeInfo1">
+            {{ page.intro|richtext }}
+        </div>
+    </div>
+
+
+{% endblock %}

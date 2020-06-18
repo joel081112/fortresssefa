@@ -19,7 +19,7 @@
 
 
     <div class="human-rights alternative-colour">
-        <h1>
+        {% comment %}<h1>
             Human Rights
         </h1>
         <h4>
@@ -87,15 +87,37 @@
                 <p class="btn-txt">PDF version</p>
             </a>
 
+        </div>{% endcomment %}
+
+
+        <div class="homeInfo1">
+            {{ page.intro|richtext }}
         </div>
+
+        {% for download in page.legal_pdf.all %}
+            {% with doc=download.legal_pdf %} {# retrieve the Document object for each one #}
+
+                <div class="download">
+                    <a href="{{ doc.url }} " target="_new" class="smooth-over-button noDecoration">
+                        <i class="fa fa-download"></i>
+                        <p class="btn-txt">PDF version</p>
+                    </a>
+
+                </div>
+
+            {% endwith %}
+        {% endfor %}
+
     </div>
+
+
     <div class="certificates">
         <div class="gallery thumbs">
             <div class="gallery">
                 <div class="container">
                     {% for item in page.legal_images.all %}
-                            {% image item.image max-200x200 %}
-                            <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
+                        {% image item.image max-200x200 %}
+                        <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
                     {% endfor %}
                 </div>
             </div>

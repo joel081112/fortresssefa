@@ -25,7 +25,7 @@
 {% block content %} {#    html stuff sits in here#}
 
 
-{% include 'architect_drop.html' %}
+    {% include 'architect_drop.html' %}
 
     <ul class="text hidden">
         <li>S</li>
@@ -76,9 +76,9 @@
 
     <div class="overview">
         <article class="item">
-                <div class="homeInfo2">
-                    {{ page.security|richtext }}
-                </div>
+            <div class="homeInfo2">
+                {{ page.security|richtext }}
+            </div>
             <div class="homeIm1 responsiveness">
                 {% for item in page.homepage_images.all|slice:"1" %}
                     {% image item.image fill-800x800-c100 %}
@@ -121,6 +121,15 @@
                 {% endfor %}
             </div>
         </article>
+    </div>
+
+    <div class="cookie-banner" style="display: none">
+        <p>
+            We use cookies to ensure that we give you the best experience on our website. If you continue to use this site
+            we will assume that you are happy with it. Check out our
+            <a href="/cookies">cookie policy</a> here
+        </p>
+        <button class="close">&times;</button>
     </div>
 
 

@@ -18,7 +18,8 @@
 {% block content %}
     <div class="human-rights alternative-colour">
         <h1>Privacy policy <i class="fas fa-user-secret"></i></h1>
-        <h4>1. Introduction</h4>
+
+        {% comment %}<h4>1. Introduction</h4>
         <div class="text">
             <ul>
                 <li>1.1 We are committed to safeguarding the privacy of Fortress-SEFA visitors and service users.</li>
@@ -39,7 +40,8 @@
         <div class="text">
             <ul>
                 <li>This document was created using a template from SEQ Legal .com
-                    <a href="https://seqlegal.com/free-legal-documents/privacy-policy" target="_blank"><i class="fas fa-link"></i>
+                    <a href="https://seqlegal.com/free-legal-documents/privacy-policy" target="_blank"><i
+                            class="fas fa-link"></i>
                     </a>
                 </li>
             </ul>
@@ -154,7 +156,7 @@
                     This helps us to provide you with a good experience when you browse our website
                     and also allows us to improve our site. For detailed information on the cookies we use
                     and the purposes for which we use them see our Cookie policy
-                    <a href="/coookies">
+                    <a href="/cookies">
                         <i class="fas fa-cookie-bite" style="font-size: 30px"></i>
                     </a>.
                 </li>
@@ -233,6 +235,10 @@
                 </li>
             </ul>
 
+        </div>{% endcomment %}
+
+        <div class="homeInfo1">
+            {{ page.intro|richtext }}
         </div>
 
     </div>
