@@ -27,105 +27,107 @@
 
     {% include 'architect_drop.html' %}
 
-    <ul class="text hidden">
-        <li>S</li>
-        <li class="ghost">e</li>
-        <li class="ghost">c</li>
-        <li class="ghost">u</li>
-        <li class="ghost">r</li>
-        <li class="ghost">i</li>
-        <li class="ghost">t</li>
-        <li class="ghost">y</li>
+    <div class="home">
+        <ul class="text hidden">
+            <li>S</li>
+            <li class="ghost">e</li>
+            <li class="ghost">c</li>
+            <li class="ghost">u</li>
+            <li class="ghost">r</li>
+            <li class="ghost">i</li>
+            <li class="ghost">t</li>
+            <li class="ghost">y</li>
 
-        <li class="spaced">E</li>
-        <li class="ghost">n</li>
-        <li class="ghost">v</li>
-        <li class="ghost">i</li>
-        <li class="ghost">r</li>
-        <li class="ghost">o</li>
-        <li class="ghost">n</li>
-        <li class="ghost">m</li>
-        <li class="ghost">e</li>
-        <li class="ghost">n</li>
-        <li class="ghost">t</li>
+            <li class="spaced">E</li>
+            <li class="ghost">n</li>
+            <li class="ghost">v</li>
+            <li class="ghost">i</li>
+            <li class="ghost">r</li>
+            <li class="ghost">o</li>
+            <li class="ghost">n</li>
+            <li class="ghost">m</li>
+            <li class="ghost">e</li>
+            <li class="ghost">n</li>
+            <li class="ghost">t</li>
 
-        <li class="spaced">F</li>
-        <li class="ghost">i</li>
-        <li class="ghost">r</li>
-        <li class="ghost">e</li>
+            <li class="spaced">F</li>
+            <li class="ghost">i</li>
+            <li class="ghost">r</li>
+            <li class="ghost">e</li>
 
-        <li class="spaced">A</li>
-        <li class="ghost">r</li>
-        <li class="ghost">c</li>
-        <li class="ghost">h</li>
-        <li class="ghost">i</li>
-        <li class="ghost">t</li>
-        <li class="ghost">e</li>
-        <li class="ghost">c</li>
-        <li class="ghost">t</li>
-        <li class="ghost">u</li>
-        <li class="ghost">r</li>
-        <li class="ghost">e</li>
-    </ul>
+            <li class="spaced">A</li>
+            <li class="ghost">r</li>
+            <li class="ghost">c</li>
+            <li class="ghost">h</li>
+            <li class="ghost">i</li>
+            <li class="ghost">t</li>
+            <li class="ghost">e</li>
+            <li class="ghost">c</li>
+            <li class="ghost">t</li>
+            <li class="ghost">u</li>
+            <li class="ghost">r</li>
+            <li class="ghost">e</li>
+        </ul>
 
-    <div class="homeInfo1 fadeonload">
-        {{ page.intro|richtext }}
-    </div>
+        <div class="homeInfo1 fadeonload">
+            {{ page.intro|richtext }}
+        </div>
 
 
+        <div class="overview">
+            <article class="item">
+                <div class="homeInfo2">
+                    {{ page.security|richtext }}
+                </div>
+                <div class="homeIm1 responsiveness">
+                    {% for item in page.homepage_images.all|slice:"1" %}
+                        {% image item.image fill-800x800-c100 %}
+                        <p>{{ item.caption }}</p>
+                    {% endfor %}
+                </div>
+            </article>
+            <article class="item fadeInBlock">
+                <div class="homeInfo3">
+                    {{ page.environment|richtext }}
+                </div>
+                <div class="homeIm2">
+                    {% for item in page.homepage_images.all|slice:"1:2" %}
+                        {% image item.image fill-800x800-c100 %}
+                        <p>{{ item.caption }}</p>
+                    {% endfor %}
+                </div>
+            </article>
 
-    <div class="overview">
-        <article class="item">
-            <div class="homeInfo2">
-                {{ page.security|richtext }}
-            </div>
-            <div class="homeIm1 responsiveness">
-                {% for item in page.homepage_images.all|slice:"1" %}
-                    {% image item.image fill-800x800-c100 %}
-                    <p>{{ item.caption }}</p>
-                {% endfor %}
-            </div>
-        </article>
-        <article class="item fadeInBlock">
-            <div class="homeInfo3">
-                {{ page.environment|richtext }}
-            </div>
-            <div class="homeIm2">
-                {% for item in page.homepage_images.all|slice:"1:2" %}
-                    {% image item.image fill-800x800-c100 %}
-                    <p>{{ item.caption }}</p>
-                {% endfor %}
-            </div>
-        </article>
+            <article class="item fadeInBlock">
+                <div class="homeInfo4">
+                    {{ page.fire|richtext }}
+                </div>
+                <div class="homeIm3">
+                    {% for item in page.homepage_images.all|slice:"2:3" %}
+                        {% image item.image fill-800x800-c100 %}
+                        <p>{{ item.caption }}</p>
+                    {% endfor %}
+                </div>
+            </article>
 
-        <article class="item fadeInBlock">
-            <div class="homeInfo4">
-                {{ page.fire|richtext }}
-            </div>
-            <div class="homeIm3">
-                {% for item in page.homepage_images.all|slice:"2:3" %}
-                    {% image item.image fill-800x800-c100 %}
-                    <p>{{ item.caption }}</p>
-                {% endfor %}
-            </div>
-        </article>
-
-        <article class="item fadeInBlock">
-            <div class="homeInfo5">
-                {{ page.architectural|richtext }}
-            </div>
-            <div class="homeIm4">
-                {% for item in page.homepage_images.all|slice:"3:4" %}
-                    {% image item.image fill-800x800-c100 %}
-                    <p>{{ item.caption }}</p>
-                {% endfor %}
-            </div>
-        </article>
+            <article class="item fadeInBlock">
+                <div class="homeInfo5">
+                    {{ page.architectural|richtext }}
+                </div>
+                <div class="homeIm4">
+                    {% for item in page.homepage_images.all|slice:"3:4" %}
+                        {% image item.image fill-800x800-c100 %}
+                        <p>{{ item.caption }}</p>
+                    {% endfor %}
+                </div>
+            </article>
+        </div>
     </div>
 
     <div class="cookie-banner" style="display: none">
         <p>
-            We use cookies to ensure that we give you the best experience on our website. If you continue to use this site
+            We use cookies to ensure that we give you the best experience on our website. If you continue to use this
+            site
             we will assume that you are happy with it. Check out our
             <a href="/cookies">cookie policy</a> here
         </p>

@@ -1,32 +1,53 @@
-.human-rights{
+.human-rights {
     padding: 10%;
 }
 
-.human-rights ul{
+.human-rights ul {
     margin-left: 5%;
 }
+.human-rights ol li{
+    padding-top: 25px;
+}
 
-.human-rights h4{
+#legalHeading{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.human-rights h4 {
     padding-top: 2%;
 }
 
-.human-rights ul{
+.human-rights ul {
     max-width: 800px;
     list-style: inherit;
 }
 
-.human-rights h1{
+.human-rights h1 {
     margin: -100px 30% 100px;
     font-size: 400%;
 }
 
-.certificates{
+.human-rights h2{
+    margin: 0 0 20px;
+}
+
+@media only screen and (max-width: 640px) {
+
+    .human-rights h1 {
+        margin: -100px 30% 100px;
+    }
+}
+
+.certificates {
     padding: 10%;
 }
 
-#section11 li{
+#section11 li {
     list-style: none;
 }
-.section8, .section6{
+
+.section8, .section6 {
     list-style: none;
 }

@@ -149,16 +149,20 @@ class ContactUs(Page):
 
 
 class About(Page):
+    extra = RichTextField(blank=True)
+
     search_fields = Page.search_fields + [
 
     ]  # these are if adding a search to the website
 
     # content tab panels
     content_panels = Page.content_panels + [
+        FieldPanel('extra'),
         MultiFieldPanel(
             [InlinePanel('client_images', max_num=30, min_num=1, label="client images")],
             heading="client Images"
         ),
+
     ]
 
     # what to call the panels on wagtail

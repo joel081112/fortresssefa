@@ -18,7 +18,12 @@
 {% block content %}
 
 
+
     <div class="human-rights alternative-colour">
+        <h1 id="legalHeading">
+            {{ page.title }}
+        </h1>
+
         {% comment %}<h1>
             Human Rights
         </h1>
@@ -94,19 +99,29 @@
             {{ page.intro|richtext }}
         </div>
 
-        {% for download in page.legal_pdf.all %}
-            {% with doc=download.legal_pdf %} {# retrieve the Document object for each one #}
 
-                <div class="download">
-                    <a href="{{ doc.url }} " target="_new" class="smooth-over-button noDecoration">
-                        <i class="fa fa-download"></i>
-                        <p class="btn-txt">PDF version</p>
-                    </a>
+        <div class="all-blocks">
+            {% for download in page.legal_pdf.all %} {# loop over the ArchitectDownload objects #}
 
+                <div class="document">
+                    <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
+                        {% with doc=download.legal_pdf %} {# retrieve the Document object for each one #}
+                            <div class="w3-container">
+                                {{ doc.title }}
+                            </div>
+
+                            <div class="download">
+                                <a href="{{ doc.url }}" class="smooth-over-button noDecoration">
+                                    <i class="fa fa-download"></i>
+                                    <p class="btn-txt">PDF Version</p>
+                                </a>
+                            </div>
+                        {% endwith %}
+                    </div>
                 </div>
 
-            {% endwith %}
-        {% endfor %}
+            {% endfor %}
+        </div>
 
     </div>
 

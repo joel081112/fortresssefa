@@ -5,6 +5,20 @@ img {
 
 }
 
+#oldFortress{
+    max-width: 90%;
+}
+
+#aboutExtra{
+    padding: 250px 20%;
+}
+
+#aboutHeading{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
 .pastIntro {
     padding: 75px 0 150px 0;
 }
@@ -215,7 +229,7 @@ img {
 .timeline {
     background: #112C30;
     margin: 0;
-    font-family: sans-serif;
+    font-family: Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 15px;
     line-height: 26px;
     color: #B9CFD0;
@@ -230,7 +244,7 @@ img {
 }
 
 .timeline h1, h2, h3, h4, h5, h6 {
-    font-family: 'Comfortaa', cursive;
+    font-family: Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .main-content {

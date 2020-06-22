@@ -39,9 +39,10 @@
 
 
 /*background is behind text        e9e0c1*/
- body {
+body {
     background: #ecf6f9;
-    font-family: "Varela Round", Nunito, Montserrat, sans-serif;
+    font-family: Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*  "Varela Round", Nunito, Montserrat, sans-serif*/
     margin: 0;
     padding: 0;
     text-transform: capitalize;
@@ -51,6 +52,7 @@
     margin: 8px;
     padding: 100px 8px 8px 8px;
     max-width: 1510px;
+    font-family: "Varela Round", Nunito, Montserrat, sans-serif;
 }
 
 .menu > ol {
@@ -68,33 +70,34 @@
     transition: 0.5s;
 }
 
+/*Change the banner colours of the top of the menu*/
 .menu > ol > li:nth-child(1) {
-    --accent-color: #fefefe;
+    --accent-color: #6396ad;
     --gradient-color: #285469;
 }
 
 .menu > ol > li:nth-child(2) {
-    --accent-color: #fefefe;
+    --accent-color: #6396ad;
     --gradient-color: #285469;
 }
 
 .menu > ol > li:nth-child(3) {
-    --accent-color: #fefefe;
+    --accent-color: #6396ad;
     --gradient-color: #285469;
 }
 
 .menu > ol > li:nth-child(4) {
-    --accent-color: #fefefe;
+    --accent-color: #6396ad;
     --gradient-color: #285469;
 }
 
 .menu > ol > li:nth-child(5) {
-    --accent-color: #fefefe;
+    --accent-color: #6396ad;
     --gradient-color: #285469;
 }
 
 
-/*nav bar itself*/
+/*nav bar text itself*/
 .menu > ol > li a {
     color: #FBFBFB;
     display: block;
@@ -154,7 +157,7 @@
 }
 
 .menu > ol .sub-menu {
-    border-left: 1px solid #FBFBFB;
+    border-left: 1px solid #000000;
     margin-left: 22.5px;
     list-style: none;
     max-height: 0px;
@@ -198,7 +201,7 @@ ol > .column a {
     font-size: 13px;
 }
 
-@media  only screen and  (min-width: 400px)  and (max-width: 640px) {
+@media only screen and  (min-width: 400px)  and (max-width: 640px) {
     /* Create three equal columns that floats next to each other */
     .column {
         float: left;
@@ -216,7 +219,7 @@ ol > .column a {
 }
 
 /*THIS IS THE PROBLEM FOR THE BUTTON*/
-@media  only screen and (min-width: 640px) {
+@media only screen and (min-width: 640px) {
 
     .menu a:focus,
     .menu a:hover {
@@ -317,7 +320,7 @@ ol > .column a {
 }
 
 
-@media  only screen and (min-width: 775px) {
+@media only screen and (min-width: 775px) {
     .menu > ol > li {
         width: 18%;
         font-size: 18px;
@@ -364,29 +367,29 @@ ol > .column a {
 
 @media screen and (max-width: 639.98px) {
     .menu > ol > li:nth-child(1) {
-    --accent-color: #285469;
-    --gradient-color: #285469;
-}
+        --accent-color: #285469;
+        --gradient-color: #285469;
+    }
 
-.menu > ol > li:nth-child(2) {
-    --accent-color: #285469;
-    --gradient-color: #285469;
-}
+    .menu > ol > li:nth-child(2) {
+        --accent-color: #285469;
+        --gradient-color: #285469;
+    }
 
-.menu > ol > li:nth-child(3) {
-    --accent-color: #285469;
-    --gradient-color: #285469;
-}
+    .menu > ol > li:nth-child(3) {
+        --accent-color: #285469;
+        --gradient-color: #285469;
+    }
 
-.menu > ol > li:nth-child(4) {
-    --accent-color: #285469;
-    --gradient-color: #285469;
-}
+    .menu > ol > li:nth-child(4) {
+        --accent-color: #285469;
+        --gradient-color: #285469;
+    }
 
-.menu > ol > li:nth-child(5) {
-    --accent-color: #285469;
-    --gradient-color: #285469;
-}
+    .menu > ol > li:nth-child(5) {
+        --accent-color: #285469;
+        --gradient-color: #285469;
+    }
 }
 
 

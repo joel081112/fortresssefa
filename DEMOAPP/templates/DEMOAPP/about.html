@@ -16,9 +16,13 @@
 {% endblock %}
 
 {% block content %}
-    <div class="pastIntro flex-container">
+    <h1 id="aboutHeading">
+        {{ page.title }} FORTRESS-SEFA
+    </h1>
+    <div class="pastIntro flex-container alternative-colour">
         <div class="flex-item">
-            <img class="pastImg pastBox" src="/media/original_images/nFortress_old_logo.PNG" alt=""></div>
+            <img class="pastImg pastBox" id="oldFortress" src="/media/original_images/nFortress_old_logo.PNG" alt="">
+        </div>
         <div class="flex-item">
             <div class="chat">
                 <div class="mine messages">
@@ -43,6 +47,11 @@
 
         </div>
     </div>
+
+    <div class="intro" id="aboutExtra" data-aos="fade-down">
+        {{ page.extra|richtext }}
+    </div>
+
 
     <div class="timeline" id="timeline">
 
@@ -244,4 +253,5 @@
 
         </div>
     </div>
+
 {% endblock %}

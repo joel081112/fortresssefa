@@ -23,6 +23,10 @@ body {
     box-sizing: border-box;
 }
 
+.copyrightForm .copyright{
+    text-align: right;
+}
+
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
