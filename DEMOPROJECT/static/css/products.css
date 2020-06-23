@@ -8,6 +8,19 @@
     align-content: flex-start;
 }
 
+.overview {
+    text-shadow: none;
+}
+
+@media only screen and (min-width: 1441px) {
+    .overview {
+        margin-left: auto;
+        margin-right: auto;
+        width: 980px;
+    }
+}
+
+
 .movie {
     width: 40%;
     position: relative;
@@ -24,9 +37,9 @@
     clip-path: polygon(-15px 0, 110% 0, 110% 90%, -15px 100%);
 }
 
-@media  only screen and  (max-width: 640px) {
-    .slant-in{
-        padding-top:20px;
+@media only screen and  (max-width: 640px) {
+    .slant-in {
+        padding-top: 20px;
     }
 
 
@@ -60,3 +73,205 @@
     height: auto;
     margin: 70px 20px;
 }
+
+.description {
+    padding: 40px 10vw;
+
+}
+
+#alert {
+    color: red;
+    margin: 0;
+    font-size: 21px;
+    line-height: 1.4;
+}
+
+.description h3 {
+    margin: 16px 0 9px;
+    font-weight: bold;
+}
+
+.description h1 {
+    margin: 6px 0;
+    font-weight: bold;
+}
+
+.description p {
+    font-size: 17px;
+    line-height: 1.2;
+}
+
+.prod-images .gallery img {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.thumbs img {
+    max-width: 60%;
+    height: auto;
+}
+
+.description .download {
+    margin: 20px 0;
+}
+
+@media only screen and (max-width: 640px) {
+
+    .description {
+        text-align: center;
+    }
+}
+
+
+.arrow-sets {
+    width: 50%;
+    margin-left: 50%;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    text-align: center;
+    padding: 44px 12px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+
+.arrow-sets .fa-arrow-right, .fa-arrow-left {
+    padding: 10px;
+    position: absolute;
+    border-radius: 5px;
+    vertical-align: middle;
+    display: inline-block;
+
+    color: white;
+    background-color: grey;
+
+}
+
+.arrow-sets .fa-arrow-right:hover, .fa-arrow-left:hover {
+
+    background-color: cornflowerblue;
+    color: white;
+}
+
+
+.arrow-sets .fa-arrow-right {
+    right: 0;
+    cursor: pointer;
+}
+
+.arrow-sets .fa-arrow-left {
+    left: 0;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 640px) {
+    .arrow-sets {
+        width: 100%;
+        margin-left: 0;
+        font-size: 12px;
+        padding: 5px 3px;
+        opacity: 0.6;
+    }
+
+}
+
+@media only screen and (min-width: 640px) {
+    .overview .item {
+        margin: 100px 0 50px;
+    }
+
+    .products .blog .carousel-inner {
+        position: relative;
+        width: 50%;
+        overflow: hidden;
+        margin-left: 50%;
+    }
+
+    .products .carousel-indicators {
+        margin-left: 50%;
+        margin-right: unset;
+    }
+}
+
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+
+/* Add Animation */
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
+
+

@@ -196,7 +196,10 @@ class AboutGalleryImage(Orderable):
 class Products(Page):
     # content tab panels
     content_panels = Page.content_panels + [
-
+        MultiFieldPanel(
+            [InlinePanel('products_images', max_num=30, min_num=0, label="products images")],
+            heading="products Images"
+        ),
     ]
 
     # what to call the panels on wagtail
@@ -208,6 +211,23 @@ class Products(Page):
     ]
 
     )
+
+
+class ProductsGalleryImage(Orderable):
+    page = ParentalKey(Products, on_delete=models.CASCADE, related_name='products_images')
+    image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=False,
+        on_delete=models.CASCADE,
+        related_name='+'
+    )
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        ImageChooserPanel('image'),
+        FieldPanel('caption'),
+    ]
 
 
 class NotFound(Page):
@@ -623,7 +643,14 @@ class DoorSteel(Page):
 
     # content tab panels
     content_panels = Page.content_panels + [
-
+        MultiFieldPanel(
+            [InlinePanel('steelDoor_images', max_num=30, min_num=0, label="steelDoor images")],
+            heading="steelDoor Images"
+        ),
+        MultiFieldPanel(
+            [InlinePanel('steelDoor_pdf', max_num=20, min_num=0, label="steelDoor pdf")],
+            heading="steelDoor pdf"
+        ),
     ]
 
     # what to call the panels on wagtail
@@ -635,6 +662,41 @@ class DoorSteel(Page):
     ]
 
     )
+
+
+class SteelDoorDownloads(Orderable):
+    page = ParentalKey(DoorSteel, on_delete=models.CASCADE, related_name='steelDoor_pdf')
+    steelDoor_pdf = models.ForeignKey(
+        'wagtaildocs.Document',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        FieldPanel('caption'),
+        DocumentChooserPanel('steelDoor_pdf'),
+    ]
+
+
+class SteelDoorGalleryImage(Orderable):
+    page = ParentalKey(DoorSteel, on_delete=models.CASCADE, related_name='steelDoor_images')
+    image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=False,
+        on_delete=models.CASCADE,
+        related_name='+'
+    )
+    caption = models.CharField(blank=True, max_length=250)
+
+    panels = [
+        ImageChooserPanel('image'),
+        FieldPanel('caption'),
+    ]
 
 
 class ShuttersCommercial(Page):

@@ -13,22 +13,23 @@
     clear: both;
     line-height: 90px;
     text-align: center;
-
-
 }
 
 .protec .banner {
     background-image: url('/media/images/protec8.jpg');
-    background-position: center;
+}
+
+@media (min-width: 640px) {
+    .protec .banner {
+        background-position: center;
+    }
 }
 
 @media (max-width: 640px) {
 
     .protec .banner {
         background-size: contain;
-        background-position: center;
         background-repeat: no-repeat;
-        margin-top: 20vh;
 
     }
 

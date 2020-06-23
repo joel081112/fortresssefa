@@ -10,6 +10,8 @@
     height: 500px;
 }
 
+
+
 .clipped {
     opacity: 0.8;
     padding-top: 20px;
@@ -25,7 +27,7 @@
     max-width: 400px;
 }
 
-@media (max-width: 640px) {
+@media only screen and  (min-width: 420px)  and (max-width: 640px) {
     .clipped {
         display: none;
     }
@@ -34,8 +36,23 @@
         background-size: contain;
         background-position: 0 90px;
         background-repeat: no-repeat;
+        height: 250px;
 
     }
+}
 
 
+@media only screen and (max-width: 420px) {
+
+    .clipped {
+        display: none;
+    }
+
+    .banner {
+        background-size: contain;
+        background-position: 0 90px;
+        background-repeat: no-repeat;
+        height: 200px;
+
+    }
 }

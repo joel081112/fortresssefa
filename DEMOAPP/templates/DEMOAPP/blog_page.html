@@ -64,7 +64,8 @@
 
 
     <div class="gallery thumbs">
-        <button class="gallery nav-arrow"></button>
+        <div class="fa fa-arrow-left"></div>
+        <div class="fa fa-arrow-right"></div>
         <div class="gallery">
             <div class="container">
                 {% for item in page.blogpage_images.all %}
@@ -76,7 +77,6 @@
                 {% endfor %}
             </div>
         </div>
-        <button class="gallery nav-arrow"></button>
     </div>
 
     <div id="disqus_thread"></div>

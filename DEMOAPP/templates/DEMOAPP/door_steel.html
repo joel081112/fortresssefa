@@ -5,6 +5,9 @@
 {% block body_class %}Steel Door{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
+    <link rel="stylesheet" href='/static/css/blog.css'>
+    <link rel="stylesheet" href='/static/css/w3.css'>
+    <link rel="stylesheet" href='/static/css/homePage.css'>
 
 {% endblock %}
 {% block extra_js %}
@@ -15,7 +18,96 @@
 {% endblock %}
 
 {% block content %}
-   {% include 'type_text.html' %}
+    {% include 'type_text.html' %}
+
+    <div class="overview alternative-colour">
+        <article class="item">
+            <div class="description">
+                <div id="alert">New</div>
+                <h3>SR3 Door</h3>
+                <h1>Extra Security.<br/>
+                    More Thought.<br/>
+                    More Design.</h1>
+                <h3>Highest Security</h3>
+                {% for download in page.steelDoor_pdf.all %} {# loop over the ArchitectDownload objects #}
+                    {% with doc=download.steelDoor_pdf %} {# retrieve the Document object for each one #}
+
+                        <div class="download">
+                            <a href="{{ doc.url }}" class="smooth-over-button noDecoration">
+                                <i class="fa fa-download"></i>
+                                <p class="btn-txt">Specs</p>
+                            </a>
+                        </div>
+                    {% endwith %}
+                {% endfor %}
+                <p> More details below </p>
+
+
+            </div>
+
+            <div class="prod-images">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        {% for item in page.steelDoor_images.all %}
+                            <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter|add:"-1" }}"
+                                class="{% if forloop.counter == 1 %}active{% endif %}">
+                            </li>
+
+                        {% endfor %}
+                    </ul>
+                    <div class="blog">
+                        <div class="carousel-inner">
+                            {% for item in page.steelDoor_images.all %}
+                                {% image item.image fill-10000x10000 as img %}
+
+                                <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
+                                    <img src="{{ img.url }}" class="d-block w-100" data-aos="fade-down"
+                                         alt="{{ img.alt }}">
+
+
+                                    <div class="imageCounter">
+                                        <img src="/media/original_images/camera.png" id="display">
+                                        {{ forloop.counter }} of {{ page.steelDoor_images.all.count }}
+
+                                    </div>
+                                    <div class="protec-title">
+                                        {{ item.caption }}
+                                    </div>
+
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {# end carousel #}
+
+
+                <div class="gallery thumbs">
+                    {% comment %}<div class="fa fa-arrow-left"></div>
+                    <div class="fa fa-arrow-right"></div>{% endcomment %}
+                    <div class="gallery">
+                        <div class="container">
+                            {% for item in page.steelDoor_images.all %}
+                                <li data-target="#carouselExampleIndicators"
+                                    data-slide-to="{{ forloop.counter|add:"-1" }}"
+                                    class="{% if forloop.counter == 1 %}active{% endif %}">
+                                    {% image item.image fill-150x150-c100 %}
+                                    <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
+                                    <p id="colour-title">{{ item.caption }}</p></li>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </div>
+
+
+    <div class="intro" id="aboutExtra" data-aos="fade-down">
+        yeah
+    </div>
+
 
 
 {% endblock %}

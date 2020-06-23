@@ -184,7 +184,7 @@ h1 {
     text-transform: none;
 }
 
-.blog {
+.carousel-collection {
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -236,7 +236,7 @@ h1 {
     list-style-type: none;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 800px) {
     .blog .carousel-inner {
         position: relative;
         width: 50%;
