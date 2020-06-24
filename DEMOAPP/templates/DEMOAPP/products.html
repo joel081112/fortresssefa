@@ -22,7 +22,7 @@
 {% block content %}
     {% include 'type_text.html' %}
 
-    <div class="products">
+    <div class="products" id="main-products">
         <div class="overview alternative-colour">
             <article class="item">
                 <div class="description">
@@ -53,9 +53,9 @@
                                     {% image item.image fill-10000x10000 as img %}
 
                                     <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
-                                        <img src="{{ img.url }}" class="d-block w-100" data-aos="fade-down"
+                                        <img src="{{ img.url }}" class="d-block w-100"
                                              alt="{{ img.alt }}"
-                                             onclick="document.getElementById('modal01').style.display='block'">
+                                             onclick="document.getElementById('modal01').style.display='block'; myFunction();">
 
 
                                         <div class="imageCounter">
@@ -65,25 +65,28 @@
 
                                     </div>
 
-                                    <!-- The Modal -->
-                                    <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
-                                        <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
-                                        <div class="w3-modal-content w3-animate-zoom">
-                                            <img src="{{ img.url }}" style="width:100%">
-                                        </div>
-                                    </div>
+
+
 
                                 {% endfor %}
+                                <!-- The Modal -->
+                                <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+                                    <span class="w3-button w3-hover-white w3-xlarge w3-display-topright">&times;</span>
+                                    <div class="w3-modal-content w3-animate-zoom">
+                                        <img src="" id="modal" style="width:100%">
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                         <div class="arrow-sets">
                             <a class="left recommended-item-control" href="#carouselExampleIndicators"
                                data-slide="prev">
-                                <i class="fa fa-arrow-left"></i>
+                                <i class="fa fa-angle-left"></i>
                             </a>
                             <a class="right recommended-item-control" href="#carouselExampleIndicators"
                                data-slide="next">
-                                <i class="fa fa-arrow-right"></i>
+                                <i class="fa fa-angle-right"></i>
                             </a>
                         </div>
                     </div>

@@ -57,6 +57,16 @@
                     </div>
                 {% endfor %}
             </div>
+            <div class="arrow-sets">
+                <a class="left recommended-item-control" href="#carouselExampleIndicators"
+                   data-slide="prev">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="right recommended-item-control" href="#carouselExampleIndicators"
+                   data-slide="next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
         </div>
     </div>
     {# end carousel #}
@@ -64,8 +74,7 @@
 
 
     <div class="gallery thumbs">
-        <div class="fa fa-arrow-left"></div>
-        <div class="fa fa-arrow-right"></div>
+
         <div class="gallery">
             <div class="container">
                 {% for item in page.blogpage_images.all %}
