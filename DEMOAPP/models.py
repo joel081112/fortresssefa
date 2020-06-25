@@ -637,6 +637,21 @@ class DoorSectional(Page):
 
 
 class DoorSteel(Page):
+    hardware = RichTextField(
+        blank=True,  # required field or not
+        verbose_name="Hardware Options"  # called on wagtail site
+    )
+
+    doorOptions = RichTextField(
+        blank=True,  # required field or not
+        verbose_name="Door Options"  # called on wagtail site
+    )
+
+    dimensions = RichTextField(
+        blank=True,  # required field or not
+        verbose_name="Door Dimensions"  # called on wagtail site
+    )
+
     search_fields = Page.search_fields + [
 
     ]  # these are if adding a search to the website
@@ -650,6 +665,19 @@ class DoorSteel(Page):
         MultiFieldPanel(
             [InlinePanel('steelDoor_pdf', max_num=20, min_num=0, label="steelDoor pdf")],
             heading="steelDoor pdf"
+        ),
+        FieldPanel(
+            'hardware',
+            classname="full",
+        ),
+        FieldPanel(
+            'doorOptions',
+            classname="full",
+
+        ),
+        FieldPanel(
+            'dimensions',
+            classname="full",
         ),
     ]
 

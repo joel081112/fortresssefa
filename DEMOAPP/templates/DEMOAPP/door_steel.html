@@ -60,22 +60,22 @@
                         {#    end  line indicators   #}
                         <div class="blog">
                             <div class="carousel-inner">
+
+
                                 {% for item in page.steelDoor_images.all %}
-                                    {% image item.image fill-10000x10000 as img %}
-
                                     <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
-                                        <img src="{{ img.url }}" class="d-block w-100" data-aos="fade-down"
-                                             alt="{{ img.alt }}">
 
+
+                                        {% image item.image fill-10000x10000 as img %}
+                                        <img src="{{ img.url }}" class="d-block w-100"
+                                             alt="{{ img.alt }}">
 
                                         <div class="imageCounter">
                                             <img src="/media/original_images/camera.png" id="display">
                                             {{ forloop.counter }} of {{ page.steelDoor_images.all.count }}
 
                                         </div>
-                                        <div class="protec-title">
-                                            {{ item.caption }}
-                                        </div>
+
 
                                     </div>
                                 {% endfor %}
@@ -93,27 +93,47 @@
                             </a>
                         </div>
                     </div>
+
                     {# end carousel #}
 
 
-                    <div class="gallery">
-                        <div class="thumbs">
-                            <div class="container" id="multiViewCarousel">
-                                {% for item in page.steelDoor_images.all %}
-                                    <li data-target="#carouselExampleIndicators"
-                                        data-slide-to="{{ forloop.counter|add:"-1" }}"
-                                        class="{% if forloop.counter == 1 %}active{% endif %}">
-                                        {% image item.image fill-150x150-c100 %}
-                                        <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
-                                    </li>
-                                {% endfor %}
+                    <div class="mini">
+
+                        <div class="prod-images">
+                            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+                                <div class="blog">
+                                    <div class="carousel-inner">
+                                        {% for item in page.steelDoor_images.all %}
+
+                                            <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
+                                                {% image item.image fill-10000x10000 as img %}
+                                                <img src="{{ img.url }}" class="flex"
+                                                     data-target="#carouselExampleIndicators"
+                                                     data-slide-to="{{ forloop.counter|add:"-1" }}"
+                                                     alt="{{ img.alt }}">
+                                            </div>
+
+
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+                                <div class="arrow-sets">
+                                    <a class="left recommended-item-control" href="#carouselExampleIndicators2"
+                                       data-slide="prev">
+                                        <i class="fa fa-angle-left"></i>
+                                    </a>
+                                    <a class="right recommended-item-control" href="#carouselExampleIndicators2"
+                                       data-slide="next">
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-
                     </div>
-
-
+                    {# end carousel #}
                 </div>
+
             </article>
         </div>
 
@@ -123,5 +143,31 @@
         </div>
 
 
-    </div>>
+        <div class="align-content-center item-info">
+            <div class="column" data-aos="fade-down">
+                <div class="w3-container">
+                    <i class="fa fa-plus"></i>
+                </div>
+                <h3>Hardware Options</h3>
+                {{ page.hardware|richtext }}
+
+            </div>
+            <div class="column" data-aos="fade-down">
+                <div class="w3-container">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Door Options</h3>
+                {{ page.doorOptions|richtext }}
+            </div>
+            <div class="column" data-aos="fade-down">
+                <div class="w3-container">
+                    <i class="fas fa-question-circle"></i>
+                </div>
+                <h3>Dimensions</h3>
+                {{ page.dimensions|richtext }}
+            </div>
+        </div>
+
+
+    </div>
 {% endblock %}
