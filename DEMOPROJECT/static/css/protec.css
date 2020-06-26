@@ -137,13 +137,20 @@
     margin: 50px 0;
 }
 
-.intro h1 {
-    font-size: 64px;
+.intro h1, h2 {
     line-height: 1.0625;
     font-weight: 700;
     letter-spacing: -.009em;
     font-family: Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: 50px 0;
+}
+
+.intro h1 {
+    font-size: 64px;
+}
+
+.intro h2 {
+    font-size: 45px;
 }
 
 .contact p {

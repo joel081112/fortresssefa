@@ -24,11 +24,30 @@
     }
 }
 
+.products .btn-txt{
+    margin-bottom: 0;
+}
+
+.products .all-blocks{
+    max-width:1500px;
+}
+
+.products .all-blocks h3{
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+    .prod-process .download {
+        margin-top: 20px;
+    }
+}
+
 
 .movie {
+    align-items: center;
     width: 40%;
     position: relative;
-    margin: 40px 0 40px -15px
+    margin: 0 auto;
 }
 
 .image {
@@ -73,14 +92,43 @@
     float: left;
     position: relative;
     display: block;
-    width: 40%;
+    width: 25%;
     height: auto;
-    margin: 70px 20px;
+    margin: 70px 40px 70px 40px;
 }
+
+.prod-process p{
+    margin: 15px 0;
+    text-shadow: none;
+    line-height: 2;
+}
+
+@media only screen and  (max-width: 640px) {
+    .prod-process{
+        width: 100%;
+    }
+}
+
+@media only screen and  (max-width: 375px) {
+    .image-text{
+        font-size: 20px;
+    }
+}
+
 
 .description {
     padding: 40px 10vw;
 
+}
+
+#docs-pic{
+    font-size: 45px;
+}
+
+@media only screen and (max-width: 800px){}
+ #aboutExtra .download .btn-txt {
+    display: inherit;
+    font-size: 16px;
 }
 
 #alert {

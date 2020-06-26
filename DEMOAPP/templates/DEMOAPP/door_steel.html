@@ -29,13 +29,13 @@
                         More Thought.<br/>
                         More Design.</h1>
                     <h3>Highest Security</h3>
-                    {% for download in page.steelDoor_pdf.all %} {# loop over the ArchitectDownload objects #}
+                    {% for download in page.steelDoor_pdf.all|slice:"1" %} {# loop over the ArchitectDownload objects #}
                         {% with doc=download.steelDoor_pdf %} {# retrieve the Document object for each one #}
 
                             <div class="download">
                                 <a href="{{ doc.url }}" class="smooth-over-button noDecoration">
                                     <i class="fa fa-download"></i>
-                                    <p class="btn-txt">Specs</p>
+                                    <p class="btn-txt">{{doc.title}}</p>
                                 </a>
                             </div>
                         {% endwith %}
@@ -139,7 +139,8 @@
 
 
         <div class="intro" id="aboutExtra" data-aos="fade-down">
-            yeah
+            <h2>What all this means.</h2>
+            {{ page.general|richtext }}
         </div>
 
 
@@ -161,11 +162,32 @@
             </div>
             <div class="column" data-aos="fade-down">
                 <div class="w3-container">
-                    <i class="fas fa-question-circle"></i>
+                    <i class="fas fa-crop"></i>
                 </div>
                 <h3>Dimensions</h3>
                 {{ page.dimensions|richtext }}
             </div>
+
+
+        </div>
+
+        <div class="intro alternative-colour" id="aboutExtra" data-aos="fade-right">
+            <div id="docs-pic">
+                <i class="fa fa-file-pdf-o"></i>
+            </div>
+            <h3 id="prod-docs">Get the Docs</h3>
+
+            {% for download in page.steelDoor_pdf.all %} {# loop over the ArchitectDownload objects #}
+                {% with doc=download.steelDoor_pdf %} {# retrieve the Document object for each one #}
+
+                    <div class="download">
+                        <a href="{{ doc.url }}" class="smooth-over-button noDecoration">
+                            <i class="fa fa-download"></i>
+                            <p class="btn-txt">{{ doc.title }}</p>
+                        </a>
+                    </div>
+                {% endwith %}
+            {% endfor %}
         </div>
 
 
