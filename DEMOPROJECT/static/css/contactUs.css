@@ -43,16 +43,63 @@ html {
 }
 
 .mapBox {
+    padding-top: 100px;
     padding-bottom: 100px;
 }
 
-.button_place{
+.button_place {
     text-transform: uppercase;
 }
 
-.button_place img{
+.button_place img {
     margin: 0;
 }
-.button_place img:hover{
+
+.button_place img:hover {
     transform: scale(1.1);
 }
+
+#contact-us .button_place {
+    color: #1A0FBA;
+}
+
+#contact-us h3 {
+    width: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+#contact-us h3:before,
+#contact-us h3:after {
+    background-color: darkgrey;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+
+#contact-us h3:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+
+#contact-us h3:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+/*
+.contact-bar{
+    background-color: black;
+    font-size: 45px;
+    padding:30px;
+}
+
+.contact-bar:hover{
+    background-color: #007bff;
+}
+*/
+

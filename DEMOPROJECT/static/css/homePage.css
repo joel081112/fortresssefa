@@ -18,7 +18,7 @@
     margin-left: 1%;
 }
 
-.home{
+.home {
     font-family: Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 300;
 }
@@ -38,7 +38,7 @@
     max-width: 2em;
 }
 
-@media  only screen and (min-width: 640px)  and (max-width: 775px) {
+@media only screen and (min-width: 640px)  and (max-width: 775px) {
     .text li {
         font-size: 1.5em;
         max-width: 1.5em;
@@ -69,7 +69,6 @@
     border-collapse: collapse;
 
 }
-
 
 
 .overview td {
@@ -133,7 +132,7 @@
     float: left;
 }
 
-@media  only screen and (max-width: 640px) {
+@media only screen and (max-width: 640px) {
     .homeInfo1 {
         padding: 50px;
 
@@ -159,7 +158,7 @@
     width: 50%;
 }
 
-@media  only screen and (max-width: 640px) {
+@media only screen and (max-width: 640px) {
 
     .item,
     .item:nth-child(odd) {
@@ -179,8 +178,8 @@
     margin-right: 150px;
 }
 
-@media  only screen and  (max-width: 640px) {
-    .accountdrop{
+@media only screen and  (max-width: 640px) {
+    .accountdrop {
         padding-top: 25px;
     }
 }
@@ -193,7 +192,7 @@
     text-align: left;
 }
 
-.accountsub {
+.accountsub{
     background: #fff;
     position: absolute;
     top: -12px;
@@ -250,28 +249,80 @@ a.account {
 }
 
 
-
 .cookie-banner {
-  position: fixed;
-  bottom: 40px;
-  left: 10%;
-  right: 10%;
-  width: 80%;
-  padding: 5px 14px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #eee;
-  border-radius: 5px;
-  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    bottom: 40px;
+    left: 10%;
+    right: 10%;
+    width: 80%;
+    padding: 5px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eee;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .close {
-  height: 20px;
-  background-color: #777;
-  border: none;
-  color: black;
-  border-radius: 2px;
-  cursor: pointer;
+    height: 20px;
+    background-color: #777;
+    border: none;
+    color: black;
+    border-radius: 2px;
+    cursor: pointer;
 }
 
+.contact-banner {
+    display: block;
+    border-right: 4px solid #36718e;
+    border-left: 4px solid #36718e;
+    background: #214557;
+    text-align: center;
+    -o-box-shadow: 0 9px 20px rgba(0, 0, 0, .2);
+    box-shadow: 0 9px 20px rgba(0, 0, 0, .2);
+}
+
+.attention {
+    text-align: center;
+    margin: 0 5px;
+    text-shadow: none;
+    background-color: #214557;
+    padding: 15px;
+    cursor: pointer;
+    box-shadow: 0 9px 20px rgba(0,0,0,.2);
+}
+
+.attention:hover{
+    background-color: #36718e;
+
+}
+#first-line:hover, #second-line:hover{
+    color: #fff;
+}
+
+.attention i{
+    font-size: 35px;
+}
+
+
+
+#first-line {
+    color: #7b8081;
+    font-size: 1rem;
+    line-height: 2.25rem;
+    text-transform: uppercase;
+    transition: color .4s ease;
+    margin-bottom: 11px;
+}
+
+#second-line {
+    display: inline-block;
+    color: #fff;
+    font-size: 3.9rem;
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 13px;
+    text-transform: uppercase;
+    line-height: 58px;
+    margin-right: 10px;
+}

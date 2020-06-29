@@ -67,86 +67,95 @@
 {% wagtailuserbar %}
 
 <div class="{% block page-css-class %}{% endblock %}">
-    <div class="centre-content">
 
-        <div class="top">
-            {# header #}
-            <div class="header">
+    <div class="mian-block">
+        <div class="centre-content">
 
-                <a href="/" class="menuLogo">
-                    <img src="/media/images/fortress_sefa_small_60px.max-165x165.jpg" id="smallLogo">
-                </a>
+            <div class="top">
+                {# header #}
+                <div class="header">
+
+                    <a href="/" class="menuLogo">
+                        <img src="/media/images/fortress_sefa_small_60px.max-165x165.jpg" id="smallLogo">
+                    </a>
 
 
-                <div class="hamburger">
-                    <label class="toggle cd-btn js-cd-panel-trigger" id="menuDisplay" data-panel="main">
-                        <input type="checkbox" id="myCheck">
-                        <div>
+                    <div class="hamburger">
+                        <label class="toggle cd-btn js-cd-panel-trigger" id="menuDisplay" data-panel="main">
+                            <input type="checkbox" id="myCheck">
                             <div>
-                                <span></span>
-                                <span></span>
+                                <div>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <svg>
+                                    <use xlink:href="#path">
+                                </svg>
+                                <svg>
+                                    <use xlink:href="#path">
+                                </svg>
                             </div>
-                            <svg>
-                                <use xlink:href="#path">
-                            </svg>
-                            <svg>
-                                <use xlink:href="#path">
-                            </svg>
-                        </div>
-                    </label>
+                        </label>
 
 
-                    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-                        <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" id="path">
-                            <path d="M22,22 L2,22 C2,11 11,2 22,2 C33,2 42,11 42,22"></path>
-                        </symbol>
-                    </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" id="path">
+                                <path d="M22,22 L2,22 C2,11 11,2 22,2 C33,2 42,11 42,22"></path>
+                            </symbol>
+                        </svg>
 
+                    </div>
+                    <a href="/" class="menuLogo">
+                        <img src="/media/original_images/fortress_sefa_s8gdTFJ.jpg" id="largeLogo">
+                    </a>
                 </div>
-                <a href="/" class="menuLogo">
-                    <img src="/media/original_images/fortress_sefa_s8gdTFJ.jpg" id="largeLogo">
-                </a>
+
+                <header class="masthead mb-auto" id="menuPanel">
+
+                    {# This the menu for the desktop panel. It is seperate to the mobile #}
+                    {% include 'nav_menu.html' %}
+                </header>
+                <p id="fixedpoint">
+                    46546487978
+                </p>
+
+                {# This the menu for the mobile panel. It is seperate to the desktop #}
+                <div class="cd-panel cd-panel--from-left js-cd-panel-main mobilePanel">
+                    <header class="cd-panel__header">
+                        <img src="/media/original_images/fortress_sefa_s8gdTFJ.jpg" id="panelImage">
+                        <a href="#0" class="cd-panel__close js-cd-close">Close</a>
+                    </header>
+
+                    <div class="cd-panel__container">
+                        <div class="cd-panel__content">
+                            {% include 'nav_menu.html' %}
+
+                        </div> <!-- cd-panel__content -->
+
+                    </div> <!-- cd-panel__container -->
+
+                </div> <!-- cd-panel -->
+                {# /header #}
+
+
             </div>
 
-            <header class="masthead mb-auto" id="menuPanel">
 
-                {# This the menu for the desktop panel. It is seperate to the mobile #}
-                {% include 'nav_menu.html' %}
-            </header>
-            <p id="fixedpoint">
-                46546487978
-            </p>
+            <div class="block">
+                {% block content %}{% endblock %}
 
-            {# This the menu for the mobile panel. It is seperate to the desktop #}
-            <div class="cd-panel cd-panel--from-left js-cd-panel-main mobilePanel">
-                <header class="cd-panel__header">
-                    <img src="/media/original_images/fortress_sefa_s8gdTFJ.jpg" id="panelImage">
-                    <a href="#0" class="cd-panel__close js-cd-close">Close</a>
-                </header>
 
-                <div class="cd-panel__container">
-                    <div class="cd-panel__content">
-                        {% include 'nav_menu.html' %}
-
-                    </div> <!-- cd-panel__content -->
-
-                </div> <!-- cd-panel__container -->
-
-            </div> <!-- cd-panel -->
-            {# /header #}
-
+            </div>
 
         </div>
-
-
-        <div class="block">
-            {% block content %}{% endblock %}
-
-
+        {# footer #}
+        <div class="contact-banner">
+            <div class="attention">
+                <p id="first-line">GOT A PROJECT FOR US?</p>
+                <p id="second-line">LET'S CHAT <i class="fa fa-arrow-circle-o-right"></i></p>
+            </div>
         </div>
-
     </div>
-    {# footer #}
     <footer class="mastfoot mt-auto">
         <div class="footer-contents">
             <div class="column left">
@@ -168,7 +177,8 @@
             </div>
             <div class="column middle">
                 <p>
-                    <a href="/contact-us#mapHeading"><img src="/media/original_images/maps.png" id="mapIcon" height="40px" width="40px"></a>
+                    <a href="/contact-us#mapHeading"><img src="/media/original_images/maps.png" id="mapIcon"
+                                                          height="40px" width="40px"></a>
                     6 Trench Road
                     <br>Newtownabbey, Northern Ireland
                     <br><br>

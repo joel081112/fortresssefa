@@ -14,38 +14,120 @@
 
 {% endblock %}
 {% block meta_descr %}
-    Fortress SEFA Contact us. Belfast 6 Trench Road Northern Ireland office. Email - info@fortress-sefa.com. Get
-    directions via google maps
+    Fortress SEFA Contact us. Belfast 6 Trench Road Northern Ireland office. Email - info@fortress-sefa.com.
+    Here you can find our contact information in large detail with map view and location detail view.
+    We also have links to different parts of our page to where there will be useful information.
 
 
 
 {% endblock %}
 
 {% block content %}
-    <div class="top_header">
-        <p id="intro">
-            {{ page.title }}<br/>
+    <div id="contact-us">
+        <div class="top_header">
+            <p id="intro">
+                {{ page.title }}<br/>
 
-        </p>
-        <p id="extra">Our page may not have everything, so why not ask us to answer your questions</p>
-    </div>
-    <div class="alternative-colour quickLinks">
-        <h3>Lets Start a Conversation.</h3>
+            </p>
+            <p id="extra">Our page may not have everything, so why not ask us to answer your questions</p>
+        </div>
+        <div class="alternative-colour quickLinks">
+            <h3 data-aos="fade-left">Lets Start a Conversation.</h3>
+            <div class="all-blocks links_contact" data-aos="fade-right">
+
+
+                <div class="document">
+                    <div class="w3-card-4 w3-margin w3-white">
+                        <div class="w3-container">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <hr>
+                        <p id="caption">PRODUCT FAQS</p>
+                        <div class="download button_place">
+                            <div class="info">
+                                <a href="/faq">
+                                    FIND ANSWERS NOW</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="document">
+                    <div class="w3-card-4 w3-margin w3-white" >
+                        <div class="w3-container">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <hr>
+                        <p id="caption">WARRANTY</p>
+                        <div class="download button_place">
+                            <div class="info">
+                                WHAT WE ENSURE
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="document">
+                    <div class="w3-card-4 w3-margin w3-white">
+                        <div class="w3-container">
+                            <i class="fas fa-address-book"></i>
+                        </div>
+                        <hr>
+                        <p id="caption">CONTACT US DIRECTLY</p>
+                        <div class="download button_place">
+                            <div class="info">
+                                <a href="/contact-page">FORM FILL</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="document">
+                    <div class="w3-card-4 w3-margin w3-white">
+                        <div class="w3-container">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <hr>
+                        <p id="caption">CONNECT WITH US</p>
+                        <div class="download button_place">
+                            <a href="https://www.linkedin.com/company/fortresssefa/" target="_blank" id="social">
+                                <figure id="social"><img src="/media/original_images/linkedIn.png" height="40px"
+                                                         width="40px">
+                                </figure>
+                            </a>
+                            <a href="https://www.facebook.com/Fortress-SEFA-367639123362658/" target="_blank"
+                               id="social">
+                                <figure id="social"><img src="/media/original_images/facebook.png" height="40px"
+                                                         width="40px">
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <h3 data-aos="fade-left" id="locations">Where are we located?</h3>
         <div class="all-blocks links_contact">
 
 
             <div class="document">
                 <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
                     <div class="w3-container">
-                        <i class="fas fa-question-circle"></i>
+                        Belfast
                     </div>
                     <hr>
-                    <p id="caption">PRODUCT FAQS</p>
-                    <div class="download button_place">
-                        <div class="info">
-                            <a href="/faq">
-                                FIND ANSWERS NOW</a>
-                        </div>
+                    <p id="caption">
+                        06 Trench Road<br/>
+                        Hydepark Industrial Estate<br/>
+                        Newtownabbey<br/>
+                        BT36 4TY
+                    </p>
+                    <div class="download">
+                        Monday - Friday<br/>
+                        9am - 5pm<br/>
+                        tel: +44 (0)28 9034 2655
                     </div>
                 </div>
             </div>
@@ -53,14 +135,18 @@
             <div class="document">
                 <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
                     <div class="w3-container">
-                        <i class="fas fa-certificate"></i>
+                        Dundee
                     </div>
                     <hr>
-                    <p id="caption">WARRANTY</p>
-                    <div class="download button_place">
-                        <div class="info">
-                            Click here
-                        </div>
+                    <p id="caption">
+                        Unit R Scott Way<br/>
+                        West Pitkerro Enterprise Zone<br/>
+                        DD5 3RX
+                    </p>
+                    <div class="download">
+                        Monday - Friday<br/>
+                        8am - 5pm<br/>
+                        tel: +44 (0)138 273 6033
                     </div>
                 </div>
             </div>
@@ -68,14 +154,18 @@
             <div class="document">
                 <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
                     <div class="w3-container">
-                        <i class="fas fa-phone"></i>
+                        Glasgow
                     </div>
                     <hr>
-                    <p id="caption">CONTACT US DIRECTLY</p>
-                    <div class="download button_place">
-                        <div class="info">
-                        <a href="/contact-page">ASK US</a>
-                        </div>
+                    <p id="caption">
+                        20 Barnes Street<br/>
+                        Barrhead<br/>
+                        G78 1QN
+                    </p>
+                    <div class="download">
+                        Monday - Friday<br/>
+                        9am - 5pm<br/>
+                        tel: +44 (0)141 881 8216
                     </div>
                 </div>
             </div>
@@ -83,219 +173,133 @@
             <div class="document">
                 <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
                     <div class="w3-container">
-                        <i class="fas fa-search"></i>
+                        London
                     </div>
                     <hr>
-                    <p id="caption">CONNECT WITH US</p>
-                    <div class="download button_place">
-                        <a href="https://www.linkedin.com/company/fortresssefa/" target="_blank" id="social">
-                            <figure id="social"><img src="/media/original_images/linkedIn.png" height="40px"
-                                                     width="40px">
-                            </figure>
-                        </a>
-                        <a href="https://www.facebook.com/Fortress-SEFA-367639123362658/" target="_blank" id="social">
-                            <figure id="social"><img src="/media/original_images/facebook.png" height="40px"
-                                                     width="40px">
-                            </figure>
-                        </a>
+                    <p id="caption">
+                        Unit 39 Saffron Court<br/>
+                        Basildon<br/>
+                        Essex<br/>
+                        SS15 6SS
+                    </p>
+                    <div class="download">
+                        Monday - Friday<br/>
+                        9am - 5pm<br/>
+                        tel: +44 (0)141 471 4691
+                    </div>
+                </div>
+            </div>
+
+            <div class="document">
+                <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
+                    <div class="w3-container">
+                        Manchester
+                    </div>
+                    <hr>
+                    <p id="caption">
+                        Westhoughton Industrial Estate<br/>
+                        James St<br/>
+                        Westhoughton<br/>
+                        Bolton<br/>
+                        BL5 3QR
+                    </p>
+                    <div class="download">
+                        Monday - Friday<br/>
+                        9am - 5pm<br/>
+                        tel: +44 (0)1942 817 498
+                    </div>
+                </div>
+            </div>
+
+            <div class="document">
+                <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
+                    <div class="w3-container">
+                        Warsaw
+                    </div>
+                    <hr>
+                    <p id="caption">
+                        Zaklad Produkcyjny<br/>
+                        Mloteczno 14a<br/>
+                        14-500 Braniewo<br/>
+                        Poland
+                    </p>
+                    <div class="download">
+                        Monday - Friday<br/>
+                        9am - 5pm<br/>
+                        tel.: (+48) 55 307 07 02<br/>
+                        Email: kontakt@fortaxa.eu<br/>
+                        Web: www.fortaxa.pl
+                    </div>
+                </div>
+            </div>
+
+            <div class="document">
+                <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
+                    <div class="w3-container">
+                        Gothenburg
+                    </div>
+                    <hr>
+                    <p id="caption">
+                        Fältspatgatan 1<br/>
+                        Västra Frölunda 421 30 <br/>
+                        Sweden
+                    </p>
+                    <div class="download">
+                        Days Open<br/>
+                        Time Open<br/>
+                        W: www.fortaxa.se
+                    </div>
+                </div>
+            </div>
+
+            <div class="document">
+                <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
+                    <div class="w3-container">
+                        Stockholm
+                    </div>
+                    <hr>
+                    <p id="caption">
+                        Importörvägen 4<br/>
+                        Årsta 120 44<br/>
+                        Sweden
+                    </p>
+                    <div class="download">
+                        Monday - Friday<br/>
+                        7am-4pm<br/>
+                        tel: +46855661670 <br/>
+                        W: www.fortaxa.se
+                    </div>
+                </div>
+            </div>
+
+            <div class="document">
+                <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
+                    <div class="w3-container">
+                        Malmo
+                    </div>
+                    <hr>
+                    <p id="caption">
+                        Lärkträdsgatan 4<br/>
+                        Malmö 213 63<br/>
+                        Sweden
+                    </p>
+                    <div class="download">
+                        Monday - Friday<br/>
+                        9am - 5pm<br/>
+                        W: www.fortaxa.se
                     </div>
                 </div>
             </div>
 
 
         </div>
-    </div>
-    <h3 id="locations">Where are we located?</h3>
-    <div class="all-blocks links_contact">
 
 
-        <div class="document">
-            <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
-                <div class="w3-container">
-                    Belfast
-                </div>
-                <hr>
-                <p id="caption">
-                    06 Trench Road<br/>
-                    Hydepark Industrial Estate<br/>
-                    Newtownabbey<br/>
-                    BT36 4TY
-                </p>
-                <div class="download">
-                    Monday - Friday<br/>
-                    9am - 5pm<br/>
-                    tel: +44 (0)28 9034 2655
-                </div>
-            </div>
+        <div class="mapBox alternative-colour">
+
+            <div id="map"></div>
         </div>
 
-        <div class="document">
-            <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
-                <div class="w3-container">
-                    Dundee
-                </div>
-                <hr>
-                <p id="caption">
-                    Unit R Scott Way<br/>
-                    West Pitkerro Enterprise Zone<br/>
-                    DD5 3RX
-                </p>
-                <div class="download">
-                    Monday - Friday<br/>
-                    8am - 5pm<br/>
-                    tel: +44 (0)138 273 6033
-                </div>
-            </div>
-        </div>
-
-        <div class="document">
-            <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
-                <div class="w3-container">
-                    Glasgow
-                </div>
-                <hr>
-                <p id="caption">
-                    20 Barnes Street<br/>
-                    Barrhead<br/>
-                    G78 1QN
-                </p>
-                <div class="download">
-                    Monday - Friday<br/>
-                    9am - 5pm<br/>
-                    tel: +44 (0)141 881 8216
-                </div>
-            </div>
-        </div>
-
-        <div class="document">
-            <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
-                <div class="w3-container">
-                    London
-                </div>
-                <hr>
-                <p id="caption">
-                    Unit 39 Saffron Court<br/>
-                    Basildon<br/>
-                    Essex<br/>
-                    SS15 6SS
-                </p>
-                <div class="download">
-                    Monday - Friday<br/>
-                    9am - 5pm<br/>
-                    tel: +44 (0)141 471 4691
-                </div>
-            </div>
-        </div>
-
-        <div class="document">
-            <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
-                <div class="w3-container">
-                    Manchester
-                </div>
-                <hr>
-                <p id="caption">
-                    Westhoughton Industrial Estate<br/>
-                    James St<br/>
-                    Westhoughton<br/>
-                    Bolton<br/>
-                    BL5 3QR
-                </p>
-                <div class="download">
-                    Monday - Friday<br/>
-                    9am - 5pm<br/>
-                    tel: +44 (0)1942 817 498
-                </div>
-            </div>
-        </div>
-
-        <div class="document">
-            <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
-                <div class="w3-container">
-                    Warsaw
-                </div>
-                <hr>
-                <p id="caption">
-                    Zaklad Produkcyjny<br/>
-                    Mloteczno 14a<br/>
-                    14-500 Braniewo<br/>
-                    Poland
-                </p>
-                <div class="download">
-                    Monday - Friday<br/>
-                    9am - 5pm<br/>
-                    tel.: (+48) 55 307 07 02<br/>
-                    Email: kontakt@fortaxa.eu<br/>
-                    Web: www.fortaxa.pl
-                </div>
-            </div>
-        </div>
-
-        <div class="document">
-            <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
-                <div class="w3-container">
-                    Gothenburg
-                </div>
-                <hr>
-                <p id="caption">
-                    Fältspatgatan 1<br/>
-                    Västra Frölunda 421 30 <br/>
-                    Sweden
-                </p>
-                <div class="download">
-                    Days Open<br/>
-                    Time Open<br/>
-                    W: www.fortaxa.se
-                </div>
-            </div>
-        </div>
-
-        <div class="document">
-            <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
-                <div class="w3-container">
-                    Stockholm
-                </div>
-                <hr>
-                <p id="caption">
-                    Importörvägen 4<br/>
-                    Årsta 120 44<br/>
-                    Sweden
-                </p>
-                <div class="download">
-                    Monday - Friday<br/>
-                    7am-4pm<br/>
-                    tel: +46855661670 <br/>
-                    W: www.fortaxa.se
-                </div>
-            </div>
-        </div>
-
-        <div class="document">
-            <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
-                <div class="w3-container">
-                    Malmo
-                </div>
-                <hr>
-                <p id="caption">
-                    Lärkträdsgatan 4<br/>
-                    Malmö 213 63<br/>
-                    Sweden
-                </p>
-                <div class="download">
-                    Monday - Friday<br/>
-                    9am - 5pm<br/>
-                    W: www.fortaxa.se
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-
-
-
-    <div class="mapBox alternative-colour">
-        <h3 id="mapHeading">Map View.</h3>
-        <div id="map"></div>
     </div>
 
     <script async defer
