@@ -1,0 +1,55 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block page-css-class %}cover-container w-100 d-flex h-100 p-3 mx-auto flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}Site Map{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+
+    <link rel="stylesheet" href='/static/css/sitemap.css'>
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA site map page. Get every page you need from this specific one
+{% endblock %}
+
+{% block content %}
+
+    <div id="sitemap">
+        <div class="head">
+            <hr>
+            <h3>FORTRESS SEFA {{ page.title }}</h3>
+            <a id="home-link" href="/home_page">home</a> | fortress sefa sitemap
+            <hr>
+        </div>
+        <div class="all-blocks">
+            <div class="prod-process">
+
+            </div>
+        </div>
+        <div class="all-blocks">
+
+            <div class="prod-process">
+                <h5>About Us</h5>
+
+
+            </div>
+            <div class="prod-process">
+                <h5>Products</h5>
+
+            </div>
+            <div class="prod-process">
+                <h5>Services</h5>
+
+            </div>
+            <div class="prod-process">
+                <h5>Account</h5>
+
+            </div>
+        </div>
+
+
+    </div>
+{% endblock %}

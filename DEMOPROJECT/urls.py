@@ -24,6 +24,7 @@ from wagtail.documents import urls as wagtaildocs_urls
 from wagtail.core import urls as wagtail_urls
 from allauth.account import *
 from . import views
+from django.contrib.sitemaps.views import sitemap
 
 urlpatterns = [
                   # path('admin/', admin.site.urls),

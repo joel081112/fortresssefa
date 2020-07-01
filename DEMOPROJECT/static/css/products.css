@@ -430,7 +430,7 @@ cursor: pointer;
     font-size: 45px;
 }
 
-#door-steel ul{
+.item-info ul{
     display:inline !important;
 }
 

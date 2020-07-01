@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <sitemap>
+        <loc>http://www.fortress-sefa.com/sitemap.xml</loc>
+    </sitemap>
+    <url>
+        <loc>http://www.fortress-sefa.com</loc>
+        <lastmod>30/06/2020</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>http://www.fortress-sefa.com/about/</loc>
+        <lastmod>30/06/2020</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>http://www.fortress-sefa.com/products/</loc>
+        <lastmod>30/06/2020</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>http://www.fortress-sefa.com/architect-page/</loc>
+        <lastmod>30/06/2020</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>http://www.fortress-sefa.com/contact-us/</loc>
+        <lastmod>30/06/2020</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+</urlset>

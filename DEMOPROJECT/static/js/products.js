@@ -1,5 +1,5 @@
 $(".carousel-indicators").each(function () {
-    if ($('ul > li').length > 8) {
+    if ($('ul > li').length > 9) {
         $('ul').hide();
     }
 });
@@ -43,16 +43,3 @@ $('.mini .carousel .carousel-item').each(function(){
 
 
 });
-
-
-$(".mini .carousel").swipe({
-        swipe: function (event, direction, distance, duration, fingerCount, fingerData) {
-            if (direction == 'left') $(this).carousel('next');
-            if (direction == 'right') $(this).carousel('prev');
-        },
-        allowPageScroll: "vertical"
-    });
-
-
-
-

@@ -25,7 +25,7 @@ SECRET_KEY = '#11yayz=k%wd-5(evc8s%h1j^u*o$8z#^bjv9=d^i!2iv&*k^z'
 # DEBUG = True
 # DEBUG = False
 DEBUG = True
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sitemaps',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',

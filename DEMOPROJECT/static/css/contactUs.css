@@ -91,6 +91,17 @@ html {
     margin-right: -50%;
 }
 
+@media only screen and (max-width: 640px) {
+    #contact-us .all-blocks{
+        padding-top: 0;
+    }
+
+    #caption{
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+}
+
 /*
 .contact-bar{
     background-color: black;

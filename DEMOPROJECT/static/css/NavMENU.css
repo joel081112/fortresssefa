@@ -160,7 +160,7 @@ body {
     border-left: 1px solid #000000;
     margin-left: 22.5px;
     list-style: none;
-    max-height: 0px;
+    max-height: 0;
     overflow: hidden;
     padding-left: 7.5px;
     position: relative;
@@ -168,6 +168,8 @@ body {
     z-index: 1;
 }
 
+
+/*Create line under sub heading that expands*/
 .menu > ol .sub-menu li {
     font-size: 0.9em;
 }
@@ -186,6 +188,9 @@ body {
 .menu > ol .sub-menu li a:focus:after {
     width: 15px;
 }
+/*end Create line under sub heading that expands*/
+
+
 
 /* Create three equal columns that floats next to each other */
 /* padding over the highlighted area*/
@@ -218,9 +223,10 @@ ol > .column a {
     }
 }
 
-/*THIS IS THE PROBLEM FOR THE BUTTON*/
+
 @media only screen and (min-width: 640px) {
 
+    /*Create line under main pages heading*/
     .menu a:focus,
     .menu a:hover {
         position: relative;
@@ -236,6 +242,8 @@ ol > .column a {
         right: 0;
         margin: auto;
     }
+    /*end Create line under main pages heading*/
+
 
     .menu {
         padding: 8px;
