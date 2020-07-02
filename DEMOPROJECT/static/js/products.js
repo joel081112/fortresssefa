@@ -18,6 +18,7 @@ $('#carouselExampleIndicators').carousel({
     interval: 25000
 });
 
+
 $('.mini .carousel .carousel-item').each(function(){
     var next = $(this).next();
 
@@ -43,3 +44,4 @@ $('.mini .carousel .carousel-item').each(function(){
 
 
 });
+

@@ -182,6 +182,8 @@ footer p {
 }
 
 
+
+
 .copyright {
     color: #4d5258;
 }
@@ -312,7 +314,6 @@ footer p {
 footer .column {
     float: left;
     padding: 10px;
-    height: 200px;
 }
 
 .left, .right {
@@ -323,6 +324,13 @@ footer .column {
 .middle {
     width: 50%;
     text-align: center;
+}
+
+
+@media only screen and (max-width: 1000px){
+    .middle {
+        font-size: 0.8rem;
+    }
 }
 
 /* Clear floats after the columns */

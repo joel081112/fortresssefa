@@ -1,43 +1,51 @@
 .human-rights {
-    padding: 10%;
+    padding: 5%;
 }
 
 .human-rights ul {
     margin-left: 5%;
 }
-.human-rights ol li{
+
+.human-rights ol li {
     padding-top: 25px;
 }
 
-#legalHeading{
-    padding-top: 50px;
-    padding-bottom: 50px;
-    text-align: center;
-}
-
-.human-rights h4 {
-    padding-top: 2%;
-}
 
 .human-rights ul {
     max-width: 800px;
     list-style: inherit;
 }
 
-.human-rights h1 {
-    margin: -100px 30% 100px;
-    font-size: 400%;
+
+
+.human-rights h2 {
+    margin: 0 0 20px;
 }
 
-.human-rights h2{
-    margin: 0 0 20px;
+.human-rights h4 {
+    padding-top: 2%;
+}
+
+#legalHeading h1 {
+    padding: 0 0 50px;
+    text-align: center;
+    font-size: 4rem;
 }
 
 @media only screen and (max-width: 640px) {
 
-    .human-rights h1 {
-        margin: -100px 30% 100px;
+    .human-rights {
+        padding: 15%;
     }
+
+    .human-rights h1 {
+        font-size: 2rem;
+    }
+
+    #legalHeading h1 {
+        font-size: 3rem;
+    }
+
 }
 
 .certificates {

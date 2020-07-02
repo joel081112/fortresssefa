@@ -20,7 +20,7 @@
 
 @media  only screen and  (min-width: 700px) and (max-width: 1000px) {
     .css-typing p {
-        font-size: 12px;
+        font-size: 0.6rem;
     }
 }
 
@@ -58,6 +58,15 @@
     animation-delay: 4s;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+}
+
+
+@media  only screen and  (min-width: 700px) and (max-width: 1000px) {
+    .css-typing p:nth-child(1) {
+        width: 30vw;
+    }
+
+
 }
 
 @keyframes type {

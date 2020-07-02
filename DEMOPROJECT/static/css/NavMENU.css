@@ -14,6 +14,7 @@
     --gradient-color: #FBFBFB;
 }
 
+/*background is for the line appearing on hover including white line that loads*/
 .menu a:focus {
     outline: none;
     position: relative;
@@ -23,8 +24,6 @@
     width: 100px;
 }
 
-
-/*background is for the line appearing on hover*/
 .menu a:after {
     content: "";
     background: #FBFBFB;
@@ -36,6 +35,8 @@
     transition: 0.5s;
     transition-delay: 0.2s;
 }
+
+/*end background is for the line appearing on hover including white line that loads*/
 
 
 /*background is behind text        e9e0c1*/
@@ -55,6 +56,7 @@ body {
     font-family: "Varela Round", Nunito, Montserrat, sans-serif;
 }
 
+/*menu box*/
 .menu > ol {
     list-style: none;
     margin: 2px 0;
@@ -70,27 +72,11 @@ body {
     transition: 0.5s;
 }
 
-/*Change the banner colours of the top of the menu*/
-.menu > ol > li:nth-child(1) {
-    --accent-color: #6396ad;
-    --gradient-color: #285469;
-}
-
-.menu > ol > li:nth-child(2) {
-    --accent-color: #6396ad;
-    --gradient-color: #285469;
-}
-
-.menu > ol > li:nth-child(3) {
-    --accent-color: #6396ad;
-    --gradient-color: #285469;
-}
-
-.menu > ol > li:nth-child(4) {
-    --accent-color: #6396ad;
-    --gradient-color: #285469;
-}
-
+/*Change the banner colours of the top of the menu in large view*/
+.menu > ol > li:nth-child(1),
+.menu > ol > li:nth-child(2),
+.menu > ol > li:nth-child(3),
+.menu > ol > li:nth-child(4),
 .menu > ol > li:nth-child(5) {
     --accent-color: #6396ad;
     --gradient-color: #285469;
@@ -107,6 +93,7 @@ body {
     z-index: 1;
 }
 
+/*arrow on sub menu*/
 .menu > ol > li a:not(:last-child):before {
     content: "\f078";
     font-family: fontAwesome;
@@ -120,11 +107,13 @@ body {
     transition: 0.5s;
 }
 
+/*This is the loading bar when you click menu drop down */
 .menu > ol > li:focus,
 .menu > ol > li:focus-within,
 .menu > ol > li:hover {
     z-index: 100;
 }
+
 
 .menu > ol > li:focus:after,
 .menu > ol > li:focus-within:after,
@@ -133,16 +122,21 @@ body {
     max-width: 800px;
 }
 
+/*Height of the drop down*/
 .menu > ol > li:focus .sub-menu,
-.menu > ol > li:focus-within .sub-menu {
+.menu > ol > li:focus-within .sub-menu,
+.menu > ol > li:hover .sub-menu {
     max-height: 1500px;
 }
 
+/*arrow on sub menu*/
 .menu > ol > li:focus a:before,
-.menu > ol > li:focus-within a:before {
+.menu > ol > li:focus-within a:before,
+.menu > ol > li:hover a:before {
     transform: rotate(-180deg);
 }
 
+/*background colour when drop down*/
 .menu > ol > li:after {
     background: #36718e;
     content: "";
@@ -151,18 +145,20 @@ body {
     right: 0;
     top: 0;
     bottom: 0;
-    transition: 0.5s;
+    transition: 1.5s;
     max-width: 0;
     overflow: hidden;
 }
 
+/* submenu styles */
+/*This is the one that changes submenu loading*/
 .menu > ol .sub-menu {
     border-left: 1px solid #000000;
-    margin-left: 22.5px;
+    margin-left: 22px;
     list-style: none;
     max-height: 0;
     overflow: hidden;
-    padding-left: 7.5px;
+    padding-left: 7px;
     position: relative;
     transition: 0.5s;
     z-index: 1;
@@ -174,6 +170,7 @@ body {
     font-size: 0.9em;
 }
 
+/*BACKGROUND FOR THE SUBMENU OPTIONS*/
 .menu > ol .sub-menu li:hover,
 .menu > ol .sub-menu li a:focus {
     background: rgba(60, 60, 60, 0.3);
@@ -188,7 +185,6 @@ body {
 .menu > ol .sub-menu li a:focus:after {
     width: 15px;
 }
-/*end Create line under sub heading that expands*/
 
 
 
@@ -242,9 +238,8 @@ ol > .column a {
         right: 0;
         margin: auto;
     }
+
     /*end Create line under main pages heading*/
-
-
     .menu {
         padding: 8px;
         max-width: 1510px;
@@ -374,30 +369,17 @@ ol > .column a {
 }
 
 @media screen and (max-width: 639.98px) {
-    .menu > ol > li:nth-child(1) {
-        --accent-color: #285469;
-        --gradient-color: #285469;
-    }
 
-    .menu > ol > li:nth-child(2) {
-        --accent-color: #285469;
-        --gradient-color: #285469;
-    }
-
-    .menu > ol > li:nth-child(3) {
-        --accent-color: #285469;
-        --gradient-color: #285469;
-    }
-
-    .menu > ol > li:nth-child(4) {
-        --accent-color: #285469;
-        --gradient-color: #285469;
-    }
-
+    /*This changes the colour of the background for the drop down menu that appears*/
+    .menu > ol > li:nth-child(1),
+    .menu > ol > li:nth-child(2),
+    .menu > ol > li:nth-child(3),
+    .menu > ol > li:nth-child(4),
     .menu > ol > li:nth-child(5) {
         --accent-color: #285469;
         --gradient-color: #285469;
     }
+
 }
 
 

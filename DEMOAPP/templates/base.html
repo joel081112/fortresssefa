@@ -65,7 +65,7 @@
 
 
 </head>
-<body class="{% block body_class %}{% endblock %}" tabIndex=0>
+<body class="{% block body_class %}{% endblock %}">
 {% wagtailuserbar %}
 
 <div class="{% block page-css-class %}{% endblock %}">
@@ -252,6 +252,10 @@
 <script src="../../static/js/aos.js"></script>
 <script src="../../static/js/contactUs.js"></script>
 <script src="../../static/js/products.js"></script>
+<script>
+    document.addEventListener("touchstart", function () {
+    }, true);
+</script>
 
 
 
