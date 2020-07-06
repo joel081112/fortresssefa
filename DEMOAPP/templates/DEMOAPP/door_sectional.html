@@ -5,9 +5,11 @@
 {% block body_class %}Sectional Door{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
-<link rel="stylesheet" href='/static/css/blog.css'>
+    <link rel="stylesheet" href='/static/css/blog.css'>
     <link rel="stylesheet" href='/static/css/w3.css'>
     <link rel="stylesheet" href='/static/css/homePage.css'>
+
+    <link rel="stylesheet" href='/static/css/image-gallery.css'>
 {% endblock %}
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
@@ -19,10 +21,36 @@
 {% block content %}
     {% include 'type_text.html' %}
     <div class="alternative-colour">
-    images
+        images
+
+
+        <main class="container">
+            <div class="child">
+                <h2>Image 1</h2>
+            </div>
+            <div class="child">
+                <h2>Image 2</h2>
+            </div>
+            <div class="child">
+                <h2>Image 3</h2>
+            </div>
+            <div class="child">
+                <h2>Image 4</h2>
+            </div>
+            <div class="child">
+                <h2>Image 5</h2>
+            </div>
+            <div class="child">
+                <h2>Image 6</h2>
+            </div>
+            <div class="child">
+                <h2>Image 7</h2>
+            </div>
+        </main>
+
     </div>
     description
     <div class="alternative-colour">
-    options
+        options
     </div>
 {% endblock %}

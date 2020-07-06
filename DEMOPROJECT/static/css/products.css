@@ -432,9 +432,6 @@
     align-items: center;
 }
 
-.carousel-item {
-    transition-timing-function: linear;
-}
 
 .carousel-inner .carousel-item-right,
 .carousel-inner .carousel-item-left {

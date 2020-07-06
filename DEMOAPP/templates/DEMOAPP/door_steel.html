@@ -8,6 +8,7 @@
     <link rel="stylesheet" href='/static/css/blog.css'>
     <link rel="stylesheet" href='/static/css/w3.css'>
     <link rel="stylesheet" href='/static/css/homePage.css'>
+    <link rel="stylesheet" href='/static/css/image-gallery.css'>
 
 {% endblock %}
 {% block extra_js %}
@@ -27,6 +28,7 @@
                     <h3>SR3 Door</h3>
                     <h1>Extra Security.<br/>
                         More Thought.<br/>
+
                         More Design.</h1>
                     <h3>Highest Security</h3>
                     {% for download in page.steelDoor_pdf.all|slice:"1" %} {# loop over the ArchitectDownload objects #}
@@ -35,12 +37,13 @@
                             <div class="download">
                                 <a href="{{ doc.url }}" class="smooth-over-button noDecoration">
                                     <i class="fa fa-download"></i>
-                                    <p class="btn-txt">{{doc.title}}</p>
+                                    <p class="btn-txt">{{ doc.title }}</p>
                                 </a>
                             </div>
                         {% endwith %}
                     {% endfor %}
                     <p> More details below </p>
+                    <p>Architects go to <a href="/architect-page/">Architect Page! <i class="fa fa-user"></i> </a>  </p>
 
 
                 </div>
@@ -97,7 +100,7 @@
                     {# end carousel #}
 
 
-                    <div class="mini">
+                    {% comment %}<div class="mini">
 
                         <div class="prod-images">
                             <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
@@ -130,7 +133,23 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>{% endcomment %}
+
+
+                    <main class="container" id="gallery">
+                        {% for item in page.steelDoor_images.all %}
+
+                            <div class="child {% if forloop.counter == 1 %}active{% endif %}">
+                                {% image item.image fill-100x100 as img %}
+                                <img src="{{ img.url }}"
+                                     data-target="#carouselExampleIndicators"
+                                     data-slide-to="{{ forloop.counter|add:"-1" }}"
+                                     alt="{{ img.alt }}">
+                            </div>
+
+
+                        {% endfor %}
+                    </main>
                     {# end carousel #}
                 </div>
 
@@ -138,7 +157,7 @@
         </div>
 
 
-        <div class="intro" id="aboutExtra" data-aos="fade-down">
+        <div class="intro" id="aboutExtra">
             <h2>What all this means.</h2>
             {{ page.general|richtext }}
         </div>

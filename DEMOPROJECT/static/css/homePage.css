@@ -202,8 +202,16 @@
     display: none;
     margin-left: 10px;
     padding: 40px 0 5px;
-    border-radius: 6px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+#open{
+    display: inline;
+
+}
+
+#close{
+    display: none;
 }
 
 .dropdown li a {
@@ -235,8 +243,6 @@ a.account {
     text-decoration: none;
     background: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAECAYAAABCxiV9AAAAIklEQVQI12NgYGBwA+JsLBgkDgZuuCTQFSAk/v//j64ADgAE3AirQOYYigAAAABJRU5ErkJggg==) 116px 17px no-repeat;
     cursor: pointer;
-
-    border-radius: 6px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 

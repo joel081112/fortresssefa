@@ -7,6 +7,13 @@
     {# Override this in templates to add extra stylesheets #}
     <link rel="stylesheet" href='/static/css/blog.css'>
     <link rel="stylesheet" href='/static/css/w3.css'>
+
+
+
+    <link rel="stylesheet" href='/static/css/image-gallery.css'>
+
+
+
 {% endblock %}
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
@@ -54,6 +61,7 @@
         <hr/>
         <div class="intro">
             <h2>Choose your colour.</h2>
+            <p>Colour names will appear on full images </p>
         </div>
 
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -87,7 +95,7 @@
                     {% endfor %}
                 </div>
 
-                <div class="arrow-sets">
+                <div class="arrow-sets" id="protec-arrows">
                     <a class="left recommended-item-control" href="#carouselExampleIndicators"
                        data-slide="prev">
                         <i class="fa fa-angle-left"></i>
@@ -99,10 +107,11 @@
                 </div>
             </div>
         </div>
+
         {# end carousel #}
 
 
-        <div class="gallery thumbs">
+        {% comment %} <div class="gallery thumbs">
             <div class="gallery">
                 <div class="container">
                     {% for item in page.protec_images.all %}
@@ -114,11 +123,30 @@
                     {% endfor %}
                 </div>
             </div>
+        </div>{% endcomment %}
+        <div class="full">
+            <main class="container" id="gallery">
+                {% for item in page.protec_images.all %}
+
+                    <div class="child {% if forloop.counter == 1 %}active{% endif %}">
+                        {% image item.image fill-100x50-c100 as img %}
+                        <img src="{{ img.url }}"
+                             data-target="#carouselExampleIndicators"
+                             data-slide-to="{{ forloop.counter|add:"-1" }}"
+                             alt="{{ img.alt }}">
+                        {% comment %}
+                        <p id="colour-title">{{ item.caption }}</p>
+                        {% endcomment %}
+                    </div>
+
+
+                {% endfor %}
+            </main>
         </div>
 
         <hr/>
         <div class="image-container1 alternative-colour">
-            <div class="image-container2 " data-aos="fade-down">
+            <div class="image-container2 ">
                 <img src="/media/images/protec9.jpg" class="full-image">
                 <div class="image-container2 images-2" data-aos="fade-down">
                     <img src="/media/images/protec8.jpg" class="wide-images-left">

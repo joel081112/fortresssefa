@@ -170,10 +170,17 @@
     }
 }
 
-.protec .arrow-sets{
-    margin-left: 0;
+
+#protec-arrows{
+    margin-left: 25%;
 }
 
+@media only screen and (max-width: 800px) {
+    #protec-arrows {
+        width: 100%;
+        margin-left: 0;
+    }
+}
 
 
 
