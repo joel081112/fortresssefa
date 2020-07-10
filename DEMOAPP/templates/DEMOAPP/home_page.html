@@ -80,7 +80,7 @@
                 <div class="homeInfo2">
                     {{ page.security|richtext }}
                 </div>
-                <div class="homeIm1 responsiveness">
+                <div class="homeIm1 responsiveness super-centered">
                     {% for item in page.homepage_images.all|slice:"1" %}
                         {% image item.image fill-800x800-c100 %}
                         <p>{{ item.caption }}</p>
@@ -91,7 +91,7 @@
                 <div class="homeInfo3">
                     {{ page.environment|richtext }}
                 </div>
-                <div class="homeIm2">
+                <div class="homeIm2  super-centered">
                     {% for item in page.homepage_images.all|slice:"1:2" %}
                         {% image item.image fill-800x800-c100 %}
                         <p>{{ item.caption }}</p>
@@ -103,7 +103,7 @@
                 <div class="homeInfo4">
                     {{ page.fire|richtext }}
                 </div>
-                <div class="homeIm3">
+                <div class="homeIm3  super-centered">
                     {% for item in page.homepage_images.all|slice:"2:3" %}
                         {% image item.image fill-800x800-c100 %}
                         <p>{{ item.caption }}</p>
@@ -115,7 +115,7 @@
                 <div class="homeInfo5">
                     {{ page.architectural|richtext }}
                 </div>
-                <div class="homeIm4">
+                <div class="homeIm4  super-centered">
                     {% for item in page.homepage_images.all|slice:"3:4" %}
                         {% image item.image fill-800x800-c100 %}
                         <p>{{ item.caption }}</p>

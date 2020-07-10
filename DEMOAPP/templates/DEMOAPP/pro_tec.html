@@ -124,11 +124,10 @@
                 </div>
             </div>
         </div>{% endcomment %}
-        <div class="full">
-            <main class="container" id="gallery">
+            <main class="container-snap full image-gallery" id="gallery">
                 {% for item in page.protec_images.all %}
 
-                    <div class="child {% if forloop.counter == 1 %}active{% endif %}">
+                    <div class="child-snap height-depend {% if forloop.counter == 1 %}active{% endif %}">
                         {% image item.image fill-100x50-c100 as img %}
                         <img src="{{ img.url }}"
                              data-target="#carouselExampleIndicators"
@@ -142,7 +141,6 @@
 
                 {% endfor %}
             </main>
-        </div>
 
         <hr/>
         <div class="image-container1 alternative-colour">

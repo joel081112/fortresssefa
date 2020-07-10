@@ -6,6 +6,9 @@
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
     <link rel="stylesheet" href='/static/css/about.css'>
+    <link rel="stylesheet" href='/static/css/image-gallery.css'>
+
+    <link rel="stylesheet" href='/static/css/slider.css'>
 {% endblock %}
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
@@ -16,7 +19,7 @@
 {% endblock %}
 
 {% block content %}
-    <h1 id="aboutHeading">
+    <h1 class="aboutHeading">
         {{ page.title }} FORTRESS-SEFA
     </h1>
     <div class="pastIntro flex-container alternative-colour">
@@ -51,91 +54,178 @@
 
     <div class="intro" id="aboutExtra" data-aos="fade-right">
         {{ page.extra|richtext }}
+       {% comment %} <p class="content" contenteditable>
+            This can be edited on view
+        </p>{% endcomment %}
     </div>
 
     <div class="our-Brands alternative-colour">
-        <h3 id="aboutHeading">
+        <h3 class="aboutHeading">
             Our Brand over time have expanded
-
-            Think about possible design to show this. Maybe like a carousel
-
         </h3>
-        <article class="item">
-            <div class="brand-image">
-                <img src="/media/images/fortress axalux.jpg" class="item" alt="fortress axalux.jpg">
+
+        <div class="intro" data-aos="fade-left">
+            {{ page.brands|richtext }}
+        </div>
 
 
-            </div>
-            <div class="brand-desc">
-                Fortress SEFA controls our operations in the UK mainland. Branches include, Glasgow, Dundee, Manchester and London.
-            </div>
-        </article>
-    <article class="item">
-            <div class="brand-image">
-                dam
-
-            </div>
-            <div class="brand-desc">
-                Fortress Doors control our business in Ireland. The Irish Headquarters are located in Belfast.
-            </div>
-        </article>
-    <article class="item">
-            <div class="brand-image">
-                dam
-
-            </div>
-            <div class="brand-desc">
-                Fortress Glass technology provide services in glazing solutions, framing and curtain walls.
-            </div>
-        </article>
-    <article class="item">
-            <div class="brand-image">
-                dam
-
-            </div>
-            <div class="brand-desc">
-                Fortress Andersons Service agency provide all service and repairs for Fortress customers
-            </div>
-        </article>
-    <article class="item">
-            <div class="brand-image">
-                dam
-
-            </div>
-            <div class="brand-desc">
-                Pro-Tec powder coating provide painting services for all Fortress products
-            </div>
-        </article>
-    <article class="item">
-            <div class="brand-image">
-                dam
-
-            </div>
-            <div class="brand-desc">
-                Fortress Eco investigates ways to improve the environmental impact of all Fortress companies.
-            </div>
-        </article>
-    <article class="item">
-            <div class="brand-image">
-                dam
-
-            </div>
-            <div class="brand-desc">
-                Fortaxa Security controls operations in Sweden with branches in Malmo, Goteborg, Uppsala and Stockholm.
-            </div>
-        </article>
-    <article class="item">
-            <div class="brand-image">
-                dam
-
-            </div>
-            <div class="brand-desc">
-                Fortress Axalux controls operations in Poland with branches in Gdansk and Warsaw.
-            </div>
-        </article>
+        {% comment %}<main class="container-snap full" id="gallery">
+            <div class="child-snap">
+                <div class="brand-image">
+                    <img src="/media/images/tr_fortress sefa.png" class="item" alt="fortress sefa.jpg">
 
 
+                </div>
+                <div class="brand-desc">
+                    Fortress SEFA controls our operations in the UK mainland. Branches include, Glasgow, Dundee,
+                    Manchester
+                    and London.
+                </div>
+            </div>
+            <div class="child-snap">
+                <div class="brand-image">
+                    <img src="/media/images/tr_fortress doors.png" class="item" alt="fortress doors.jpg">
 
+                </div>
+                <div class="brand-desc">
+                    Fortress Doors control our business in Ireland. The Irish Headquarters are located in Belfast.
+                </div>
+            </div>
+            <div class="child-snap">
+                <div class="brand-image">
+                    <img src="/media/images/tr_fortress glass.png" class="item" alt="fortress glass.jpg">
+
+                </div>
+                <div class="brand-desc">
+                    Fortress Glass technology provide services in glazing solutions, framing and curtain walls.
+                </div>
+            </div>
+            <div class="child-snap">
+                <div class="brand-image">
+                    <img src="/media/images/tr_fasa.png" class="item" alt="fasa.jpg">
+
+                </div>
+                <div class="brand-desc">
+                    Fortress Andersons Service agency provide all service and repairs for Fortress customers
+                </div>
+            </div>
+            <div class="child-snap">
+                <div class="brand-image">
+                    <img src="/media/images/tr_pro-tec.png" class="item" alt="fortress axalux.jpg">
+
+                </div>
+                <div class="brand-desc">
+                    Pro-Tec powder coating provide painting services for all Fortress products
+                </div>
+            </div>
+            <div class="child-snap">
+                <div class="brand-image">
+                    <img src="/media/images/tr_fortress eco.png" class="item" alt="fortress axalux.jpg">
+
+                </div>
+                <div class="brand-desc">
+                    Fortress Eco investigates ways to improve the environmental impact of all Fortress companies.
+                </div>
+            </div>
+            <div class="child-snap">
+                <div class="brand-image">
+                    <img src="/media/images/fortaxa security.png" class="item" alt="fortress axalux.jpg">
+
+                </div>
+                <div class="brand-desc">
+                    Fortaxa Security controls operations in Sweden with branches in Malmo, Goteborg, Uppsala and
+                    Stockholm.
+                </div>
+            </div>
+            <div class="child-snap">
+                <div class="brand-image">
+                    <img src="/media/images/tr_fortress axalux.png" class="item" alt="fortress axalux.jpg">
+
+                </div>
+                <div class="brand-desc">
+                    Fortress Axalux controls operations in Poland with branches in Gdansk and Warsaw.
+                </div>
+            </div>
+        </main>{% endcomment %}
+
+
+        <div class="slider">
+            <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide2" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide3" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide4" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide4" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide4" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide4" class="slider__nav"/>
+            <input type="radio" name="slider" title="slide4" class="slider__nav"/>
+            <div class="slider__inner">
+                <div class="slider__contents">
+                    <img src="/media/images/tr_fortress sefa.png" class="item" alt="fortress sefa">
+                    <h2 class="slider__caption">SEFA</h2>
+                    <p class="slider__txt">Fortress SEFA controls our operations in the UK mainland. Branches include,
+                        Glasgow, Dundee,
+                        Manchester
+                        and London.</p>
+                </div>
+                <div class="slider__contents">
+                    <img src="/media/images/tr_fortress doors.png" class="item" alt="fortress doors">
+                    <h2 class="slider__caption">Doors</h2>
+                    <p class="slider__txt">Fortress Doors control our business in Ireland. The Irish Headquarters are
+                        located in Belfast.</p>
+                </div>
+                <div class="slider__contents">
+                    <img src="/media/images/tr_fortress glass.png" class="item" alt="fortress glass">
+
+                    <h2 class="slider__caption">Glass</h2>
+                    <p class="slider__txt"> Fortress Glass technology provide services in glazing solutions, framing and
+                        curtain walls.</p>
+                </div>
+                <div class="slider__contents">
+                    <img src="/media/images/tr_fasa.png" class="item" alt="fasa">
+                    <h2 class="slider__caption">Service</h2>
+                    <p class="slider__txt">Fortress Andersons Service agency provide all service and repairs for
+                        Fortress customers</p>
+                </div>
+                <div class="slider__contents">
+                    <img src="/media/images/tr_pro-tec.png" class="item" alt="pro-tec">
+                    <h2 class="slider__caption">Pro-Tec</h2>
+                    <p class="slider__txt">Pro-Tec powder coating provide painting services for all Fortress products
+                    </p>
+                </div>
+                <div class="slider__contents">
+                    <img src="/media/images/tr_fortress eco.png" class="item" alt="fortress eco">
+                    <h2 class="slider__caption">Eco</h2>
+                    <p class="slider__txt">Fortress Eco investigates ways to improve the environmental impact of all
+                        Fortress companies.</p>
+                </div>
+                <div class="slider__contents">
+                    <img src="/media/images/fortaxa security.png" class="item" alt="fortaxa security">
+                    <h2 class="slider__caption">Security</h2>
+                    <p class="slider__txt">Fortaxa Security controls operations in Sweden with branches in Malmo,
+                        Goteborg, Uppsala and
+                        Stockholm.</p>
+                </div>
+                <div class="slider__contents">
+                    <img src="/media/images/tr_fortress axalux.png" class="item" alt="fortress axalux">
+                    <h2 class="slider__caption">Axalux</h2>
+                    <p class="slider__txt">Fortress Axalux controls operations in Poland with branches in Gdansk and
+                        Warsaw.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="global-partners">
+        <h3 class="aboutHeading">
+            We have Global Partners too
+        </h3>
+        <div class="flex-global" data-aos="fade-right">
+            <img src="/media/images/amstel manuf.png" class="item" alt="amstel manuf">
+            <img src="/media/images/cornell safe and secure.png" class="item" alt="cornell safe and secure">
+
+        </div>
     </div>
 
 
@@ -316,123 +406,102 @@
             </div> <!-- main-content -->
         </div>
         <div class="mobile">
-            <div class="container">
-                <div class="child">
-
-                    <div class="post-content">
-                        <div class="timeline-desc" data-aos="fade-up">
-                            <h5 class="meta">1970</h5>
-                            <h2 class="post-title">THE BEGINNING</h2>
-                            <div class="entry-content">
-                                <p>Fortress Industries created</p>
-                            </div>
-                        </div>
+            <div class="post-content">
+                <div class="timeline-desc" data-aos="fade-up">
+                    <h5 class="meta">1970</h5>
+                    <h2 class="post-title">THE BEGINNING</h2>
+                    <div class="entry-content">
+                        <p>Fortress Industries created</p>
                     </div>
                 </div>
-                <div class="child">
-                    <div class="post-content ">
-                        <div class="timeline-desc" data-aos="fade-up">
-                            <h5 class="meta">1995</h5>
-                            <h2 class="post-title">FORTRESS PRO-TEC</h2>
-                            <div class="entry-content">
-                                <p>Creation of Fortress Pro-Tec power coating</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="post-content ">
-                        <div class="timeline-desc" data-aos="fade-up">
-                            <h5 class="meta">2003</h5>
-                            <h2 class="post-title">FORTRESS DOORS</h2>
-                            <div class="entry-content">
-                                <p>Demerger of Fortress Industries creates Fortress Doors</p>
-                            </div>
-                        </div>
+            </div>
+            <div class="post-content ">
+                <div class="timeline-desc" data-aos="fade-up">
+                    <h5 class="meta">1995</h5>
+                    <h2 class="post-title">FORTRESS PRO-TEC</h2>
+                    <div class="entry-content">
+                        <p>Creation of Fortress Pro-Tec power coating</p>
                     </div>
                 </div>
-                <div class="child">
-                    <div class="post-content ">
-                        <div class="timeline-desc" data-aos="fade-up">
-                            <h5 class="meta">2005</h5>
-                            <h2 class="post-title">FORTRESS ANDERSONS</h2>
-                            <div class="entry-content">
-                                <p>Creation of Fortress Andersons service Agency</p>
-                            </div>
-                        </div>
+            </div>
+            <div class="post-content ">
+                <div class="timeline-desc" data-aos="fade-up">
+                    <h5 class="meta">2003</h5>
+                    <h2 class="post-title">FORTRESS DOORS</h2>
+                    <div class="entry-content">
+                        <p>Demerger of Fortress Industries creates Fortress Doors</p>
                     </div>
                 </div>
-                <div class="child">
-                    <div class="post-content ">
-                        <div class="timeline-desc" data-aos="fade-up">
-                            <h5 class="meta">2006</h5>
-                            <h2 class="post-title">COUNT SHUTTERS</h2>
-                            <div class="entry-content">
-                                <p>Merger with County Shutters</p>
-                            </div>
-                        </div>
+            </div>
+            <div class="post-content ">
+                <div class="timeline-desc" data-aos="fade-up">
+                    <h5 class="meta">2005</h5>
+                    <h2 class="post-title">FORTRESS ANDERSONS</h2>
+                    <div class="entry-content">
+                        <p>Creation of Fortress Andersons service Agency</p>
                     </div>
                 </div>
-                <div class="child">
-                    <div class="post-content ">
-                        <div class="timeline-desc" data-aos="fade-up">
-                            <h5 class="meta">2007</h5>
-                            <h2 class="post-title">FORTRESS GLASS</h2>
-                            <div class="entry-content">
-                                <p>Creation of Fortress Glass</p>
-                            </div>
-                        </div>
+            </div>
+            <div class="post-content ">
+                <div class="timeline-desc" data-aos="fade-up">
+                    <h5 class="meta">2006</h5>
+                    <h2 class="post-title">COUNT SHUTTERS</h2>
+                    <div class="entry-content">
+                        <p>Merger with County Shutters</p>
                     </div>
                 </div>
-                <div class="child">
-
-                    <div class="post-content ">
-                        <div class="timeline-desc" data-aos="fade-up">
-                            <h5 class="meta">2008</h5>
-                            <h2 class="post-title">AABLE MERGE</h2>
-                            <div class="entry-content">
-                                <p>Merger with Aable Roller Shutters</p>
-                            </div>
-                        </div>
+            </div>
+            <div class="post-content ">
+                <div class="timeline-desc" data-aos="fade-up">
+                    <h5 class="meta">2007</h5>
+                    <h2 class="post-title">FORTRESS GLASS</h2>
+                    <div class="entry-content">
+                        <p>Creation of Fortress Glass</p>
                     </div>
                 </div>
-                <div class="child">
-                    <div class="post-content ">
-                        <div class="timeline-desc" data-aos="fade-up">
-                            <h5 class="meta">2010</h5>
-                            <h2 class="post-title">AABLE FORTRESS</h2>
-                            <div class="entry-content">
-                                <p>Scotland to form Aable Fortress</p>
-                            </div>
-                        </div>
+            </div>
+            <div class="post-content ">
+                <div class="timeline-desc" data-aos="fade-up">
+                    <h5 class="meta">2008</h5>
+                    <h2 class="post-title">AABLE MERGE</h2>
+                    <div class="entry-content">
+                        <p>Merger with Aable Roller Shutters</p>
                     </div>
                 </div>
-                <div class="child">
-                    <div class="post-content ">
-                        <div class="timeline-desc" data-aos="fade-up">
-                            <h5 class="meta">2013</h5>
-                            <h2 class="post-title">SWEDEN EXPANSION</h2>
-                            <div class="entry-content">
-                                <p>Merger with FortAXA Security Sweden</p>
-                            </div>
-                        </div>
+            </div>
+            <div class="post-content ">
+                <div class="timeline-desc" data-aos="fade-up">
+                    <h5 class="meta">2010</h5>
+                    <h2 class="post-title">AABLE FORTRESS</h2>
+                    <div class="entry-content">
+                        <p>Scotland to form Aable Fortress</p>
                     </div>
                 </div>
-
-                <div id="scroll-down-animation">
-              <span class="mouse">
-                <span class="move"></span>
-              </span>
+            </div>
+            <div class="post-content ">
+                <div class="timeline-desc" data-aos="fade-up">
+                    <h5 class="meta">2013</h5>
+                    <h2 class="post-title">SWEDEN EXPANSION</h2>
+                    <div class="entry-content">
+                        <p>Merger with FortAXA Security Sweden</p>
+                    </div>
                 </div>
             </div>
 
+            <div id="scroll-down-animation">
+              <span class="mouse">
+                <span class="move"></span>
+              </span>
+            </div>
         </div>
     </div>
-
 
 
     <div class="pastClients" data-aos="fade-down">
         <div class="pastBox">
             <h2>Clients</h2>
-            <p>As one of Europes leading door suppliers we have a long list of high profile clients who trust us with
+            <p>As one of Europes leading door suppliers we have a long list of high profile clients who trust us
+                with
                 their
                 business.
                 Here is a list of just a few of them.</p>

@@ -10,10 +10,10 @@ img {
 }
 
 #aboutExtra {
-    padding: 250px 20%;
+    padding: 50px 20% 150px;
 }
 
-#aboutHeading {
+.aboutHeading {
     padding-top: 50px;
     padding-bottom: 50px;
     text-align: center;
@@ -58,6 +58,7 @@ img {
     justify-content: center;
     flex-direction: column;
 }
+
 
 .chat {
     width: auto;
@@ -224,6 +225,42 @@ img {
 }
 
 /*end of slam animation*/
+
+
+.our-Brands {
+    padding-top: 50px;
+    padding-bottom: 10%;
+}
+
+.global-partners {
+    padding-top: 50px;
+    padding-bottom: 10%;
+
+}
+
+.global-partners img {
+    max-width: 350px;
+    height: auto;
+    max-height: 200px;
+    width: auto;
+}
+
+@media only screen and (max-width: 640px) {
+
+    .global-partners img {
+        max-width: 80%;
+        height: auto;
+    }
+}
+
+
+.flex-global {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
 
 /*timeline start*/
@@ -525,18 +562,6 @@ img {
         height: 100vh;
     }
 
-    * {
-        box-sizing: border-box;
-    }
-
-    .mobile .container {
-        scroll-snap-type: y mandatory;
-    }
-
-    .mobile .child {
-        scroll-snap-align: start;
-    }
-
 
     .timeline-desc {
         padding-top: 55vh;
@@ -556,7 +581,6 @@ img {
     #scroll-down-animation {
         position: fixed;
         bottom: 5%;
-        left: 50%;
         z-index: 50;
     }
 
@@ -701,22 +725,20 @@ img {
     width: 50%;
 }
 
-.brand-image{
-    text-align: right;
-    padding: 50px 100px 50px 100px;
-    align-items: flex-end;
+.brand-image {
+    width: 25vw;
 }
 
-.brand-image img{
-    max-height: 250px;
-    width: auto;
-}
 
-.brand-desc{
-    height: 150px;
-    text-align:left;
-    padding: 50px 100px 50px 100px;
+.brand-desc {
     justify-content: flex-start;
+}
+
+.brand-image img {
+    max-height: 200px;
+    height: auto;
+    width: auto;
+    max-width: 250px;
 }
 
 @media only screen and (max-width: 640px) {

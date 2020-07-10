@@ -18,6 +18,10 @@ ul {
     align-content: flex-start;
 }
 
+.product-card{
+    max-width: 35vw;
+}
+
 .document .w3-container {
     font-size: 20px;
     padding-top: 5px;
@@ -53,8 +57,13 @@ ul {
 .download {
     bottom: 0;
     text-decoration: none;
+    max-width: 75%;
+    margin:0 auto;
 }
 
+.product-info .smooth-over-button{
+    font-size: 14px;
+}
 
 #intro {
     padding-top: 10%;
@@ -69,8 +78,7 @@ ul {
 
 #caption {
     max-width: 300px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0 auto;
     padding-top: 10px;
     padding-bottom: 20px;
 }

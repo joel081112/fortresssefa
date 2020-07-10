@@ -1,3 +1,8 @@
+#architect-link{
+    color: blue;
+    text-decoration: underline;
+}
+
 
 .products-container {
     display: flex;
@@ -157,7 +162,6 @@
 
 .prod-images .gallery img {
     padding: 5px;
-    border-radius: 5px;
 }
 
 .thumbs img {

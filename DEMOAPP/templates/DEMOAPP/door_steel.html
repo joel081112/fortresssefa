@@ -43,7 +43,7 @@
                         {% endwith %}
                     {% endfor %}
                     <p> More details below </p>
-                    <p>Architects go to <a href="/architect-page/">Architect Page! <i class="fa fa-user"></i> </a>  </p>
+                    <p>Architects go to <a href="/architect-page/" id="architect-link">Architect Page!</a> <i class="fa fa-user"></i> </p>
 
 
                 </div>
@@ -136,10 +136,10 @@
                     </div>{% endcomment %}
 
 
-                    <main class="container" id="gallery">
+                    <main class="container-snap half-margin image-gallery" id="gallery">
                         {% for item in page.steelDoor_images.all %}
 
-                            <div class="child {% if forloop.counter == 1 %}active{% endif %}">
+                            <div class="child-snap {% if forloop.counter == 1 %}active{% endif %} height-depend">
                                 {% image item.image fill-100x100 as img %}
                                 <img src="{{ img.url }}"
                                      data-target="#carouselExampleIndicators"
@@ -154,10 +154,12 @@
                 </div>
 
             </article>
+
+
         </div>
 
-
         <div class="intro" id="aboutExtra">
+
             <h2>What all this means.</h2>
             {{ page.general|richtext }}
         </div>

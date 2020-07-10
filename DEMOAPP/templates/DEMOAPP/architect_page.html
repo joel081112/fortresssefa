@@ -33,41 +33,74 @@
     </div>
 
     <div class="all-blocks">
-        {% for download in page.architect_pdf.all %} {# loop over the ArchitectDownload objects #}
-
-            <div class="document">
+        {% for download in page.architect_pdf.all %}
+            <div class="document product-card">
                 <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
-
-
                     {% image download.image fill-150x150-c100 %}
-                    {% with doc=download.architect_pdf %} {# retrieve the Document object for each one #}
-
-                        <div class="w3-container">
-                            {{ doc.title }}
-                        </div>
-
-                    {% endwith %}
-
-                  <hr>
+                    <div class="w3-container">
+                        {{ panel.name }}
+                    </div>
+                    <hr>
                     <p id="caption">{{ download.caption }}</p>
-
-                    {% with doc=download.architect_pdf %} {# retrieve the Document object for each one #}
-
-                        <div class="download">
+                    {% with doc=download.architect_pdf %}
+                        <div class="download product-info">
                             <a href="{{ doc.url }}" class="smooth-over-button noDecoration">
                                 <i class="fa fa-download"></i>
-                                <p class="btn-txt">PDF</p>
+                                <p class="btn-txt">{{ doc.title }}</p>
                             </a>
-
                         </div>
-
                     {% endwith %}
-
-
                 </div>
             </div>
-
         {% endfor %}
+
+
+        <div class="document product-card">
+            <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
+                {% for download in page.architect_pdf.all|slice:":1" %}
+                    {% image download.image fill-150x150-c100 %}
+                    <div class="w3-container">
+                        {{ panel.name }}
+                    </div>
+                    <hr>
+                    <p id="caption">{{ download.caption }}</p>
+                {% endfor %}
+                {% for download in page.architect_pdf.all %}
+                    {% with doc=download.architect_pdf %}
+                        <div class="download product-info">
+                            <a href="{{ doc.url }}" class="smooth-over-button noDecoration">
+                                <i class="fa fa-download"></i>
+                                <p class="btn-txt">{{ doc.title }}</p>
+                            </a>
+                        </div>
+                    {% endwith %}
+                {% endfor %}
+            </div>
+        </div>
+
+        {# Product1 #}
+        <div class="document product-card">
+            <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
+                {% image page.image1 fill-150x150-c100 %}
+                <div class="w3-container">
+
+                </div>
+                <hr>
+                <p id="caption">{{ page.caption1 }}</p>
+                {% for download in page.product1.all %}
+                    {% with doc=download.product1 %}
+                        <div class="download product-info">
+                            <a href="{{ doc.url }}" class="smooth-over-button noDecoration">
+                                <i class="fa fa-download"></i>
+                                <p class="btn-txt">{{ doc.title }}</p>
+                            </a>
+                        </div>
+                    {% endwith %}
+                {% endfor %}
+            </div>
+        </div>
+
+
     </div>
 
 

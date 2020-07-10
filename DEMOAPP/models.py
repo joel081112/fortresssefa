@@ -14,7 +14,7 @@ from modelcluster.fields import ParentalKey
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, MultiFieldPanel, TabbedInterface, ObjectList, \
     StreamFieldPanel, FieldRowPanel
 from wagtail.core.fields import RichTextField
-from wagtail.core.models import Page, Orderable
+from wagtail.core.models import Page, Orderable, ClusterableModel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from wagtail.search import index
 from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField, AbstractFormSubmission
@@ -150,6 +150,7 @@ class ContactUs(Page):
 
 class About(Page):
     extra = RichTextField(blank=True)
+    brands = RichTextField(blank=True)
 
     search_fields = Page.search_fields + [
 
@@ -158,6 +159,7 @@ class About(Page):
     # content tab panels
     content_panels = Page.content_panels + [
         FieldPanel('extra'),
+        FieldPanel('brands'),
         MultiFieldPanel(
             [InlinePanel('client_images', max_num=30, min_num=1, label="client images")],
             heading="client Images"
@@ -548,6 +550,47 @@ class ProTecGalleryImage(Orderable):
 
 
 class ArchitectPage(Page):
+    image1 = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True, on_delete=models.PROTECT, related_name='+'
+    )
+    image2 = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True, on_delete=models.PROTECT, related_name='+'
+    )
+    image3 = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True, on_delete=models.PROTECT, related_name='+'
+    )
+    image4 = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True, on_delete=models.PROTECT, related_name='+'
+    )
+    image5 = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True, on_delete=models.PROTECT, related_name='+'
+    )
+    image6 = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True, on_delete=models.PROTECT, related_name='+'
+    )
+    image7 = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True, on_delete=models.PROTECT, related_name='+'
+    )
+    image8 = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True, on_delete=models.PROTECT, related_name='+'
+    )
+    image9 = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True, on_delete=models.PROTECT, related_name='+'
+    )
+    image10 = models.ForeignKey(
+        'wagtailimages.Image', null=True, blank=True, on_delete=models.PROTECT, related_name='+'
+    )
+    caption1 = models.CharField(blank=True, max_length=250)
+    caption2 = models.CharField(blank=True, max_length=250)
+    caption3 = models.CharField(blank=True, max_length=250)
+    caption4 = models.CharField(blank=True, max_length=250)
+    caption5 = models.CharField(blank=True, max_length=250)
+    caption6 = models.CharField(blank=True, max_length=250)
+    caption7 = models.CharField(blank=True, max_length=250)
+    caption8 = models.CharField(blank=True, max_length=250)
+    caption9 = models.CharField(blank=True, max_length=250)
+    caption10 = models.CharField(blank=True, max_length=250)
+
     search_fields = Page.search_fields + [
 
     ]  # these are if adding a search to the website
@@ -555,8 +598,69 @@ class ArchitectPage(Page):
     # content tab panels
     content_panels = Page.content_panels + [
         MultiFieldPanel(
-            [InlinePanel('architect_pdf', max_num=20, min_num=0, label="architect pdf")],
+            [
+                InlinePanel('architect_pdf', max_num=20, min_num=0, label="architect doc")],
             heading="architect pdf"
+        ),
+        MultiFieldPanel(
+            [
+                ImageChooserPanel('image1'), FieldPanel('caption1'),
+                InlinePanel('product1', max_num=20, min_num=0, label="product pdf")
+            ], heading="product1"
+        ),
+        MultiFieldPanel(
+            [
+                ImageChooserPanel('image2'), FieldPanel('caption2'),
+                InlinePanel('product2', max_num=20, min_num=0, label="product pdf")
+            ], heading="product2"
+        ),
+        MultiFieldPanel(
+            [
+                ImageChooserPanel('image3'), FieldPanel('caption3'),
+                InlinePanel('product3', max_num=20, min_num=0, label="product pdf")
+            ], heading="product3"
+        ),
+        MultiFieldPanel(
+            [
+                ImageChooserPanel('image4'), FieldPanel('caption4'),
+                InlinePanel('product4', max_num=20, min_num=0, label="product pdf")
+            ], heading="product4"
+        ),
+        MultiFieldPanel(
+            [
+                ImageChooserPanel('image5'), FieldPanel('caption5'),
+                InlinePanel('product5', max_num=20, min_num=0, label="product pdf")
+            ], heading="product5"
+        ),
+        MultiFieldPanel(
+            [
+                ImageChooserPanel('image6'), FieldPanel('caption6'),
+                InlinePanel('product6', max_num=20, min_num=0, label="product pdf")
+            ], heading="product6"
+        ),
+        MultiFieldPanel(
+            [
+                ImageChooserPanel('image7'), FieldPanel('caption7'),
+                InlinePanel('product7', max_num=20, min_num=0, label="product pdf")
+            ], heading="product7"
+        ),
+        MultiFieldPanel(
+            [
+                ImageChooserPanel('image8'), FieldPanel('caption8'),
+                InlinePanel('product8', max_num=20, min_num=0, label="product pdf")
+            ], heading="product8"
+        ),
+        MultiFieldPanel(
+            [
+                ImageChooserPanel('image9'), FieldPanel('caption9'),
+                InlinePanel('product9', max_num=20, min_num=0, label="product pdf")
+            ], heading="product9"
+        ),
+        MultiFieldPanel(
+            [
+                ImageChooserPanel('image10'), FieldPanel('caption10'),
+                InlinePanel('product10', max_num=20, min_num=0, label="product pdf")
+            ], heading="product10"
         ),
     ]
 
@@ -572,11 +676,7 @@ class ArchitectPage(Page):
 class ArchitectDownloads(Orderable):
     page = ParentalKey(ArchitectPage, on_delete=models.CASCADE, related_name='architect_pdf')
     architect_pdf = models.ForeignKey(
-        'wagtaildocs.Document',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
-        related_name='+'
+        'wagtaildocs.Document', null=True, blank=True, on_delete=models.SET_NULL, related_name='+'
     )
     image = models.ForeignKey(
         'wagtailimages.Image',
@@ -592,6 +692,106 @@ class ArchitectDownloads(Orderable):
         FieldPanel('caption'),
         DocumentChooserPanel('architect_pdf'),
     ]
+
+    class Product1(Orderable):
+        page = ParentalKey(ArchitectPage, on_delete=models.CASCADE, related_name='product1')
+        product1 = models.ForeignKey(
+            'wagtaildocs.Document', null=True, blank=True, on_delete=models.SET_NULL, related_name='+'
+        )
+
+        panels = [
+            DocumentChooserPanel('product1'),
+        ]
+
+    class Product2(Orderable):
+        page = ParentalKey(ArchitectPage, on_delete=models.CASCADE, related_name='product2')
+        product2 = models.ForeignKey(
+            'wagtaildocs.Document', null=True, blank=True, on_delete=models.SET_NULL, related_name='+'
+        )
+
+        panels = [
+            DocumentChooserPanel('product2'),
+        ]
+
+    class Product3(Orderable):
+        page = ParentalKey(ArchitectPage, on_delete=models.CASCADE, related_name='product3')
+        product3 = models.ForeignKey(
+            'wagtaildocs.Document', null=True, blank=True, on_delete=models.SET_NULL, related_name='+'
+        )
+
+        panels = [
+            DocumentChooserPanel('product3'),
+        ]
+
+    class Product4(Orderable):
+        page = ParentalKey(ArchitectPage, on_delete=models.CASCADE, related_name='product4')
+        product4 = models.ForeignKey(
+            'wagtaildocs.Document', null=True, blank=True, on_delete=models.SET_NULL, related_name='+'
+        )
+
+        panels = [
+            DocumentChooserPanel('product4'),
+        ]
+
+    class Product5(Orderable):
+        page = ParentalKey(ArchitectPage, on_delete=models.CASCADE, related_name='product5')
+        product5 = models.ForeignKey(
+            'wagtaildocs.Document', null=True, blank=True, on_delete=models.SET_NULL, related_name='+'
+        )
+
+        panels = [
+            DocumentChooserPanel('product5'),
+        ]
+
+    class Product6(Orderable):
+        page = ParentalKey(ArchitectPage, on_delete=models.CASCADE, related_name='product6')
+        product6 = models.ForeignKey(
+            'wagtaildocs.Document', null=True, blank=True, on_delete=models.SET_NULL, related_name='+'
+        )
+
+        panels = [
+            DocumentChooserPanel('product6'),
+        ]
+
+    class Product7(Orderable):
+        page = ParentalKey(ArchitectPage, on_delete=models.CASCADE, related_name='product7')
+        product7 = models.ForeignKey(
+            'wagtaildocs.Document', null=True, blank=True, on_delete=models.SET_NULL, related_name='+'
+        )
+
+        panels = [
+            DocumentChooserPanel('product7'),
+        ]
+
+    class Product8(Orderable):
+        page = ParentalKey(ArchitectPage, on_delete=models.CASCADE, related_name='product8')
+        product8 = models.ForeignKey(
+            'wagtaildocs.Document', null=True, blank=True, on_delete=models.SET_NULL, related_name='+'
+        )
+
+        panels = [
+            DocumentChooserPanel('product8'),
+        ]
+
+    class Product9(Orderable):
+        page = ParentalKey(ArchitectPage, on_delete=models.CASCADE, related_name='product9')
+        product9 = models.ForeignKey(
+            'wagtaildocs.Document', null=True, blank=True, on_delete=models.SET_NULL, related_name='+'
+        )
+
+        panels = [
+            DocumentChooserPanel('product9'),
+        ]
+
+    class Product10(Orderable):
+        page = ParentalKey(ArchitectPage, on_delete=models.CASCADE, related_name='product10')
+        product10 = models.ForeignKey(
+            'wagtaildocs.Document', null=True, blank=True, on_delete=models.SET_NULL, related_name='+'
+        )
+
+        panels = [
+            DocumentChooserPanel('product10'),
+        ]
 
 
 class DoorSpeed(Page):
