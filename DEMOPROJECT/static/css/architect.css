@@ -18,7 +18,7 @@ ul {
     align-content: flex-start;
 }
 
-.product-card{
+.product-card {
     max-width: 35vw;
 }
 
@@ -58,10 +58,10 @@ ul {
     bottom: 0;
     text-decoration: none;
     max-width: 75%;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
-.product-info .smooth-over-button{
+.product-info .smooth-over-button {
     font-size: 14px;
 }
 
@@ -96,7 +96,7 @@ ul {
     margin-top: 15px;
 }
 
-.document hr{
+.document hr {
     width: 20%;
     margin: 0 auto;
     border: 1px solid green;
@@ -120,11 +120,16 @@ ul {
     }
 }
 
-#open{
+#open {
     display: inline;
 
 }
 
-#close{
+#close {
     display: none;
+}
+
+.btn-txt p{
+     overflow: hidden;
+  max-width: 50ch;
 }
