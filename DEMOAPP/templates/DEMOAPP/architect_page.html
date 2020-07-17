@@ -14,6 +14,8 @@
 
 {% endblock %}
 {% block extra_js %}
+
+<script src="../../static/js/architect.js"></script>
     {# Override this in templates to add extra javascript #}
 {% endblock %}
 {% block meta_descr %}
@@ -33,7 +35,8 @@
     </div>
 
     <div class="all-blocks">
-        {% for download in page.architect_pdf.all %}
+
+        {% comment %}{% for download in page.architect_pdf.all %}
             <div class="document product-card">
                 <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
                     {% image download.image fill-150x150-c100 %}
@@ -77,8 +80,10 @@
                 {% endfor %}
             </div>
         </div>
-
-
+{% endcomment %}
+        {% for block in page.content %}
+         {% include_block block %}
+        {% endfor %}
 
 
     </div>

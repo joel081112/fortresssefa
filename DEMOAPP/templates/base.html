@@ -46,6 +46,7 @@
     <link rel="stylesheet" href='/static/css/legal.css'>
     <link rel="stylesheet" href='/static/css/faq.css'>
     <link rel="stylesheet" href='/static/css/custom-layouts.css'>
+    <link rel="stylesheet" href='/static/css/lotti_anims.css'>
 
     <link rel="stylesheet" href='/static/css/backgrounds.css'>
     <link href="https://fonts.googleapis.com/css2?family=BenchNine:wght@300&family=Pragati+Narrow&family=Teko:wght@300&family=Wire+One&display=swap"
@@ -169,14 +170,11 @@
             <div class="column left">
                 <div class="footerLinks">
                     <p>
-                    <h1 id="legal"><a href="/privacy" class="effect-shine">Privacy </a></h1>
+                    <h1 id="legal"><a href="/privacy" class="effect-shine">Privacy</a></h1>
                     ·
                     <h1 id="legal"><a href="/legal" class="effect-shine" id="legal"> Legal</a></h1>
                     ·
                     <h1 id="legal"><a href="/cookies" class="effect-shine" id="legal"> Cookies</a></h1>
-
-
-                    </p>
                 </div>
 
                 {% include 'copyright_code.html' %}
@@ -186,7 +184,10 @@
             <div class="column middle">
                 <p>
                     <a href="/contact-us#map"><img src="/media/original_images/maps.png" id="mapIcon"
-                                                          height="40px" width="40px"></a>
+                                                   height="40px" width="40px">
+
+                    </a>
+
                     6 Trench Road
                     <br>Newtownabbey, Northern Ireland
                     <br><br>
@@ -197,6 +198,7 @@
                     <a href="/contact-page" id="phoneLink">
                         <img src="/media/original_images/email.png" id="mailIcon" height="40px"
                              width="40px">
+
                     </a>
                     tenders@fortress-sefa.com
                 </p>
@@ -233,6 +235,13 @@
         crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+
+<script src="../../static/js/lottie_svg.min.js"></script>
+<script src="../../static/js/lottie-anim-double-click.js"></script>
+<script src="../../static/js/lottie-anim-loader.js"></script>
+<script src="../../static/js/lottie-anim-single-click.js"></script>
+<script src="../../static/js/lottie-anim-hover.js"></script>
+
 <script src="../../static/js/hamburgerAnim.js"></script>
 <script src="../../static/js/homepage.js"></script>
 <script src="../../static/js/base.js"></script>
@@ -259,7 +268,6 @@
     document.addEventListener("touchstart", function () {
     }, true);
 </script>
-
 
 
 {#<script type="text/javascript" src="{% static 'js/match-height.min.js' %}"></script>#}

@@ -27,6 +27,11 @@ class CardBlock(blocks.StructBlock):
         )
     )
 
+    class Meta:
+        template = "card_block.html"
+        icon = "edit"
+        label = "Product Cards"
+
 
 class ButtonLinksBlock(blocks.StructBlock):
     cards = blocks.ListBlock(
