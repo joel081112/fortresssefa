@@ -1,17 +1,27 @@
 /* Lottie javascript for animation https://useanimations.com/ */
 
-let iconPlus = document.querySelector('.bodymovinanim');
-    let animationPlus = bodymovin.loadAnimation({
-            container: iconPlus,
+let iconPlus = document.querySelectorAll('.bodymovinanim');
+
+iconPlus.forEach( ic => {
+
+        let animationPlus = bodymovin.loadAnimation({
+            container: ic,
             renderer: 'svg',
             loop: false,
             autoplay: false,
             path: '/static/json/plustox.json'
-    });
-    /* Change the path above to an animation */
+            /* Change the path above to an animation */
+        });
+
+
+
     var directionPlus = 1;
-      iconPlus.addEventListener('click', (e) => {
-      animationPlus.setDirection(directionPlus);
-      animationPlus.play();
-      directionPlus = -directionPlus;
+    ic.addEventListener('click', (e) => {
+        animationPlus.setDirection(directionPlus);
+        animationPlus.play();
+        directionPlus = -directionPlus;
     });
+
+});
+
+
