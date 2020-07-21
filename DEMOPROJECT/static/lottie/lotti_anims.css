@@ -1,3 +1,5 @@
+/*https://lottiefiles.com/editor */
+
 
 .bodymovinanim {
     display: block;
@@ -34,11 +36,36 @@
 
 .bodymovi {
     padding: 30px;
-    display: block;
-    margin: auto;
+    width:92px;
   cursor: pointer;
+
 }
 
 .bodymovi svg{
-    max-width:40px
+    max-width:40px;
+}
+
+.bodyarrowUp-circle {
+    padding: 30px;
+    width:92px;
+  cursor: pointer;
+}
+
+.bodyarrowUp-circle svg{
+    max-width:40px;
+}
+
+.bodyarrowUpload {
+    padding: 30px;
+    width:92px;
+  cursor: pointer;
+}
+
+.bodyarrowUpload svg{
+    max-width:40px;
+}
+
+.bodylinkedIn, .bodyfacebook{
+  cursor: pointer;
+    max-width: 100px;
 }

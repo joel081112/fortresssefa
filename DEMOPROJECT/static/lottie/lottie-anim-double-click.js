@@ -1,4 +1,5 @@
 /* Lottie javascript for animation https://useanimations.com/ */
+/*https://lottiefiles.com/editor*/
 
 let iconPlus = document.querySelectorAll('.bodymovinanim');
 
@@ -9,7 +10,7 @@ iconPlus.forEach( ic => {
             renderer: 'svg',
             loop: false,
             autoplay: false,
-            path: '/static/json/plustox.json'
+            path: '/static/lottie/json/plustox.json'
             /* Change the path above to an animation */
         });
 

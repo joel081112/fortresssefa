@@ -46,7 +46,7 @@
     <link rel="stylesheet" href='/static/css/legal.css'>
     <link rel="stylesheet" href='/static/css/faq.css'>
     <link rel="stylesheet" href='/static/css/custom-layouts.css'>
-    <link rel="stylesheet" href='/static/css/lotti_anims.css'>
+    <link rel="stylesheet" href='/static/lottie/lotti_anims.css'>
 
     <link rel="stylesheet" href='/static/css/backgrounds.css'>
     <link href="https://fonts.googleapis.com/css2?family=BenchNine:wght@300&family=Pragati+Narrow&family=Teko:wght@300&family=Wire+One&display=swap"
@@ -167,8 +167,8 @@
     </div>
     <footer class="mastfoot mt-auto">
         <div class="footer-contents">
-            <div class="column left">
-                <div class="footerLinks">
+            <div class="column left legalsection">
+                <div class="footerLinks legallinks">
                     <p>
                     <h1 id="legal"><a href="/privacy" class="effect-shine">Privacy</a></h1>
                     ·
@@ -182,25 +182,31 @@
 
             </div>
             <div class="column middle">
-                <p>
+                <p id="footer-contacts">
+
+                <div class="contactsection">
                     <a href="/contact-us#map"><img src="/media/original_images/maps.png" id="mapIcon"
                                                    height="40px" width="40px">
 
                     </a>
 
                     6 Trench Road
+
                     <br>Newtownabbey, Northern Ireland
-                    <br><br>
+
+                </div>
+                <br><br>
+                <div class="contactsection">
                     <a href="tel:+44 (0)28 9034 2655" id="phoneLink">
                         <img src="/media/original_images/phone.png" id="phoneIcon" height="40px" width="40px">
                     </a>
-                    +44 (0)28 9034 2655<br><br><br>
-                    <a href="/contact-page" id="phoneLink">
-                        <img src="/media/original_images/email.png" id="mailIcon" height="40px"
-                             width="40px">
-
-                    </a>
+                    +44 (0)28 9034 2655
+                </div>
+                <br><br><br>
+                <div class="contactsection">
+                    <a class="bodymovi" href="/contact-page"></a>
                     tenders@fortress-sefa.com
+                </div>
                 </p>
             </div>
             <div class="column right">
@@ -218,9 +224,13 @@
 
                 </div>
             </div>
-            <a href="#" class="scrollup">
+            {% comment %}<a href="#" class="scrollup">
                 <img src="/media/original_images/returnToTop.png" id="backToTop">
-            </a>
+
+
+            </a>{% endcomment %}
+                <a href="#" class="bodyarrowUpload scrollup circle-border" id="backToTop"></a>
+
         </div>
 
     </footer>
@@ -236,11 +246,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 
-<script src="../../static/js/lottie_svg.min.js"></script>
-<script src="../../static/js/lottie-anim-double-click.js"></script>
-<script src="../../static/js/lottie-anim-loader.js"></script>
-<script src="../../static/js/lottie-anim-single-click.js"></script>
-<script src="../../static/js/lottie-anim-hover.js"></script>
+<script src="../../static/lottie/lottie_svg.min.js"></script>
+<script src="../../static/lottie/lottie-anim-double-click.js"></script>
+<script src="../../static/lottie/lottie-anim-loader.js"></script>
+<script src="../../static/lottie/lottie-anim-single-click.js"></script>
+<script src="../../static/lottie/lottie-anim-hover.js"></script>
 
 <script src="../../static/js/hamburgerAnim.js"></script>
 <script src="../../static/js/homepage.js"></script>
