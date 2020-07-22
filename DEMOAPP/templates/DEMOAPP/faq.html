@@ -22,13 +22,22 @@
 
     <div class="human-rights alternative-colour">
 
-        <h1>Fortress {{ page.title }}</h1>
+        <h1>Fortress {{ page.title }} </h1>
 
-        <div class="questions">
+       {% comment %} <div class="questions">
             <div class="homeInfo1">
                 {{ page.intro|richtext }}
             </div>
+        </div>{% endcomment %}
+
+        <div class="questions">
+            <div class="homeInfo1">
+                {% for block in page.content %}
+                    {% include_block block %}
+                {% endfor %}
+            </div>
         </div>
+
     </div>
 
 

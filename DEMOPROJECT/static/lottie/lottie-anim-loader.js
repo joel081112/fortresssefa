@@ -11,8 +11,8 @@ svgContainer.forEach( ic => {
     });
 });
 
-let iconArrowUp = document.querySelectorAll('.bodyarrowUpload');
-iconArrowUp.forEach( ic => {
+let iconArrowUpLoad = document.querySelectorAll('.bodyarrowUpload');
+iconArrowUpLoad.forEach( ic => {
      bodymovin.loadAnimation({
         wrapper: ic,
         animType: 'svg',

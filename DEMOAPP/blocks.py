@@ -33,6 +33,53 @@ class CardBlock(blocks.StructBlock):
         label = "Product Cards"
 
 
+class ImageTextsBlock(blocks.StructBlock):
+    image = ImageChooserBlock(required=False, help_text="Add your Image")
+    title = blocks.CharBlock(required=True, help_text="Add your title")
+
+    card = blocks.ListBlock(
+        blocks.StructBlock(
+            [
+                ("info", blocks.RichTextBlock(required=True, max_length=300)),
+            ]
+        )
+    )
+
+    class Meta:
+        template = "timeline_block.html"
+        icon = "edit"
+        label = "Extra Timeline"
+
+
+class ImageTextBlock(blocks.StructBlock):
+    image = ImageChooserBlock(required=False, help_text="Add your Image")
+    title = blocks.CharBlock(required=True, help_text="Add your title")
+    text = blocks.CharBlock(required=True, help_text="Add your detail")
+
+    class Meta:
+        template = "image_text_block.html"
+        icon = "edit"
+        label = "Image and Text"
+
+
+class QuestionBlock(blocks.StructBlock):
+    title = blocks.CharBlock(required=True, help_text="Add your main title")
+
+    cards = blocks.ListBlock(
+        blocks.StructBlock(
+            [
+                ("question", blocks.CharBlock(require=True, max_length=100)),
+                ("answer", blocks.RichTextBlock(required=True, max_length=300)),
+            ]
+        )
+    )
+
+    class Meta:
+        template = "question_block.html"
+        icon = "edit"
+        label = "New Question"
+
+
 class ButtonLinksBlock(blocks.StructBlock):
     cards = blocks.ListBlock(
         blocks.StructBlock(

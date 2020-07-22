@@ -70,3 +70,25 @@ iconFacebook.forEach( ic => {
       animationMenu.play();
     });
 });
+
+let iconInfo = document.querySelectorAll('.bodyInfo');
+iconInfo.forEach( ic => {
+    let animationMenu = bodymovin.loadAnimation({
+            container: ic,
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: "/static/lottie/json/info.json"
+    });
+
+    var directionMenu = 1;
+      ic.addEventListener('mouseenter', (e) => {
+      animationMenu.setDirection(directionMenu);
+      animationMenu.play();
+    });
+
+      ic.addEventListener('mouseleave', (e) => {
+      animationMenu.setDirection(-directionMenu);
+      animationMenu.play();
+    });
+});

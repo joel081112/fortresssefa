@@ -40,6 +40,7 @@ html {
 
 .quickLinks .w3-container {
     font-size: 60px;
+    max-height: 100px;
 }
 
 .mapBox {

@@ -69,3 +69,12 @@
   cursor: pointer;
     max-width: 100px;
 }
+
+.bodyInfo {
+  cursor: pointer;
+
+}
+
+.bodyInfo svg{
+    max-width:75px;
+}

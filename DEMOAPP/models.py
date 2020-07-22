@@ -24,7 +24,7 @@ from wagtail.documents.edit_handlers import DocumentChooserPanel
 from wagtail.users.forms import UserEditForm, UserCreationForm
 from wagtail.images.blocks import ImageChooserBlock
 
-from .blocks import CardBlock
+from .blocks import CardBlock, QuestionBlock, ImageTextsBlock, ImageTextBlock
 
 
 class FormField(AbstractFormField):
@@ -154,6 +154,20 @@ class ContactUs(Page):
 class About(Page):
     extra = RichTextField(blank=True)
     brands = RichTextField(blank=True)
+    brand = StreamField(
+        [
+            ("brands", ImageTextBlock()),
+        ],
+        null=True,
+        blank=True,
+    )
+    timeline = StreamField(
+        [
+            ("timeline", ImageTextsBlock()),
+        ],
+        null=True,
+        blank=True,
+    )
 
     search_fields = Page.search_fields + [
 
@@ -167,7 +181,8 @@ class About(Page):
             [InlinePanel('client_images', max_num=30, min_num=1, label="client images")],
             heading="client Images"
         ),
-
+        StreamFieldPanel("brand"),
+        StreamFieldPanel("timeline"),
     ]
 
     # what to call the panels on wagtail
@@ -311,6 +326,13 @@ class Privacy(Page):
 
 
 class FAQ(Page):
+    content = StreamField(
+        [
+            ("questions", QuestionBlock()),
+        ],
+        null=True,
+        blank=True,
+    )
     intro = RichTextField(
         blank=True,  # required field or not
         verbose_name="Intro"  # called on wagtail site
@@ -322,6 +344,7 @@ class FAQ(Page):
             'intro',
             classname="full"
         ),
+        StreamFieldPanel("content"),
     ]
 
     # what to call the panels on wagtail
