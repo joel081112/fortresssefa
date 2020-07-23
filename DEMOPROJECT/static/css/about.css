@@ -267,15 +267,13 @@ img {
 
 
 .timeline {
-    background: #112C30;
     margin: 0;
-    font-family: Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 15px;
-    line-height: 26px;
     color: #B9CFD0;
     overflow: hidden;
     padding-bottom: 15px;
 }
+
+
 
 
 .timeline a {
@@ -349,7 +347,6 @@ img {
 }
 
 .stem-wrapper .stem {
-    background: #1e4f56;
     overflow: hidden;
     height: 100%;
 }

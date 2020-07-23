@@ -149,7 +149,7 @@
         </main>{% endcomment %}
 
 
-        <div class="slider">
+        <div class="brand slider">
             {% for block in page.brand %}
                 {% if forloop.counter == 1 %}
                     <input type="radio" name="slider" title="slide{{ forloop.counter }}" checked="checked"
@@ -160,7 +160,7 @@
             {% endfor %}
 
 
-            <div class="slider__inner">
+            <div class="slider__inner" id="brand-slider">
                 {% for block in page.brand %}
                     {% include_block block %}
                 {% endfor %}
@@ -181,192 +181,33 @@
     </div>
 
 
-    <div class="timeline" id="timeline">
-        <div class="desktop">
+    <div class="timeline alternative-colour" id="">
+        <div class="slider">
+            {% for block in page.timeline %}
+                {% if forloop.counter == 1 %}
+                    <input type="radio" name="slider" title="slide{{ forloop.counter }}" checked="checked"
+                           class="slider__nav"/>
+                {% else %}
+                    <input type="radio" name="slider" title="slide{{ forloop.counter }}" class="slider__nav"/>
+                {% endif %}
+            {% endfor %}
 
 
-            <div class="stem-wrapper">
-                <div class="stem"></div>
-                <div class="stem-background"></div>
+            <div class="slider__inner">
+                {% for block in page.timeline %}
+                    {% include_block block %}
+                {% endfor %}
             </div>
-
-
-            <div class="section main-content">
-                <div class="section-inner">
-
-
-                    <div class="post-wrapper">
-
-                        <article class="post start-icon">
-                            <div class="stem-overlay">
-                                <div class="icon"></div>
-                                <div class="stem-mask"></div>
-                            </div>
-
-                            <div class="post-content">
-                                <div class="entry-content">
-                                    <p><br><br><br><br><br></p>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="post">
-                            <div class="stem-overlay">
-                                <div class="icon" style="background-image: url('/media/original_images/1970.png')"></div>
-                                <div class="stem-mask"></div>
-                            </div>
-
-                            <div class="post-content" data-aos="zoom-in">
-                                <p class="meta">Written yesterday at 8:56 pm</p>
-                                <h2 class="post-title">Fortress Industries created</h2>
-                                <div class="entry-content">
-                                    <p>Fortress Industries created</p>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="post" data-stem-color="green">
-                            <div class="stem-overlay">
-                                <div class="icon" style="background-image: url('/media/original_images/1995.png')"></div>
-                                <div class="stem-mask"></div>
-                            </div>
-
-                            <div class="post-content" data-aos="zoom-in">
-                                <p class="meta">Written yesterday at 8:56 pm</p>
-                                <h2 class="post-title">Creation of Fortress Pro-Tec power coating</h2>
-                                <div class="entry-content">
-                                    <p>Creation of Fortress Pro-Tec power coating</p>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="post" data-stem-color="yellow">
-                            <div class="stem-overlay">
-                                <div class="icon" style="background-image: url('/media/original_images/2003.png')"></div>
-                                <div class="stem-mask"></div>
-                            </div>
-
-                            <div class="post-content" data-aos="zoom-in">
-                                <p class="meta">Written yesterday at 8:56 pm</p>
-                                <h2 class="post-title">Demerger of Fortress Industries creates Fortress Doors</h2>
-                                <div class="entry-content">
-                                    <p>Demerger of Fortress Industries creates Fortress Doors</p>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="post" data-stem-color="white">
-                            <div class="stem-overlay">
-                                <div class="icon" style="background-image: url('/media/original_images/2005.png')"></div>
-                                <div class="stem-mask"></div>
-                            </div>
-
-                            <div class="post-content" data-aos="zoom-in">
-                                <p class="meta">Written yesterday at 8:56 pm</p>
-                                <h2 class="post-title">Creation of Fortress Andersons service Agency</h2>
-                                <div class="entry-content">
-                                    <p>Creation of Fortress Andersons service Agency</p>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="post">
-                            <div class="stem-overlay">
-                                <div class="icon" style="background-image: url('/media/original_images/2006.png')"></div>
-                                <div class="stem-mask"></div>
-                            </div>
-
-                            <div class="post-content" data-aos="zoom-in">
-                                <p class="meta">Written yesterday at 8:56 pm</p>
-                                <h2 class="post-title">Merger with County Shutters</h2>
-                                <div class="entry-content">
-                                    <p>Merger with County Shutters</p>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="post" data-stem-color="green">
-                            <div class="stem-overlay">
-                                <div class="icon" style="background-image: url('/media/original_images/2007.png')"></div>
-                                <div class="stem-mask"></div>
-                            </div>
-
-                            <div class="post-content" data-aos="zoom-in">
-                                <p class="meta">Written yesterday at 8:56 pm</p>
-                                <h2 class="post-title">Creation of Fortress Glass</h2>
-                                <div class="entry-content">
-                                    <p>Creation of Fortress Glass</p>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="post" data-stem-color="yellow">
-                            <div class="stem-overlay">
-                                <div class="icon" style="background-image: url('/media/original_images/2008.png')"></div>
-                                <div class="stem-mask"></div>
-                            </div>
-
-                            <div class="post-content" data-aos="zoom-in">
-                                <p class="meta">Written yesterday at 8:56 pm</p>
-                                <h2 class="post-title">Merger with Aable Roller Shutters</h2>
-                                <div class="entry-content">
-                                    <p>Merger with Aable Roller Shutters</p>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="post" data-stem-color="white">
-                            <div class="stem-overlay">
-                                <div class="icon" style="background-image: url('/media/original_images/2010.png')"></div>
-                                <div class="stem-mask"></div>
-                            </div>
-
-                            <div class="post-content" data-aos="zoom-in">
-                                <p class="meta">Written yesterday at 8:56 pm</p>
-                                <h2 class="post-title">Scotland to form Aable Fortress</h2>
-                                <div class="entry-content">
-                                    <p>Scotland to form Aable Fortress</p>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="post ">
-                            <div class="stem-overlay">
-                                <div class="icon" style="background-image: url('/media/original_images/2013.png')"></div>
-                                <div class="stem-mask"></div>
-                            </div>
-
-                            <div class="post-content" data-aos="zoom-in">
-                                <p class="meta">Written yesterday at 8:56 pm</p>
-                                <h2 class="post-title">Merger with FortAXA Security Sweden</h2>
-                                <div class="entry-content">
-                                    <p>Merger with FortAXA Security Sweden</p>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="post top-icon trigger-scroll-to-top" data-stem-color="green">
-                            <div class="stem-overlay">
-                                <div class="icon"></div>
-                                <div class="stem-mask"></div>
-                            </div>
-                        </article>
-                    </div> <!-- post-wrapper -->
-
-
-                </div> <!-- section-inner -->
-            </div> <!-- main-content -->
         </div>
-        {% for block in page.timeline %}
-            {% include_block block %}
-        {% endfor %}
+
     </div>
 
 
     <div class="pastClients" data-aos="fade-down">
         <div class="pastBox">
             <h2>Clients</h2>
-            <p>As one of Europes leading door suppliers we have a long list of high profile clients who trust us
+            <p>As one of Europes leading door suppliers we have a long list of high profile clients who
+                trust us
                 with
                 their
                 business.
