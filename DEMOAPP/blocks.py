@@ -15,6 +15,26 @@ class TitleAndTextBlock(blocks.StructBlock):
         label = "Title & Text"
 
 
+class LocationCardBlock(blocks.StructBlock):
+    city = blocks.CharBlock(required=True, help_text="Add your City")
+    addressLines = blocks.ListBlock(
+        blocks.StructBlock(
+            [
+                ("addressLine", blocks.TextBlock(required=True, max_length=100)),
+            ]
+        )
+    )
+    daysOpen = blocks.TextBlock(required=True, max_length=100, help_text="Eg Monday - Friday")
+    timeOpen = blocks.TextBlock(required=True, max_length=100, help_text="Eg 9am - 5pm")
+    telephoneNumber = blocks.TextBlock(required=False, max_length=100, help_text="Eg tel: +44(0)28 9034 2655")
+    websiteLink = blocks.RichTextBlock(required=False, max_length=100, help_text="Eg Web: www.fortaxa.pl")
+
+    class Meta:
+        template = "location_card_block.html"
+        icon = "edit"
+        label = "Location Cards"
+
+
 class CardBlock(blocks.StructBlock):
     title = blocks.CharBlock(required=True, help_text="Add your title")
     image = ImageChooserBlock(required=False, help_text="Add your Image")
@@ -31,6 +51,17 @@ class CardBlock(blocks.StructBlock):
         template = "card_block.html"
         icon = "edit"
         label = "Product Cards"
+
+
+class ArticleBlock(blocks.StructBlock):
+    title = blocks.CharBlock(required=True, help_text="Add your title")
+    info = blocks.RichTextBlock(required=True)
+    document = DocumentChooserBlock(help_text="Choose a related document")
+
+    class Meta:
+        template = "article_block.html"
+        icon = "edit"
+        label = "Article"
 
 
 class ImageTextsBlock(blocks.StructBlock):
@@ -81,18 +112,14 @@ class QuestionBlock(blocks.StructBlock):
 
 
 class ButtonLinksBlock(blocks.StructBlock):
-    cards = blocks.ListBlock(
-        blocks.StructBlock(
-            [
-                ("image", ImageChooserBlock(required=True)),
-                ("title", blocks.CharBlock(require=True, max_length=40)),
-                ("text", blocks.TextBlock(required=True, max_length=200)),
-                ("button_page", blocks.PageChooserBlock(required=False)),
-                ("button_url",
-                 blocks.URLBlock(required=False, help_text="If the button above is selected, that will be used first")),
-                ("document", DocumentChooserBlock(required=True))
-            ]
-        )
-    )
+    image = ImageChooserBlock(required=True, help_text="Link header image")
+    title = blocks.CharBlock(require=True, max_length=40, help_text="Link title")
+    text = blocks.TextBlock(required=True, max_length=400, help_text="Link overview")
+    button_page = blocks.PageChooserBlock(required=False, help_text="Internal page link")
+    button_url = blocks.URLBlock(required=False, help_text="If the button page is selected, "
+                                                           "will be used first (external)")
 
-
+    class Meta:
+        template = "button_links_block.html"
+        icon = "edit"
+        label = "New link"

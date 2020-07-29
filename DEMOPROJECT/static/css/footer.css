@@ -10,7 +10,7 @@
     filter: grayscale(100%) blur(3px);
 }
 
-#social {
+#social, #socialF {
     display: inline-block;
     margin: 5px;
 }
@@ -41,3 +41,4 @@ a.effect-shine:hover {
         -webkit-mask-position: -50%;
     }
 }
+

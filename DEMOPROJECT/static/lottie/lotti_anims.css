@@ -4,11 +4,11 @@
 .bodymovinanim {
     display: block;
     margin: auto;
-  cursor: pointer;
+    cursor: pointer;
 }
 
-.bodymovinanim svg{
-    max-width:40px
+.bodymovinanim svg {
+    max-width: 40px
 }
 
 
@@ -16,65 +16,70 @@
     padding: 30px;
     display: block;
     margin: auto;
-  cursor: pointer;
+    cursor: pointer;
 }
 
-.bodymovinani svg{
-    max-width:40px
+.bodymovinani svg {
+    max-width: 40px
 }
 
 .bodymovinan {
     padding: 30px;
     display: block;
     margin: auto;
-  cursor: pointer;
+    cursor: pointer;
 }
 
-.bodymovinan svg{
-    max-width:40px
+.bodymovinan svg {
+    max-width: 40px
 }
 
 .bodymovi {
     padding: 30px;
-    width:92px;
-  cursor: pointer;
-
+    width: 92px;
+    cursor: pointer;
 }
 
-.bodymovi svg{
-    max-width:40px;
+@media only screen and (max-width: 640px) {
+    .footer-contents .bodymovi {
+        padding: 0;
+    }
+}
+
+.bodymovi svg {
+    max-width: 40px;
 }
 
 .bodyarrowUp-circle {
     padding: 30px;
-    width:92px;
-  cursor: pointer;
+    width: 92px;
+    cursor: pointer;
 }
 
-.bodyarrowUp-circle svg{
-    max-width:40px;
+.bodyarrowUp-circle svg {
+    max-width: 40px;
 }
 
 .bodyarrowUpload {
     padding: 30px;
-    width:92px;
-  cursor: pointer;
+    width: 92px;
+    cursor: pointer;
 }
 
-.bodyarrowUpload svg{
-    max-width:40px;
+.bodyarrowUpload svg {
+    max-width: 40px;
 }
 
-.bodylinkedIn, .bodyfacebook{
-  cursor: pointer;
+.bodylinkedIn, .bodyfacebook {
+    cursor: pointer;
     max-width: 100px;
 }
 
 .bodyInfo {
-  cursor: pointer;
+    cursor: pointer;
 
 }
 
-.bodyInfo svg{
-    max-width:75px;
+.bodyInfo svg {
+    max-width: 75px;
 }

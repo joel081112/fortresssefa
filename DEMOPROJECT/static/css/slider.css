@@ -30,9 +30,14 @@ body {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
+
 }
 
-.slider__nav {
+.slider form {
+    z-index: 1;
+}
+
+.slider input {
     width: 12px;
     height: 12px;
     margin: 2rem 12px;
@@ -49,32 +54,49 @@ body {
     backface-visibility: hidden;
 }
 
-.slider__nav:checked {
+
+.slider form input:checked {
     -webkit-animation: check 0.4s linear forwards;
     animation: check 0.4s linear forwards;
 }
 
+
+.timeline form input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* IMAGE STYLES */
+.timeline form input + p {
+    cursor: pointer;
+    margin-right: 25px;
+}
+
+/* CHECKED STYLES */
+.timeline form input:checked + p {
+    border: 2px solid #000;
+    padding: 5px;
+    border-radius: 50%;
+    /* transform: scale(1.2);*/
+
+}
+
+/*
+.radio-button__control{
+    position: absolute;
+    display: inline;
+    width: 20px;
+    height: 20px;
+    background-color: inherit;
+    color: #017b5f;
+    border: 2px solid #666;
+    border-radius: 24px;
+}*/
+
+
 /*8 sliders so need this */
-.brand .slider__nav:checked:nth-of-type(1) ~ .slider__inner {
-    left: 0;
-}
-
-.brand .slider__nav:checked:nth-of-type(2) ~ .slider__inner {
-    left: -100%;
-}
-
-.brand .slider__nav:checked:nth-of-type(3) ~ .slider__inner {
-    left: -200%;
-}
-
-.brand .slider__nav:checked:nth-of-type(4) ~ .slider__inner {
-    left: -300%;
-}
-
-.brand .slider__nav:checked:nth-of-type(5) ~ .slider__inner {
-    left: -400%;
-}
-
 
 
 /*this needs added to */

@@ -82,18 +82,48 @@ ul {
     padding-bottom: 20px;
 }
 
-.top_image {
+/*.top_image {
     position: relative;
-    background-size: cover;
     background-image: url(/media/images/workstation.jpg);
     background-attachment: fixed;
     background-position: center;
+    background-size: cover;
     height: 75vh;
     width: 100vw;
-    margin-left: -15px;
+    !*margin-left: -15px;*!
 
     margin-top: 15px;
+}*/
+
+
+
+
+
+.top_image .banner {
+    background-image: url(/media/images/workstation.jpg);
+    margin-top: 15px;
+    height:75vh;
 }
+
+@media (min-width: 640px) {
+    .top_image .banner {
+        background-position: center;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .top_image .banner {
+        background-size: contain;
+        background-repeat: no-repeat;
+        height:250px;
+    }
+
+}
+
+
+
+
 
 .document hr {
     width: 20%;

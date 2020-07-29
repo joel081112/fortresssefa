@@ -171,7 +171,7 @@ footer {
     width: 100%;
     margin: 0 auto;
     text-align: left;
-    padding: 45px 50px 95px;
+    padding: 45px 50px 75px;
     position: relative;
     clear: both;
 box-shadow: inset 0 0 20px 20px rgba(0, 0, 0, 0.2);
@@ -443,6 +443,11 @@ footer .row:after {
 #footer-contacts{
     display: inline;
 }
+@media  only screen and  (max-width: 640px) {
+    .footer-contents .middle{
+        margin-top: 30px;
+    }
+}
 
 .contactsection{
     display: flex;
@@ -463,7 +468,7 @@ footer .row:after {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: baseline;
     align-content: center;
 }
 

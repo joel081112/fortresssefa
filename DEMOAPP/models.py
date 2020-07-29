@@ -24,7 +24,7 @@ from wagtail.documents.edit_handlers import DocumentChooserPanel
 from wagtail.users.forms import UserEditForm, UserCreationForm
 from wagtail.images.blocks import ImageChooserBlock
 
-from .blocks import CardBlock, QuestionBlock, ImageTextsBlock, ImageTextBlock
+from .blocks import CardBlock, QuestionBlock, ImageTextsBlock, ImageTextBlock, ArticleBlock, LocationCardBlock, ButtonLinksBlock
 
 
 class FormField(AbstractFormField):
@@ -131,13 +131,21 @@ class BlogPageGalleryImage(Orderable):
 
 
 class ContactUs(Page):
+    content = StreamField(
+        [
+            ("locations", LocationCardBlock()),
+        ],
+        null=True,
+        blank=True,
+    )
+
     search_fields = Page.search_fields + [
 
     ]  # these are if adding a search to the website
 
     # content tab panels
     content_panels = Page.content_panels + [
-
+        StreamFieldPanel("content"),
     ]
 
     # what to call the panels on wagtail
@@ -214,12 +222,21 @@ class AboutGalleryImage(Orderable):
 
 
 class Products(Page):
+    content = StreamField(
+        [
+            ("links", ButtonLinksBlock()),
+        ],
+        null=True,
+        blank=True,
+    )
+
     # content tab panels
     content_panels = Page.content_panels + [
         MultiFieldPanel(
             [InlinePanel('products_images', max_num=30, min_num=0, label="products images")],
             heading="products Images"
         ),
+        StreamFieldPanel("content"),
     ]
 
     # what to call the panels on wagtail
@@ -333,17 +350,8 @@ class FAQ(Page):
         null=True,
         blank=True,
     )
-    intro = RichTextField(
-        blank=True,  # required field or not
-        verbose_name="Intro"  # called on wagtail site
-    )
 
     content_panels = Page.content_panels + [
-
-        FieldPanel(
-            'intro',
-            classname="full"
-        ),
         StreamFieldPanel("content"),
     ]
 
@@ -415,6 +423,13 @@ class Legal(Page):
         blank=True,  # required field or not
         verbose_name="Intro"  # called on wagtail site
     )
+    content = StreamField(
+        [
+            ("legal", ArticleBlock()),
+        ],
+        null=True,
+        blank=True,
+    )
 
     content_panels = Page.content_panels + [
 
@@ -430,6 +445,7 @@ class Legal(Page):
             [InlinePanel('legal_images', min_num=0, label="legal images")],
             heading="legal Images"
         ),
+        StreamFieldPanel("content"),
 
     ]
 
@@ -586,11 +602,6 @@ class ArchitectPage(Page):
 
     # content tab panels
     content_panels = Page.content_panels + [
-        MultiFieldPanel(
-            [
-                InlinePanel('architect_pdf', max_num=20, min_num=0, label="architect doc")],
-            heading="architect pdf"
-        ),
         StreamFieldPanel("content"),
     ]
 
@@ -601,27 +612,6 @@ class ArchitectPage(Page):
         ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
         # classname settings adds the cog
     ])
-
-
-class ArchitectDownloads(Orderable):
-    page = ParentalKey(ArchitectPage, on_delete=models.CASCADE, related_name='architect_pdf')
-    architect_pdf = models.ForeignKey(
-        'wagtaildocs.Document', null=True, blank=True, on_delete=models.SET_NULL, related_name='+'
-    )
-    image = models.ForeignKey(
-        'wagtailimages.Image',
-        null=True,
-        blank=True,
-        on_delete=models.CASCADE,
-        related_name='+'
-    )
-    caption = models.CharField(blank=True, max_length=250)
-
-    panels = [
-        ImageChooserPanel('image'),
-        FieldPanel('caption'),
-        DocumentChooserPanel('architect_pdf'),
-    ]
 
 
 class DoorSpeed(Page):

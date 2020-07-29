@@ -15,7 +15,7 @@
 {% endblock %}
 {% block extra_js %}
 
-<script src="../../static/js/architect.js"></script>
+    <script src="../../static/js/architect.js"></script>
     {# Override this in templates to add extra javascript #}
 {% endblock %}
 {% block meta_descr %}
@@ -27,11 +27,13 @@
 
 {% block content %}
     <div class="top_image">
-        <p id="intro">
-            {{ page.title }}
-            <br/>
+        <div class="banner">
+            <p id="intro">
+                {{ page.title }}
+                <br/>
 
-        </p>
+            </p>
+        </div>
     </div>
 
     <div class="all-blocks">
@@ -82,7 +84,7 @@
         </div>
 {% endcomment %}
         {% for block in page.content %}
-         {% include_block block %}
+            {% include_block block %}
         {% endfor %}
 
 

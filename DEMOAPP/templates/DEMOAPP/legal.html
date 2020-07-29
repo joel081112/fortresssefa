@@ -97,7 +97,7 @@
         </div>{% endcomment %}
 
 
-        <div class="homeInfo1">
+        {% comment %}<div class="homeInfo1">
             {{ page.intro|richtext }}
         </div>
 
@@ -123,7 +123,11 @@
                 </div>
 
             {% endfor %}
-        </div>
+        </div>{% endcomment %}
+
+        {% for block in page.content %}
+            {% include_block block %}
+        {% endfor %}
 
     </div>
 

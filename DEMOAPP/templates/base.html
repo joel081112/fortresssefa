@@ -154,15 +154,17 @@
         </div>
         {# footer #}
         <div class="contact-banner">
-            <div class="attention">
-                <p id="first-line">GOT A PROJECT FOR US?</p>
-                <p id="second-line">LET'S CHAT
+            <a href="/contact-page">
+                <div class="attention">
+                    <p id="first-line">GOT A PROJECT FOR US?</p>
+                    <p id="second-line">LET'S CHAT
 
-                    <i class="fa fa-arrow-circle-o-right"></i>
+                        <i class="fa fa-arrow-circle-o-right"></i>
 
 
-                </p>
-            </div>
+                    </p>
+                </div>
+            </a>
         </div>
     </div>
     <footer class="mastfoot mt-auto">
@@ -182,32 +184,32 @@
 
             </div>
             <div class="column middle">
-                <p id="footer-contacts">
+                <div id="footer-contacts">
 
-                <div class="contactsection">
-                    <a href="/contact-us#map"><img src="/media/original_images/maps.png" id="mapIcon"
-                                                   height="40px" width="40px">
+                    <div class="contactsection">
+                        <a href="/contact-us#map"><img src="/media/original_images/maps.png" id="mapIcon"
+                                                       height="40px" width="40px">
 
-                    </a>
+                        </a>
 
-                    6 Trench Road
+                        6 Trench Road
 
-                    <br>Newtownabbey, Northern Ireland
+                        <br>Newtownabbey, Northern Ireland
 
+                    </div>
+                    <br><br>
+                    <div class="contactsection">
+                        <a href="tel:+44 (0)28 9034 2655" id="phoneLink">
+                            <img src="/media/original_images/phone.png" id="phoneIcon" height="40px" width="40px">
+                        </a>
+                        +44 (0)28 9034 2655
+                    </div>
+                    <br><br>
+                    <div class="contactsection">
+                        <a class="bodymovi" href="/contact-page"></a>
+                        tenders@fortress-sefa.com
+                    </div>
                 </div>
-                <br><br>
-                <div class="contactsection">
-                    <a href="tel:+44 (0)28 9034 2655" id="phoneLink">
-                        <img src="/media/original_images/phone.png" id="phoneIcon" height="40px" width="40px">
-                    </a>
-                    +44 (0)28 9034 2655
-                </div>
-                <br><br><br>
-                <div class="contactsection">
-                    <a class="bodymovi" href="/contact-page"></a>
-                    tenders@fortress-sefa.com
-                </div>
-                </p>
             </div>
             <div class="column right">
                 <p class="copyright">Registered in Northern Ireland with Company No:NC000941 </p>
@@ -217,10 +219,15 @@
                         <figure id="social"><img src="/media/original_images/linkedIn.png" height="40px" width="40px">
                         </figure>
                     </a>
-                    <a href="https://www.facebook.com/Fortress-SEFA-367639123362658/" target="_blank" id="social">
+                    <a class="facebook" href="fb://page/?id=367639123362658	" target="_blank" id="social">
                         <figure id="social"><img src="/media/original_images/facebook.png" height="40px" width="40px">
                         </figure>
                     </a>
+                    {% comment %}
+                    fb://page/?id=367639123362658
+                    fb://page/367639123362658
+                    https://facebook.com/367639123362658
+                    {% endcomment %}
 
                 </div>
             </div>
@@ -229,7 +236,7 @@
 
 
             </a>{% endcomment %}
-                <a href="#" class="bodyarrowUpload scrollup circle-border" id="backToTop"></a>
+            <a href="#" class="bodyarrowUpload scrollup circle-border" id="backToTop"></a>
 
         </div>
 
