@@ -190,7 +190,17 @@
         <div class="slider">
             <form>
                 {% for block in page.timeline %}
-                    <label>
+
+                    {% if forloop.counter == 1 %}
+                        <input type="radio" name="slider" title="slide{{ forloop.counter }}" checked="checked"/>
+
+                    {% else %}
+                        <input type="radio" name="slider" title="slide{{ forloop.counter }}"/>
+
+                    {% endif %}
+
+
+                  {% comment %}  <label>
 
                         {% if forloop.counter == 1 %}
                             <input type="radio" name="slider" title="slide{{ forloop.counter }}" checked="checked"/>
@@ -199,26 +209,14 @@
                         {% endif %}
 
 
-                        {% comment %}<img src="/media/images/cornell safe and secure.png" style="width:75px; height: auto;" alt="">{% endcomment %}
+                        <img src="/media/images/cornell safe and secure.png" style="width:75px; height: auto;" alt="">
 
 
+                        <p>5 Need to alternate this to get in the year of event</p>
+                        also need to fix the form input for ios
 
 
-
-
-
-
-
-                    <p>5  {% comment %}Need to alternate this to get in the year of event{% endcomment %}</p>
-                    {% comment %}also need to fix the form input for ios{% endcomment %}
-
-
-
-
-
-
-
-                    </label>
+                    </label>{% endcomment %}
                     {% comment %}
                     {% image self.image fill-75x75-c100 as img %}
                     <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">{% endcomment %}

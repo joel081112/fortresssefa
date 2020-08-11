@@ -4,6 +4,10 @@
 {% load i18n %}
 {% block title %} {% trans "404" %}{% endblock %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href='/static/css/not_found.css'>
+{% endblock %}
+
 {% block content %}
    {% trans 'Fortress cannot find that page' %}
 {% endblock %}

@@ -4,6 +4,7 @@ from django import forms
 from django.core.serializers.json import DjangoJSONEncoder
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db import models
+from django.db.models import TextField
 from django.shortcuts import redirect
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
