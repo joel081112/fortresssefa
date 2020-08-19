@@ -61,3 +61,4 @@ def delete_user(request):
     request.user.delete()
     logout(request)
     return redirect('/')
+

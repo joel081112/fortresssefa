@@ -43,13 +43,15 @@
                         {% endwith %}
                     {% endfor %}
                     <p> More details below </p>
-                    <p>Architects go to <a href="/architect-page/" id="architect-link">Architect Page!</a> <i class="fa fa-user"></i> </p>
+                    <p>Architects go to <a href="/architect-page/" id="architect-link">Architect Page!</a> <i
+                            class="fa fa-user"></i></p>
 
 
                 </div>
 
                 <div class="prod-images">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-touch="true">
+                    <div id="carouselExampleIndicators" class="carousel carousel-fade" data-ride="carousel"
+                         data-touch="true">
                         {#      line indicators   #}
                         <ul class="carousel-indicators">
                             {% for item in page.steelDoor_images.all %}
@@ -157,6 +159,33 @@
 
 
         </div>
+
+
+        {% comment %}<div class="iphone">
+            <div class="container">
+                <div class="panels" id="carouselExampleIndicators3">
+                    <div class="panel">heyeeee</div>
+                    {% for item in page.steelDoor_images.all %}
+                        <div class="panel {% if forloop.counter == 1 %}active{% endif %}">
+
+
+                            {% image item.image fill-10000x10000 as img %}
+                            <img src="{{ img.url }}" class="d-block w-100"
+                                 alt="{{ img.alt }}">
+
+                            <div class="imageCounter">
+                                <img src="/media/original_images/camera.png" id="display">
+                                {{ forloop.counter }} of {{ page.steelDoor_images.all.count }}
+
+                            </div>
+
+
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>{% endcomment %}
+
 
         <div class="intro" id="aboutExtra">
 

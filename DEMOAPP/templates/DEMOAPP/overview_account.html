@@ -40,20 +40,21 @@
             </div>
         </div>
     </form>
-    {{ request.user.first_name }}<br/>
-    {{ request.user.last_name }}<br/>
-    {{ request.user.email }}<br/>
-    {{ request.user.password }}<br/>
-    {{ request.user.groups }}<br/>
-    {{ request.user.user_permissions }}<br/>
-    {{ request.user.is_staff }}<br/>
-    {{ request.user.is_active }}<br/>
-    {{ request.user.is_superuser }}<br/>
-    {{ request.user.last_login }}<br/>
-    {{ request.user.date_joined }}<br/>
+    First name: {{ request.user.first_name }}<br/>
+    Last name: {{ request.user.last_name }}<br/>
+    Email: {{ request.user.email }}<br/>
+    Encrypted password: {{ request.user.password }}<br/>
 
-    {{ request.user.get_full_name }}<br/>
-    {{ request.user.get_user_permissions }}<br/>
+        Groups: {{ request.user.groups }}<br/>
+
+    Permissions: {{ request.user.has_perm }}<br/>
+    Is staff: {{ request.user.is_staff }}<br/>
+    Is active: {{ request.user.is_active }}<br/>
+    Is superuser: {{ request.user.is_superuser }}<br/>
+    Last login: {{ request.user.last_login }}<br/>
+    Date joined: {{ request.user.date_joined }}<br/>
+
+    Full name: {{ request.user.get_full_name }}<br/>
 
 
 {% endblock %}

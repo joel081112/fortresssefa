@@ -65,7 +65,7 @@
             <p>Colours are in RAL and British Standard format</p>
         </div>
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel" data-ride="carousel">
             <ul class="carousel-indicators">
                 {% for item in page.protec_images.all %}
                     <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter|add:"-1" }}"

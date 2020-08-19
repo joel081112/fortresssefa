@@ -129,6 +129,7 @@
 
 }
 
+
 #docs-pic {
     font-size: 45px;
 }
@@ -174,6 +175,12 @@
 
 .description .download {
     margin: 20px 0;
+}
+
+@media only screen and (max-width: 800px) {
+    .description .download {
+        margin: 0 auto;
+    }
 }
 
 @media only screen and (max-width: 640px) {
@@ -464,3 +471,46 @@
     display: inline !important;
 }
 
+
+
+
+/*Testing*/
+
+
+.iphone {
+  position: relative;
+  width: 50%;
+  height: 800px;
+  border-radius: 20px;
+}
+.iphone .container {
+  position: absolute;
+  width: calc(100% - 10px);
+  height: calc(100% - 100px);
+  background:transparent;
+  border-radius: 5px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 52px;
+}
+
+.iphone .panels {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  height: 50%;
+    margin-left: 50%;
+}
+.iphone .panel {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  background: #f55;
+}
+
+
+
+
+/*end testing*/

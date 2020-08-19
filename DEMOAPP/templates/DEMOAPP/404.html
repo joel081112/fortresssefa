@@ -1,13 +1,45 @@
 {% extends "../not_found_base.html" %}
 {% block page-css-class %}cover-container w-100 d-flex h-25 p-3 mx-auto flex-column{% endblock %}
-
+{% load static %}
 {% load i18n %}
 {% block title %} {% trans "404" %}{% endblock %}
 
 {% block extra_css %}
+
     <link rel="stylesheet" href='/static/css/not_found.css'>
+    <link rel="stylesheet" href='/static/css/cover_2.0.css'>
+    <link rel="stylesheet" href='/static/css/bootstrap.css'>
+    <link rel="stylesheet" href='/static/css/NavMENU.css'>
 {% endblock %}
 
 {% block content %}
-   {% trans 'Fortress cannot find that page' %}
+    <div class="centre-content">
+
+        <div class="top">
+
+
+            <div class="block">
+
+
+                <div class="content">
+                    <img src="/media/images/404.jpg" alt="404 image">
+                    <p id="nope">
+                        {% trans 'Fortress cannot find that page' %}
+
+
+                    </p>
+                    <img src="/media/images/fortress_sefa_small_60px.max-165x165.jpg" height="20px"
+                         alt="fortress small logo">
+                    <a id="link" href="/"><p class="ml2">Go to fortress-sefa.com >
+                    </p></a>
+
+                    {% include 'copyright_code.html' %}
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
 {% endblock %}

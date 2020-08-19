@@ -22,7 +22,7 @@
     {% if request.user.is_authenticated %}
 
         <p>Do you want to delete the account "{{ request.user.username }}"?</p>
-        {{ request.user.first_name }}
+        {% comment %}{{ request.user.first_name }}{% endcomment %}
     {% endif %}
 
 

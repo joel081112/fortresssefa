@@ -187,20 +187,40 @@
 
 
     <div class="timeline alternative-colour" id="">
+
+
+        {% comment %}  {% for item in page.protec_images.all %}
+
+            <div class="child-snap height-depend {% if forloop.counter == 1 %}active{% endif %}">
+                {% image item.image fill-100x50-c100 as img %}
+                <img src="{{ img.url }}"
+                     data-target="#carouselExampleIndicators"
+                     data-slide-to="{{ forloop.counter|add:"-1" }}"
+                     alt="{{ img.alt }}">
+                                        <p id="colour-title">{{ item.caption }}</p>
+
+            </div>
+
+
+        {% endfor %}{% endcomment %}
+
         <div class="slider">
+
             <form>
-                {% for block in page.timeline %}
+                <div class="container-snap hey" id="scroller">
+                    {% for block in page.timeline %}
+                        <div class="child-snap {% if forloop.counter == 1 %}active{% endif %}">
+                            {% if forloop.counter == 1 %}
+                                <input type="radio" name="slider" title="slide{{ forloop.counter }}" checked="checked"/>
 
-                    {% if forloop.counter == 1 %}
-                        <input type="radio" name="slider" title="slide{{ forloop.counter }}" checked="checked"/>
+                            {% else %}
+                                <input type="radio" name="slider" title="slide{{ forloop.counter }}"/>
 
-                    {% else %}
-                        <input type="radio" name="slider" title="slide{{ forloop.counter }}"/>
-
-                    {% endif %}
+                            {% endif %}
+                        </div>
 
 
-                  {% comment %}  <label>
+                        {% comment %}  <label>
 
                         {% if forloop.counter == 1 %}
                             <input type="radio" name="slider" title="slide{{ forloop.counter }}" checked="checked"/>
@@ -217,11 +237,14 @@
 
 
                     </label>{% endcomment %}
-                    {% comment %}
+                        {% comment %}
                     {% image self.image fill-75x75-c100 as img %}
                     <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">{% endcomment %}
-                {% endfor %}
+
+                    {% endfor %}
+                </div>
             </form>
+
 
             <div class="slider__inner">
                 {% for block in page.timeline %}
