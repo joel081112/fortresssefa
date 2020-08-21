@@ -28,17 +28,19 @@
                 <div class="description">
 
                     <div id="alert">New</div>
-                    <h3>XD Door</h3>
+                    {% comment %}<h3>XD Door</h3>
                     <h1>Our Best Yet.<br/>
                         More Security.<br/>
                         More Resistance.</h1>
                     <h3>Range of Frames</h3>
-                    <p> Select Hardware</p>
+                    <p> Select Hardware</p>{% endcomment %}
+                     {{ page.alert|richtext }}
+
 
                 </div>
 
                 <div class="prod-images">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <div id="carouselExampleIndicators" class="carousel" data-ride="carousel">
 
                         <ul class="carousel-indicators">
                             {% for item in page.products_images.all %}

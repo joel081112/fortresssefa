@@ -4,7 +4,7 @@ from django import forms
 from django.core.serializers.json import DjangoJSONEncoder
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.db import models
-from django.db.models import TextField
+from django.db.models import TextField, CharField
 from django.shortcuts import redirect
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
@@ -25,7 +25,8 @@ from wagtail.documents.edit_handlers import DocumentChooserPanel
 from wagtail.users.forms import UserEditForm, UserCreationForm
 from wagtail.images.blocks import ImageChooserBlock
 
-from .blocks import CardBlock, QuestionBlock, ImageTextsBlock, ImageTextBlock, ArticleBlock, LocationCardBlock, ButtonLinksBlock
+from .blocks import CardBlock, QuestionBlock, ImageTextsBlock, ImageTextBlock, ArticleBlock, LocationCardBlock, \
+    ButtonLinksBlock
 
 
 class FormField(AbstractFormField):
@@ -161,6 +162,12 @@ class ContactUs(Page):
 
 
 class About(Page):
+    firstBox = RichTextField(
+        blank=True, verbose_name="First"
+    )
+    secondBox = RichTextField(
+        blank=True, verbose_name="Second"
+    )
     extra = RichTextField(blank=True)
     brands = RichTextField(blank=True)
     brand = StreamField(
@@ -177,6 +184,9 @@ class About(Page):
         null=True,
         blank=True,
     )
+    clientIntro = RichTextField(
+        blank=True, verbose_name="Client Intro"
+    )
 
     search_fields = Page.search_fields + [
 
@@ -184,14 +194,27 @@ class About(Page):
 
     # content tab panels
     content_panels = Page.content_panels + [
+        MultiFieldPanel(
+            [
+                FieldPanel('firstBox'),
+                FieldPanel('secondBox')
+            ],
+            heading="About Intro Boxes"
+        ),
         FieldPanel('extra'),
         FieldPanel('brands'),
-        MultiFieldPanel(
-            [InlinePanel('client_images', max_num=30, min_num=1, label="client images")],
-            heading="client Images"
-        ),
         StreamFieldPanel("brand"),
+        MultiFieldPanel(
+            [InlinePanel('global_partner_images', max_num=30, min_num=1, label="global partner images")],
+            heading="global partner Images"
+        ),
         StreamFieldPanel("timeline"),
+        MultiFieldPanel(
+            [
+                FieldPanel('clientIntro'),
+                InlinePanel('client_images', max_num=30, min_num=1, label="client images")],
+            heading="clients"
+        ),
     ]
 
     # what to call the panels on wagtail
@@ -221,8 +244,25 @@ class AboutGalleryImage(Orderable):
         FieldPanel('caption'),
     ]
 
+    class AboutGlobalImage(Orderable):
+        page = ParentalKey(About, on_delete=models.CASCADE, related_name='global_partner_images')
+        image = models.ForeignKey(
+            'wagtailimages.Image',
+            null=True,
+            blank=False,
+            on_delete=models.CASCADE,
+            related_name='+'
+        )
+
+        panels = [
+            ImageChooserPanel('image'),
+        ]
+
 
 class Products(Page):
+    alert = RichTextField(
+        blank=True, verbose_name="Products Alert"
+    )
     content = StreamField(
         [
             ("links", ButtonLinksBlock()),
@@ -234,8 +274,10 @@ class Products(Page):
     # content tab panels
     content_panels = Page.content_panels + [
         MultiFieldPanel(
-            [InlinePanel('products_images', max_num=30, min_num=0, label="products images")],
-            heading="products Images"
+            [
+                FieldPanel('alert'),
+                InlinePanel('products_images', max_num=30, min_num=0, label="products images")],
+            heading="products overview"
         ),
         StreamFieldPanel("content"),
     ]
@@ -550,6 +592,7 @@ class ProTec(Page):
     ]  # these are if adding a search to the website
 
     intro = RichTextField(blank=True)
+    location = RichTextField(blank=True)
 
     # content tab panels
     content_panels = Page.content_panels + [
@@ -560,6 +603,10 @@ class ProTec(Page):
         MultiFieldPanel(
             [InlinePanel('protec_images', min_num=0, label="protec images")],
             heading="protec Images"
+        ),
+        FieldPanel(
+            'location',
+            classname="full"
         ),
 
     ]
@@ -658,6 +705,10 @@ class DoorSectional(Page):
 
 
 class DoorSteel(Page):
+    alertText = CharField(blank=True, max_length=250)
+    alertInfo = RichTextField(
+        blank=True, verbose_name="Alert Info"
+    )
     general = RichTextField(
         blank=True,  # required field or not
         verbose_name="General"  # called on wagtail site
@@ -685,29 +736,23 @@ class DoorSteel(Page):
     # content tab panels
     content_panels = Page.content_panels + [
         MultiFieldPanel(
-            [InlinePanel('steelDoor_images', max_num=30, min_num=0, label="steelDoor images")],
-            heading="steelDoor Images"
+            [
+                FieldPanel('alertText'),
+                FieldPanel('alertInfo'),
+                InlinePanel('steelDoor_images', max_num=30, min_num=0, label="steelDoor images")],
+            heading="Steel Door Header"
         ),
         MultiFieldPanel(
             [InlinePanel('steelDoor_pdf', max_num=20, min_num=0, label="steelDoor pdf")],
             heading="steelDoor pdf"
         ),
-        FieldPanel(
-            'general',
-            classname="full",
-        ),
-        FieldPanel(
-            'hardware',
-            classname="full",
-        ),
-        FieldPanel(
-            'doorOptions',
-            classname="full",
-
-        ),
-        FieldPanel(
-            'dimensions',
-            classname="full",
+        MultiFieldPanel(
+            [
+                FieldPanel('general', classname="full", ),
+                FieldPanel('hardware', classname="full", ),
+                FieldPanel('doorOptions', classname="full", ),
+                FieldPanel('dimensions', classname="full", )],
+            heading="Steel Door info"
         ),
     ]
 
@@ -1107,7 +1152,7 @@ class HomePageGalleryImage(Orderable):
     image = models.ForeignKey(
         'wagtailimages.Image', on_delete=models.CASCADE, related_name='+'
     )
-    caption = models.CharField(blank=True, max_length=250)
+    caption = models.TextField(blank=True, max_length=250)
 
     panels = [
         ImageChooserPanel('image'),

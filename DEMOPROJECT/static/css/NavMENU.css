@@ -93,6 +93,8 @@ body {
     z-index: 1;
 }
 
+
+
 /*arrow on sub menu*/
 .menu > ol > li a:not(:last-child):before {
     content: "\f078";
@@ -203,6 +205,8 @@ ol > .column a {
 }
 
 @media only screen and  (min-width: 400px)  and (max-width: 640px) {
+
+
     /* Create three equal columns that floats next to each other */
     .column {
         float: left;
@@ -210,13 +214,19 @@ ol > .column a {
         padding: 15px;
         max-height: 750px;
     }
-
+/*Want to alter the submenu headings*/
     ol > .column a {
         float: none;
-        padding: 16px;
+        padding: 16px 16px 16px 0;
         display: block;
         text-align: left;
     }
+     .menu ol > .column a {
+        padding: 16px 16px 16px 16px;
+    }
+     .menu > ol .sub-menu li {
+         margin-left: -16px;
+     }
 }
 
 

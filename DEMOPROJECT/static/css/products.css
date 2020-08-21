@@ -154,14 +154,18 @@
     font-weight: bold;
 }
 
-.description h1 {
-    margin: 6px 0;
+.description h2 {
+    margin: 0 0 6px 0;
     font-weight: bold;
 }
 
 .description p {
     font-size: 17px;
     line-height: 1.2;
+}
+
+.description .rich-text{
+    margin: 0;
 }
 
 .prod-images .gallery img {

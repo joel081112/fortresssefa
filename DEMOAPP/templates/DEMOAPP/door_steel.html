@@ -24,13 +24,13 @@
         <div class="overview alternative-colour">
             <article class="item">
                 <div class="description">
-                    <div id="alert">New</div>
-                    <h3>SR3 Door</h3>
-                    <h1>Extra Security.<br/>
+                    <div id="alert">{{ page.alertText }}</div>
+                    {% comment %}<h3>SR3 Door</h3>
+                    <h2>Extra Security.<br/>
                         More Thought.<br/>
-
-                        More Design.</h1>
-                    <h3>Highest Security</h3>
+                        More Design.</h2>
+                    <h3>Highest Security</h3>{% endcomment %}
+                    {{ page.alertInfo|richtext }}
                     {% for download in page.steelDoor_pdf.all|slice:"1" %} {# loop over the ArchitectDownload objects #}
                         {% with doc=download.steelDoor_pdf %} {# retrieve the Document object for each one #}
 

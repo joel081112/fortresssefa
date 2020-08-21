@@ -1,5 +1,5 @@
 $(function initMap() {
-    var belfast = {lat: 54.679044, lng: -5.998068};
+    var belfast = {lat: 54.677164, lng: -5.989427};
     var dundee = {lat: 56.481879, lng: -2.889296};
     var glasgow = {lat: 55.800615, lng: -4.399953};
     var london = {lat: 51.575048, lng: 0.402577};

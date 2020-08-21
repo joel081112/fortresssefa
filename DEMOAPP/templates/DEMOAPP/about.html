@@ -31,20 +31,12 @@
             <div class="chat">
                 <div class="mine messages">
                     <div class="message last pastBox">
-                        <p>Fortress has a proud history dating back to 1969. Over the years we have expanded and adapted
-                            to provide the best service for our clients.
-                            Below is a timeline of some of the key moments in Fortress's history, leading up to the
-                            present
-                            day. </p>
+                        {{ page.firstBox|richtext }}
                     </div>
                 </div>
                 <div class="yours messages">
                     <div class="message pastBox">
-                        <p>Below you can see some of our older companies which represent our rich heritage within the
-                            industry over the years.
-                            Although the names may have changed, the ideals and standards remain the same.
-                            Our commitment to innovation and development will continue to change the face of Fortress
-                            group.</p>
+                       {{ page.secondBox|richtext }}
                     </div>
                 </div>
             </div>
@@ -179,8 +171,12 @@
             We have Global Partners too
         </h3>
         <div class="flex-global" data-aos="fade-right">
-            <img src="/media/images/amstel manuf.png" class="item" alt="amstel manuf">
-            <img src="/media/images/cornell safe and secure.png" class="item" alt="cornell safe and secure">
+            {% for item in page.global_partner_images.all %}
+                {% image item.image original as img %}
+
+                <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
+
+            {% endfor %}
 
         </div>
     </div>
@@ -259,12 +255,7 @@
     <div class="pastClients" data-aos="fade-down">
         <div class="pastBox">
             <h2>Clients</h2>
-            <p>As one of Europes leading door suppliers we have a long list of high profile clients who
-                trust us
-                with
-                their
-                business.
-                Here is a list of just a few of them.</p>
+            {{ page.clientIntro|richtext }}
 
             <div class="gallery">
                 <div class="container">
