@@ -1,10 +1,2 @@
-.responsive {
-    width: 100%;
-    height: auto;
-}
-
-/*make images width of div*/
-img {
-    max-width: 100%;
-    height: auto;
-}
+.responsive{width:100%;height:auto;}
+img{max-width:100%;height:auto;}

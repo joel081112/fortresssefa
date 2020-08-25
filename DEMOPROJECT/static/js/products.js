@@ -45,7 +45,10 @@ $('.mini .carousel .carousel-item').each(function(){
 
 });
 
+
+/*Potential for flicking carousel*/
+/*
 var iphone = new eg.Flicking(".panels", {
     circular: true,
     gap: 10,
-});
+});*/

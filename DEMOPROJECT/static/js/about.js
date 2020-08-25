@@ -1,3 +1,4 @@
+/*
 (function ($) {
 
 
@@ -183,7 +184,7 @@
 })(jQuery);
 
 
-/*==========  Helpers  ==========*/
+/!*==========  Helpers  ==========*!/
 
 
 // Timeout function
@@ -203,3 +204,4 @@ $.fn.reverse = function () {
 
 
 
+*/

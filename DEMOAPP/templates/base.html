@@ -3,7 +3,9 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#4285f4"/>
+
     <link rel="icon" type="image/png" href="/media/original_images/fortress_sefa_ico.png"/>
     <title>
         {% block title %}
@@ -19,21 +21,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     {#    #responsive stuff to work bootstrap##}
     {# Fonts #}
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
+
 
     <script src="https://kit.fontawesome.com/c730198b71.js" crossorigin="anonymous"></script>
 
-    {# Owl CSS #}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.min.css' %}">
+
     {#for the carousel#}
     {# Global stylesheets #}
     <link rel="stylesheet" href='/static/css/cover.css'>
     <link rel="stylesheet" href='/static/css/bootstrap.css'>
     <link rel="stylesheet" href='/static/css/NavMENU.css'>
     <link rel="stylesheet" href='/static/css/footer.css'>
-    <link rel="stylesheet" href='/static/css/owl.min.css'>
-    <link rel="stylesheet" href='/static/css/owl.theme.default.min.css'>
-    <link rel="stylesheet" href='/static/css/owl.carousel.css'>
     <link rel="stylesheet" href='/static/css/hamburgerAnim.css'>
     <link rel="stylesheet" href='/static/css/panel.css'>
     <link rel="stylesheet" href='/static/css/buttons.css'>
@@ -80,7 +78,7 @@
                 <div class="header">
 
                     <a href="/" class="menuLogo">
-                        <img src="/media/original_images/fortress_sefa_s8gdTFJ.jpg" id="smallLogo">
+                        <img src="/media/original_images/fortress_sefa_s8gdTFJ.jpg" id="smallLogo" alt="logo">
                     </a>
 
 
@@ -110,7 +108,7 @@
 
                     </div>
                     <a href="/" class="menuLogo">
-                        <img src="/media/original_images/fortress_sefa_s8gdTFJ.jpg" id="largeLogo">
+                        <img src="/media/original_images/fortress_sefa_s8gdTFJ.jpg" id="largeLogo" alt="largeLogo">
                     </a>
                 </div>
 
@@ -188,7 +186,7 @@
 
                     <div class="contactsection">
                         <a href="/contact-us#map"><img src="/media/original_images/maps.png" id="mapIcon"
-                                                       height="40px" width="40px">
+                                                       height="40px" width="40px" alt="map Icon">
 
                         </a>
 
@@ -200,7 +198,8 @@
                     <br><br>
                     <div class="contactsection">
                         <a href="tel:+44 (0)28 9034 2655" id="phoneLink">
-                            <img src="/media/original_images/phone.png" id="phoneIcon" height="40px" width="40px">
+                            <img src="/media/original_images/phone.png" alt="phone icon" id="phoneIcon" height="40px"
+                                 width="40px">
                         </a>
                         +44 (0)28 9034 2655
                     </div>
@@ -216,12 +215,15 @@
                 <p class="copyright">Registered in Northern Ireland with Company No:NC000941 </p>
                 <br>
                 <div class="hover10">
-                    <a href="https://www.linkedin.com/company/fortresssefa/" target="_blank" id="social">
-                        <figure id="social"><img src="/media/original_images/linkedIn.png" height="40px" width="40px">
+                    <a href="https://www.linkedin.com/company/fortresssefa/" target="_blank" id="social" rel="noopener">
+                        <figure id="social"><img src="/media/original_images/linkedIn.png" height="40px" width="40px"
+                                                 alt="linkedIn">
                         </figure>
                     </a>
-                    <a class="facebook" href="fb://page/?id=367639123362658	" target="_blank" id="social">
-                        <figure id="social"><img src="/media/original_images/facebook.png" height="40px" width="40px">
+                    <a class="facebook" href="fb://page/?id=367639123362658	" target="_blank" id="social"
+                       rel="noopener">
+                        <figure id="social"><img src="/media/original_images/facebook.png" height="40px" width="40px"
+                                                 alt="facebook">
                         </figure>
                     </a>
                     {% comment %}
@@ -252,7 +254,8 @@
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://naver.github.io/egjs-flicking/release/latest/dist/flicking.pkgd.js"></script>
+{% comment %}
+<script src="https://naver.github.io/egjs-flicking/release/latest/dist/flicking.pkgd.js"></script>{% endcomment %}
 <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
 
 <script src="../../static/lottie/lottie_svg.min.js"></script>
@@ -265,19 +268,18 @@
 <script src="../../static/js/homepage.js"></script>
 <script src="../../static/js/base.js"></script>
 {##<script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>##}
-<script src="../../static/js/owl.min.js"></script>
-<script src="../../static/js/owl.carousel.js"></script>
+
+
 <script src="../../static/js/slim.min.js"></script>
+<script src="../../static/js/flicking.pkgd.js "></script>
 <script src="../../static/js/jquery-3.4.1.min.js"></script>
 <script src="../../static/js/panel.js"></script>
-<script src="../../static/js/disqus.js"></script>
 <script src="../../static/js/popper.min.js"></script>
 <script src="../../static/js/bootstrap.min.js"></script>
 <script src="../../static/js/about.js"></script>
 <script src="../../static/js/url_extract.js"></script>
 <script src="../../static/js/account.js"></script>
 <script src="../../static/js/anime.min.js"></script>
-<script src="../../static/js/rotate_txt.js"></script>
 <script src="../../static/js/aos.js"></script>
 <script src="../../static/js/contactUs.js"></script>
 <script src="../../static/js/products.js"></script>
