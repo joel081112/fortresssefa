@@ -1,0 +1,33 @@
+.protec-title{position:absolute;font-size:75px;opacity:0.75;background:#000000;color:#ffffff;padding-right:5px;display:inline-block;top:50%;left:50%;transform:translate(-50%, -50%);clear:both;line-height:90px;text-align:center;}
+.protec .banner{background-image:url('/media/images/protec8.jpg');}
+@media (min-width:640px){.protec .banner{background-position:center;}
+}
+@media (max-width:640px){.protec .banner{background-size:contain;background-repeat:no-repeat;}
+}
+.intro{padding:40px 20vw;text-align:center;font-family:Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;font-size:16px;}
+@media only screen and (max-width:800px){.protec-title{font-size:50px;line-height:60px;}
+.intro{padding:40px 10vw;text-align:center;}
+}
+#colour-title{margin:5px;}
+.image-container1{display:flex;flex-wrap:wrap;align-items:flex-start;padding-bottom:100px;}
+.image-container2{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;}
+@media only screen and (max-width:1100px){.image-container2{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;}
+}
+.images-2{margin:0 auto;width:70vw;max-width:1200px;}
+.full-image{max-width:1200px;width:70vw;height:auto;margin:50px auto;}
+.tall-images-left, .tall-images-right{max-height:50vh;max-width:70vw;height:auto;width:auto;padding-bottom:50px;}
+.wide-images-left, .wide-images-right{height:auto;width:36vw;padding-bottom:50px;}
+@media only screen and (max-width:800px){.wide-images-left, .wide-images-right{height:auto;width:70vw;}
+}
+.contact{text-align:left;margin-left:20vw;margin-bottom:200px;margin-top:200px;}
+.contact h1{font-size:64px;line-height:1.0625;font-weight:700;letter-spacing:-.009em;font-family:Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;margin:50px 0;}
+.intro h1, h2{line-height:1.0625;font-weight:700;letter-spacing:-.009em;font-family:Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;margin:50px 0;}
+.intro h1{font-size:64px;}
+.intro h2{font-size:45px;}
+.contact p{color:gray;font-size:17px;line-height:1.23536;font-weight:600;}
+@media only screen and (max-width:800px){.intro h1, .contact h1{font-size:45px;}
+.contact p{font-size:13px;}
+}
+#protec-arrows{margin-left:25%;}
+@media only screen and (max-width:800px){#protec-arrows{width:100%;margin-left:0;}
+}

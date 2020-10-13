@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+}
+
+.container-snap {
+    width: 50%;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+
+.container-snap-y{
+     width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-gallery{
+    height: 125px;
+}
+
+.about-companies{
+    height: 400px;
+}
+
+.half-margin{
+    width: 50%;
+margin-left: 50%;
+}
+
+.full{
+    width: 50%;
+    margin: 0 auto;
+    color: black;
+}
+
+.scroll-snap-start{
+    scroll-snap-align: start;
+}
+
+.child-snap {
+    margin-left: 5px;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.child-snap img:hover{
+    cursor: zoom-in;
+}
+
+.height-depend{
+    height: 100%;
+    width: auto;
+}
+
+.width-depend{
+    height: auto;
+    width: 100%;
+}
+
+
+
+#gallery::-webkit-scrollbar {
+    width: 12px;
+    height: 10px;
+
+}
+
+/* Track */
+#gallery::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/* Handle */
+#gallery::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(90, 90, 150, 0.8);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+
+@media only screen and (max-width: 700px) {
+    .container-snap {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .full{
+        width: 90%;
+        color: black;
+    }
+}
+
+
+
+
+

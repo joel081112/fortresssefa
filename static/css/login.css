@@ -1,0 +1,290 @@
+body {
+    background-image: url("/media/images/edited login background.jpg");
+    /* Background image is centered vertically and horizontally at all times */
+    background-position: center center;
+
+    /* Background image doesn't tile */
+    background-repeat: no-repeat;
+
+    /* Background image is fixed in the viewport so that it doesn't move when
+       the content's height is greater than the image's height */
+    background-attachment: fixed;
+
+    /* This is what makes the background image rescale based
+       on the container's size */
+    background-size: cover;
+
+    /* Set a background color that will be displayed
+       while the background image is loading */
+    background-color: #464646;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.copyrightForm .copyright{
+    text-align: right;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+input[type=password], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container1 {
+    border-radius: 25px;
+    background-color: #f2f2f2;
+    padding: 40px;
+    position: center;
+    margin: 15% 30%;
+}
+
+.container1 hr {
+    padding: -40px;
+    width: 100%;
+}
+
+.signup hr {
+    padding: -40px;
+    width: 100%;
+}
+
+.signup {
+    border-radius: 25px;
+    background-color: #f2f2f2;
+    padding: 40px;
+    position: center;
+    opacity: 0.96;
+}
+
+@media  only screen and  (min-width: 1000px) {
+    .signup {
+        margin: 2% 30%;
+    }
+}
+
+@media  only screen and (min-width: 800px)  and (max-width: 1000px) {
+    .signup {
+        margin: 2% 15%;
+    }
+}
+
+@media  only screen and (min-width: 580px)  and (max-width: 800px) {
+    .signup {
+        margin: 2% 10%;
+    }
+
+    .container1 {
+        margin: 15% 15%;
+    }
+}
+
+@media  only screen and (max-width: 580px) {
+    .signup {
+        margin: 2% 5%;
+    }
+
+    .container1 {
+        margin: 15% 5%;
+    }
+}
+
+
+.container1 .new-body {
+    background: #f2f2f2;
+}
+
+.signup .new-body {
+    background: #f2f2f2;
+}
+
+.signup .row {
+    padding-top: 5px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-45 {
+    float: left;
+    width: 45%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+.col-55 {
+    float: left;
+    width: 55%;
+    margin-top: 6px;
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.wrapt {
+    position: relative;
+}
+
+.text {
+    width: 100%;
+    height: 100%;
+}
+
+.checkbox {
+    position: absolute;
+    right: -8px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-45, .col-75, .col-55, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+.passw {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+}
+
+.passNew {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+}
+
+.col-75 label {
+    padding-top: 16px;
+    position: absolute;
+    z-index: 100;
+}
+
+.col-70 label {
+    padding-top: 16px;
+    position: absolute;
+    z-index: 100;
+}
+
+.forgotten-password .row{
+    display: inherit;
+}
+
+@media  only screen and (min-width: 1000px) {
+    .forgotten-password .btn{
+        width:200px;
+    }
+    .forgotten-password .box-1{
+        width:200px;
+    }
+}
+
+@media  only screen and (max-width: 450px) {
+    .forgotten-password .btn{
+        width:180px;
+    }
+    .forgotten-password .box-1{
+        width:180px;
+    }
+}
+
+.sign-up .col-55{
+    float:right;
+}
+
+body .pass-confirm{
+    text-transform: none;
+}
+
+.field_error{
+    padding-top: 15px;
+    text-transform: none;
+}
+
+.field_error .errorlist{
+    margin-bottom: 0
+}
+
+.forgotten-password .learn-more{
+    width:15rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

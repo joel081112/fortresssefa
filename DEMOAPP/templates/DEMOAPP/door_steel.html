@@ -73,12 +73,13 @@
                                     <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
 
 
-                                        {% image item.image fill-10000x10000 as img %}
+                                        {% image item.image fill-1080x1080 as img %}
                                         <img src="{{ img.url }}" class="d-block w-100"
                                              alt="{{ img.alt }}">
 
                                         <div class="imageCounter">
                                             <img src="/media/original_images/camera.png" id="display" alt="mini camera">
+
                                             {{ forloop.counter }} of {{ page.steelDoor_images.all.count }}
 
                                         </div>

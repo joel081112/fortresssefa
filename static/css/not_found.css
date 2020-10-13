@@ -1,0 +1,49 @@
+.pg404{
+    background-color: #686868;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-transform: inherit;
+}
+.content {
+    padding: 30px;
+}
+
+.content .copyright{
+    color: darkgrey;
+    font-size: 12px;
+}
+
+#link, #nope, #info{
+    margin-top: 10px;
+}
+
+
+#link{
+    color: lightgrey;
+
+}
+
+#link a{
+    color: lightgrey;
+    font-size: 21px;
+    text-decoration-color: lightgrey;
+}
+
+#nope{
+    color:white;
+    font-size: 45px;
+}
+
+#info{
+    font-size: 100px;
+}
+
+.form {
+  padding: 1em 2em;
+  color: #000000;
+  margin: 0.4em 0;
+  font-size: 2em;
+  font-weight: bold;
+}

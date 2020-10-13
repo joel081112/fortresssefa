@@ -37,7 +37,7 @@
     {# start carousel #}
     {# second attempt #}
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel" data-ride="carousel">
         <ul class="carousel-indicators">
             {% for item in page.blogpage_images.all %}
                 <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter|add:"-1" }}"

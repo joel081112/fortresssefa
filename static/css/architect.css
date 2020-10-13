@@ -1,0 +1,28 @@
+body{text-transform:none;}
+ul{list-style-type:none;}
+.all-blocks{margin:0 auto;padding:53px 20px;display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:flex-start;align-content:flex-start;}
+.product-card{}
+.document .w3-container{font-size:20px;padding-top:5px;padding-bottom:10px;}
+.document .w3-card-4{min-width:200px;text-align:center;border-radius:15px;min-height:250px;position:relative;display:block;}
+.document img{margin-top:15px;max-width:80%;}
+.download .btn-txt{display:inline;}
+.document .w3-margin{margin:40px !important;}
+.download{}
+.download{bottom:0;text-decoration:none;max-width:75%;margin:0 auto;}
+.product-info .smooth-over-button{font-size:14px;}
+#intro{padding-top:10%;width:80%;margin-left:auto;margin-right:auto;text-align:center;color:white;vertical-align:center;font-size:50px;}
+#caption{max-width:300px;margin:0 auto;padding-top:10px;padding-bottom:20px;}
+.top_image .banner{background-image:url(/media/images/workstation.jpg);margin-top:15px;height:75vh;}
+@media (min-width:640px){.top_image .banner{background-position:center;}
+}
+@media (max-width:640px){.top_image .banner{background-size:contain;background-repeat:no-repeat;height:250px;}
+}
+.document hr{width:20%;margin:0 auto;border:1px solid green;}
+@media only screen and (max-width:800px){.document .w3-card-4{width:75%;min-height:150px;}
+.download .btn-txt{}
+.download{margin-top:20px;}
+}
+#open{display:inline;}
+#close{display:none;}
+.view-pdf{padding:15px;place-content:center;cursor:pointer;}
+@media only screen and (max-width:800px){}

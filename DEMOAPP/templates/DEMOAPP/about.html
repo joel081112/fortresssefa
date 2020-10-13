@@ -12,6 +12,9 @@
 {% endblock %}
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
+
+    {% comment %}<script src="../../static/js/about.js"></script>{% endcomment %}
+
 {% endblock %}
 {% block meta_descr %}
     Fortress SEFA history about us page. This is our recent history in timeline format
@@ -36,7 +39,7 @@
                 </div>
                 <div class="yours messages">
                     <div class="message pastBox">
-                       {{ page.secondBox|richtext }}
+                        {{ page.secondBox|richtext }}
                     </div>
                 </div>
             </div>
