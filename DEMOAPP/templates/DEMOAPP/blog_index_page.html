@@ -5,10 +5,10 @@
 {% block body_class %}template-blogindexpage{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
-    <link rel="stylesheet" href='/static/css/homepage.css'>
-    <link rel="stylesheet" href='/static/css/allImagesRespon.css'>
-    <link rel="stylesheet" href='/static/css/w3.css'>
-    <link rel="stylesheet" href='/static/css/blog.css'>
+    <link rel="stylesheet" href="{% static '/css/homepage.css'%}">
+    <link rel="stylesheet" href="{% static '/css/allImagesRespon.css'%}">
+    <link rel="stylesheet" href="{% static 'css/w3.css'%}">
+    <link rel="stylesheet" href="{% static '/css/blog.css'%}">
 
 
 
@@ -16,9 +16,9 @@
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
 
-    <script src="../../static/js/disqus.js"></script>
+    <script src="{% static 'js/disqus.js'%}"></script>
 
-    <script src="../../static/js/anime.min.js"></script>
+    <script src="{% static '/js/anime.min.js'%}"></script>
 {% endblock %}
 {% block meta_descr %}
     FORTRESS SEFA welcome to our blog page. Find all up to date recent news on this page.

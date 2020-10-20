@@ -5,14 +5,14 @@
 {% block body_class %}Speed Door{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
-<link rel="stylesheet" href='/static/css/blog.css'>
-    <link rel="stylesheet" href='/static/css/w3.css'>
-    <link rel="stylesheet" href='/static/css/homePage.css'>
+<link rel="stylesheet" href="{%static '/css/blog.css'%}">
+    <link rel="stylesheet" href="{%static '/css/w3.css'%}">
+    <link rel="stylesheet" href="{%static '/css/homePage.css'%}">
 {% endblock %}
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
 
-<script src="../../static/js/rotate_txt.js"></script>
+<script src="{%static '/js/rotate_txt.js'%}"></script>
 {% endblock %}
 {% block meta_descr %}
     Fortress SEFA About us. Links to socials and linkedin is included in this page.

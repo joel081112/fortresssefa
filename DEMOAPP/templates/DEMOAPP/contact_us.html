@@ -5,14 +5,14 @@
 {% block body_class %}Contact Us{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
-    <link rel="stylesheet" href='/static/css/homePage.css'>
-    <link rel="stylesheet" href='/static/css/contactUs.css'>
+    <link rel="stylesheet" href="{%static '/css/homePage.css'%}">
+    <link rel="stylesheet" href="{%static '/css/contactUs.css'%}">
 {% endblock %}
 
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
 
-<script src="../../static/js/contactUs.js"></script>
+<script src="{%static '/js/contactUs.js'%}"></script>
 
 {% endblock %}
 {% block meta_descr %}

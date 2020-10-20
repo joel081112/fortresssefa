@@ -5,8 +5,8 @@
 {% block body_class %}Architect Details{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
-    <link rel="stylesheet" href='/static/css/login.css'>
-    <link rel="stylesheet" href='/static/css/contact_form.css'>
+    <link rel="stylesheet" href="{% static '/css/login.css'%}">
+    <link rel="stylesheet" href="{% static '/css/contact_form.css'%}">
 
 {% endblock %}
 {% block extra_js %}

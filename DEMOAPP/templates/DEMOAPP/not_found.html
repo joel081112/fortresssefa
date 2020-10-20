@@ -5,7 +5,7 @@
 {% block body_class %}Not Found{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
-    <link rel="stylesheet" href='/static/css/not_found.css'>
+    <link rel="stylesheet" href="{%static '/css/not_found.css'%}">
 {% endblock %}
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}

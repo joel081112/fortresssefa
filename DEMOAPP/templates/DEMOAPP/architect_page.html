@@ -5,17 +5,17 @@
 {% block body_class %}Architect Page{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
-    <link rel="stylesheet" href='/static/css/homePage.css'>
-    <link rel="stylesheet" href='/static/css/contactUs.css'>
-    <link rel="stylesheet" href='/static/css/w3.css'>
-    <link rel="stylesheet" href='/static/css/blog.css'>
+    <link rel="stylesheet" href="{% static '/css/homePage.css'%}">
+    <link rel="stylesheet" href="{% static '/css/contactUs.css'%}">
+    <link rel="stylesheet" href="{% static '/css/w3.css'%}">
+    <link rel="stylesheet" href="{% static '/css/blog.css'%}">
 
-    <link rel="stylesheet" href='/static/css/architect.css'>
+    <link rel="stylesheet" href="{% static '/css/architect.css'%}">
 
 {% endblock %}
 {% block extra_js %}
 
-    <script src="../../static/js/architect.js"></script>
+    <script src="{% static '/js/architect.js'%}"></script>
     {# Override this in templates to add extra javascript #}
 {% endblock %}
 {% block meta_descr %}

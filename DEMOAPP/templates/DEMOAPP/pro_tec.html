@@ -5,19 +5,16 @@
 {% block body_class %}Pro Tec{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
-    <link rel="stylesheet" href='/static/css/blog.css'>
-    <link rel="stylesheet" href='/static/css/w3.css'>
-
-
-
-    <link rel="stylesheet" href='/static/css/image-gallery.css'>
+    <link rel="stylesheet" href="{%static '/css/blog.css'%}">
+    <link rel="stylesheet" href="{%static '/css/w3.css'%}">
+    <link rel="stylesheet" href="{%static '/css/image-gallery.css'%}">
 
 
 
 {% endblock %}
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
-<script src="../../static/js/rotate_txt.js"></script>
+<script src="{%static '/js/rotate_txt.js'%}"></script>
 {% endblock %}
 {% block meta_descr %}
     As part of Fortress-SEFA there is Pro-Tec which powder coat and have shot blast facilities for doors and shutters.

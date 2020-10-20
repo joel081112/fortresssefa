@@ -5,8 +5,8 @@
 {% block body_class %}Email Verification{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
-    <link rel="stylesheet" href='/static/css/login.css'>
-<link rel="stylesheet" href='/static/css/buttons.css'>
+    <link rel="stylesheet" href="{%static '/css/login.css'%}">
+<link rel="stylesheet" href="{%static '/css/buttons.css'%}">
 
 
 {% endblock %}
@@ -24,7 +24,7 @@
 
 {% block content %}
 
-        <p>An email has been sent to <A HREF="mailto:jferguson@fortress-sefa.com">admin services</A></p>
+        <p>An email has been sent to <A HREF="mailto:fortresssefa@gmail.com">admin services</A></p>
         <p>In the meantime check your own inbox to see the correct email has been setup.</p>
         <br/>
         <p>Please await your confirmation</p>
