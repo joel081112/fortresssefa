@@ -114,12 +114,30 @@ WSGI_APPLICATION = 'DEMOPROJECT.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     },
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    },
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'fort',
+        'USER': 'postgres1',
+        'PASSWORD': 'Japan:1234',
+        'HOST': 'localhost',
+        'PORT': '5433',
+    }
 }
+
+
+# 'ENGINE': 'djongo',
+# 'NAME': 'website',
+# 'HOST': 'mongodb+srv://joel:Japan1234@cluster0.v8m0y.mongodb.net/website?retryWrites=true&w=majority',
+# 'USER': 'joel',
+# 'PASSWORD': 'Japan1234',
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -171,6 +189,7 @@ EMAIL_HOST = EMAIL_HOST
 EMAIL_HOST_USER = EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
 EMAIL_PORT = EMAIL_PORT
+EMAIL_BACKEND = EMAIL_BACKEND
 
 WAGTAIL_FRONTEND_LOGIN_URL = '/account/login/'
 
