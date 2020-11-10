@@ -803,13 +803,18 @@ class SteelDoorGalleryImage(Orderable):
 
 
 class ShuttersCommercial(Page):
+    intro = RichTextField(blank=True)
+
     search_fields = Page.search_fields + [
 
     ]  # these are if adding a search to the website
 
     # content tab panels
     content_panels = Page.content_panels + [
-
+        FieldPanel(
+            'intro',
+            classname="full"
+        ),
     ]
 
     # what to call the panels on wagtail

@@ -1411,7 +1411,7 @@
     "model": "auth.user",
     "fields": {
         "password": "pbkdf2_sha256$120000$fuk6y6c2BpSw$BeuiaqF/KtHqRFxVELPKDlWXiUfjOiMyBqffuNgktIU=",
-        "last_login": "2020-11-10T12:51:58.300Z",
+        "last_login": "2020-11-10T15:11:25.588Z",
         "is_superuser": true,
         "username": "admin",
         "first_name": "Fortress",
@@ -1661,14 +1661,6 @@
 },
 {
     "model": "sessions.session",
-    "pk": "a80u90vtehwj2qatf5h3825djp4k3m3k",
-    "fields": {
-        "session_data": "NjllZmQyM2Y2Yzc5OTRkM2E2NTRiMzQ5MGFmY2UwMzA4ZjU3YTU2Nzp7Il9hdXRoX3VzZXJfaWQiOiI4MSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiZmFmNjlhNjEwNTk1OThkNjY2ODE0ZmMzZDdlODJhNWFlNjVmODc4NSJ9",
-        "expire_date": "2020-11-24T12:51:58.309Z"
-    }
-},
-{
-    "model": "sessions.session",
     "pk": "cicqi3lzrhfr3dvfptfylagwf6xg1lgs",
     "fields": {
         "session_data": "NDdkNzhjMjZlZjdmOTcxNzk3ZmFjZWNkOGJkOWJiOGIwNGFhYjI0Zjp7Il9hdXRoX3VzZXJfaWQiOiI3NiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImFsbGF1dGguYWNjb3VudC5hdXRoX2JhY2tlbmRzLkF1dGhlbnRpY2F0aW9uQmFja2VuZCIsIl9hdXRoX3VzZXJfaGFzaCI6ImJiZGZmNWU4MDI5ODk4NzVlOGUxYzBhYmY3NzcwYmMwYTlkMjZiY2YiLCJfcGFzc3dvcmRfcmVzZXRfa2V5IjoiNWV1LWFkMWM5OGZjMjg4MWZmOGU3NjNiIn0=",
@@ -1825,6 +1817,14 @@
     "fields": {
         "session_data": "OWVmNTk3MDkyZmNjMTNhY2Y2OGQ1N2Q1YTRlMzRkZTczNzkwNzhhYzp7Il9hdXRoX3VzZXJfaWQiOiI4MSIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiOWZkNjM3NWZjYTBjN2RkMzE1Njk2ZThkMjExNzE2ZjNiZDA5ODQ1YyIsIl9zZXNzaW9uX2V4cGlyeSI6MTIwOTYwMH0=",
         "expire_date": "2020-08-12T09:22:45.496Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "v6hy553v19su9sucyc8i8gzot3i03n96",
+    "fields": {
+        "session_data": "NmRiNDkxZjZhOTA4M2MyZjA1Y2QxZTg1YWJjZWNiYTY0ZDIxNDMxMjp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJmYWY2OWE2MTA1OTU5OGQ2NjY4MTRmYzNkN2U4MmE1YWU2NWY4Nzg1In0=",
+        "expire_date": "2020-11-24T15:11:25.592Z"
     }
 },
 {
@@ -27190,7 +27190,8 @@
     "model": "DEMOAPP.shutterscommercial",
     "pk": 14,
     "fields": {
-        "page_ptr": 14
+        "page_ptr": 14,
+        "intro": ""
     }
 },
 {

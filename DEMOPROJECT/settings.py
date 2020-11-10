@@ -132,7 +132,9 @@ DATABASES = {
     }
 }
 
+# _______for another machine take these steps_______ #
 # delete all migrations
+# delete local postgres table
 # python manage.py makemigrations
 # python manage.py migrate --run-syncdb
 # python manage.py dumpdata --natural-foreign --natural-primary -e contenttypes -e
