@@ -132,6 +132,13 @@ DATABASES = {
     }
 }
 
+# delete all migrations
+# python manage.py makemigrations
+# python manage.py migrate --run-syncdb
+# python manage.py dumpdata --natural-foreign --natural-primary -e contenttypes -e
+#       auth.permission -e wagtailcore.groupcollectionpermission --indent 4 > db.json
+# python manage.py loaddata db.json
+
 
 # 'ENGINE': 'djongo',
 # 'NAME': 'website',
