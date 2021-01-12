@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
 
-    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 
     'allauth',
@@ -66,12 +65,12 @@ INSTALLED_APPS = [
     'captcha',
     'wagtailcaptcha',
 ]
+# pip freeze > requirements.txt
 
 SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -140,6 +139,10 @@ DATABASES = {
 # python manage.py dumpdata --natural-foreign --natural-primary -e contenttypes -e
 #       auth.permission -e wagtailcore.groupcollectionpermission --indent 4 > db.json
 # python manage.py loaddata db.json
+
+
+# if on pgadmin follow the tutorial to backup as sql file and then as tar file
+# then restore tar file into other machine's pgadmin
 
 
 # 'ENGINE': 'djongo',
@@ -226,5 +229,3 @@ RECAPTCHA_PRIVATE_KEY = "6LdT_dsUAAAAANpNL07g_0pkSTz2zDlpq-v_K_uc"
 NOCAPTCHA = True
 
 GOOGLE_RECAPTCHA_SECRET_KEY = "6LdT_dsUAAAAANpNL07g_0pkSTz2zDlpq-v_K_uc"
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'

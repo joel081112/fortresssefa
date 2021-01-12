@@ -2270,6 +2270,15 @@
     }
 },
 {
+    "model": "wagtailforms.formsubmission",
+    "pk": 56,
+    "fields": {
+        "form_data": "{\"email\": \"joelferguson98@gmail.com\", \"first-name\": \"Joel\", \"last-name\": \"Ferguson\", \"message\": \"aYYYY\"}",
+        "page": 68,
+        "submit_time": "2020-11-17T08:58:30.926Z"
+    }
+},
+{
     "model": "wagtailusers.userprofile",
     "pk": 1,
     "fields": {
@@ -25855,6 +25864,126 @@
         "depth": 2,
         "numchild": 0,
         "name": "Videos"
+    }
+},
+{
+    "model": "wagtailcore.groupcollectionpermission",
+    "pk": 1,
+    "fields": {
+        "group": [
+            "Moderators"
+        ],
+        "collection": 1,
+        "permission": [
+            "add_image",
+            "wagtailimages",
+            "image"
+        ]
+    }
+},
+{
+    "model": "wagtailcore.groupcollectionpermission",
+    "pk": 2,
+    "fields": {
+        "group": [
+            "Editors"
+        ],
+        "collection": 1,
+        "permission": [
+            "add_image",
+            "wagtailimages",
+            "image"
+        ]
+    }
+},
+{
+    "model": "wagtailcore.groupcollectionpermission",
+    "pk": 3,
+    "fields": {
+        "group": [
+            "Moderators"
+        ],
+        "collection": 1,
+        "permission": [
+            "change_image",
+            "wagtailimages",
+            "image"
+        ]
+    }
+},
+{
+    "model": "wagtailcore.groupcollectionpermission",
+    "pk": 4,
+    "fields": {
+        "group": [
+            "Editors"
+        ],
+        "collection": 1,
+        "permission": [
+            "change_image",
+            "wagtailimages",
+            "image"
+        ]
+    }
+},
+{
+    "model": "wagtailcore.groupcollectionpermission",
+    "pk": 5,
+    "fields": {
+        "group": [
+            "Moderators"
+        ],
+        "collection": 1,
+        "permission": [
+            "add_document",
+            "wagtaildocs",
+            "document"
+        ]
+    }
+},
+{
+    "model": "wagtailcore.groupcollectionpermission",
+    "pk": 6,
+    "fields": {
+        "group": [
+            "Editors"
+        ],
+        "collection": 1,
+        "permission": [
+            "add_document",
+            "wagtaildocs",
+            "document"
+        ]
+    }
+},
+{
+    "model": "wagtailcore.groupcollectionpermission",
+    "pk": 7,
+    "fields": {
+        "group": [
+            "Moderators"
+        ],
+        "collection": 1,
+        "permission": [
+            "change_document",
+            "wagtaildocs",
+            "document"
+        ]
+    }
+},
+{
+    "model": "wagtailcore.groupcollectionpermission",
+    "pk": 8,
+    "fields": {
+        "group": [
+            "Editors"
+        ],
+        "collection": 1,
+        "permission": [
+            "change_document",
+            "wagtaildocs",
+            "document"
+        ]
     }
 },
 {
