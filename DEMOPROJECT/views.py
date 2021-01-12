@@ -1,6 +1,6 @@
 from django.contrib.auth.views import redirect_to_login
 from django.http import HttpResponse, HttpResponseNotFound
-from django.shortcuts import render, redirect, render_to_response
+from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
 from django.core.mail import send_mail
 from django.conf import settings
@@ -23,13 +23,6 @@ def fun(request):
 
 def password_redirect(request):
     response = redirect('/account/password/reset')
-    return response
-
-
-def handler500(request, *args, **argv):
-    response = render_to_response('500.html', {},
-                                  context_instance=RequestContext(request))
-    response.status_code = 500
     return response
 
 

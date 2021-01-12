@@ -124,18 +124,29 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'fort',
-        'USER': 'postgres1',
-        'PASSWORD': 'Japan:1234',
+        'USER': 'postgres',
+        # 'PASSWORD': 'Japan:1234',
+        'PASSWORD': 'Harbour192',
         'HOST': 'localhost',
-        'PORT': '5433',
+        'PORT': '5432',
     }
 }
 
 # _______for another machine take these steps_______ #
 # delete all migrations
 # delete local postgres table
-# python manage.py makemigrations
+
+# might have to comment out models.py in demoapp
 # python manage.py migrate --run-syncdb
+
+# might have to recomment back in the models.py
+# python manage.py makemigrations
+# python mange.py migrate
+# python manage.py migrate --run-syncdb
+
+# python manage.py loaddata db.json
+
+
 # python manage.py dumpdata --natural-foreign --natural-primary -e contenttypes -e
 #       auth.permission -e wagtailcore.groupcollectionpermission --indent 4 > db.json
 # python manage.py loaddata db.json
@@ -144,12 +155,6 @@ DATABASES = {
 # if on pgadmin follow the tutorial to backup as sql file and then as tar file
 # then restore tar file into other machine's pgadmin
 
-
-# 'ENGINE': 'djongo',
-# 'NAME': 'website',
-# 'HOST': 'mongodb+srv://joel:Japan1234@cluster0.v8m0y.mongodb.net/website?retryWrites=true&w=majority',
-# 'USER': 'joel',
-# 'PASSWORD': 'Japan1234',
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -229,3 +234,6 @@ RECAPTCHA_PRIVATE_KEY = "6LdT_dsUAAAAANpNL07g_0pkSTz2zDlpq-v_K_uc"
 NOCAPTCHA = True
 
 GOOGLE_RECAPTCHA_SECRET_KEY = "6LdT_dsUAAAAANpNL07g_0pkSTz2zDlpq-v_K_uc"
+
+# test
+# python3.7 must be used

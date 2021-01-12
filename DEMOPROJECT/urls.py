@@ -46,4 +46,4 @@ urlpatterns = [
 
 handler404 = TemplateView.as_view(template_name="DEMOAPP/404.html")
 handler403 = TemplateView.as_view(template_name="DEMOAPP/403.html")
-handler500 = 'DEMOPROJECT.views.handler500'
+
