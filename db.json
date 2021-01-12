@@ -1411,7 +1411,7 @@
     "model": "auth.user",
     "fields": {
         "password": "pbkdf2_sha256$120000$fuk6y6c2BpSw$BeuiaqF/KtHqRFxVELPKDlWXiUfjOiMyBqffuNgktIU=",
-        "last_login": "2020-11-10T15:11:25.588Z",
+        "last_login": "2021-01-12T08:23:34.464Z",
         "is_superuser": true,
         "username": "admin",
         "first_name": "Fortress",
@@ -1793,6 +1793,14 @@
     "fields": {
         "session_data": "NTNlNTc0ZmU2OTRiNGQyYjNiMTQ0OTY2NGZhMTMxMmVhOGFkMjVmNjp7Il9hdXRoX3VzZXJfaWQiOiI2MiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImRqYW5nby5jb250cmliLmF1dGguYmFja2VuZHMuTW9kZWxCYWNrZW5kIiwiX2F1dGhfdXNlcl9oYXNoIjoiNWFhYzNkZDg5ZjgwNmQ2Y2EyNTQ1OTE1YmEwMWMxNDYwYTRkM2Y1NyIsIl9zZXNzaW9uX2V4cGlyeSI6MTIwOTYwMH0=",
         "expire_date": "2020-07-16T14:30:10.488Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ojf0sg31w1siet5sjsa4jhfvc1lf0y5a",
+    "fields": {
+        "session_data": "NmRiNDkxZjZhOTA4M2MyZjA1Y2QxZTg1YWJjZWNiYTY0ZDIxNDMxMjp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJmYWY2OWE2MTA1OTU5OGQ2NjY4MTRmYzNkN2U4MmE1YWU2NWY4Nzg1In0=",
+        "expire_date": "2021-01-26T08:23:34.537Z"
     }
 },
 {
@@ -25864,126 +25872,6 @@
         "depth": 2,
         "numchild": 0,
         "name": "Videos"
-    }
-},
-{
-    "model": "wagtailcore.groupcollectionpermission",
-    "pk": 1,
-    "fields": {
-        "group": [
-            "Moderators"
-        ],
-        "collection": 1,
-        "permission": [
-            "add_image",
-            "wagtailimages",
-            "image"
-        ]
-    }
-},
-{
-    "model": "wagtailcore.groupcollectionpermission",
-    "pk": 2,
-    "fields": {
-        "group": [
-            "Editors"
-        ],
-        "collection": 1,
-        "permission": [
-            "add_image",
-            "wagtailimages",
-            "image"
-        ]
-    }
-},
-{
-    "model": "wagtailcore.groupcollectionpermission",
-    "pk": 3,
-    "fields": {
-        "group": [
-            "Moderators"
-        ],
-        "collection": 1,
-        "permission": [
-            "change_image",
-            "wagtailimages",
-            "image"
-        ]
-    }
-},
-{
-    "model": "wagtailcore.groupcollectionpermission",
-    "pk": 4,
-    "fields": {
-        "group": [
-            "Editors"
-        ],
-        "collection": 1,
-        "permission": [
-            "change_image",
-            "wagtailimages",
-            "image"
-        ]
-    }
-},
-{
-    "model": "wagtailcore.groupcollectionpermission",
-    "pk": 5,
-    "fields": {
-        "group": [
-            "Moderators"
-        ],
-        "collection": 1,
-        "permission": [
-            "add_document",
-            "wagtaildocs",
-            "document"
-        ]
-    }
-},
-{
-    "model": "wagtailcore.groupcollectionpermission",
-    "pk": 6,
-    "fields": {
-        "group": [
-            "Editors"
-        ],
-        "collection": 1,
-        "permission": [
-            "add_document",
-            "wagtaildocs",
-            "document"
-        ]
-    }
-},
-{
-    "model": "wagtailcore.groupcollectionpermission",
-    "pk": 7,
-    "fields": {
-        "group": [
-            "Moderators"
-        ],
-        "collection": 1,
-        "permission": [
-            "change_document",
-            "wagtaildocs",
-            "document"
-        ]
-    }
-},
-{
-    "model": "wagtailcore.groupcollectionpermission",
-    "pk": 8,
-    "fields": {
-        "group": [
-            "Editors"
-        ],
-        "collection": 1,
-        "permission": [
-            "change_document",
-            "wagtaildocs",
-            "document"
-        ]
     }
 },
 {
