@@ -112,9 +112,9 @@ $(".carousel-indicators").each(function () {
     }
 });
 
-function myFunction() {
+$(function myFunction() {
   document.getElementById("modal").src = $('.active').find('img').attr('src');
-}
+});
 
 
 /*Test*/
