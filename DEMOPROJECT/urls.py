@@ -31,6 +31,7 @@ urlpatterns = [
                   # path('', include('DEMOAPP.urls')),  # empty string because we want it to be mapped to the homepage
                   path('403/', TemplateView.as_view(template_name="DEMOAPP/403.html")),
                   path('404/', TemplateView.as_view(template_name="DEMOAPP/404.html")),
+                  path('500/', TemplateView.as_view(template_name="DEMOAPP/500.html")),
                   # path('architect-page/', views.view_architect_page),
                   # path('', views.view_home_page),
                   url('deleted/', views.delete_user, name='delete-user'),
@@ -44,6 +45,7 @@ urlpatterns = [
                   # url(r��, include(wagtail_urls)),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+# comment out to test
 handler404 = TemplateView.as_view(template_name="DEMOAPP/404.html")
 handler403 = TemplateView.as_view(template_name="DEMOAPP/403.html")
-
+handler500 = TemplateView.as_view(template_name="DEMOAPP/500.html")

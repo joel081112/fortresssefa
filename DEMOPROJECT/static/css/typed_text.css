@@ -8,6 +8,8 @@
 .css-typing p:nth-child(1){width:25vw;-webkit-animation:type 2s steps(40, end);animation:type 2s steps(40, end);-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;}
 .css-typing p:nth-child(2){width:25vw;opacity:0;-webkit-animation:type2 2s steps(40, end);animation:type2 2s steps(40, end);-webkit-animation-delay:2s;animation-delay:2s;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;}
 .css-typing p:nth-child(3){width:25vw;opacity:0;-webkit-animation:type3 3s steps(30, end), blink .55s step-end infinite alternate;animation:type3 3s steps(30, end), blink .55s step-end infinite alternate;-webkit-animation-delay:4s;animation-delay:4s;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;}
+@media only screen and (min-width:1000px) and (max-width:1600px){.css-typing p:nth-child(1){width:35vw;}
+}
 @media only screen and (min-width:700px) and (max-width:1000px){.css-typing p:nth-child(1){width:30vw;}
 }
 @keyframes type{0%{width:0;}

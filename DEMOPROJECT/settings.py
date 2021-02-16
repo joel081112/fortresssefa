@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 from .email_info import *
 import os
+from wagtail.embeds.oembed_providers import youtube
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -136,6 +137,8 @@ DATABASES = {
 # delete all migrations
 # delete local postgres table
 
+# might have to manage.py makemigrations DEMOAPP
+
 # might have to comment out models.py in demoapp
 # python manage.py migrate --run-syncdb
 
@@ -232,6 +235,47 @@ LOGIN_REDIRECT_URL = '/'
 RECAPTCHA_PUBLIC_KEY = "6LdT_dsUAAAAAH2cTbodfKOVXYOgKbd4ys18wzzf"
 RECAPTCHA_PRIVATE_KEY = "6LdT_dsUAAAAANpNL07g_0pkSTz2zDlpq-v_K_uc"
 NOCAPTCHA = True
+
+WAGTAILEMBEDS_RESPONSIVE_HTML = True
+
+# Add a custom provider
+# Your custom provider must support oEmbed for this to work. You should be
+# able to find these details in the provider's documentation.
+# - 'endpoint' is the URL of the oEmbed endpoint that Wagtail will call
+# - 'urls' specifies which patterns
+my_custom_provider = {
+    'endpoint': 'https://customvideosite.com/oembed',
+    'urls': [
+        '^http(?:s)?://(?:www\\.)?customvideosite\\.com/[^#?/]+/videos/.+$',
+    ]
+}
+
+# videos uploaded to youtube and then shared as an embed URL into a rich text field
+WAGTAILEMBEDS_FINDERS = [
+    {
+        'class': 'wagtail.embeds.finders.oembed',
+        'providers': [
+            {
+                "endpoint": "https://www.youtube.com/oembed",
+                "urls": [
+                    r'^https?://(?:[-\w]+\.)?youtube\.com/watch.+$',
+                    r'^https?://(?:[-\w]+\.)?youtube\.com/v/.+$',
+                    r'^https?://youtu\.be/.+$',
+                    r'^https?://(?:[-\w]+\.)?youtube\.com/user/.+$',
+                    r'^https?://(?:[-\w]+\.)?youtube\.com/[^#?/]+#[^#?/]+/.+$',
+                    r'^https?://m\.youtube\.com/index.+$',
+                    r'^https?://(?:[-\w]+\.)?youtube\.com/profile.+$',
+                    r'^https?://(?:[-\w]+\.)?youtube\.com/view_play_list.+$',
+                    r'^https?://(?:[-\w]+\.)?youtube\.com/playlist.+$',
+                ],
+            }
+        ],
+        'options': {'scheme': 'https'}
+    },
+    {
+        'class': 'wagtail.embeds.finders.oembed',
+    }
+]
 
 GOOGLE_RECAPTCHA_SECRET_KEY = "6LdT_dsUAAAAANpNL07g_0pkSTz2zDlpq-v_K_uc"
 

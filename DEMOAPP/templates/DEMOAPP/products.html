@@ -2,16 +2,17 @@
 {% load static %}
 {% block page-css-class %}cover-container w-100 d-flex h-100 p-3 mx-auto flex-column{% endblock %}
 {% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailembeds_tags %}
 {% block body_class %}Products{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
-    <link rel="stylesheet" href="{%static '/css/blog.css'%}">
-    <link rel="stylesheet" href="{%static '/css/w3.css'%}">
-    <link rel="stylesheet" href="{%static '/css/homePage.css'%}">
+    <link rel="stylesheet" href="{% static '/css/blog.css' %}">
+    <link rel="stylesheet" href="{% static '/css/w3.css' %}">
+    <link rel="stylesheet" href="{% static '/css/homePage.css' %}">
 {% endblock %}
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
-<script src="{%static '/js/rotate_txt.js'%}"></script>
+    <script src="{% static '/js/rotate_text.js' %}"></script>
 {% endblock %}
 {% block meta_descr %}
     Fortress SEFA Products overview. Find each of our door ranges on their specific after you see each of our products
@@ -30,12 +31,12 @@
 
                     <div id="alert">New</div>
                     {% comment %}<h3>XD Door</h3>
-                    <h1>Our Best Yet.<br/>
-                        More Security.<br/>
-                        More Resistance.</h1>
-                    <h3>Range of Frames</h3>
-                    <p> Select Hardware</p>{% endcomment %}
-                     {{ page.alert|richtext }}
+                        <h1>Our Best Yet.<br/>
+                            More Security.<br/>
+                            More Resistance.</h1>
+                        <h3>Range of Frames</h3>
+                        <p> Select Hardware</p>{% endcomment %}
+                    {{ page.alert|richtext }}
 
 
                 </div>
@@ -55,7 +56,7 @@
                         <div class="blog">
                             <div class="carousel-inner">
                                 {% for item in page.products_images.all %}
-                                    {% image item.image fill-10000x10000 as img %}
+                                    {% image item.image fill-1000x1000 as img %}
 
                                     <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
                                         <img src="{{ img.url }}" class="d-block w-100"
@@ -64,7 +65,7 @@
 
 
                                         <div class="imageCounter">
-                                            <img src="/media/original_images/camera.png" id="display">
+                                            <img src="/media/original_images/camera.png" id="display" alt="camera">
                                             {{ forloop.counter }} of {{ page.products_images.all.count }}
                                         </div>
 
@@ -78,7 +79,7 @@
                                 <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
                                     <span class="w3-button w3-hover-white w3-xlarge w3-display-topright">&times;</span>
                                     <div class="w3-modal-content w3-animate-zoom">
-                                        <img src="" id="modal" style="width:100%">
+                                        <img src="" id="modal" style="width:100%" alt="modal image">
 
                                     </div>
                                 </div>
@@ -106,16 +107,18 @@
         </div>
 
 
-        <div class="intro" id="aboutExtra" data-aos="fade-down">
-            <h1></h1>
+
+        {#        <div class="movie">#}
+        {#            <img src="/media/videos/sr4 vid.gif" class="image" alt="sr4 vid">#}
+        {#            <div class="image-text">SR4 joins</div>#}
+        {#        </div>#}
+
+        <div class="all-blocks">
+            {% for block in page.showcase %}
+                {% include_block block %}
+            {% endfor %}
         </div>
 
-
-        <div class="movie">
-            <img src="/media/videos/sr4 vid.gif" class="image" alt="sr4 vid">
-            <div class="image-text">SR4 joins</div>
-
-        </div>
 
         <hr/>
 
@@ -124,6 +127,12 @@
                 {% include_block block %}
             {% endfor %}
         </div>
+
+
+
+
     </div>
+
+    {# vimeo linkneeded has this added - ?autoplay=1&quality=1080p #}
 
 {% endblock %}

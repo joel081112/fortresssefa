@@ -5,20 +5,26 @@
 {% block body_class %}template-blogindexpage{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
-    <link rel="stylesheet" href="{% static '/css/homepage.css'%}">
-    <link rel="stylesheet" href="{% static '/css/allImagesRespon.css'%}">
-    <link rel="stylesheet" href="{% static 'css/w3.css'%}">
-    <link rel="stylesheet" href="{% static '/css/blog.css'%}">
+    <link rel="stylesheet" href="{% static '/css/homepage.css' %}">
+    <link rel="stylesheet" href="{% static '/css/allImagesRespon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+    <link rel="stylesheet" href="{% static '/css/blog.css' %}">
 
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
 
 
 {% endblock %}
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
 
-    <script src="{% static 'js/disqus.js'%}"></script>
+    <script src="{% static 'js/disqus.js' %}"></script>
 
-    <script src="{% static '/js/anime.min.js'%}"></script>
+    <script src="{% static '/js/anime.min.js' %}"></script>
 {% endblock %}
 {% block meta_descr %}
     FORTRESS SEFA welcome to our blog page. Find all up to date recent news on this page.
@@ -188,7 +194,7 @@
         <div class="w3-col l4" data-aos="fade-down">
             <div class="w3-card w3-margin">
                 <div class="w3-container w3-padding">
-                    <h4>Popular Posts</h4>
+                    <h4>Quick Launch</h4>
                 </div>
 
                 <ul class="w3-ul w3-hoverable w3-white">

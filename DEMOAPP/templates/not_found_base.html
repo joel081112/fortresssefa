@@ -4,7 +4,7 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8"/>
-    <link rel="icon" type="image/png" href="/media/original_images/fortress_sefa_ico.png"/>
+    <link rel="icon" type="image/png" href="../../media/original_images/fortress_sefa_ico.png"/>
     <title>
         {% block title %}
             {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
@@ -24,11 +24,15 @@
             integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ"
             crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/0969a8bc39.js"></script>
+    <script src="https://kit.fontawesome.com/c730198b71.js" crossorigin="anonymous"></script>
+
     {# Owl CSS #}
     {#for the carousel#}
     {# Global stylesheets #}
-
-
+    <link rel="stylesheet" href="{% static '/css/not_found.css' %}">
+    <link rel="stylesheet" href="{% static '/css/cover_2.0.css' %}">
+    <link rel="stylesheet" href="{% static '/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static '/css/NavMENU.css' %}">
 
 
     {#  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"#}
@@ -45,7 +49,7 @@
 
 </head>
 
-<body class="{% block body_class %}{% endblock %}">
+<body class="{% block body_class %}bg-image{% endblock %}">
 {% wagtailuserbar %}
 
 <div class="{% block page-css-class %}{% endblock %} ">
@@ -56,38 +60,13 @@
 
 
 {# Global javascript #}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-<script src="{% static '/css/NavMENU.css'%}"></script>
-<script src="{% static '/css/homepage.css'%}"></script>
-<script src="{% static '/css/base.css'%}"></script>
-{##<script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>##}
-<script src="{% static '/css/owl.min.css'%}"></script>
-<script src="{% static '/css/owl.carousel.css'%}"></script>
-<script src="{% static '/css/slim.min.css'%}"></script>
-<script src="{% static '/css/jquery-3.4.1.min.css'%}"></script>
-<script src="{% static '/css/panel.css'%}"></script>
-<script src="{% static '/css/disqus.css'%}"></script>
-<script src="{% static '/css/popper.min.css'%}"></script>
-<script src="{% static '/css/bootstrap.min.css'%}"></script>
-<script src="{% static '/css/about.css'%}"></script>
-<script src="{% static '/css/url_extract.css'%}"></script>
-<script src="{% static '/css/account.css'%}"></script>
-<script src="{% static '/css/anime.min.css'%}"></script>
+
 
 {#<script type="text/javascript" src="{% static 'js/match-height.min.js' %}"></script>#}
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
 
 {% endblock %}
-
-
-<script id="dsq-count-scr" src="//fortress-sefa.disqus.com/count.js" async></script>
 
 
 </body>

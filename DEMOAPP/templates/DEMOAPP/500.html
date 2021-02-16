@@ -2,7 +2,7 @@
 {% block page-css-class %}d-flex h-100 text-center text-white{% endblock %}
 
 {% load i18n %}
-{% block title %} {% trans "403" %}{% endblock %}
+{% block title %} {% trans "500" %}{% endblock %}
 
 {% block content %}
     <div class="px-3">
@@ -14,14 +14,19 @@
 
 
                 <div class="content">
-                    <i class="fa fa-lock fa-10x"></i>
+                    <div class="image-info">
+                        <div class="mr-5">
+                            <h1>Error 500</h1>
+                            Oops... something went wrong
+                        </div>
 
-                    <p id="nope" class="mt-5">
-                        Oops... That door is locked
-                    </p>
-                    <div class="pb-4">
-                        <h3>{% trans 'You are denied permission' %}</h3>
+                        <i class="fa fa-server fa-10x"></i>
+
+
                     </div>
+                    <p id="nope" class="mt-5">
+                        {% trans 'Internal Server Error' %}
+                    </p>
 
                     <a id="link" href="/"><p class="ml2">Go to fortress-sefa.com >
                     </p></a>

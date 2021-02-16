@@ -1,6 +1,8 @@
 """StreamFields live in here"""
 
 from wagtail.core import blocks
+from wagtail.core.blocks import CharBlock
+from wagtail.embeds.blocks import EmbedBlock
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.documents.blocks import DocumentChooserBlock
 
@@ -123,3 +125,28 @@ class ButtonLinksBlock(blocks.StructBlock):
         template = "button_links_block.html"
         icon = "edit"
         label = "New link"
+
+
+# youtube channel
+# fortresssefa@gmail.com
+# copy shareable link into wagtail block
+class InlineVideoBlock(blocks.StructBlock):
+    video = EmbedBlock()
+    caption = CharBlock(required=False, label="Caption")
+    float = blocks.ChoiceBlock(
+        required=False,
+        choices=[('right', "Right"), ('left', "Left"), ('Center', "Center")],
+        default='center',
+        label="Float",
+    )
+    size = blocks.ChoiceBlock(
+        required=False,
+        choices=[('small', "Small"), ('medium', "Medium"), ('large', "Large"), ('half', "Half")],
+        default='medium',
+        label="Size",
+    )
+
+    class Meta:
+        template = "video_block.html"
+        icon = 'media'
+        label = "New video"

@@ -40,12 +40,14 @@
             </div>
         </div>
     </form>
+    <img src="{{ request.user.wagtail_userprofile.avatar.url }}">
+    <br>
     First name: {{ request.user.first_name }}<br/>
     Last name: {{ request.user.last_name }}<br/>
     Email: {{ request.user.email }}<br/>
     Encrypted password: {{ request.user.password }}<br/>
 
-        Groups: {{ request.user.groups }}<br/>
+    Groups: {{ request.user.groups }}<br/>
 
     Permissions: {{ request.user.has_perm }}<br/>
     Is staff: {{ request.user.is_staff }}<br/>
@@ -53,8 +55,12 @@
     Is superuser: {{ request.user.is_superuser }}<br/>
     Last login: {{ request.user.last_login }}<br/>
     Date joined: {{ request.user.date_joined }}<br/>
-
     Full name: {{ request.user.get_full_name }}<br/>
+    ID: {{ request.user.id }}
 
+    {% for item in wagtail.auth_group.all %}
+            1
+
+    {% endfor %}
 
 {% endblock %}

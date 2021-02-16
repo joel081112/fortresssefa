@@ -5,24 +5,20 @@
 {% block body_class %}Architect Page{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
-    <link rel="stylesheet" href="{% static '/css/homePage.css'%}">
-    <link rel="stylesheet" href="{% static '/css/contactUs.css'%}">
-    <link rel="stylesheet" href="{% static '/css/w3.css'%}">
-    <link rel="stylesheet" href="{% static '/css/blog.css'%}">
+    <link rel="stylesheet" href="{% static '/css/homePage.css' %}">
+    <link rel="stylesheet" href="{% static '/css/contactUs.css' %}">
+    <link rel="stylesheet" href="{% static '/css/w3.css' %}">
+    <link rel="stylesheet" href="{% static '/css/blog.css' %}">
 
-    <link rel="stylesheet" href="{% static '/css/architect.css'%}">
+    <link rel="stylesheet" href="{% static '/css/architect.css' %}">
 
 {% endblock %}
 {% block extra_js %}
 
-    <script src="{% static '/js/architect.js'%}"></script>
     {# Override this in templates to add extra javascript #}
 {% endblock %}
 {% block meta_descr %}
     Fortress SEFA page for seeing all the documents for viewing
-
-
-
 {% endblock %}
 
 {% block content %}
@@ -38,51 +34,53 @@
 
     <div class="all-blocks">
 
-        {% comment %}{% for download in page.architect_pdf.all %}
+        {% comment %}
+            {% for download in page.architect_pdf.all %}
+                <div class="document product-card">
+                    <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
+                        {% image download.image fill-150x150-c100 %}
+                        <div class="w3-container">
+                            {{ panel.name }}
+                        </div>
+                        <hr>
+                        <p id="caption">{{ download.caption }}</p>
+                        {% with doc=download.architect_pdf %}
+                            <div class="download product-info">
+                                <a href="{{ doc.url }}" class="smooth-over-button noDecoration">
+                                    <i class="fa fa-download"></i>
+                                    <p class="btn-txt" id="limiter">{{ doc.title }}</p>
+                                </a>
+                            </div>
+                        {% endwith %}
+                    </div>
+                </div>
+            {% endfor %}
+
+
             <div class="document product-card">
                 <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
-                    {% image download.image fill-150x150-c100 %}
-                    <div class="w3-container">
-                        {{ panel.name }}
-                    </div>
-                    <hr>
-                    <p id="caption">{{ download.caption }}</p>
-                    {% with doc=download.architect_pdf %}
-                        <div class="download product-info">
-                            <a href="{{ doc.url }}" class="smooth-over-button noDecoration">
-                                <i class="fa fa-download"></i>
-                                <p class="btn-txt" id="limiter">{{ doc.title }}</p>
-                            </a>
+                    {% for download in page.architect_pdf.all|slice:":1" %}
+                        {% image download.image fill-150x150-c100 %}
+                        <div class="w3-container">
+                            {{ panel.name }}
                         </div>
-                    {% endwith %}
+                        <hr>
+                        <p id="caption">{{ download.caption }}</p>
+                    {% endfor %}
+                    {% for download in page.architect_pdf.all %}
+                        {% with doc=download.architect_pdf %}
+                            <div class="download product-info">
+                                <a href="{{ doc.url }}" class="smooth-over-button noDecoration">
+                                    <i class="fa fa-download"></i>
+                                    <p class="btn-txt">{{ doc.title }}</p>
+                                </a>
+                            </div>
+                        {% endwith %}
+                    {% endfor %}
                 </div>
             </div>
-        {% endfor %}
+        {% endcomment %}
 
-
-        <div class="document product-card">
-            <div class="w3-card-4 w3-margin w3-white" data-aos="fade-down">
-                {% for download in page.architect_pdf.all|slice:":1" %}
-                    {% image download.image fill-150x150-c100 %}
-                    <div class="w3-container">
-                        {{ panel.name }}
-                    </div>
-                    <hr>
-                    <p id="caption">{{ download.caption }}</p>
-                {% endfor %}
-                {% for download in page.architect_pdf.all %}
-                    {% with doc=download.architect_pdf %}
-                        <div class="download product-info">
-                            <a href="{{ doc.url }}" class="smooth-over-button noDecoration">
-                                <i class="fa fa-download"></i>
-                                <p class="btn-txt">{{ doc.title }}</p>
-                            </a>
-                        </div>
-                    {% endwith %}
-                {% endfor %}
-            </div>
-        </div>
-{% endcomment %}
         {% for block in page.content %}
             {% include_block block %}
         {% endfor %}
@@ -92,7 +90,8 @@
 
 
 
-    {% comment %} <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-    </script>{% endcomment %}
+    {% comment %}
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+        </script>{% endcomment %}
 {% endblock %}

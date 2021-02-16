@@ -9,6 +9,8 @@ from django.shortcuts import redirect
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+import re
+from django import template
 
 from modelcluster.fields import ParentalKey
 
@@ -26,7 +28,7 @@ from wagtail.users.forms import UserEditForm, UserCreationForm
 from wagtail.images.blocks import ImageChooserBlock
 
 from .blocks import CardBlock, QuestionBlock, ImageTextsBlock, ImageTextBlock, ArticleBlock, LocationCardBlock, \
-    ButtonLinksBlock
+    ButtonLinksBlock, InlineVideoBlock
 
 
 class FormField(AbstractFormField):
@@ -263,6 +265,14 @@ class Products(Page):
     alert = RichTextField(
         blank=True, verbose_name="Products Alert"
     )
+    showcase = StreamField(
+        [
+            ("video", InlineVideoBlock()),
+        ],
+        null=True,
+        blank=True,
+    )
+
     content = StreamField(
         [
             ("links", ButtonLinksBlock()),
@@ -273,6 +283,7 @@ class Products(Page):
 
     # content tab panels
     content_panels = Page.content_panels + [
+        StreamFieldPanel("showcase"),
         MultiFieldPanel(
             [
                 FieldPanel('alert'),

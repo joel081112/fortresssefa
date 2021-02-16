@@ -5,15 +5,35 @@
 {% block body_class %}About{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
-    <link rel="stylesheet" href="{% static '/css/about.css'%}">
-    <link rel="stylesheet" href="{% static '/css/image-gallery.css'%}">
-
-    <link rel="stylesheet" href="{% static '/css/slider.css'%}">
+    <link rel="stylesheet" href="{% static '/css/about.css' %}">
+    <link rel="stylesheet" href="{% static '/css/image-gallery.css' %}">
 {% endblock %}
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
+    <script>
+        /*slider .js*/
+        $(document).ready(function () {
+            var count = $(".brand .slider__inner >div").length;
+            var width = count * 100;
+            $('.brand .slider__inner').width(width + '%');
 
-    {% comment %}<script src="{% static '/js/about.js'%}"></script>{% endcomment %}
+
+            var countT = $(".timeline .slider__inner >div").length;
+            var widthT = countT * 100;
+            $('.timeline .slider__inner').width(widthT + '%');
+
+
+            $('.slider').each(function () {
+                const $slider = $(this);
+                $(this).find('form input').each(function (i) {
+                    $(this).on('change', function () {
+                        $slider.find('.slider__inner').css('left', (-100 * i) + "%");
+                    });
+                });
+            });
+        });
+    </script>
+
 
 {% endblock %}
 {% block meta_descr %}
@@ -64,84 +84,85 @@
         </div>
 
 
-        {% comment %}<main class="container-snap full" id="gallery">
-            <div class="child-snap">
-                <div class="brand-image">
-                    <img src="/media/images/tr_fortress sefa.png" class="item" alt="fortress sefa.jpg">
+        {% comment %}
+            <main class="container-snap full" id="gallery">
+                <div class="child-snap">
+                    <div class="brand-image">
+                        <img src="/media/images/tr_fortress sefa.png" class="item" alt="fortress sefa.jpg">
 
 
+                    </div>
+                    <div class="brand-desc">
+                        Fortress SEFA controls our operations in the UK mainland. Branches include, Glasgow, Dundee,
+                        Manchester
+                        and London.
+                    </div>
                 </div>
-                <div class="brand-desc">
-                    Fortress SEFA controls our operations in the UK mainland. Branches include, Glasgow, Dundee,
-                    Manchester
-                    and London.
-                </div>
-            </div>
-            <div class="child-snap">
-                <div class="brand-image">
-                    <img src="/media/images/tr_fortress doors.png" class="item" alt="fortress doors.jpg">
+                <div class="child-snap">
+                    <div class="brand-image">
+                        <img src="/media/images/tr_fortress doors.png" class="item" alt="fortress doors.jpg">
 
+                    </div>
+                    <div class="brand-desc">
+                        Fortress Doors control our business in Ireland. The Irish Headquarters are located in Belfast.
+                    </div>
                 </div>
-                <div class="brand-desc">
-                    Fortress Doors control our business in Ireland. The Irish Headquarters are located in Belfast.
-                </div>
-            </div>
-            <div class="child-snap">
-                <div class="brand-image">
-                    <img src="/media/images/tr_fortress glass.png" class="item" alt="fortress glass.jpg">
+                <div class="child-snap">
+                    <div class="brand-image">
+                        <img src="/media/images/tr_fortress glass.png" class="item" alt="fortress glass.jpg">
 
+                    </div>
+                    <div class="brand-desc">
+                        Fortress Glass technology provide services in glazing solutions, framing and curtain walls.
+                    </div>
                 </div>
-                <div class="brand-desc">
-                    Fortress Glass technology provide services in glazing solutions, framing and curtain walls.
-                </div>
-            </div>
-            <div class="child-snap">
-                <div class="brand-image">
-                    <img src="/media/images/tr_fasa.png" class="item" alt="fasa.jpg">
+                <div class="child-snap">
+                    <div class="brand-image">
+                        <img src="/media/images/tr_fasa.png" class="item" alt="fasa.jpg">
 
+                    </div>
+                    <div class="brand-desc">
+                        Fortress Andersons Service agency provide all service and repairs for Fortress customers
+                    </div>
                 </div>
-                <div class="brand-desc">
-                    Fortress Andersons Service agency provide all service and repairs for Fortress customers
-                </div>
-            </div>
-            <div class="child-snap">
-                <div class="brand-image">
-                    <img src="/media/images/tr_pro-tec.png" class="item" alt="fortress axalux.jpg">
+                <div class="child-snap">
+                    <div class="brand-image">
+                        <img src="/media/images/tr_pro-tec.png" class="item" alt="fortress axalux.jpg">
 
+                    </div>
+                    <div class="brand-desc">
+                        Pro-Tec powder coating provide painting services for all Fortress products
+                    </div>
                 </div>
-                <div class="brand-desc">
-                    Pro-Tec powder coating provide painting services for all Fortress products
-                </div>
-            </div>
-            <div class="child-snap">
-                <div class="brand-image">
-                    <img src="/media/images/tr_fortress eco.png" class="item" alt="fortress axalux.jpg">
+                <div class="child-snap">
+                    <div class="brand-image">
+                        <img src="/media/images/tr_fortress eco.png" class="item" alt="fortress axalux.jpg">
 
+                    </div>
+                    <div class="brand-desc">
+                        Fortress Eco investigates ways to improve the environmental impact of all Fortress companies.
+                    </div>
                 </div>
-                <div class="brand-desc">
-                    Fortress Eco investigates ways to improve the environmental impact of all Fortress companies.
-                </div>
-            </div>
-            <div class="child-snap">
-                <div class="brand-image">
-                    <img src="/media/images/fortaxa security.png" class="item" alt="fortress axalux.jpg">
+                <div class="child-snap">
+                    <div class="brand-image">
+                        <img src="/media/images/fortaxa security.png" class="item" alt="fortress axalux.jpg">
 
+                    </div>
+                    <div class="brand-desc">
+                        Fortaxa Security controls operations in Sweden with branches in Malmo, Goteborg, Uppsala and
+                        Stockholm.
+                    </div>
                 </div>
-                <div class="brand-desc">
-                    Fortaxa Security controls operations in Sweden with branches in Malmo, Goteborg, Uppsala and
-                    Stockholm.
-                </div>
-            </div>
-            <div class="child-snap">
-                <div class="brand-image">
-                    <img src="/media/images/tr_fortress axalux.png" class="item" alt="fortress axalux.jpg">
+                <div class="child-snap">
+                    <div class="brand-image">
+                        <img src="/media/images/tr_fortress axalux.png" class="item" alt="fortress axalux.jpg">
 
+                    </div>
+                    <div class="brand-desc">
+                        Fortress Axalux controls operations in Poland with branches in Gdansk and Warsaw.
+                    </div>
                 </div>
-                <div class="brand-desc">
-                    Fortress Axalux controls operations in Poland with branches in Gdansk and Warsaw.
-                </div>
-            </div>
-        </main>{% endcomment %}
+            </main>{% endcomment %}
 
 
         <div class="brand slider">
@@ -196,7 +217,7 @@
                      data-target="#carouselExampleIndicators"
                      data-slide-to="{{ forloop.counter|add:"-1" }}"
                      alt="{{ img.alt }}">
-                                        <p id="colour-title">{{ item.caption }}</p>
+                <p id="colour-title">{{ item.caption }}</p>
 
             </div>
 
@@ -221,24 +242,25 @@
 
                         {% comment %}  <label>
 
-                        {% if forloop.counter == 1 %}
-                            <input type="radio" name="slider" title="slide{{ forloop.counter }}" checked="checked"/>
-                        {% else %}
-                            <input type="radio" name="slider" title="slide{{ forloop.counter }}"/>
-                        {% endif %}
+                            {% if forloop.counter == 1 %}
+                                <input type="radio" name="slider" title="slide{{ forloop.counter }}" checked="checked"/>
+                            {% else %}
+                                <input type="radio" name="slider" title="slide{{ forloop.counter }}"/>
+                            {% endif %}
 
 
-                        <img src="/media/images/cornell safe and secure.png" style="width:75px; height: auto;" alt="">
+                            <img src="/media/images/cornell safe and secure.png" style="width:75px; height: auto;"
+                                 alt="">
 
 
-                        <p>5 Need to alternate this to get in the year of event</p>
-                        also need to fix the form input for ios
+                            <p>5 Need to alternate this to get in the year of event</p>
+                            also need to fix the form input for ios
 
 
-                    </label>{% endcomment %}
+                        </label>{% endcomment %}
                         {% comment %}
-                    {% image self.image fill-75x75-c100 as img %}
-                    <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">{% endcomment %}
+                            {% image self.image fill-75x75-c100 as img %}
+                            <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">{% endcomment %}
 
                     {% endfor %}
                 </div>
@@ -266,6 +288,7 @@
                         {% image item.image fill-100x100-c100 as img %}
                         <a href="{{ item.caption }}">
                             <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
+
 
                         </a>
                     {% endfor %}

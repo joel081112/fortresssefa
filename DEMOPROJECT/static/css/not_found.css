@@ -47,3 +47,12 @@
   font-size: 2em;
   font-weight: bold;
 }
+
+.bg-image{
+    background-color: #666666;
+}
+
+.image-info{
+    display: flex;
+    align-items: center;
+}
