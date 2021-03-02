@@ -5,8 +5,8 @@
 {% block body_class %}Contact Us{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
-    <link rel="stylesheet" href="{%static '/css/homePage.css'%}">
-    <link rel="stylesheet" href="{%static '/css/contactUs.css'%}">
+    <link rel="stylesheet" href="{% static '/css/homePage.css' %}">
+    <link rel="stylesheet" href="{% static '/css/contactUs.css' %}">
 {% endblock %}
 
 {% block extra_js %}
@@ -25,12 +25,13 @@
 
 {% block content %}
     <div id="contact-us">
-        <div class="top_header">
-            <p id="intro">
-                {{ page.title }}<br/>
+        <div class="top_header text-center">
+            <h1 class="pt-5 text-white">
+                {{ page.title }}
+            </h1>
 
-            </p>
-            <p id="extra">Our page may not have everything, so why not ask us to answer your questions</p>
+
+            <p class="text-white pt-4 px-4">Our page may not have everything, so why not ask us to answer your questions</p>
         </div>
         <div class="alternative-colour quickLinks">
             <h3 data-aos="fade-left">Lets Start a Conversation.</h3>
@@ -45,8 +46,8 @@
                         <hr>
                         <p id="caption">PRODUCT FAQS</p>
                         <div class="download button_place">
-                            <div class="info">
-                                <a href="/faq">
+                            <div class="info border border-dark border-2">
+                                <a class="text-dark" href="/faq">
                                     FIND ANSWERS NOW</a>
                             </div>
                         </div>
@@ -61,8 +62,8 @@
                         <hr>
                         <p id="caption">WARRANTY</p>
                         <div class="download button_place">
-                            <div class="info">
-                                WHAT WE ENSURE
+                            <div class="info border border-dark border-2">
+                                <a class="text-dark" href="/contact-page">WHAT WE ENSURE</a>
                             </div>
                         </div>
                     </div>
@@ -76,8 +77,8 @@
                         <hr>
                         <p id="caption">CONTACT US DIRECTLY</p>
                         <div class="download button_place">
-                            <div class="info">
-                                <a href="/contact-page">FORM FILL</a>
+                            <div class="info border border-dark border-2">
+                                <a class="text-dark" href="/contact-page">FORM FILL</a>
                             </div>
                         </div>
                     </div>
@@ -126,7 +127,8 @@
     <!-- Replace the value of the key parameter with your own API key. -->
 
 
-    {% comment %} <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
-    </script>{% endcomment %}
+    {% comment %}
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+        </script>{% endcomment %}
 {% endblock %}

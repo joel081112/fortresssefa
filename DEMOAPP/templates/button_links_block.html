@@ -1,18 +1,19 @@
+{# Used in products page #}
 {% load wagtailimages_tags %}
 
 <div class="prod-process">
     {% image self.image fill-350x350-c100 as img %}
     <img src="{{ img.url }}" class="image" alt="{{ img.title }}">
     <div class="image-text">{{ forloop.counter }}</div>
-    <h3>{{ self.title }} </h3>
+    <h3><b>{{ self.title }}</b> </h3>
     {{ self.text }}
-    <div class="download button_place">
+    <div class="download button_place ">
         {% if self.button_page %}
             <a href="{{ self.button_page.url }}">
         {% elif card.button_url %}
             <a href="{{ self.button_url.url }}">
         {% endif %}
-        <div class="info">
+        <div class="info text-white bg-gradient-blue">
             DISCOVER MORE
         </div>
         </a>

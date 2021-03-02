@@ -5,10 +5,9 @@
 {% block body_class %}Steel Door{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
-    <link rel="stylesheet" href="{%static '/css/blog.css'%}">
+    <link rel="stylesheet" href="{%static '/css/about.css'%}">
     <link rel="stylesheet" href="{%static '/css/w3.css'%}">
     <link rel="stylesheet" href="{%static '/css/homePage.css'%}">
-    <link rel="stylesheet" href="{%static '/css/image-gallery.css'%}">
 
 {% endblock %}
 {% block extra_js %}
@@ -192,7 +191,7 @@
 
         <div class="intro" id="aboutExtra">
 
-            <h2>What all this means.</h2>
+            <h2 class="mb-3">What all this means.</h2>
             {{ page.general|richtext }}
         </div>
 

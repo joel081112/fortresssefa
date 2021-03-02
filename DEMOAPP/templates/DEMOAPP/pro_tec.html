@@ -5,16 +5,15 @@
 {% block body_class %}Pro Tec{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
-    <link rel="stylesheet" href="{%static '/css/blog.css'%}">
-    <link rel="stylesheet" href="{%static '/css/w3.css'%}">
-    <link rel="stylesheet" href="{%static '/css/image-gallery.css'%}">
+    <link rel="stylesheet" href="{% static '/css/about.css' %}">
+    <link rel="stylesheet" href="{% static '/css/w3.css' %}">
 
 
 
 {% endblock %}
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
-<script src="{%static '/js/rotate_text.js'%}"></script>
+    <script src="{% static '/js/rotate_text.js' %}"></script>
 {% endblock %}
 {% block meta_descr %}
     As part of Fortress-SEFA there is Pro-Tec which powder coat and have shot blast facilities for doors and shutters.
@@ -94,52 +93,57 @@
                     {% endfor %}
                 </div>
 
-                <div class="arrow-sets" id="protec-arrows">
-                    <a class="left recommended-item-control" href="#carouselExampleIndicators"
-                       data-slide="prev">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a class="right recommended-item-control" href="#carouselExampleIndicators"
-                       data-slide="next">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-                </div>
+                {% for item in page.protec_images.all %}
+                    {% if forloop.counter >= 1 %}
+                        <div class="arrow-sets" id="protec-arrows">
+                            <a class="left recommended-item-control" href="#carouselExampleIndicators"
+                               data-slide="prev">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a class="right recommended-item-control" href="#carouselExampleIndicators"
+                               data-slide="next">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
 
         {# end carousel #}
 
 
-        {% comment %} <div class="gallery thumbs">
-            <div class="gallery">
-                <div class="container">
-                    {% for item in page.protec_images.all %}
-                        <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter|add:"-1" }}"
-                            class="{% if forloop.counter == 1 %}active{% endif %}">
-                            {% image item.image fill-100x50-c100 %}
-                            <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
-                            <p id="colour-title">{{ item.caption }}</p></li>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>{% endcomment %}
-            <main class="container-snap full image-gallery" id="gallery">
-                {% for item in page.protec_images.all %}
-
-                    <div class="child-snap height-depend {% if forloop.counter == 1 %}active{% endif %}">
-                        {% image item.image fill-100x50-c100 as img %}
-                        <img src="{{ img.url }}"
-                             data-target="#carouselExampleIndicators"
-                             data-slide-to="{{ forloop.counter|add:"-1" }}"
-                             alt="{{ img.alt }}">
-                        {% comment %}
-                        <p id="colour-title">{{ item.caption }}</p>
-                        {% endcomment %}
+        {% comment %}
+            <div class="gallery thumbs">
+                <div class="gallery">
+                    <div class="container">
+                        {% for item in page.protec_images.all %}
+                            <li data-target="#carouselExampleIndicators" data-slide-to="{{ forloop.counter|add:"-1" }}"
+                                class="{% if forloop.counter == 1 %}active{% endif %}">
+                                {% image item.image fill-100x50-c100 %}
+                                <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
+                                <p id="colour-title">{{ item.caption }}</p></li>
+                        {% endfor %}
                     </div>
+                </div>
+            </div>{% endcomment %}
+        <main class="container-snap full image-gallery" id="gallery">
+            {% for item in page.protec_images.all %}
+
+                <div class="child-snap height-depend {% if forloop.counter == 1 %}active{% endif %}">
+                    {% image item.image fill-100x50-c100 as img %}
+                    <img src="{{ img.url }}"
+                         data-target="#carouselExampleIndicators"
+                         data-slide-to="{{ forloop.counter|add:"-1" }}"
+                         alt="{{ img.alt }}">
+                    {% comment %}
+                        <p id="colour-title">{{ item.caption }}</p>
+                    {% endcomment %}
+                </div>
 
 
-                {% endfor %}
-            </main>
+            {% endfor %}
+        </main>
 
         <hr/>
         <div class="image-container1 alternative-colour">

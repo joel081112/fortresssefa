@@ -2,6 +2,10 @@ html {
     scroll-behavior: smooth;
 }
 
+#contact-us {
+    text-transform: none;
+}
+
 /* Set the size of the div element that contains the map */
 #map {
     height: 700px; /* The height is 400 pixels */
@@ -71,6 +75,12 @@ html {
     text-align: center;
 }
 
+@media only screen and (max-width: 640px) {
+    #contact-us h3 {
+        width: 90%;
+    }
+}
+
 #contact-us h3:before,
 #contact-us h3:after {
     background-color: darkgrey;
@@ -92,22 +102,22 @@ html {
     margin-right: -50%;
 }
 
-.addressLines{
+.addressLines {
     padding-top: 10px;
 }
 
 @media only screen and (max-width: 640px) {
-    #contact-us .all-blocks{
+    #contact-us .all-blocks {
         padding-top: 0;
     }
 
-    .addressLines{
+    .addressLines {
         padding-bottom: 0;
         margin-bottom: 0;
     }
 }
 
-.contact-buttons{
+.contact-buttons {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -116,7 +126,7 @@ html {
     align-content: center;
 }
 
-.contact-details{
+.contact-details {
     padding: 15px 0 15px 0;
 }
 

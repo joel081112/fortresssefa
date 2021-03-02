@@ -6,7 +6,6 @@
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
     <link rel="stylesheet" href="{% static '/css/about.css' %}">
-    <link rel="stylesheet" href="{% static '/css/image-gallery.css' %}">
 {% endblock %}
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
@@ -42,259 +41,267 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="aboutHeading">
-        {{ page.title }} FORTRESS-SEFA
-    </h1>
-    <div class="pastIntro flex-container alternative-colour">
-        <div class="flex-item">
-            <img class="pastImg pastBox" id="oldFortress" src="/media/original_images/nFortress old logo.PNG"
-                 alt="old fortress logo">
-        </div>
-        <div class="flex-item">
-            <div class="chat">
-                <div class="mine messages">
-                    <div class="message last pastBox">
-                        {{ page.firstBox|richtext }}
-                    </div>
-                </div>
-                <div class="yours messages">
-                    <div class="message pastBox">
-                        {{ page.secondBox|richtext }}
-                    </div>
-                </div>
+    <div class="about-page">
+        <h1 class="aboutHeading">
+            <b>{{ page.title }} FORTRESS-SEFA</b>
+        </h1>
+        <div class="pastIntro flex-container alternative-colour">
+            <div class="flex-item">
+                <img class="pastImg pastBox" id="oldFortress" src="/media/original_images/nFortress old logo.PNG"
+                     alt="old fortress logo">
             </div>
-
-        </div>
-    </div>
-
-    <div class="intro" id="aboutExtra" data-aos="fade-right">
-        {{ page.extra|richtext }}
-        {% comment %} <p class="content" contenteditable>
-            This can be edited on view
-        </p>{% endcomment %}
-    </div>
-
-    <div class="our-Brands alternative-colour">
-        <h3 class="aboutHeading">
-            Our Brand over time have expanded
-        </h3>
-
-        <div class="intro" data-aos="fade-left">
-            {{ page.brands|richtext }}
-        </div>
-
-
-        {% comment %}
-            <main class="container-snap full" id="gallery">
-                <div class="child-snap">
-                    <div class="brand-image">
-                        <img src="/media/images/tr_fortress sefa.png" class="item" alt="fortress sefa.jpg">
-
-
-                    </div>
-                    <div class="brand-desc">
-                        Fortress SEFA controls our operations in the UK mainland. Branches include, Glasgow, Dundee,
-                        Manchester
-                        and London.
-                    </div>
-                </div>
-                <div class="child-snap">
-                    <div class="brand-image">
-                        <img src="/media/images/tr_fortress doors.png" class="item" alt="fortress doors.jpg">
-
-                    </div>
-                    <div class="brand-desc">
-                        Fortress Doors control our business in Ireland. The Irish Headquarters are located in Belfast.
-                    </div>
-                </div>
-                <div class="child-snap">
-                    <div class="brand-image">
-                        <img src="/media/images/tr_fortress glass.png" class="item" alt="fortress glass.jpg">
-
-                    </div>
-                    <div class="brand-desc">
-                        Fortress Glass technology provide services in glazing solutions, framing and curtain walls.
-                    </div>
-                </div>
-                <div class="child-snap">
-                    <div class="brand-image">
-                        <img src="/media/images/tr_fasa.png" class="item" alt="fasa.jpg">
-
-                    </div>
-                    <div class="brand-desc">
-                        Fortress Andersons Service agency provide all service and repairs for Fortress customers
-                    </div>
-                </div>
-                <div class="child-snap">
-                    <div class="brand-image">
-                        <img src="/media/images/tr_pro-tec.png" class="item" alt="fortress axalux.jpg">
-
-                    </div>
-                    <div class="brand-desc">
-                        Pro-Tec powder coating provide painting services for all Fortress products
-                    </div>
-                </div>
-                <div class="child-snap">
-                    <div class="brand-image">
-                        <img src="/media/images/tr_fortress eco.png" class="item" alt="fortress axalux.jpg">
-
-                    </div>
-                    <div class="brand-desc">
-                        Fortress Eco investigates ways to improve the environmental impact of all Fortress companies.
-                    </div>
-                </div>
-                <div class="child-snap">
-                    <div class="brand-image">
-                        <img src="/media/images/fortaxa security.png" class="item" alt="fortress axalux.jpg">
-
-                    </div>
-                    <div class="brand-desc">
-                        Fortaxa Security controls operations in Sweden with branches in Malmo, Goteborg, Uppsala and
-                        Stockholm.
-                    </div>
-                </div>
-                <div class="child-snap">
-                    <div class="brand-image">
-                        <img src="/media/images/tr_fortress axalux.png" class="item" alt="fortress axalux.jpg">
-
-                    </div>
-                    <div class="brand-desc">
-                        Fortress Axalux controls operations in Poland with branches in Gdansk and Warsaw.
-                    </div>
-                </div>
-            </main>{% endcomment %}
-
-
-        <div class="brand slider">
-            <form>
-                {% for block in page.brand %}
-
-                    {% if forloop.counter == 1 %}
-                        <input type="radio" name="slider" title="slide{{ forloop.counter }}" checked="checked"/>
-
-                    {% else %}
-                        <input type="radio" name="slider" title="slide{{ forloop.counter }}"/>
-
-                    {% endif %}
-
-
-                {% endfor %}
-            </form>
-
-            <div class="slider__inner" id="brand-slider">
-                {% for block in page.brand %}
-                    {% include_block block %}
-                {% endfor %}
-            </div>
-        </div>
-
-    </div>
-
-    <div class="global-partners">
-        <h3 class="aboutHeading">
-            We have Global Partners too
-        </h3>
-        <div class="flex-global" data-aos="fade-right">
-            {% for item in page.global_partner_images.all %}
-                {% image item.image original as img %}
-
-                <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
-
-            {% endfor %}
-
-        </div>
-    </div>
-
-
-    <div class="timeline alternative-colour" id="">
-
-
-        {% comment %}  {% for item in page.protec_images.all %}
-
-            <div class="child-snap height-depend {% if forloop.counter == 1 %}active{% endif %}">
-                {% image item.image fill-100x50-c100 as img %}
-                <img src="{{ img.url }}"
-                     data-target="#carouselExampleIndicators"
-                     data-slide-to="{{ forloop.counter|add:"-1" }}"
-                     alt="{{ img.alt }}">
-                <p id="colour-title">{{ item.caption }}</p>
-
-            </div>
-
-
-        {% endfor %}{% endcomment %}
-
-        <div class="slider">
-
-            <form>
-                <div class="container-snap hey" id="scroller">
-                    {% for block in page.timeline %}
-                        <div class="child-snap {% if forloop.counter == 1 %}active{% endif %}">
-                            {% if forloop.counter == 1 %}
-                                <input type="radio" name="slider" title="slide{{ forloop.counter }}" checked="checked"/>
-
-                            {% else %}
-                                <input type="radio" name="slider" title="slide{{ forloop.counter }}"/>
-
-                            {% endif %}
+            <div class="flex-item">
+                <div class="chat">
+                    <div class="mine messages">
+                        <div class="message last pastBox">
+                            {{ page.firstBox|richtext }}
                         </div>
-
-
-                        {% comment %}  <label>
-
-                            {% if forloop.counter == 1 %}
-                                <input type="radio" name="slider" title="slide{{ forloop.counter }}" checked="checked"/>
-                            {% else %}
-                                <input type="radio" name="slider" title="slide{{ forloop.counter }}"/>
-                            {% endif %}
-
-
-                            <img src="/media/images/cornell safe and secure.png" style="width:75px; height: auto;"
-                                 alt="">
-
-
-                            <p>5 Need to alternate this to get in the year of event</p>
-                            also need to fix the form input for ios
-
-
-                        </label>{% endcomment %}
-                        {% comment %}
-                            {% image self.image fill-75x75-c100 as img %}
-                            <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">{% endcomment %}
-
-                    {% endfor %}
+                    </div>
+                    <div class="yours messages">
+                        <div class="message pastBox">
+                            {{ page.secondBox|richtext }}
+                        </div>
+                    </div>
                 </div>
-            </form>
 
-
-            <div class="slider__inner">
-                {% for block in page.timeline %}
-                    {% include_block block %}
-                {% endfor %}
             </div>
         </div>
 
-    </div>
+        <div class="intro" id="aboutExtra" data-aos="fade-right">
+            {{ page.extra|richtext }}
+            {% comment %} <p class="content" contenteditable>
+                This can be edited on view
+            </p>{% endcomment %}
+        </div>
+
+        <div class="our-Brands alternative-colour">
+            <h3 class="aboutHeading">
+                Our Brand over time have expanded
+            </h3>
+
+            <div class="intro" data-aos="fade-left">
+                {{ page.brands|richtext }}
+            </div>
 
 
-    <div class="pastClients" data-aos="fade-down">
-        <div class="pastBox">
-            <h2>Clients</h2>
-            {{ page.clientIntro|richtext }}
-
-            <div class="gallery">
-                <div class="container">
-                    {% for item in page.client_images.all %}
-                        {% image item.image fill-100x100-c100 as img %}
-                        <a href="{{ item.caption }}">
-                            <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
+            {% comment %}
+                <main class="container-snap full" id="gallery">
+                    <div class="child-snap">
+                        <div class="brand-image">
+                            <img src="/media/images/tr_fortress sefa.png" class="item" alt="fortress sefa.jpg">
 
 
-                        </a>
+                        </div>
+                        <div class="brand-desc">
+                            Fortress SEFA controls our operations in the UK mainland. Branches include, Glasgow, Dundee,
+                            Manchester
+                            and London.
+                        </div>
+                    </div>
+                    <div class="child-snap">
+                        <div class="brand-image">
+                            <img src="/media/images/tr_fortress doors.png" class="item" alt="fortress doors.jpg">
+
+                        </div>
+                        <div class="brand-desc">
+                            Fortress Doors control our business in Ireland. The Irish Headquarters are located in
+                            Belfast.
+                        </div>
+                    </div>
+                    <div class="child-snap">
+                        <div class="brand-image">
+                            <img src="/media/images/tr_fortress glass.png" class="item" alt="fortress glass.jpg">
+
+                        </div>
+                        <div class="brand-desc">
+                            Fortress Glass technology provide services in glazing solutions, framing and curtain walls.
+                        </div>
+                    </div>
+                    <div class="child-snap">
+                        <div class="brand-image">
+                            <img src="/media/images/tr_fasa.png" class="item" alt="fasa.jpg">
+
+                        </div>
+                        <div class="brand-desc">
+                            Fortress Andersons Service agency provide all service and repairs for Fortress customers
+                        </div>
+                    </div>
+                    <div class="child-snap">
+                        <div class="brand-image">
+                            <img src="/media/images/tr_pro-tec.png" class="item" alt="fortress axalux.jpg">
+
+                        </div>
+                        <div class="brand-desc">
+                            Pro-Tec powder coating provide painting services for all Fortress products
+                        </div>
+                    </div>
+                    <div class="child-snap">
+                        <div class="brand-image">
+                            <img src="/media/images/tr_fortress eco.png" class="item" alt="fortress axalux.jpg">
+
+                        </div>
+                        <div class="brand-desc">
+                            Fortress Eco investigates ways to improve the environmental impact of all Fortress
+                            companies.
+                        </div>
+                    </div>
+                    <div class="child-snap">
+                        <div class="brand-image">
+                            <img src="/media/images/fortaxa security.png" class="item" alt="fortress axalux.jpg">
+
+                        </div>
+                        <div class="brand-desc">
+                            Fortaxa Security controls operations in Sweden with branches in Malmo, Goteborg, Uppsala and
+                            Stockholm.
+                        </div>
+                    </div>
+                    <div class="child-snap">
+                        <div class="brand-image">
+                            <img src="/media/images/tr_fortress axalux.png" class="item" alt="fortress axalux.jpg">
+
+                        </div>
+                        <div class="brand-desc">
+                            Fortress Axalux controls operations in Poland with branches in Gdansk and Warsaw.
+                        </div>
+                    </div>
+                </main>{% endcomment %}
+
+
+            <div class="brand slider">
+                <form>
+                    {% for block in page.brand %}
+
+                        {% if forloop.counter == 1 %}
+                            <input type="radio" name="slider" title="slide{{ forloop.counter }}" checked="checked"/>
+
+                        {% else %}
+                            <input type="radio" name="slider" title="slide{{ forloop.counter }}"/>
+
+                        {% endif %}
+
+
+                    {% endfor %}
+                </form>
+
+                <div class="slider__inner" id="brand-slider">
+                    {% for block in page.brand %}
+                        {% include_block block %}
                     {% endfor %}
                 </div>
             </div>
 
+        </div>
+
+        <div class="global-partners">
+            <h3 class="aboutHeading">
+                We have Global Partners too
+            </h3>
+            <div class="flex-global" data-aos="fade-right">
+                {% for item in page.global_partner_images.all %}
+                    {% image item.image original as img %}
+
+                    <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
+
+                {% endfor %}
+
+            </div>
+        </div>
+
+
+        <div class="timeline alternative-colour" id="">
+
+
+            {% comment %}  {% for item in page.protec_images.all %}
+
+                <div class="child-snap height-depend {% if forloop.counter == 1 %}active{% endif %}">
+                    {% image item.image fill-100x50-c100 as img %}
+                    <img src="{{ img.url }}"
+                         data-target="#carouselExampleIndicators"
+                         data-slide-to="{{ forloop.counter|add:"-1" }}"
+                         alt="{{ img.alt }}">
+                    <p id="colour-title">{{ item.caption }}</p>
+
+                </div>
+
+
+            {% endfor %}{% endcomment %}
+
+            <div class="slider">
+
+                <form>
+                    <div class="container-snap hey col-xs-1" id="scroller">
+                        {% for block in page.timeline %}
+                            <div class="child-snap {% if forloop.counter == 1 %}active{% endif %}">
+                                {% if forloop.counter == 1 %}
+                                    <input type="radio" name="slider" title="slide{{ forloop.counter }}"
+                                           checked="checked"/>
+
+                                {% else %}
+                                    <input type="radio" name="slider" title="slide{{ forloop.counter }}"/>
+
+                                {% endif %}
+                            </div>
+
+
+                            {% comment %}  <label>
+
+                                {% if forloop.counter == 1 %}
+                                    <input type="radio" name="slider" title="slide{{ forloop.counter }}"
+                                           checked="checked"/>
+                                {% else %}
+                                    <input type="radio" name="slider" title="slide{{ forloop.counter }}"/>
+                                {% endif %}
+
+
+                                <img src="/media/images/cornell safe and secure.png" style="width:75px; height: auto;"
+                                     alt="">
+
+
+                                <p>5 Need to alternate this to get in the year of event</p>
+                                also need to fix the form input for ios
+
+
+                            </label>{% endcomment %}
+                            {% comment %}
+                                {% image self.image fill-75x75-c100 as img %}
+                                <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">{% endcomment %}
+
+                        {% endfor %}
+                    </div>
+                </form>
+
+
+                <div class="slider__inner">
+                    {% for block in page.timeline %}
+                        {% include_block block %}
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="pastClients" data-aos="fade-down">
+            <div class="pastBox">
+                <h2>Clients</h2>
+                {{ page.clientIntro|richtext }}
+
+                <div class="gallery">
+                    <div class="container">
+                        {% for item in page.client_images.all %}
+                            <div class="col-lg-2">
+                                {% image item.image fill-100x100-c100 as img %}
+                                <a href="{{ item.caption }}">
+                                    <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
+
+
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 

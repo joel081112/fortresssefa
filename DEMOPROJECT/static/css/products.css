@@ -12,6 +12,21 @@
     align-content: flex-start;
 }
 
+.products li {
+    list-style: none;
+}
+
+.products {
+    text-transform: none;
+}
+
+
+@media only screen and (max-width: 700px) {
+    #gallery {
+        width: 75%;
+    }
+}
+
 .rich-text ul {
     display: block;
 }
@@ -471,8 +486,6 @@
 }
 
 /*end testing*/
-
-
 .block-video-Right {
     float: right;
     margin-left: 20px;

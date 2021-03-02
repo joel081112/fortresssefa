@@ -14,7 +14,7 @@ to{-webkit-mask-position:-50%;}
 html{}
 html,
 body{height:100%;background:#ecf6f9;}
-body{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;color:#fff;text-shadow:0 .05rem .1rem rgba(0, 0, 0, .5);}
+body{display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-pack:center;-webkit-box-pack:center;justify-content:center;color:#fff;text-shadow:none;}
 /* Header */
 .top{position:relative;z-index:1000;}
 .header{padding:15px;position:relative;}

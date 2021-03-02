@@ -10,7 +10,7 @@ from django.views.generic import TemplateView
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import ProductForm
-from.models import Product
+from .models import Product, BlogPage, BlogIndexPage, ContactUs
 import webbrowser
 
 
@@ -48,6 +48,7 @@ class RestrictedView(LoginRequiredMixin, TemplateView):
     template_name = ''
     raise_exception = True
     permission_denied_message = "You are not allowed here"
+
 
 
 

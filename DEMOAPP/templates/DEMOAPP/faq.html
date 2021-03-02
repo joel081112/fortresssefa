@@ -19,19 +19,20 @@
 {% block content %}
 
 
+    <div class="faq">
+        <div class="human-rights alternative-colour">
 
-    <div class="human-rights alternative-colour">
+            <h1><b>Fortress {{ page.title }} </b></h1>
 
-        <h1>Fortress {{ page.title }} </h1>
-
-        <div class="questions">
-            <div class="homeInfo1">
-                {% for block in page.content %}
-                    {% include_block block %}
-                {% endfor %}
+            <div class="questions">
+                <div class="homeInfo1">
+                    {% for block in page.content %}
+                        {% include_block block %}
+                    {% endfor %}
+                </div>
             </div>
-        </div>
 
+        </div>
     </div>
 
 

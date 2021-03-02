@@ -5,7 +5,13 @@
 {% block body_class %}Cookies{% endblock %}
 {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
+    <style>
+        p, h4, li {
+            text-transform: none;
+            text-shadow: none;
+        }
 
+    </style>
 {% endblock %}
 {% block extra_js %}
     {# Override this in templates to add extra javascript #}
