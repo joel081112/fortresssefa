@@ -4,6 +4,7 @@ This site is not currently uploaded anywhere
 
 This is a great template that I hope to have in the future
 
+### created with python3.7
 
 # _______for another machine take these steps_______ #
 delete all migrations
