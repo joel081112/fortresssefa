@@ -1,6 +1,6 @@
 {% extends "../base.html" %}
 {% load static %}
-{% block page-css-class %}cover-container w-100 d-flex h-100 p-3 mx-auto flex-column{% endblock %}
+{% block page-css-class %}cover-container w-100 d-flex h-100 pb-3 mx-auto flex-column{% endblock %}
 {% load wagtailcore_tags wagtailimages_tags %}
 {% load wagtailembeds_tags %}
 {% block body_class %}Products{% endblock %}
@@ -120,7 +120,7 @@
         </div>
 
 
-        <hr/>
+        <hr class="w-75 m-auto">
 
         <div class="all-blocks">
             {% for block in page.content %}

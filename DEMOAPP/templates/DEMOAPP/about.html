@@ -1,6 +1,6 @@
 {% extends "../base.html" %}
 {% load static %}
-{% block page-css-class %}cover-container w-100 d-flex h-25 p-3 flex-column{% endblock %}
+{% block page-css-class %}cover-container w-100 d-flex h-25 pb-3 flex-column{% endblock %}
 {% load wagtailcore_tags wagtailimages_tags %}
 {% block body_class %}About{% endblock %}
 {% block extra_css %}
@@ -211,20 +211,22 @@
         <div class="timeline alternative-colour" id="">
 
 
-            {% comment %}  {% for item in page.protec_images.all %}
+            {% comment %}
+                {% for item in page.protec_images.all %}
 
-                <div class="child-snap height-depend {% if forloop.counter == 1 %}active{% endif %}">
-                    {% image item.image fill-100x50-c100 as img %}
-                    <img src="{{ img.url }}"
-                         data-target="#carouselExampleIndicators"
-                         data-slide-to="{{ forloop.counter|add:"-1" }}"
-                         alt="{{ img.alt }}">
-                    <p id="colour-title">{{ item.caption }}</p>
+                    <div class="child-snap height-depend {% if forloop.counter == 1 %}active{% endif %}">
+                        {% image item.image fill-100x50-c100 as img %}
+                        <img src="{{ img.url }}"
+                             data-target="#carouselExampleIndicators"
+                             data-slide-to="{{ forloop.counter|add:"-1" }}"
+                             alt="{{ img.alt }}">
+                        <p id="colour-title">{{ item.caption }}</p>
 
-                </div>
+                    </div>
 
 
-            {% endfor %}{% endcomment %}
+                {% endfor %}
+            {% endcomment %}
 
             <div class="slider">
 
@@ -243,28 +245,33 @@
                             </div>
 
 
-                            {% comment %}  <label>
+                            {% comment %}
+                                <label>
 
-                                {% if forloop.counter == 1 %}
-                                    <input type="radio" name="slider" title="slide{{ forloop.counter }}"
-                                           checked="checked"/>
-                                {% else %}
-                                    <input type="radio" name="slider" title="slide{{ forloop.counter }}"/>
-                                {% endif %}
-
-
-                                <img src="/media/images/cornell safe and secure.png" style="width:75px; height: auto;"
-                                     alt="">
+                                    {% if forloop.counter == 1 %}
+                                        <input type="radio" name="slider" title="slide{{ forloop.counter }}"
+                                               checked="checked"/>
+                                    {% else %}
+                                        <input type="radio" name="slider" title="slide{{ forloop.counter }}"/>
+                                    {% endif %}
 
 
-                                <p>5 Need to alternate this to get in the year of event</p>
-                                also need to fix the form input for ios
+                                    <img src="/media/images/cornell safe and secure.png"
+                                         style="width:75px; height: auto;"
+                                         alt="">
 
 
-                            </label>{% endcomment %}
+                                    <p>5 Need to alternate this to get in the year of event</p>
+                                    also need to fix the form input for ios
+
+
+                                </label>
+                            {% endcomment %}
+
                             {% comment %}
                                 {% image self.image fill-75x75-c100 as img %}
-                                <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">{% endcomment %}
+                                <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">
+                            {% endcomment %}
 
                         {% endfor %}
                     </div>
@@ -281,15 +288,15 @@
         </div>
 
 
-        <div class="pastClients" data-aos="fade-down">
-            <div class="pastBox">
+        <div class="pastClients text-center" data-aos="fade-down">
+            <div class="">
                 <h2>Clients</h2>
                 {{ page.clientIntro|richtext }}
 
                 <div class="gallery">
                     <div class="container">
                         {% for item in page.client_images.all %}
-                            <div class="col-lg-2">
+                            <div class="col-sm-2 px-4 py-3">
                                 {% image item.image fill-100x100-c100 as img %}
                                 <a href="{{ item.caption }}">
                                     <img src="{{ img.url }}" class="item" alt="{{ img.alt }}">

@@ -1,6 +1,6 @@
 {% extends "../base.html" %}
 {% load static %}
-{% block page-css-class %}cover-container d-flex h-25 p-3 mx-auto flex-column padding{% endblock %}
+{% block page-css-class %}cover-container d-flex h-25 pb-3 mx-auto flex-column padding{% endblock %}
 {% load wagtailcore_tags wagtailimages_tags %}
 {% block body_class %}template-blogindexpage{% endblock %}
 {% block extra_css %}
@@ -108,7 +108,6 @@
 
                     </div>
 
-                    <hr>
                 {% endfor %}
                 {# end blog cards #}
 
@@ -205,23 +204,19 @@
 
                         <ul class="w3-ul w3-hoverable w3-white">
                             {% for post in posts %}
+                                    <a class="" href="{% pageurl post %}">
+                                        <li class="w3-padding-16 zoom border border-1">
 
-                                <a class="" href="{% pageurl post %}">
-                                    <li class="w3-padding-16 zoom">
+                                            <div class="w3-left w3-margin-right">
+                                                {% for item in post.specific.blogpage_images.all|slice:"1" %}
+                                                    {% image item.image fill-50x50-c100 %}
+                                                {% endfor %}
+                                            </div>
+                                            <span class="w3-large">{{ post.title }}</span><br>
+                                            <span>{{ post.specific.intro }}</span>
 
-                                        <div class="w3-left w3-margin-right">
-                                            {% for item in post.specific.blogpage_images.all|slice:"1" %}
-                                                {% image item.image fill-50x50-c100 %}
-                                            {% endfor %}
-                                        </div>
-                                        <span class="w3-large">{{ post.title }}</span><br>
-                                        <span>{{ post.specific.intro }}</span>
-
-                                    </li>
-                                </a>
-
-
-
+                                        </li>
+                                    </a>
                             {% endfor %}
                         </ul>
 

@@ -1,6 +1,6 @@
 {% extends "../base.html" %}
 {% load static %}
-{% block page-css-class %}cover-container w-100 d-flex h-100 p-3 mx-auto flex-column{% endblock %}
+{% block page-css-class %}cover-container w-100 d-flex h-100 pb-3 mx-auto flex-column{% endblock %}
 {% load wagtailcore_tags wagtailimages_tags %}
 {% block body_class %}Pro Tec{% endblock %}
 {% block extra_css %}
@@ -55,7 +55,6 @@
 
         {# start carousel #}
         {# second attempt #}
-        <hr/>
         <div class="intro">
             <h2>Choose your colour.</h2>
             <p>Colour names will appear on full images </p>
@@ -127,7 +126,7 @@
                     </div>
                 </div>
             </div>{% endcomment %}
-        <main class="container-snap full image-gallery" id="gallery">
+        <main class="container-snap full image-gallery mb-5" id="gallery">
             {% for item in page.protec_images.all %}
 
                 <div class="child-snap height-depend {% if forloop.counter == 1 %}active{% endif %}">
@@ -145,7 +144,6 @@
             {% endfor %}
         </main>
 
-        <hr/>
         <div class="image-container1 alternative-colour">
             <div class="image-container2 ">
                 <img src="/media/images/protec9.jpg" class="full-image" alt="main">

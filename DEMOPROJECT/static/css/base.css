@@ -176,3 +176,13 @@
 .line-height-2{
     line-height: 200%;
 }
+.fixed-footer-icon{
+    height: 40px;
+    width: 40px;
+    align-content: center;
+}
+.fixed-footer-icon img{
+    height: 35px;
+    width: auto;
+}
+
