@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 from .email_info import *
 import os
+import django_heroku
 from wagtail.embeds.oembed_providers import youtube
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -279,6 +280,9 @@ WAGTAILEMBEDS_FINDERS = [
 ]
 
 GOOGLE_RECAPTCHA_SECRET_KEY = "6LdT_dsUAAAAANpNL07g_0pkSTz2zDlpq-v_K_uc"
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
 
 # test
 # python3.7 must be used

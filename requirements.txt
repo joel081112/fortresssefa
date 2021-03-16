@@ -62,4 +62,6 @@ wagtail-condensedinlinepanel==0.5.2
 wagtail-django-captcha==1.0
 wagtail-robots==0.1.2
 wagtailmenus==2.12
+gunicorn==20.0.4
+django-heroku==0.3.1
 
