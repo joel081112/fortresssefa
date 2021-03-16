@@ -29,3 +29,5 @@ python manage.py loaddata db.json
 
 if on pgadmin follow the tutorial to backup as sql file and then as tar file
 then restore tar file into other machine's pgadmin
+
+### pip freeze > requirements.txt
