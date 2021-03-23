@@ -23,7 +23,7 @@ body {
     box-sizing: border-box;
 }
 
-.copyrightForm .copyright{
+.copyrightForm .copyright {
     text-align: right;
 }
 
@@ -96,19 +96,19 @@ input[type=submit]:hover {
     opacity: 0.96;
 }
 
-@media  only screen and  (min-width: 1000px) {
+@media only screen and  (min-width: 1000px) {
     .signup {
         margin: 2% 30%;
     }
 }
 
-@media  only screen and (min-width: 800px)  and (max-width: 1000px) {
+@media only screen and (min-width: 800px)  and (max-width: 1000px) {
     .signup {
         margin: 2% 15%;
     }
 }
 
-@media  only screen and (min-width: 580px)  and (max-width: 800px) {
+@media only screen and (min-width: 580px)  and (max-width: 800px) {
     .signup {
         margin: 2% 10%;
     }
@@ -118,7 +118,7 @@ input[type=submit]:hover {
     }
 }
 
-@media  only screen and (max-width: 580px) {
+@media only screen and (max-width: 580px) {
     .signup {
         margin: 2% 5%;
     }
@@ -217,6 +217,7 @@ input[type=submit]:hover {
     padding-top: 16px;
     position: absolute;
     z-index: 100;
+    margin-right: 15px;
 }
 
 .col-70 label {
@@ -225,47 +226,49 @@ input[type=submit]:hover {
     z-index: 100;
 }
 
-.forgotten-password .row{
+.forgotten-password .row {
     display: inherit;
 }
 
-@media  only screen and (min-width: 1000px) {
-    .forgotten-password .btn{
-        width:200px;
+@media only screen and (min-width: 1000px) {
+    .forgotten-password .btn {
+        width: 200px;
     }
-    .forgotten-password .box-1{
-        width:200px;
+
+    .forgotten-password .box-1 {
+        width: 200px;
     }
 }
 
-@media  only screen and (max-width: 450px) {
-    .forgotten-password .btn{
-        width:180px;
+@media only screen and (max-width: 450px) {
+    .forgotten-password .btn {
+        width: 180px;
     }
-    .forgotten-password .box-1{
-        width:180px;
+
+    .forgotten-password .box-1 {
+        width: 180px;
     }
 }
 
-.sign-up .col-55{
-    float:right;
+.sign-up .col-55 {
+    float: right;
 }
 
-body .pass-confirm{
+body .pass-confirm {
     text-transform: none;
 }
 
-.field_error{
+.field_error {
     padding-top: 15px;
     text-transform: none;
 }
 
-.field_error .errorlist{
+.field_error .errorlist {
     margin-bottom: 0
 }
 
-.forgotten-password .learn-more{
-    width:15rem;
+.forgotten-password .learn-more {
+    width: 15rem;
 }
 
 
