@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     'wagtailcaptcha',
 ]
 # pip freeze > requirements.txt
+# py -3.7 -m venv myenvpy manage
 
 SITE_ID = 1
 

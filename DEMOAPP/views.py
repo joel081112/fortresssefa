@@ -22,28 +22,6 @@ def home(request):
     return render(request, 'base/home.html', {'posts': posts})
 
 
-def confirm_email(request):
-
-    subject = 'Thanks'
-    message = 'For the nuts'
-    from_email = settings.EMAIL_HOST_USER
-    to_list = [settings.EMAIL_HOST_USER, 'joel08112@icloud.com']
-    send_mail(subject, message, from_email, to_list, fail_silently=True)
-
-    return render(request, 'confirm_email.html')
-
-
-def email_verification(request):
-
-    subject = 'Thanks'
-    message = 'For the nuts'
-    from_email = settings.EMAIL_HOST_USER
-    to_list = [settings.EMAIL_HOST_USER, 'joel08112@icloud.com']
-    send_mail(subject, message, from_email, to_list, fail_silently=True)
-
-    return render(request, 'email_verification.html')
-
-
 class RestrictedView(LoginRequiredMixin, TemplateView):
     template_name = ''
     raise_exception = True
