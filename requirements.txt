@@ -56,7 +56,7 @@ soupsieve==2.2.1
 sqlparse==0.4.1
 typing-extensions==3.7.4.3
 Unidecode==1.1.2
-urllib3==1.25.3
+urllib3==1.25.8
 virtualenv==20.3.0
 wagtail==2.8.2
 wagtail-condensedinlinepanel==0.5.2
