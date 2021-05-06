@@ -1,0 +1,76 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block page-css-class %}cover-container w-100 d-flex h-100 pb-3 mx-auto flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}Main Page{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+    <link rel="stylesheet" href="{% static '/css/w3.css' %}">
+    <link rel="stylesheet" href="{% static '/css/homePage.css' %}">
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+
+    <script src="{% static '/js/rotate_text.js' %}"></script>
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA All Product Page.
+{% endblock %}
+
+{% block content %}
+
+    <div class="pb-5 container col-md-9">
+        <div class="row justify-content-evenly">
+            <div class="col-md-3 text-center mt-3">
+                Security
+                <hr class="col-3 mx-auto">
+                {% for p in security %}
+                    <a href="{% url 'viewproduct' p.id %}">
+                        {{ p }}
+                    </a>
+                    <br>
+                {% endfor %}
+            </div>
+
+            <div class="d-md-none">
+                <hr>
+            </div>
+            <div class="col-md-3  text-center">
+                Environment
+                <hr class="col-3 mx-auto">
+                {% for p in environment %}
+                    <a href="{% url 'viewproduct' p.id %}">
+                        {{ p }}
+                    </a>
+                    <br>
+                {% endfor %}
+
+            </div>
+
+            <div class="d-md-none">
+                <hr>
+            </div>
+            <div class="col-md-3  text-center">
+                Architecture
+                <hr class="col-3 mx-auto">
+                {% for p in architecture %}
+                    <a href="{% url 'viewproduct' p.id %}">
+                        {{ p }}
+                    </a>
+                    <br>
+                {% endfor %}
+            </div>
+            <div class="col-md-3  text-center">
+                Fire
+                <hr class="col-3 mx-auto">
+                {% for p in fire %}
+                    <a href="{% url 'viewproduct' p.id %}">
+                        {{ p }}
+                    </a>
+                    <br>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

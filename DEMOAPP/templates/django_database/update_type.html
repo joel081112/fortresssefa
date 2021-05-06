@@ -1,0 +1,41 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block page-css-class %}cover-container w-100 d-flex h-100 pb-3 mx-auto flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}Update Type{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+    <link rel="stylesheet" href="{% static '/css/w3.css' %}">
+    <link rel="stylesheet" href="{% static '/css/homePage.css' %}">
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+
+    <script src="{% static '/js/rotate_text.js' %}"></script>
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA Update Type Page.
+{% endblock %}
+
+{% block content %}
+
+    <div class="pb-5 container">
+        <form action="" method="POST" role="form" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-success mb-5">
+                        Update Type
+                    </button>
+                    <a class="result text-danger" href="{% url "delete_type" obj.id %}"
+                       onclick="return confirm('Are you sure?')">
+                        <i class="far fa-trash-alt fs-1"></i>
+                    </a>
+
+                    {{ form.as_p }}
+                </div>
+            </div>
+        </form>
+
+    </div>
+{% endblock %}

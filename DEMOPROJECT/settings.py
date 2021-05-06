@@ -34,21 +34,6 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'DEMOAPP.apps.DemoappConfig',
 
-    'django.contrib.sites',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.sitemaps',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-
-    'django.contrib.staticfiles',
-    'mathfilters',
-
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
@@ -61,14 +46,32 @@ INSTALLED_APPS = [
     'wagtail.admin',
     'wagtail.core',
 
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.sitemaps',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.sites',
+
+    'django.contrib.staticfiles',
+    'mathfilters',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
     'blog',
     'modelcluster',
     'taggit',
 
     'captcha',
     'wagtailcaptcha',
+    'ckeditor',
 ]
 # pip freeze > requirements.txt
+# pip install -r requirements.txt
+# py -3.7 -m venv myenvpy manage
 
 SITE_ID = 1
 
@@ -204,7 +207,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 MEDIAFILES_DIRS = [os.path.join(BASE_DIR, 'DEMOPROJECT/media')]
 
-WAGTAIL_SITE_NAME = 'Joels class website'
+WAGTAIL_SITE_NAME = 'Fortress website'
 
 EMAIL_USE_TLS = EMAIL_USE_TLS
 EMAIL_HOST = EMAIL_HOST
@@ -213,9 +216,9 @@ EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
 EMAIL_PORT = EMAIL_PORT
 EMAIL_BACKEND = EMAIL_BACKEND
 
-WAGTAIL_FRONTEND_LOGIN_URL = '/account/login/'
+WAGTAIL_FRONTEND_LOGIN_URL = '/login/'
 
-LOGIN_URL = '/account/login'
+LOGIN_URL = '/login'
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 2

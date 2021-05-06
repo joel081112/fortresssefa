@@ -186,3 +186,6 @@
     width: auto;
 }
 
+.text-dec-none {
+    text-decoration: none;
+}

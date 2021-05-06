@@ -1,5 +1,15 @@
 from django import forms
-from ..DEMOAPP.templates.account import *
-from .models import Products
+from .models import Product, Type
 
+
+class ProductForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = '__all__'
+
+
+class TypeForm(forms.ModelForm):
+    class Meta:
+        model = Type
+        fields = '__all__'
 

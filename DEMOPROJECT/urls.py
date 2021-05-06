@@ -35,12 +35,14 @@ urlpatterns = [
                   # path('architect-page/', views.view_architect_page),
                   # path('', views.view_home_page),
                   url('deleted/', views.delete_user, name='delete-user'),
-                  url(r'^account/password/change/', views.password_redirect),
-                  url(r'^account/', include('allauth.account.urls')),
-                  url(r'^fun/', views.fun),
-                  re_path(r'^admin/', include(wagtailadmin_urls)),
-                  re_path(r'^documents/', include(wagtaildocs_urls)),
-                  re_path(r'', include(wagtail_urls)),
+                  path('password/change/', views.password_redirect),
+                  path('', include('allauth.account.urls')),
+                  path('fun/', views.fun),
+                  path('admin/', include(wagtailadmin_urls)),
+                  path('documents/', include(wagtaildocs_urls)),
+                  path('', include(wagtail_urls)),
+
+                  path('site/', include('DEMOAPP.urls')),
 
                   # url(r��, include(wagtail_urls)),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

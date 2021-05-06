@@ -15,7 +15,7 @@
         {% for card in self.cards|slice:":1" %}
             {% with doc=card.document %}
                 <div class="download product-info">
-                    <a href="{{ doc.url }}" class="smooth-over-button noDecoration">
+                    <a href="{{ doc.url }}" class="btn btn-info mb-2">
                         <i class="fa fa-download"></i>
                         <p class="btn-txt" id="limiter">{{ doc.title }}</p>
                     </a>
@@ -33,8 +33,8 @@
             <div class="collapse" id="pdf-{{ forloop.counter }}">
                 {% for card in self.cards|slice:"1:" %}
                     {% with doc=card.document %}
-                        <div class="download product-info">
-                            <a href="{{ doc.url }}" class="smooth-over-button noDecoration">
+                        <div class="download product-info align-content-start">
+                            <a href="{{ doc.url }}" class="btn btn-info mb-2">
                                 <i class="fa fa-download"></i>
                                 <p class="btn-txt" id="limiter">{{ doc.title }} {{ forloop.counter }}</p>
                             </a>

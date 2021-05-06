@@ -4,11 +4,35 @@ This site is not currently uploaded anywhere
 
 This is a great template that I hope to have in the future
 
-### created with python3.7
+## created with python3.7
+For vscode (freeapp)
+
+open new window
+
+_clone repository_
+
+Use these commands
+
+git branch newBranch
+
+git checkout newBranch
+
+py -3.7 -m venv myenv
+
+bash
+
+source myenv/scripts/activate
+
+pip install -r requirements.txt
+
+
 
 # _______for another machine take these steps_______ #
 delete all migrations
-delete local postgres table
+
+Need to set up a PGAdmin database account and table
+
+delete local postgres table, if applicable
 
  might have to manage.py makemigrations DEMOAPP
 

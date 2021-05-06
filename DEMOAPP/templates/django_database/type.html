@@ -1,0 +1,31 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block page-css-class %}cover-container w-100 d-flex h-100 pb-3 mx-auto flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}Type{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+    <link rel="stylesheet" href="{% static '/css/w3.css' %}">
+    <link rel="stylesheet" href="{% static '/css/homePage.css' %}">
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+
+    <script src="{% static '/js/rotate_text.js' %}"></script>
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA Type Page.
+{% endblock %}
+
+{% block content %}
+    {% include 'type_text.html' %}
+    <div class="text-center">
+        <div class="py-5 ">
+            {{ obj }}
+        </div>
+
+        <a class="fs-3 " href="{% url 'add_type' %}">
+            <i class="fas fa-plus-square"></i>
+        </a>
+    </div>
+{% endblock %}

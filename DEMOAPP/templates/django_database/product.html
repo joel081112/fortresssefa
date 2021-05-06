@@ -1,0 +1,115 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block page-css-class %}cover-container w-100 d-flex h-100 pb-3 mx-auto flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}Product{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+    <style>
+        body {
+            text-transform: none;
+        }
+
+        hr {
+            margin-left: auto !important;
+            margin-right: auto !important;
+            max-width: 30%;
+        }
+    </style>
+
+    <link rel="stylesheet" href="{% static '/css/about.css' %}">
+    <link rel="stylesheet" href="{% static '/css/w3.css' %}">
+    <link rel="stylesheet" href="{% static '/css/homePage.css' %}">
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+
+    <script src="{% static '/js/rotate_text.js' %}"></script>
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA Product Page.
+{% endblock %}
+
+{% block content %}
+    {% include 'type_text.html' %}
+    <div class="py-3 text-center">
+        <a class="fs-3 " href="{% url 'add_product' %}">
+            <i class="fas fa-plus-square"></i>
+        </a>
+        <a class="fs-3 " href="/site/main">
+            all
+        </a>
+        <div class="py-5">
+
+        </div>
+
+
+        {% if obj.product_picture.url is not Null %}
+            <img src="{{ obj.product_picture.url }}" class="" alt="{{ obj.product_picture.url }}">
+        {% endif %}
+        <div class="">
+            <p class="fs-2 ">
+                <a class="fs-3 " href="{% url 'update_product' obj.id %}">
+                    {{ obj.heading }}
+                </a>
+                {{ obj }}
+            </p>
+            <hr class="col-3 mx-auto mb-4">
+            {{ obj.information|richtext }}
+        </div>
+    </div>
+    <div class="py-3 text-center col-5 mx-auto">
+        <div id="carouselExampleIndicators" class="carousel" data-ride="carousel">
+            <div class="blog">
+                <div class="carousel-inner">
+                    {% for colour in colours %}
+                        {% image colour.image fill-250x250 as img %}
+                        <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %}">
+                            <img src="{{ img.url }}" class="d-block w-100" alt="{{ img.alt }}">
+
+                            <div class="imageCounter">
+                                <img src="/media/original_images/camera.png" alt="camera image">
+                                {{ forloop.counter }} of {{ colours.count }}
+
+                            </div>
+
+                            <div class="protec-title fs-3 py-1 px-3">
+                                {{ colour.caption }}
+                            </div>
+                        </div>
+                        {% empty %}
+                        n
+                    {% endfor %}
+                </div>
+                {% for colour in colours %}
+                    {% if forloop.counter >= 1 %}
+                        <div class="arrow-sets" id="protec-arrows">
+                            <a class="left recommended-item-control" href="#carouselExampleIndicators"
+                               data-slide="prev">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a class="right recommended-item-control" href="#carouselExampleIndicators"
+                               data-slide="next">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="intro alternative-colour">
+        <h3 id="prod-docs">Get the Docs</h3>
+        <div class="download">
+            {% if obj.pdf.url is not Null %}
+                <a href="{{ obj.pdf.url }}" download="{{ obj.pdf.url }}">
+                    <div class="row d-print-inline">
+                        <i class="fa fa-file-pdf-o text-primary fs-1"></i>
+                        <p class="text-info  fs-3">Spec sheet</p>
+                        <p class="fs-4">Download</p>
+                    </div>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
