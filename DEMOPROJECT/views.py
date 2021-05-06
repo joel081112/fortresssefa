@@ -22,7 +22,7 @@ def fun(request):
 
 
 def password_redirect(request):
-    response = redirect('/account/password/reset')
+    response = redirect('/password/reset')
     return response
 
 
@@ -54,4 +54,5 @@ def delete_user(request):
     request.user.delete()
     logout(request)
     return redirect('/')
+
 

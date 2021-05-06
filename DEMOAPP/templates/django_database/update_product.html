@@ -1,0 +1,46 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block page-css-class %}cover-container w-100 d-flex h-100 pb-3 mx-auto flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}Update Product{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+    <link rel="stylesheet" href="{% static '/css/w3.css' %}">
+    <link rel="stylesheet" href="{% static '/css/homePage.css' %}">
+{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+
+    <script src="{% static '/js/rotate_text.js' %}"></script>
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA Update Product Page.
+{% endblock %}
+
+{% block content %}
+
+    <div class="py-3 container">
+        <div class="form-group">
+            <form action="" method="POST" role="form" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col">
+                        <button type="submit" class="btn btn-success mb-5">
+                            Update Product
+                        </button>
+                        <a class="text-info" href="{% url 'viewproduct' obj.id %}">
+                            (Return to product)
+                        </a>
+                        <a class="result text-danger px-3" href="{% url "delete_product" obj.id %}"
+                           onclick="return confirm('Are you sure?')">
+                            <i class="far fa-trash-alt fs-1"></i>
+                        </a>
+                        {{ form.media }}
+                        {{ form.as_p }}
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+{% endblock %}

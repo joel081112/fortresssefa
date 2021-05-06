@@ -28,7 +28,10 @@ from wagtail.users.forms import UserEditForm, UserCreationForm
 from wagtail.images.blocks import ImageChooserBlock
 
 from .blocks import CardBlock, QuestionBlock, ImageTextsBlock, ImageTextBlock, ArticleBlock, LocationCardBlock, \
-    ButtonLinksBlock, InlineVideoBlock
+    ButtonLinksBlock, InlineVideoBlock, ImageTextArticleBlock
+from django.conf import settings
+from django.conf.urls.static import static
+from ckeditor.fields import RichTextField as rtf
 
 
 class FormField(AbstractFormField):
@@ -581,9 +584,17 @@ class Servicing(Page):
 
     ]  # these are if adding a search to the website
 
+    intro = StreamField(
+        [
+            ("intro", ImageTextArticleBlock()),
+        ],
+        null=True,
+        blank=True,
+    )
+
     # content tab panels
     content_panels = Page.content_panels + [
-
+        StreamFieldPanel('intro')
     ]
 
     # what to call the panels on wagtail
@@ -671,48 +682,6 @@ class ArchitectPage(Page):
         ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
         # classname settings adds the cog
     ])
-
-
-class DoorSpeed(Page):
-    search_fields = Page.search_fields + [
-
-    ]  # these are if adding a search to the website
-
-    # content tab panels
-    content_panels = Page.content_panels + [
-
-    ]
-
-    # what to call the panels on wagtail
-    edit_handler = TabbedInterface([
-        ObjectList(content_panels, heading='Content'),
-        ObjectList(Page.promote_panels, heading='SEO'),
-        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-        # classname settings adds the cog
-    ]
-
-    )
-
-
-class DoorSectional(Page):
-    search_fields = Page.search_fields + [
-
-    ]  # these are if adding a search to the website
-
-    # content tab panels
-    content_panels = Page.content_panels + [
-
-    ]
-
-    # what to call the panels on wagtail
-    edit_handler = TabbedInterface([
-        ObjectList(content_panels, heading='Content'),
-        ObjectList(Page.promote_panels, heading='SEO'),
-        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-        # classname settings adds the cog
-    ]
-
-    )
 
 
 class DoorSteel(Page):
@@ -811,242 +780,6 @@ class SteelDoorGalleryImage(Orderable):
         ImageChooserPanel('image'),
         FieldPanel('caption'),
     ]
-
-
-class ShuttersCommercial(Page):
-    intro = RichTextField(blank=True)
-
-    search_fields = Page.search_fields + [
-
-    ]  # these are if adding a search to the website
-
-    # content tab panels
-    content_panels = Page.content_panels + [
-        FieldPanel(
-            'intro',
-            classname="full"
-        ),
-    ]
-
-    # what to call the panels on wagtail
-    edit_handler = TabbedInterface([
-        ObjectList(content_panels, heading='Content'),
-        ObjectList(Page.promote_panels, heading='SEO'),
-        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-        # classname settings adds the cog
-    ]
-
-    )
-
-
-class ShuttersFireCurtains(Page):
-    search_fields = Page.search_fields + [
-
-    ]  # these are if adding a search to the website
-
-    # content tab panels
-    content_panels = Page.content_panels + [
-
-    ]
-
-    # what to call the panels on wagtail
-    edit_handler = TabbedInterface([
-        ObjectList(content_panels, heading='Content'),
-        ObjectList(Page.promote_panels, heading='SEO'),
-        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-        # classname settings adds the cog
-    ]
-
-    )
-
-
-class ShuttersFireShutters(Page):
-    search_fields = Page.search_fields + [
-
-    ]  # these are if adding a search to the website
-
-    # content tab panels
-    content_panels = Page.content_panels + [
-
-    ]
-
-    # what to call the panels on wagtail
-    edit_handler = TabbedInterface([
-        ObjectList(content_panels, heading='Content'),
-        ObjectList(Page.promote_panels, heading='SEO'),
-        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-        # classname settings adds the cog
-    ]
-
-    )
-
-
-class ShuttersIndustrial(Page):
-    search_fields = Page.search_fields + [
-
-    ]  # these are if adding a search to the website
-
-    # content tab panels
-    content_panels = Page.content_panels + [
-
-    ]
-
-    # what to call the panels on wagtail
-    edit_handler = TabbedInterface([
-        ObjectList(content_panels, heading='Content'),
-        ObjectList(Page.promote_panels, heading='SEO'),
-        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-        # classname settings adds the cog
-    ]
-
-    )
-
-
-class ShuttersInsulated(Page):
-    search_fields = Page.search_fields + [
-
-    ]  # these are if adding a search to the website
-
-    # content tab panels
-    content_panels = Page.content_panels + [
-
-    ]
-
-    # what to call the panels on wagtail
-    edit_handler = TabbedInterface([
-        ObjectList(content_panels, heading='Content'),
-        ObjectList(Page.promote_panels, heading='SEO'),
-        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-        # classname settings adds the cog
-    ]
-
-    )
-
-
-class ShuttersSmokeCurtains(Page):
-    search_fields = Page.search_fields + [
-
-    ]  # these are if adding a search to the website
-
-    # content tab panels
-    content_panels = Page.content_panels + [
-
-    ]
-
-    # what to call the panels on wagtail
-    edit_handler = TabbedInterface([
-        ObjectList(content_panels, heading='Content'),
-        ObjectList(Page.promote_panels, heading='SEO'),
-        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-        # classname settings adds the cog
-    ]
-
-    )
-
-
-class OtherFortressTrellidor(Page):
-    search_fields = Page.search_fields + [
-
-    ]  # these are if adding a search to the website
-
-    # content tab panels
-    content_panels = Page.content_panels + [
-
-    ]
-
-    # what to call the panels on wagtail
-    edit_handler = TabbedInterface([
-        ObjectList(content_panels, heading='Content'),
-        ObjectList(Page.promote_panels, heading='SEO'),
-        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-        # classname settings adds the cog
-    ]
-
-    )
-
-
-class OtherCrimeGuardScreen(Page):
-    search_fields = Page.search_fields + [
-
-    ]  # these are if adding a search to the website
-
-    # content tab panels
-    content_panels = Page.content_panels + [
-
-    ]
-
-    # what to call the panels on wagtail
-    edit_handler = TabbedInterface([
-        ObjectList(content_panels, heading='Content'),
-        ObjectList(Page.promote_panels, heading='SEO'),
-        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-        # classname settings adds the cog
-    ]
-
-    )
-
-
-class OtherLoadingBays(Page):
-    search_fields = Page.search_fields + [
-
-    ]  # these are if adding a search to the website
-
-    # content tab panels
-    content_panels = Page.content_panels + [
-
-    ]
-
-    # what to call the panels on wagtail
-    edit_handler = TabbedInterface([
-        ObjectList(content_panels, heading='Content'),
-        ObjectList(Page.promote_panels, heading='SEO'),
-        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-        # classname settings adds the cog
-    ]
-
-    )
-
-
-class OtherPartitionScreens(Page):
-    search_fields = Page.search_fields + [
-
-    ]  # these are if adding a search to the website
-
-    # content tab panels
-    content_panels = Page.content_panels + [
-
-    ]
-
-    # what to call the panels on wagtail
-    edit_handler = TabbedInterface([
-        ObjectList(content_panels, heading='Content'),
-        ObjectList(Page.promote_panels, heading='SEO'),
-        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-        # classname settings adds the cog
-    ]
-
-    )
-
-
-class OtherSecurityGates(Page):
-    search_fields = Page.search_fields + [
-
-    ]  # these are if adding a search to the website
-
-    # content tab panels
-    content_panels = Page.content_panels + [
-
-    ]
-
-    # what to call the panels on wagtail
-    edit_handler = TabbedInterface([
-        ObjectList(content_panels, heading='Content'),
-        ObjectList(Page.promote_panels, heading='SEO'),
-        ObjectList(Page.settings_panels, heading='Settings', classname='settings'),
-        # classname settings adds the cog
-    ]
-
-    )
 
 
 class SiteMap(Page):
@@ -1174,3 +907,50 @@ class HomePageGalleryImage(Orderable):
         ImageChooserPanel('image'),
         FieldPanel('caption'),
     ]
+
+
+# end wagtail models
+
+
+# start django models
+class Type(models.Model):
+    """Group type of product."""
+
+    name = models.CharField(max_length=30, default='', blank=False)
+
+    class Meta:
+        """Meta class."""
+
+        unique_together = (("name",),)
+
+    def __str__(self):
+        return self.name
+
+
+class Product(models.Model):
+    """Make a door page."""
+
+    name = models.CharField(max_length=40, default='')
+    heading = models.ForeignKey(
+        Type, on_delete=models.SET_NULL,
+        blank=True,
+        null=True, default='', help_text='Choose a group this belongs to'
+    )
+    product_picture = models.ImageField(
+        null=True, blank=True,
+        upload_to='original_images/'
+    )
+    date_created = models.DateTimeField(auto_now_add=True, null=True)
+    information = rtf(blank=True, null=True)
+    pdf = models.FileField(
+        upload_to='documents/',
+        null=True, blank=True
+    )
+
+    class Meta:
+        """Meta class."""
+
+        unique_together = (("name",),)
+
+    def __str__(self):
+        return str(self.name)

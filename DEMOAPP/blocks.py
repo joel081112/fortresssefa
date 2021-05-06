@@ -37,6 +37,23 @@ class LocationCardBlock(blocks.StructBlock):
         label = "Location Cards"
 
 
+class ImageTextArticleBlock(blocks.StructBlock):
+    image = ImageChooserBlock(
+        required=False, help_text="Add your Image"
+    )
+    title = blocks.CharBlock(
+        required=False, help_text="Add your title"
+    )
+    text = blocks.RichTextBlock(
+        required=False, help_text="Add your detail"
+    )
+
+    class Meta:
+        template = "image_text_article_block.html"
+        icon = "edit"
+        label = "Image and Text"
+
+
 class CardBlock(blocks.StructBlock):
     title = blocks.CharBlock(required=True, help_text="Add your title")
     image = ImageChooserBlock(required=False, help_text="Add your Image")

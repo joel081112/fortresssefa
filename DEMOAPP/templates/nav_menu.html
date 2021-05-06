@@ -12,40 +12,18 @@
         <li class="menu-item">
             <a href="#0" >Products</a>
             <ol class="sub-menu">
-                <li class="menu-item"><a href="/products">Overview</a></li>
-                <div class="column">
-                    <h10>Security</h10>
-
-                    {#<li class="menu-item"><a href="/speed-door">XD Range</a></li>
-                    <li class="menu-item"><a href="/sectional-door">XD SBD</a></li>
-                    <li class="menu-item"><a href="/steel-door">XD SR2</a></li>
-                    <li class="menu-item"><a href="/sectional-door">XD SR4</a></li>
-                    <li class="menu-item"><a href="/steel-door">XD SR5</a></li>
-                    <li class="menu-item"><a href="/sectional-door">Ballistic</a></li>
-                    <li class="menu-item"><a href="/steel-door">XD SR2</a></li>#}
-                </div>
-                <div class="column">
-                    <h10>Environment</h10>
-                    <li class="menu-item"><a href="/commercial-shutters">Sectional</a></li>
-                    <li class="menu-item"><a href="/fire-shutters">DBI101</a></li>
-                </div>
-                <div class="column">
-                    <h10>Fire</h10>
-                    <li class="menu-item"><a href="/partition-screens">Partition Screens</a></li>
-                    <li class="menu-item"><a href="/loading-bays">Loading Bays</a></li>
-                </div>
-                <div class="column">
-                    <h10>Architectural</h10>
-                    <li class="menu-item"><a href="/partition-screens">Partition Screens</a></li>
-                    <li class="menu-item"><a href="/loading-bays">Loading Bays</a></li>
-                </div>
+                <li class="menu-item"><a href="/site/main">Overview</a></li>
+                <li class="menu-item"><a href="{% url 'selector' 'Security' %}">Security</a></li>
+                <li class="menu-item"><a href="{% url 'selector' 'Environment' %}">Environment</a></li>
+                <li class="menu-item"><a href="{% url 'selector' 'Architecture' %}">Architecture</a></li>
+                <li class="menu-item"><a href="{% url 'selector' 'Fire' %}">Fire</a></li>
             </ol>
         </li>
         <li class="menu-item">
             <a href="#0">Services</a>
             <ol class="sub-menu">
                 <li class="menu-item"><a href="/pro-tec">Pro-Tec Colours</a></li>
-                <li class="menu-item"><a href="/Servicing">Servicing</a></li>
+                <li class="menu-item"><a href="/servicing">Servicing</a></li>
                 <li class="menu-item"><a href="/architect-page">Architects</a></li>
                 <li class="menu-item"><a href="/faq">FAQ's</a></li>
             </ol>

@@ -12,6 +12,10 @@
             max-width: 100%;
             height: auto;
         }
+
+        body {
+            text-transform: none;
+        }
     </style>
 
 {% endblock %}
@@ -47,7 +51,9 @@
         <div class="overview">
             <article class="item">
                 <div class="homeInfo2">
-                    {{ page.security|richtext }}
+                    <a class="text-dec-none text-dark" href="{% url 'selector' 'Security' %}">
+                        {{ page.security|richtext }}
+                    </a>
                 </div>
                 <div class="homeIm1 responsiveness super-centered">
                     {% for item in page.homepage_images.all|slice:"1" %}
@@ -58,7 +64,9 @@
             </article>
             <article class="item fadeInBlock">
                 <div class="homeInfo3">
-                    {{ page.environment|richtext }}
+                    <a class="text-dec-none text-dark" href="{% url 'selector' 'Environment' %}">
+                        {{ page.environment|richtext }}
+                    </a>
                 </div>
                 <div class="homeIm2  super-centered">
                     {% for item in page.homepage_images.all|slice:"1:2" %}
@@ -70,7 +78,9 @@
 
             <article class="item fadeInBlock">
                 <div class="homeInfo4">
-                    {{ page.fire|richtext }}
+                    <a class="text-dec-none text-dark" href="{% url 'selector' 'Fire' %}">
+                        {{ page.fire|richtext }}
+                    </a>
                 </div>
                 <div class="homeIm3  super-centered">
                     {% for item in page.homepage_images.all|slice:"2:3" %}
@@ -82,7 +92,9 @@
 
             <article class="item fadeInBlock">
                 <div class="homeInfo5">
-                    {{ page.architectural|richtext }}
+                    <a class="text-dec-none text-dark" href="{% url 'selector' 'Architecture' %}">
+                        {{ page.architectural|richtext }}
+                    </a>
                 </div>
                 <div class="homeIm4  super-centered">
                     {% for item in page.homepage_images.all|slice:"3:4" %}

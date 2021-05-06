@@ -17,4 +17,11 @@
 
 {% block content %}
     <p>some service</p>
+    this will be from a general website copy and paste
+    <div class="container">
+        <hr>
+        {% for block in page.intro %}
+            {% include_block block %}
+        {% endfor %}
+    </div>
 {% endblock %}

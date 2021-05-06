@@ -1,0 +1,39 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block page-css-class %}cover-container w-100 d-flex h-100 pb-3 mx-auto flex-column{% endblock %}
+{% load wagtailcore_tags wagtailimages_tags %}
+{% block body_class %}{{ product_type }} Page{% endblock %}
+{% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+    <link rel="stylesheet" href="{% static '/css/w3.css' %}">
+    <link rel="stylesheet" href="{% static '/css/homePage.css' %}">
+{% endblock %}
+{% block title %}Fortress SEFA | {{ product_type }}{% endblock %}
+{% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+
+    <script src="{% static '/js/rotate_text.js' %}"></script>
+{% endblock %}
+{% block meta_descr %}
+    Fortress SEFA Product Page.
+{% endblock %}
+
+{% block content %}
+
+    <div class="pb-5 container col-md-9">
+        <div class="row justify-content-evenly">
+            <div class="col-md-3 text-center mt-3">
+                {{ product_type }}
+                <hr class="col-3 mx-auto">
+                {% for p in item %}
+                    <a href="{% url 'viewproduct' p.id %}">
+                        {{ p }}
+                    </a>
+                    <br>
+                {% endfor %}
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
