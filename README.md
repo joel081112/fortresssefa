@@ -62,7 +62,22 @@ python manage.py dumpdata --natural-foreign --natural-primary -e contenttypes -e
 python manage.py loaddata db.json
 
 
-if on pgadmin follow the tutorial to backup as sql file and then as tar file
-then restore tar file into other machine's pgadmin
+## Command help
+
+C:\Users\aszka>cd source/repos
+
+C:\Users\aszka\source\repos>cd fortresssefa
+
+C:\Users\aszka\source\repos\fortresssefa>cd myenv
+
+C:\Users\aszka\source\repos\fortresssefa\myenv>cd scripts
+
+C:\Users\aszka\source\repos\fortresssefa\myenv\Scripts>activate
+
+(myenv) C:\Users\aszka\source\repos\fortresssefa\myenv\Scripts>cd ..
+
+(myenv) C:\Users\aszka\source\repos\fortresssefa\myenv>cd ..
+
+(myenv) C:\Users\aszka\source\repos\fortresssefa>py manage.py runserver
 
 ### pip freeze > requirements.txt
