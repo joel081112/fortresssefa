@@ -17,6 +17,8 @@ git branch newBranch
 
 git checkout newBranch
 
+(python 3.7 download required)
+
 py -3.7 -m venv myenv
 
 bash
