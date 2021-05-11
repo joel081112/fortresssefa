@@ -83,6 +83,12 @@ C:\Users\aszka\source\repos\fortresssefa\myenv\Scripts>activate
 
 (myenv) C:\Users\aszka\source\repos\fortresssefa>py manage.py runserver
 
+# Wagtail Admin
+
+/admin URL
+
+Username: 'fortress_admin' p: 'Japan:1234'
+
 # FINALLY
 
 Make sure the database username and password match local PGADMIN credentials in settings.py
