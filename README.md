@@ -36,6 +36,10 @@ Download PGAdmin and PostrgreSQL
 
 Need to set up a PGAdmin database account and table
 
+CREATE ROLE username WITH LOGIN PASSWORD 'quoted password';
+CREATE DATABASE databasename;
+GRANT ALL PRIVILEGES ON DATABASE databasename TO username;
+
 delete local postgres table, if applicable
 
  might have to manage.py makemigrations DEMOAPP
