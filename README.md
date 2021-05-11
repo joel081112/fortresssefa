@@ -36,11 +36,11 @@ Download PGAdmin and PostrgreSQL
 
 Need to set up a PGAdmin database account and table
 
-CREATE ROLE username WITH LOGIN PASSWORD 'quoted password';
+`CREATE ROLE username WITH LOGIN PASSWORD 'quoted password';`
 
-CREATE DATABASE databasename;
+`CREATE DATABASE databasename;`
 
-GRANT ALL PRIVILEGES ON DATABASE databasename TO username;
+`RANT ALL PRIVILEGES ON DATABASE databasename TO username;`
 
 delete local postgres table, if applicable
 
