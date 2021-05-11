@@ -130,9 +130,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'fort',
-        'USER': 'postgres',
-        # 'PASSWORD': 'Japan:1234',
-        'PASSWORD': 'Harbour192',
+        'USER': 'postgres1',
+        'PASSWORD': 'BrightSpark:234',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -143,6 +142,8 @@ DATABASES = {
 # delete local postgres table
 
 # might have to manage.py makemigrations DEMOAPP
+
+# might have to manage.py migrate DEMOAPP
 
 # might have to comment out models.py in demoapp
 # python manage.py migrate --run-syncdb
