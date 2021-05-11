@@ -40,7 +40,7 @@ Need to set up a PGAdmin database account and table
 
 `CREATE DATABASE databasename;`
 
-`RANT ALL PRIVILEGES ON DATABASE databasename TO username;`
+`GRANT ALL PRIVILEGES ON DATABASE databasename TO username;`
 
 delete local postgres table, if applicable
 
