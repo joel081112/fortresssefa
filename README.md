@@ -2,7 +2,7 @@
 
 This site is not currently uploaded anywhere
 
-This is a great template that I hope to have in the future
+# For up to date code on your machine `git pull origin main`
 
 ## created with python3.7
 For vscode (freeapp)
@@ -82,5 +82,11 @@ C:\Users\aszka\source\repos\fortresssefa\myenv\Scripts>activate
 (myenv) C:\Users\aszka\source\repos\fortresssefa\myenv>cd ..
 
 (myenv) C:\Users\aszka\source\repos\fortresssefa>py manage.py runserver
+
+# FINALLY
+
+Make sure the database username and password match local PGADMIN credentials in settings.py
+
+You will know this is wrong if the error shown for wrong details when running commands such as makemigrations or runserver!!
 
 ### pip freeze > requirements.txt
