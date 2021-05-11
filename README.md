@@ -44,6 +44,9 @@ delete local postgres table, if applicable
 
  might have to manage.py makemigrations DEMOAPP
 
+
+ might have to manage.py migrate DEMOAPP
+ 
 might have to comment out models.py in demoapp
 python manage.py migrate --run-syncdb
 
