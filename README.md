@@ -32,6 +32,8 @@ pip install -r requirements.txt
 # _______for another machine take these steps_______ #
 delete all migrations
 
+Download PGAdmin and PostrgreSQL
+
 Need to set up a PGAdmin database account and table
 
 delete local postgres table, if applicable
