@@ -6,6 +6,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST ='smtp.gmail.com'
 # EMAIL_HOST_USER = 'joelferguson98@gmail.com'
 # EMAIL_HOST_PASSWORD = 'kywctkvuqstnxjtl'
+# current email hoster and messager for contact forms
 EMAIL_HOST_USER = 'fortresssefa@gmail.com'
 EMAIL_HOST_PASSWORD = 'rqrtetjcglayxiqv'
 EMAIL_PORT = 587
