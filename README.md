@@ -21,8 +21,6 @@ git checkout newBranch
 
 py -3.7 -m venv myenv
 
-bash
-
 source myenv/scripts/activate
 
 pip install -r requirements.txt
@@ -63,6 +61,8 @@ python manage.py loaddata db.json
 
 
 ## Command help
+
+For updated Branch code when not on main branch just  type `git pull origin main`
 
 C:\Users\aszka>cd source/repos
 
