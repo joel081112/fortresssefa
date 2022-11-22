@@ -41,7 +41,7 @@ js.knockout==3.1.0
 l18n==2018.5
 MarkupSafe==1.1.1
 oauthlib==3.1.0
-Pillow==6.1.0
+Pillow==9.3.0
 psycopg2==2.7.7
 psycopg2-binary==2.8.3
 psycopg2-pool==1.1
